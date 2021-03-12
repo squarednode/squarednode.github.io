@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1 id="title">Survey Form On My Current Web Development Skills. </h1>
+    <meta charset="utf-8">
+</head> 
+<body>
+  <p id="description">Fill out the following form to let me know how I am doing. Any input you can provide would be greatly appreciated.</p>
+  <form id="survey-form" >
+    <div> <input id="name" placeholder="Squared Node" required><label id="name-label">Name</label></input>
+   </div>
+  <div>
+    <input id="email" placeholder="xxxx@xxxx.com" type="email" required><label id="email-label">Email</label></input>
+  </div>
+  <div>
+    <input id="number" placeholder="10" type="number" min="0" max="10" required><label id="number-label">Input a rating from 1 - 10 on the layout</label></input>
+  </div>
+<div id="radio-group">
+  <label><input name="my progress" id="radio" type="radio" value="I like your layout" checked/>Your layout looks great</label>
+<div>
+  <label><input name="my progress" id="radio" type="radio" value="I dont like your layout"/>Your layout could use some work</label>
+</div>
+<div>
+  <label><input name="my progress" id="radio" type="radio" value="I am not sure"/>I'm riding the fence</label>
+</div>
+</div>
+<div>
+  <div id="you-are">
+    <select id="dropdown">
+      <option name="web developer">Web Developer</option>
+      <option name="student">Student</option>
+      <option name="Free code camp">Part of Free codecamp</option>
+    </select>
+  </div>
+  <div id="recomendations">
+    <label><input id="checkbox" type="checkbox" value="I would recomend your work">Yes, I would recomend your work</label>
+    <div></div>
+     <label><input id="checkbox" type="checkbox" value="I would not recomend your work">No, I would recomend your work</label
+       <div></div>
+     <label><input id="checkbox" type="checkbox" value="I would maybe recomend your work">Maybe, I would recomend your work</label>
+  </div>
+  <textarea placeholder="Puns and Memes"></textarea>
+</div>
+<div>
+  <button id="submit"><label id="submit-button">Click me for rewards!</label></button>
+</div>
+  </form>
+  </body>
+</html>
