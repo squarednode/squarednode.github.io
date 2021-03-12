@@ -1,0 +1,8 @@
+<style>
+    #image {
+        max-width: 100%;
+        width: 100%;
+        display: block;
+        align-items: center;
+      }
+</style> 
