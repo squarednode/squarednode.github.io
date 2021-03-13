@@ -1,0 +1,24 @@
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #header-img{
+    height: 50px;
+    width: 50px;
+    padding:0% 5% 0% 0%;
+  }
+  #nav-bar {
+  padding: 0% 0% 0% 10%;
+  }
+  
+  body {
+    display: block;
+    
+  }
+  @media screen and (max-width: 600px) {
+    #nav-link a {
+      float: none;
+      width: 100%;
+    }
+}
