@@ -6,23 +6,29 @@
         display: block;
         align-items: center;
       }
+body {
+  font-size: 100%;
+}
 
-      li.pictures {
+      li {
+  font-size: 3vw;
+  padding: 0% 0% 5% 5%;
+}
+      .pictures {
         position: relative;
-        background: lightgrey;
-      }
+        width: 50%
+            }
       
-      li.pictures img {
+      .pictures img {
         position: absolute;
         opacity: 0;
-        width: 100px;
-        height: 100px;
-        left: 0;
+        width: 80%;
+        left: 100%;
         top: -20px;
         transition: opacity .5s, top .5s;
       }
       
-      li.pictures:hover img {
+      .pictures:hover img {
         opacity: 1;
-        top: 20px;
+        top: -40%;
       }
