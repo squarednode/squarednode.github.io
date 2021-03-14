@@ -6,3 +6,23 @@
         display: block;
         align-items: center;
       }
+
+      li.pictures {
+        position: relative;
+        background: lightgrey;
+      }
+      
+      li.pictures img {
+        position: absolute;
+        opacity: 0;
+        width: 100px;
+        height: 100px;
+        left: 0;
+        top: -20px;
+        transition: opacity .5s, top .5s;
+      }
+      
+      li.pictures:hover img {
+        opacity: 1;
+        top: 20px;
+      }
