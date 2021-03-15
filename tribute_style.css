@@ -9,7 +9,7 @@
 body {
   font-size: 100%;
 }
-
+/* Section for tribute time line picture and text position*/
       li {
   
   padding: 0% 0% 5% 5%;
@@ -32,7 +32,7 @@ body {
         opacity: 1;
         top: -50%;
       }
-
+/* Section for media adjustments*/
       @media screen and (min-width: 320px) {
         body {
           font-size: calc(16px + 6 * ((100vw - 320px) / 680));
