@@ -1,0 +1,20 @@
+body {
+    display: block;
+  }
+  
+  #welcome-section {
+    height: 100vh;
+  }
+  /* Nav bar settings */
+  #navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  @media (max-width: 28.75em){
+    body {
+      font-size: 55%;
+    }
+  }
+  
