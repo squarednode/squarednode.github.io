@@ -4,8 +4,18 @@
 
 body {
     display: block;
+
+    
   }
-  
+  /* Main alignment of webpage */
+
+.container1{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60em; 
+
+  }
+/*Welcome section with video and main message */
   #welcome-section {
     height: 100vh;
   }
@@ -16,6 +26,7 @@ body {
     top: 0;
     width: 100%;
   }
+  /*Mobile first desgin */
   @media (max-width: 28.75em){
     body {
       font-size: 55%;
