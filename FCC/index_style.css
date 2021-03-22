@@ -3,9 +3,7 @@
   }
 
 body {
-    display: block;
-
-    
+    display: block;   
   }
   /* Main alignment of webpage */
 
@@ -15,16 +13,42 @@ body {
     max-width: 60em; 
 
   }
-/*Welcome section with video and main message */
-  #welcome-section {
-    height: 100vh;
-  }
+
   /* Nav bar settings */
   #navbar {
-    display: flex;
+    display: flex; 
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    z-index: 20;
+    background-color: #ED7D31; 
+    border-bottom: 1pt solid;
+    border-color: rgb(0, 0, 0);
+  }
+  #header-img {
+    display: flex;
+    align-items: flex-start;
+    height: 100px;
+  }
+ #nav-buttons{
+   display: flex;
+   margin-left: auto;
+ }
+ .nav-link {
+  display: block;
+  font-size: 22px;
+  padding: 11px;
+ }
+  .nav-link:hover{
+    background-color: black;
+    color: white;
+    box-shadow: .1em .1em .1em .1em rgb(239, 243, 13);
+}
+/*Welcome section with video and main message */
+  #welcome-section {
+    top: 3px;
+    height: 100vh;
   }
   /*Mobile first desgin */
   @media (max-width: 28.75em){
