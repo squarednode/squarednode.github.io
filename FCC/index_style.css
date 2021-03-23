@@ -46,13 +46,19 @@ body {
     justify-content: center;
     height: 100vh;
     width: 50em;
+    left: 0;
     z-index: 10;
     background-color: rgba(128, 128, 128, 0.5);
       }
+  #vidoe-prop {
+    width: 10%;
+    height: auto;
+  }
 
-   /* Main alignment of lower webpage */
 
-.container1{
+/* Main alignment of lower webpage */
+
+  .container1{
   margin-left: auto;
   margin-right: auto;
   max-width: 60em; 
