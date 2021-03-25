@@ -7,36 +7,173 @@ body {
   }
  
 
-  /* Nav bar settings */
-  #navbar {
-    display: flex; 
+  /* Navigation bar settings in header */
+  a {
+    color: #000;
+  }
+  
+  /* header main properties */
+  
+  .header {
+    background-color: #ED7D31;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 75px;
     z-index: 20;
-    background-color: #ED7D31; 
-    border-bottom: 1pt solid;
-    border-color: rgb(0, 0, 0);
   }
-  #header-img {
-    display: flex;
-    align-items: flex-start;
-    height: 100px;
+  /*mobile first drop down list properties*/
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #ED7D31;
+    margin-left: 60%;
+    margin-right: auto;
+    width: 40%;
   }
- #nav-buttons{
-   display: flex;
-   margin-left: auto;
- }
- .nav-link {
-  display: block;
-  font-size: 22px;
-  padding: 11px;
- }
-  .nav-link:hover{
-    background-color: black;
-    color: white;
-    box-shadow: .1em .1em .1em .1em rgb(44, 44, 43);
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    border-left: 1px solid #3f3d3c;
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #adaaa8;
+  }
+  
+  .header .logo {
+    display: inline-block;
+    font-size: 2em;
+    padding: 0px 10px 0px 0px;
+    height: 75px;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+  /* Adjustment for center left alignment text with image on mobile*/
+  .header #header-text{
+    top: 25%; 
+  }
+  .header .logo-img {
+    display: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* header mobile menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 35px 0px;
+    position: absolute;
+    right: 5%;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 25px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* mobile menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 59em = 940px for header image size full screen can be adjusted based on image size*/
+  /* reset the margin and width from drop down menu*/
+  @media (min-width: 59em) {
+    .header ul {
+      margin-left: 0;
+      margin-right: 0;
+      width: auto;
+    }
+   
+    .header li {
+      float: left;
+    }
+    /* Adjust position of button when full page and image is large */
+    .header li a {
+      padding: 28px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    /* removal of mobile first items*/
+    .header .menu-icon {
+      display: none;
+    }
+  
+    .header .logo {
+    display: none;
+  }
+    /* Main desktop header display*/
+    .header .logo-img {
+    display: block;
+    float: left;
+    height: 100%;
+  }
 }
 /*Welcome section with video and main message */
   #welcome-section {
@@ -80,4 +217,4 @@ body {
       font-size: 55%;
     }
   }
-  
+ 
