@@ -174,14 +174,16 @@
   }
 }
 body {
-  display: block; 
+  display: block;
+  overflow-x: hidden;
 }
 
 /*Welcome section with video and main message */
   #welcome-section {
     display:flex;
     height: 100vh; 
-    min-height: 700px;
+    min-height: 600px;
+    
   }
   /* right box properties*/   
     #right-welcome {
@@ -190,7 +192,7 @@ body {
       max-width: 500px;
       min-height: 80vh;
       left: 2%;
-      top: 75px;
+      top: 20px;
       z-index: 10;
       background-color: rgba(128, 128, 128, 0.7);
     }
@@ -210,12 +212,14 @@ body {
     padding: 10vh 20px 0px 20px;
   }
 
-
+  /* Video position and size properties */
   #vidoe-prop {
-    position: relative;
-    height: 100vh;
+    position: absolute;
+    top: -5%;
+    right: -100px;
+    height: 90vh;
+    min-height: 800px;
     z-index: 5;
-    float: right;
   }
 
 
@@ -232,5 +236,7 @@ body {
     body {
       font-size: 100%;
     }
+    #welcome-section {
+      min-height: 550px;
   }
- 
+} 
