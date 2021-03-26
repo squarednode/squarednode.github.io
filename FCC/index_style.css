@@ -216,7 +216,7 @@ body {
   #vidoe-prop {
     position: absolute;
     top: -5%;
-    right: -100px;
+    right: -150px;
     height: 90vh;
     min-height: 800px;
     z-index: 5;
@@ -233,10 +233,16 @@ body {
 
 /*Desktop additional desgin */
 @media (min-width: 59em) {
-    body {
+  body {
       font-size: 100%;
     }
-    #welcome-section {
+  #welcome-section {
       min-height: 600px;
+  }
+  #right-welcome {
+    left: 20%;
+  }
+  #vidoe-prop {
+    left: 30%;
   }
 } 
