@@ -165,7 +165,7 @@
   
     .header .logo {
     display: none;
-  }
+     }
     /* Main desktop header display*/
     .header .logo-img {
     display: block;
@@ -237,6 +237,6 @@ body {
       font-size: 100%;
     }
     #welcome-section {
-      min-height: 550px;
+      min-height: 600px;
   }
 } 
