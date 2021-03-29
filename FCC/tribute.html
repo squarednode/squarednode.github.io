@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <!-- Meta tag header information-->
 <head>
     <title>Tribute Page</title>
+    <meta name="description" content="Digital Assests for custom websites, engineering, and photo editing">
+        <meta name="keywords" content="web de, website, website design, 
+        website builder, website templates, web, web development, web page, web designer, 
+        engineer, engineering, mech engineer, mechanical engineering, autocad, solidworks, 
+        revit, mechanical design, drafting, design, 
+        photo editing, adobe, photoshop, photos, rendering, paintings, poster, custom, digital, products, for sale, hire">
+        <meta name="author" content="Squared Node">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="tribute_style.css">
 </head> 
-<body id="main">
+<body>
   <!--Main header here to be on all squared node pages -->
-  <header>
+  <header class="header"> 
+    <img class="logo-img" src="https://github.com/squarednode/image_repo/blob/main/logo_header4.JPG?raw=true" alt="Squared Node large logo">
+    <img class="logo" src="https://github.com/squarednode/image_repo/blob/main/logo_small4.JPG?raw=true" alt="Squared Node small logo">
+    <a href="" class="logo" id="header-text">Squared Node</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn">
+      <span class="navicon">
+      </span>
+    </label>
+      <ul class="menu">
+        <li><a href="#third_header">Tribute Page</a></li>
+        <li><a href="#forth_header">Technical Page</a></li>
+        <li><a href="#fith_header">Products Page</a></li>
+        <li><a href="#profile-link">Survey Form</a></li>
+      </ul>
   </header>
   <!--Page intro to hook the reader--> 
+  <div id="main-content">
     <h1 id="title">Tyrannos-sauros-rex the History</h1>
       <div id="img-div">
-    <img id="eating" src="https://i.pinimg.com/originals/a6/a9/79/a6a9797721eccc27d420ce8ec1897f79.jpg" alt="Dino's eating the yummies">
+    <img id="real-dino" src="https://cdn.wallpapersafari.com/48/55/RWxfaX.png" alt="The real T-rex">
         <div class="img-caption">The life as a dinosaur</div>
       </div>
       <h2 class="Timeline">The Start of the T-Rex</h2>
@@ -56,8 +79,10 @@
         You can check out more information on the famous beast from multiple locations. We perfer that you re-read everything here though. In the chance you want to get more head over to <a id="tribute-link" href="https://en.wikipedia.org/wiki/Tyrannosaurus" target="_blank">T-rex wiki page</a><br>
         <div>This is the work of legends. The legend is the cute dino.</div> 
         </p>
-      </body>
+      </div>
+      
       <!-- Squared Node footer to be on all pages-->
         <footer> &copy 2021 by <a href="https://squarednode.github.io/">Squared node.</a> All rights reserved.
         </footer>
+      </body>
 </html>
