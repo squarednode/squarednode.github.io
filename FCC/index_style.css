@@ -1,7 +1,12 @@
 * {
     box-sizing: border-box;
-    overflow-x: hidden;
   }
+
+  /* Settings for website */
+body {
+  display: block;
+  overflow-x: hidden;
+}
 
 /* Navigation bar settings in header */
   /* change anchor colors from standard blue to black*/
@@ -173,55 +178,45 @@
     height: 100%;
   }
 }
-body {
-  display: block;
-  overflow-x: hidden;
-}
+
 
 /*Welcome section with video and main message */
-  #welcome-section {
-    display:flex;
-    height: 100vh; 
-    min-height: 600px;
-    
-  }
-  /* right box properties*/   
-    #right-welcome {
-      position: absolute;
-      width: 60%;
-      max-width: 500px;
-      min-height: 80vh;
-      left: 2%;
-      top: 20px;
-      z-index: 10;
-      background-color: rgba(128, 128, 128, 0.7);
-    }
-  .right-text {
+#welcome-section {
+  display:block;
+  width: auto;
+  height: 100vh; 
+  min-height: 37.5em;
+}
+/* right box properties*/   
+  #right-welcome {
+    display: grid;
     position: relative;
+    top: 50px;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 30em;
+    height: 90vh; 
+    min-height: 30em;
+    z-index: 10;
+    background-color: rgba(128, 128, 128, 0.7);
+    box-shadow: 0 15px 15px 0 rgba(223, 129, 6, 0.6);
   }
-  .body h1 {
+  .right-text {
     text-align: center;
-    font-size: 3em;
-    padding: 10vh 0px 0px 0px;
+    padding: 0 10% 0 10%;
   }
-  .body h2 {
-    text-align: center;
-  }
-  .body p {
-    text-align: center;
-    padding: 10vh 20px 0px 20px;
-  }
-
-  /* Video position and size properties */
-  #vidoe-prop {
-    position: absolute;
-    top: -5%;
-    right: -18%;
-    height: 90vh;
-    min-height: 40em;
-    z-index: 5;
-    overflow: hidden;
-  }
+#vidoe-prop {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  right: -18%;
+  transform: translateX(-40%);
+  height: 90vh;
+  min-height: 40em;
+  z-index: 5;
+  overflow: hidden;
+}
 
 
 /* Main alignment of lower webpage */
@@ -257,6 +252,7 @@ body {
 
 .slide-img {
   width: 100%;
+  object-fit: contain;
 }
 
 .slide:nth-child(1) {
