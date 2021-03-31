@@ -214,6 +214,7 @@ body {
   /* Video position and size properties */
   #vidoe-prop {
     position: absolute;
+    overflow: hidden;
     top: -5%;
     right: -150px;
     height: 90vh;
