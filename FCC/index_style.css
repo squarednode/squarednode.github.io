@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    overflow-x: hidden;
   }
 
 /* Navigation bar settings in header */
@@ -12,7 +13,7 @@
   
   .header {
     background-color: #ED7D31;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.6);
     position: fixed;
     top: 0;
     left: 0;
@@ -214,12 +215,12 @@ body {
   /* Video position and size properties */
   #vidoe-prop {
     position: absolute;
-    overflow: hidden;
     top: -5%;
-    right: -150px;
+    right: -18%;
     height: 90vh;
     min-height: 40em;
     z-index: 5;
+    overflow: hidden;
   }
 
 
