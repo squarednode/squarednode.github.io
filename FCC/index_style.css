@@ -55,7 +55,7 @@
   }
   /* Adjustment for center alignment text with oversize image on mobile*/
   .header #header-text{
-    top: 25%; 
+    padding: .5em; 
   }
   /* Removal of larger header image on mobile*/
   .header .logo-img {
