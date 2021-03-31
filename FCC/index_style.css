@@ -48,7 +48,7 @@
     display: inline-block;
     font-size: 2em;
     padding: 0px 10px 0px 0px;
-    height: 75px;
+    height: 2.34em;
     position: relative;
     text-decoration: none;
     vertical-align: middle;
@@ -57,6 +57,7 @@
   .header #header-text{
     top: 25%; 
   }
+  /* Removal of larger header image on mobile*/
   .header .logo-img {
     display: none;
   }
@@ -216,7 +217,7 @@ body {
     top: -5%;
     right: -150px;
     height: 90vh;
-    min-height: 800px;
+    min-height: 40em;
     z-index: 5;
   }
 
@@ -225,15 +226,17 @@ body {
   .container1{
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   max-width: 60em; 
   }
 /* Lower scrolling boxes*/
 #slideshow {
   text-align: center;
   overflow: hidden;
-  height: 400px;
   width: 70%;
   margin: 0 auto;
+  border-style: groove;
+  border-width: 5px;
 }
 
 .slide-wrapper {
@@ -247,8 +250,11 @@ body {
 
 .slide {
   float: left;
-  height: auto;
   width: 25%;
+}
+
+.slide-img {
+  width: 100%;
 }
 
 .slide:nth-child(1) {
