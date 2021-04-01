@@ -2,12 +2,9 @@
 * {
     box-sizing: border-box;
   }
-  html, body {
-    overflow-x: hidden;
-}
 body {
-  margin: 0;
   display: block;
+  overflow-x: hidden;
 }
 /* Navigation bar settings in header */
   /* change anchor colors from standard blue to black*/
@@ -141,7 +138,7 @@ body {
     width: 60%;
     max-width: 30em;
     height: 90vh; 
-    min-height: 30em;
+    min-height: 36em;
     z-index: 10;
     background-color: rgba(128, 128, 128, 0.7);
     box-shadow: 0 10px 10px 0 rgba(225, 129, 6, 0.6);
@@ -150,19 +147,27 @@ body {
     text-align: center;
     padding: 0 10% 0 10%;
   }
-#vidoe-prop {
+.left-box {
   position: absolute;
-  top: -5%;
-  left: 50%;
-  right: -18%;
-  transform: translateX(-40%);
-  height: 90vh;
-  min-height: 40em;
+  top: 0;
+  left: 40%;
+  right: 0;
+  height: 100vh; 
+  min-height: 42em;
   z-index: 5;
   overflow: hidden;
 }
+#vidoe-prop {
+  height: 140%;
+  min-height: 990px; 
+  margin: -150px 0 0 -330px;
+  width: auto;
+  z-index: 5;
+}
+
 /* Main alignment of lower webpage */
   .container1{
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -258,9 +263,5 @@ body {
   display: block;
   float: left;
   height: 100%;
-}
-#vidoe-prop {
-  height: 100vh;
-  overflow: hidden;
 }
 }
