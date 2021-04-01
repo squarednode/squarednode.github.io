@@ -16,7 +16,7 @@ body {
   
   /* header main properties */
   
-  .header {
+.header {
     background-color: #ED7D31;
     box-shadow: 0 0 15px 0 rgba(0,0,0,.6);
     position: fixed;
@@ -68,18 +68,14 @@ body {
   .header .logo-img {
     display: none;
   }
-  
-  /* menu */
-  
-  .header .menu {
+    /* menu */
+    .header .menu {
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
   }
-  
-  /* header mobile menu icon */
-  
-  .header .menu-icon {
+    /* header mobile menu icon */
+    .header .menu-icon {
     cursor: pointer;
     display: inline-block;
     padding: 35px 0px;
@@ -87,8 +83,7 @@ body {
     right: 5%;
     user-select: none;
   }
-  
-  .header .menu-icon .navicon {
+   .header .menu-icon .navicon {
     background: #333;
     display: block;
     height: 3px;
@@ -96,8 +91,7 @@ body {
     transition: background .2s ease-out;
     width: 25px;
   }
-  
-  .header .menu-icon .navicon:before,
+   .header .menu-icon .navicon:before,
   .header .menu-icon .navicon:after {
     background: #333;
     content: '';
@@ -107,44 +101,33 @@ body {
     transition: all .2s ease-out;
     width: 100%;
   }
-  
-  .header .menu-icon .navicon:before {
+    .header .menu-icon .navicon:before {
     top: 5px;
   }
-  
-  .header .menu-icon .navicon:after {
+    .header .menu-icon .navicon:after {
     top: -5px;
   }
-  
-  /* mobile menu btn */
-  
-  .header .menu-btn {
+    /* mobile menu btn */
+    .header .menu-btn {
     display: none;
   }
-  
-  .header .menu-btn:checked ~ .menu {
+    .header .menu-btn:checked ~ .menu {
     max-height: 240px;
   }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon {
+    .header .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;
   }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    .header .menu-btn:checked ~ .menu-icon .navicon:before {
     transform: rotate(-45deg);
   }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    .header .menu-btn:checked ~ .menu-icon .navicon:after {
     transform: rotate(45deg);
   }
-  
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+    .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
   }
   
-
-
 /*Welcome section with video and main message */
 #welcome-section {
   display:block;
