@@ -2,12 +2,12 @@
 * {
     box-sizing: border-box;
   }
-html {
-  touch-action: pan-y;
+  html, body {
+    overflow-x: hidden;
 }
 body {
+  margin: 0;
   display: block;
-  overflow-x: hidden;
 }
 /* Navigation bar settings in header */
   /* change anchor colors from standard blue to black*/
