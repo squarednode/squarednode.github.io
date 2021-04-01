@@ -148,7 +148,7 @@ body {
     min-height: 30em;
     z-index: 10;
     background-color: rgba(128, 128, 128, 0.7);
-    box-shadow: 0 10px 10px 0 rgba(237, 125, 49, 0.6);
+    box-shadow: 0 10px 10px 0 rgba(225, 129, 6, 0.6);
   }
   .right-text {
     text-align: center;
@@ -276,5 +276,9 @@ body {
   display: block;
   float: left;
   height: 100%;
+}
+#vidoe-prop {
+  height: 100vh;
+  overflow: hidden;
 }
 }
