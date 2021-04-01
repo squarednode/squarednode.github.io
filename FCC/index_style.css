@@ -1,22 +1,21 @@
+ /* Settings for website */
 * {
     box-sizing: border-box;
   }
-
-  /* Settings for website */
+html {
+  touch-action: pan-x pan-y;
+}
 body {
   display: block;
   overflow-x: hidden;
 }
-
 /* Navigation bar settings in header */
   /* change anchor colors from standard blue to black*/
   a {
     color: #000;
   }
-  
-  /* header main properties */
-  
-.header {
+    /* header main properties */
+  .header {
     background-color: #ED7D31;
     box-shadow: 0 0 15px 0 rgba(0,0,0,.6);
     position: fixed;
@@ -37,14 +36,12 @@ body {
     margin-right: auto;
     width: 40%;
   }
-  
   .header li a {
     display: block;
     padding: 20px 20px;
     border-left: 1px solid #3f3d3c;
     text-decoration: none;
   }
-  
   .header li a:hover,
   .header .menu-btn:hover {
     background-color: #adaaa8;
@@ -127,7 +124,6 @@ body {
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
   }
-  
 /*Welcome section with video and main message */
 #welcome-section {
   display:block;
@@ -165,8 +161,6 @@ body {
   z-index: 5;
   overflow: hidden;
 }
-
-
 /* Main alignment of lower webpage */
   .container1{
   margin-left: auto;
@@ -179,52 +173,44 @@ body {
   text-align: center;
   overflow: hidden;
   width: 70%;
+  height: 45vh;
   margin: 0 auto;
   border-style: groove;
   border-width: 5px;
 }
-
 .slide-wrapper {
   width: 400%;
   animation: slide 18s ease infinite;
 }
-
 .slide-wrapper:hover {
   animation-play-state: paused;
 }
-
 .slide {
   float: left;
   width: 25%;
 }
-
 .slide-img {
-  width: 100%;
+  height: 45vh; 
+  width: 100%; 
   object-fit: contain;
 }
-
 .slide:nth-child(1) {
   background: #D93B65;
 }
-
 .slide:nth-child(2) {
   background: #037E8C;
 }
-
 .slide:nth-child(3) {
   background: #36BF66;
 }
-
 .slide:nth-child(4) {
   background: #D9D055;
 }
-
 .slide-number {
   color: #000;
   text-align: center;
   font-size: 10em;
 }
-
 @keyframes slide {
   20% {margin-left: 0px;}
   30% {margin-left: -100%;}
@@ -234,8 +220,6 @@ body {
   80% {margin-left: -300%;}
   90% {margin-left: -300%;}
 }
-
-
 /*Desktop additional desgin */
 @media (min-width: 59em) {
   body {
@@ -250,7 +234,6 @@ body {
     margin-right: 0;
     width: auto;
   }
- 
   .header li {
     float: left;
   }
@@ -267,7 +250,6 @@ body {
   .header .menu-icon {
     display: none;
   }
-
   .header .logo {
   display: none;
    }
