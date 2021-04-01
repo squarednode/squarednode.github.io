@@ -158,9 +158,9 @@ body {
   overflow: hidden;
 }
 #vidoe-prop {
-  height: 140%;
-  min-height: 990px; 
-  margin: -150px 0 0 -330px;
+  height: 135%;
+  min-height: 920px; 
+  margin: -130px 0 0 -320px;
   width: auto;
   z-index: 5;
 }
