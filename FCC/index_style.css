@@ -55,7 +55,7 @@ body {
   }
   /* Adjustment for center alignment text with oversize image on mobile*/
   .header #header-text{
-    font-size: 1.8em;
+    font-size: 1.5em;
     padding: .5em; 
   }
   /* Removal of larger header image on mobile*/
