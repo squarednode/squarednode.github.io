@@ -61,6 +61,7 @@ body {
   }
   /* Adjustment for center alignment text with oversize image on mobile*/
   .header #header-text{
+    font-size: 2em;
     padding: .5em; 
   }
   /* Removal of larger header image on mobile*/
@@ -142,42 +143,6 @@ body {
     top: 0;
   }
   
-/* 59em = 940px for header image size full screen can be adjusted based on image size*/
-/* reset the margin and width from drop down menu*/
-@media (min-width: 59em) {
-    .header ul {
-      margin-left: 0;
-      margin-right: 0;
-      width: auto;
-    }
-   
-    .header li {
-      float: left;
-    }
-    /* Adjust position of button when full page and image is large */
-    .header li a {
-      padding: 28px 30px;
-    }
-    .header .menu {
-      clear: none;
-      float: right;
-      max-height: none;
-    }
-    /* removal of mobile first items*/
-    .header .menu-icon {
-      display: none;
-    }
-  
-    .header .logo {
-    display: none;
-     }
-    /* Main desktop header display*/
-    .header .logo-img {
-    display: block;
-    float: left;
-    height: 100%;
-  }
-}
 
 
 /*Welcome section with video and main message */
@@ -200,7 +165,7 @@ body {
     min-height: 30em;
     z-index: 10;
     background-color: rgba(128, 128, 128, 0.7);
-    box-shadow: 0 15px 15px 0 rgba(223, 129, 6, 0.6);
+    box-shadow: 0 10px 10px 0 rgba(237, 125, 49, 0.6);
   }
   .right-text {
     text-align: center;
@@ -293,13 +258,40 @@ body {
   body {
       font-size: 100%;
     }
-  #welcome-section {
-      min-height: 600px;
-  }
-  #right-welcome {
-    left: 20%;
-  }
-  #vidoe-prop {
-    left: 30%;
-  }
 } 
+/* 59em = 940px for header image size full screen can be adjusted based on image size*/
+/* reset the margin and width from drop down menu*/
+@media (min-width: 59em) {
+  .header ul {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+ 
+  .header li {
+    float: left;
+  }
+  /* Adjust position of button when full page and image is large */
+  .header li a {
+    padding: 28px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  /* removal of mobile first items*/
+  .header .menu-icon {
+    display: none;
+  }
+
+  .header .logo {
+  display: none;
+   }
+  /* Main desktop header display*/
+  .header .logo-img {
+  display: block;
+  float: left;
+  height: 100%;
+}
+}
