@@ -17,7 +17,7 @@
 
  <!--Navigation bar content -->
  <body>
- <header class="header"> 
+ <header class="header">  
   <a href="https://squarednode.github.io/FCC/"><img class="logo-img" src="https://github.com/squarednode/image_repo/blob/main/logo_header4.JPG?raw=true" alt="Squared Node large logo">
   <img class="logo" src="https://github.com/squarednode/image_repo/blob/main/logo_small4.JPG?raw=true" alt="logo"></a>
   <a href="" class="logo" id="header-text">Squared Node</a>
@@ -56,22 +56,55 @@
       <section id="projects">
         <h3 class="project-header">Below you will find projects I have accomplished on FCC
         </h3>
-        <!-- Update links below with information
-          <div class="project-grid">
-          <a href="https://squarednode.github.io/FCC/tribute" target="_blank" class="project-tile">Tribute Project for FCC responsive web design</a>
-          <a href="https://squarednode.github.io/FCC/technical" target="_blank" class="project-tile">Technical documentation page for FCC responsive web design</a>
-          <a href="https://squarednode.github.io/FCC/products" target="_blank" class="project-tile">Product page for FCC responsive web design</a>
-        </div>-->
       </section>
       <!-- Slide show for selecting each project--> 
-      <div id="slideshow">
-        <div class="slide-wrapper">
-          <div class="slide"><a href="https://squarednode.github.io/FCC/tribute"><img class="slide-img" src="https://github.com/squarednode/image_repo/blob/main/tribute_cover.JPG?raw=true" alt="Slide for link to tribute"/></a></div>
-          <div class="slide"><h1 class="slide-number">2</h1></div>
-          <div class="slide"><h1 class="slide-number">3</h1></div>
-          <div class="slide"><h1 class="slide-number">4</h1></div>        
-        </div>
-      </div>
+      <section class="carousel" aria-label="Gallery">
+        <ol class="carousel__viewport">
+          <li id="carousel__slide1"
+              tabindex="0"
+              class="carousel__slide"><img id="slide-2" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/object-fit2.jpg">
+            <div class="carousel__snapper">
+            </div>
+          </li>
+          <li id="carousel__slide2"
+              tabindex="0"
+              class="carousel__slide">
+            <img id="slide-1" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/object-fit.jpg"> 
+            <div class="carousel__snapper"></div>
+          </li>
+          <li id="carousel__slide3"
+              tabindex="0"
+              class="carousel__slide"><img id="slide-3" src="https://www.cnet.com/a/img/LBn506tpapbLU90dSChHHM-abV0=/940x0/2019/03/25/05b61be5-fc50-44ea-992d-69b81f6d2dba/rex1.jpg">
+            <div class="carousel__snapper"></div>
+          </li>
+          <li id="carousel__slide4"
+              tabindex="0"
+              class="carousel__slide">
+            <img id="slide-4" src="https://github.com/squarednode/image_repo/blob/main/tribute_cover.JPG?raw=true" alt="">
+            <div class="carousel__snapper"></div>
+          </li>
+        </ol>
+         <aside class="carousel__navigation">
+          <ol class="carousel__navigation-list">
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide1"
+                 class="carousel__navigation-button">Go to slide 1</a>
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide2"
+                 class="carousel__navigation-button">Go to slide 2</a>
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide3"
+                 class="carousel__navigation-button">Go to slide 3</a>
+            </li>
+            <li class="carousel__navigation-item">
+              <a href="#carousel__slide4"
+                 class="carousel__navigation-button">Go to slide 4</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
      <!--Contact information-->
       <section>
       <a id="profile-link" href="https://squarednode.github.io/FCC/survey" target="_blank">Get a hold of us with this hand survey form</a>
