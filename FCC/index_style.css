@@ -1,10 +1,10 @@
  /* Settings for website */
 * {
     box-sizing: border-box;
+    outline: none;
   }
 body {
   display: block;
-  overflow-x: hidden;
   width: 100%;
 }
 /* Navigation bar settings in header */
@@ -81,10 +81,10 @@ body {
    .header .menu-icon .navicon {
     background: #333;
     display: block;
-    height: 3px;
+    height: 0.1875em;
     position: relative;
     transition: background .2s ease-out;
-    width: 25px;
+    width: 1.56em;
   }
    .header .menu-icon .navicon:before,
   .header .menu-icon .navicon:after {
@@ -97,17 +97,17 @@ body {
     width: 100%;
   }
     .header .menu-icon .navicon:before {
-    top: 5px;
+    top: 0.3125em;
   }
     .header .menu-icon .navicon:after {
-    top: -5px;
+    top: -0.3125em;
   }
     /* mobile menu btn */
     .header .menu-btn {
     display: none;
   }
     .header .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 15em;
   }
     .header .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;
@@ -133,7 +133,7 @@ body {
   #right-welcome {
     display: grid;
     position: relative;
-    top: 50px;
+    top: 3.125em;
     left: 30%;
     transform: translateX(-50%);
     width: 60%;
@@ -142,7 +142,7 @@ body {
     min-height: 36em;
     z-index: 10;
     background-color: rgba(128, 128, 128, 0.7);
-    box-shadow: 0 10px 10px 0 rgba(225, 129, 6, 0.6);
+    box-shadow: 10px 10px 10px -10px rgba(0,0,0,.5);
   }
   .right-text {
     text-align: center;
@@ -160,8 +160,8 @@ body {
 }
 #vidoe-prop {
   height: 135%;
-  min-height: 920px; 
-  margin: -130px 0 0 -320px;
+  min-height: 57.5em; 
+  margin: -8.125em 0 0 -20em;
   width: auto;
   z-index: 5;
 }
@@ -234,7 +234,6 @@ ol, li {
   position: relative;
   padding-top: 71.9vmin;
   filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
   margin-bottom: 15%;
 }
 
@@ -337,16 +336,16 @@ ol, li {
 }
 
 footer div {
-  position: relative;
+  display: flexbox;
   bottom: 0;
   left: 0;
   z-index: 100;
   background-color: #ED7D31;
   box-shadow: 0 -15px 15px -15px rgba(0,0,0,.6);
-  padding:0 0 0 0;
+  padding: 0.25em 0 1em 0;
   border: 0; 
-  min-width:100%;
-  max-width:100%;
+  width: 100%;
+  margin: 0;
   text-align: center;
 }
 /*Desktop additional desgin */
@@ -354,7 +353,7 @@ footer div {
   body {
       font-size: 100%;
     }
-    footer div {
+  footer div {
       position: fixed;
       bottom: 0;
       left: 0;
