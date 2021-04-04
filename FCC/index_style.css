@@ -5,6 +5,7 @@
 body {
   display: block;
   overflow-x: hidden;
+  width: 100%;
 }
 /* Navigation bar settings in header */
   /* change anchor colors from standard blue to black*/
@@ -14,13 +15,13 @@ body {
     /* header main properties */
   .header {
     background-color: #ED7D31;
-    box-shadow: 0 0 15px 0 rgba(0,0,0,.6);
+    box-shadow: 0 15px 15px -15px rgba(0,0,0,.6);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 75px;
-    z-index: 20;
+    height: 4.68em;
+    z-index: 100;
   }
   /*mobile first drop down list properties*/
   .header ul {
@@ -56,7 +57,7 @@ body {
   /* Adjustment for center alignment text with oversize image on mobile*/
   .header #header-text{
     font-size: 1.5em;
-    padding: .5em; 
+    padding: .5em 0 0 0; 
   }
   /* Removal of larger header image on mobile*/
   .header .logo-img {
@@ -166,13 +167,15 @@ body {
 }
 /* Main alignment of lower webpage */
   .container1{
+  position: relative;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   max-width: 60em; 
   }
-/* Position child elements relative to this element */
+
+
 @keyframes tonext {
   75% {
     left: 0;
@@ -218,7 +221,7 @@ body {
   }
 }
 
-body {
+#projects {
   max-width: 100vmin;
   margin: 0 auto;
 }
@@ -331,10 +334,31 @@ ol, li {
   font-size: 0;
   transition: transform 0.1s;
 }
+
+footer div {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #ED7D31;
+  box-shadow: 0 -15px 15px -15px rgba(0,0,0,.6);
+  padding:0 0 0 0;
+  border: 0; 
+  min-width:100%;
+  max-width:100%;
+  text-align: center;
+}
 /*Desktop additional desgin */
 @media (min-width: 59em) {
   body {
       font-size: 100%;
+    }
+    footer div {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      margin:10% 0 0 0;
     }
 } 
 /* 59em = 940px for header image size full screen can be adjusted based on image size*/
@@ -371,3 +395,4 @@ ol, li {
   height: 100%;
 }
 }
+
