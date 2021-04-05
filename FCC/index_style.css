@@ -170,11 +170,12 @@ a {
   max-width: 100vmin;
   margin: 0 auto;
   z-index: 10;
-  padding-bottom: 13%;
+  padding-bottom: 10%;
 }
 .project-title {
-  padding-top: 10%;
+  padding-top: 3em;
   text-align: center;
+  z-index: 10;
 }
 @keyframes tonext {
   75% {
