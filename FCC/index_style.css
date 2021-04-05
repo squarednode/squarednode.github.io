@@ -175,7 +175,6 @@ a {
 .project-title {
   padding-top: 3em;
   text-align: center;
-  z-index: 10;
 }
 @keyframes tonext {
   75% {
