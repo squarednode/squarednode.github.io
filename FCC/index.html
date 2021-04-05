@@ -1,38 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script>
-    function includeHTML() {
-      var z, i, elmnt, file, xhttp;
-      /* Loop through a collection of all HTML elements: */
-      z = document.getElementsByTagName("*");
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("include-html");
-        if (file) {
-          /* Make an HTTP request using the attribute value as the file name: */
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-              if (this.status == 200) {
-                elmnt.innerHTML = this.responseText;
-              }
-              if (this.status == 404) {
-                elmnt.innerHTML = "Page not found.";
-              }
-              /* Remove the attribute, and call this function once more: */
-              elmnt.removeAttribute("include-html");
-              includeHTML();
-            }
-          };
-          xhttp.open("GET", file, true);
-          xhttp.send();
-          /* Exit the function: */
-          return;
-        }
-      }
-    }
-  </script>
+  <script src="addfile.js"></script>
   <head>
     <title>Squared Node Web design and digital services</title>
     <link
@@ -59,10 +27,14 @@
     />
     <meta charset="utf-8" />
     <link rel="stylesheet" href="index_style.css" />
+    <link rel="stylesheet" href="header_style.css" />
+    <link rel="stylesheet" href="footer_style.css" />
   </head>
-  <!--Navigation bar content -->
+  <!--Webpage header content -->
   <body>
-    <div include-html="https://squarednode.github.io/FCC/header"></div>
+    <header>
+      <div include-html="https://squarednode.github.io/FCC/header"></div>
+    </header>
     <!-- Start of welcome section -->
     <section id="welcome-section">
       <div id="left-welcome">
@@ -167,13 +139,7 @@
     </section>
     <!--Footer legal Items-->
     <footer>
-      <div>
-        <p>
-          Copyright &copy; 2021
-          <!-- Add when year changes <script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> -->,
-          Squared Node | All rights reserved.
-        </p>
-      </div>
+      <div include-html="https://squarednode.github.io/FCC/footer"></div>
     </footer>
     <script>
       includeHTML();
