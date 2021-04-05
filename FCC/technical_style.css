@@ -1,14 +1,192 @@
+/* Settings for website */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* Navigation bar settings in header */
+/* change anchor colors from standard blue to black*/
+a {
+  color: #000;
+}
+/* header main properties */
+.header {
+  background-color: #ed7d31;
+  box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.68em;
+  z-index: 100;
+}
+/*mobile first drop down list properties*/
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #ed7d31;
+  margin-left: 60%;
+  margin-right: auto;
+  width: 40%;
+}
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-left: 1px solid #3f3d3c;
+  text-decoration: none;
+}
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #adaaa8;
+}
+/* Main properties for mobile left side header and image*/
+.header .logo {
+  display: inline-block;
+  font-size: 2em;
+  padding: 0 10px 0 0;
+  height: 2.34em;
+  position: relative;
+  text-decoration: none;
+  vertical-align: middle;
+}
+/* Adjustment for center alignment text with oversize image on mobile*/
+.header #header-text {
+  font-size: 1.5em;
+}
+/* Removal of larger header image on mobile*/
+.header .logo-img {
+  display: none;
+}
+/* menu */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+/* header mobile menu icon */
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 35px 0px;
+  position: absolute;
+  right: 5%;
+  user-select: none;
+}
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 0.1875em;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 1.56em;
+}
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.header .menu-icon .navicon:before {
+  top: 0.3125em;
+}
+.header .menu-icon .navicon:after {
+  top: -0.3125em;
+}
+/* mobile menu btn */
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 15em;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+/*Desktop additional desgin */
+@media (min-width: 59em) {
+  body {
+    font-size: 100%;
+  }
+}
+/* 59em = 940px for header image size full screen can be adjusted based on image size*/
+/* reset the margin and width from drop down menu*/
+@media (min-width: 59em) {
+  .header ul {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+  }
+  .header li {
+    float: left;
+  }
+  /* Adjust position of button when full page and image is large */
+  .header li a {
+    padding: 28px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  /* removal of mobile first items*/
+  .header .menu-icon {
+    display: none;
+  }
+  .header .logo {
+    display: none;
+  }
+  /* Main desktop header display*/
+  .header .logo-img {
+    display: block;
+    float: left;
+    height: 100%;
+  }
+}
+footer div {
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #ed7d31;
+  box-shadow: 0 -15px 15px -15px rgba(0, 0, 0, 0.6);
+  padding: 0.25em 0 0.25em 0;
+  border: 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
 #navbar {
-    position: fixed;
-    min-width: 290px;
-  }
-  
-  #main-doc {
-    position: absolute;
-    margin-left: 310px;
-  }
-  
-  @media only screen and (max-width: 815px) {
+  position: fixed;
+  min-width: 290px;
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+}
+
+@media only screen and (max-width: 815px) {
   #navbar {
     position: absolute;
     top: 0;
@@ -18,11 +196,11 @@
     max-height: 275px;
   }
 }
-  
-  @media only screen and (max-width: 815px) {
+
+@media only screen and (max-width: 815px) {
   #main-doc {
-      position: relative;
-      margin-left: 0px;
-      margin-top: 270px;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
   }
 }
