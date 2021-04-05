@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <html lang="en">
+    <script src="addfile.js"></script>
     <head>
       <title>Squared Node Web design and digital services</title>
       <link
@@ -27,43 +28,13 @@
       />
       <meta charset="utf-8" />
       <link rel="stylesheet" href="technical_style.css" />
+      <link rel="stylesheet" href="header_style.css" />
+      <link rel="stylesheet" href="footer_style.css" />
     </head>
     <!--Navigation bar content -->
     <body>
-      <header class="header">
-        <a href="https://squarednode.github.io/FCC/"
-          ><img
-            class="logo-img"
-            src="https://github.com/squarednode/image_repo/blob/main/logo_header4.JPG?raw=true"
-            alt="Squared Node large logo"
-          />
-          <img
-            class="logo"
-            src="https://github.com/squarednode/image_repo/blob/main/logo_small4.JPG?raw=true"
-            alt="logo"
-          />
-        </a>
-        <a href="" class="logo" id="header-text">Squared <br />Node </a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn">
-          <span class="navicon"> </span>
-        </label>
-        <ul class="menu">
-          <li>
-            <a href="https://squarednode.github.io/FCC/tribute">Tribute Page</a>
-          </li>
-          <li>
-            <a href="https://squarednode.github.io/FCC/technical"
-              >Technical Page</a
-            >
-          </li>
-          <li>
-            <a href="https://squarednode.github.io/FCC/products">Products Page</a>
-          </li>
-          <li>
-            <a href="https://squarednode.github.io/FCC/survey">Survey Form</a>
-          </li>
-        </ul>
+      <header>
+        <div include-html="https://squarednode.github.io/FCC/header"></div>
       </header>
       <!-- Navigation bar content -->
     <nav id="navbar">
@@ -124,12 +95,9 @@
   </main>
       <!--Footer legal Items-->
       <footer>
-        <div>
-          <p>
-            Copyright &copy; 2021
-            <!-- Add when year changes <script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script> -->,
-            Squared Node | All rights reserved.
-          </p>
-        </div>
+        <div include-html="https://squarednode.github.io/FCC/footer"></div>
       </footer>
+      <script>
+        includeHTML();
+      </script>
 </html>
