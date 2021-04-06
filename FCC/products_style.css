@@ -25,9 +25,6 @@ body {
   padding: 0% 0% 0% 10%;
 }
 
-body {
-  display: block;
-}
 @media screen and (max-width: 600px) {
   #nav-link a {
     float: none;
