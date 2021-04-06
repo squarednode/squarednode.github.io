@@ -11,46 +11,80 @@ body {
   border: 0;
 }
 main {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 4px solid peru;
+}
+main #main-wrapper {
+  flex: 1;
+  border: 4px solid purple;
 }
 /* Settings for header spacing*/
 #spacer {
   min-width: 100%;
-  height: 4.68em;
+  padding-bottom: 4.68em;
+  border: 2px solid blue;
 }
 /* Setting for main content*/
-
-#navigation {
+#middle-wrapper {
+  flex-direction: column;
+  flex: 1;
+  border: 2px solid red;
+}
+main #navigation {
   position: sticky;
   top: 4.68em;
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid blue;
 }
 
 #navbar {
-  background-color: palegreen;
+  width: 100%;
   text-align: center;
-  padding: 0.1em 0 0.1em 0;
   border-bottom: 1px solid black;
 }
 
 #navbar ul {
-  display: inline-block;
+  width: auto;
+  text-align: center;
+  list-style-type: none;
+  border: 2px solid yellow;
 }
-
-#main-doc {
+#navbar ul a {
+  padding: 0 0.25em;
+}
+#content-wrapper {
+  height: auto;
+  width: 50%;
+  background-color: rosybrown;
+  border: 2px solid rgb(208, 255, 0);
+}
+#content-wrapper #main-doc {
+  flex-direction: column;
   padding-left: 2%;
 }
 
-@media only screen and (min-width: 830px) {
-  #navigation {
-    display: inline-block;
-    position: sticky;
-    vertical-align: top;
-    top: 4.68em;
-    max-width: 20%;
+@media only screen and (min-width: 800px) {
+  #middle-wrapper {
+    flex-direction: row;
+    flex: 1;
+    border: 2px solid red;
   }
-  #main-doc {
-    display: inline-block;
+  main #navigation {
+    position: sticky;
+    top: 4.68em;
+    width: 10em;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+  }
+  #navbar ul a {
+    flex: ;
+    padding: 0 0.25em;
   }
 }

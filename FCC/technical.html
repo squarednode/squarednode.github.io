@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <html lang="en">
     <script src="addfile.js"></script>
@@ -33,74 +33,91 @@
     </head>
     <!--Navigation bar content -->
     <body>
-      <header>
+      <!-- <header>
         <div include-html="https://squarednode.github.io/FCC/header"></div>
-      </header>
+      </header> -->
       <main>
-        <div id="spacer"></div>
-      <!-- Navigation bar content -->
-          <section id="navigation">
-            <nav id="navbar">
-           <div id="nav-links">Crack propigation
-              <ul><a class="nav-link" href="#first_header">First header</a></ul>
-              <ul><a class="nav-link" href="#second_header">Second header</a></ul>
-              <ul><a class="nav-link" href="#third_header">Third header</a></ul>
-              <ul><a class="nav-link" href="#forth_header">Forth header</a></ul>
-              <ul><a class="nav-link" href="#fith_header">Fith header</a></ul>
-            </div>         
-          </nav> 
-        </section>
-       <div id="main-doc">
+        <section id="main-wrapper">
+          <div id="spacer"></div>
+          <!-- Navigation bar content -->
+          <section id="middle-wrapper">
+            <section id="navigation">
+              <nav id="navbar">
+                <ul>
+                  <a class="nav-link" href="#first_header">First header</a>
 
-          <!--Start of section 1-->
-            <section class="main-section" id="first_header">
-             <div><h1>First header</h1></div>
+                  <a class="nav-link" href="#second_header">Second header</a>
+
+                  <a class="nav-link" href="#third_header">Third header</a>
+
+                  <a class="nav-link" href="#forth_header">Forth header</a>
+
+                  <a class="nav-link" href="#fith_header">Fith header</a>
+                </ul>
+              </nav>
+            </section>
+            <section id="content-wrapper">
+              <div id="main-doc">
+                <!--Start of section 1-->
+                <section class="main-section" id="first_header">
+                  <div><h1>First header</h1></div>
                   <p></p>
                   <li></li>
-                     <li></li>
-                   <p>Why this <code>button</code> exists is a question to me.</p>
+                  <li></li>
+                  <p>
+                    Why this <code>button</code> exists is a question to me.
+                  </p>
+                </section>
+                <!--Start of section 2-->
+                <section class="main-section" id="second_header">
+                  <header>Second header</header>
+                  <p>
+                    When you put <code>backgroundcolor</code> and
+                    <code>font-color</code> in the CSS file the webpage will go
+                    well together.
+                  </p>
+                  <li><code>display</code></li>
+                  <li><code>flex</code></li>
+                  <li><code>fixed</code></li>
+                  <li><code>other</code></li>
+                  <p></p>
+                </section>
+                <!--Start of section 3-->
+                <section class="main-section" id="third_header">
+                  <header>Third header</header>
+                  <p></p>
+                  <li></li>
+                  <li></li>
+                  <p></p>
+                </section>
+                <!--Start of section 4-->
+                <section class="main-section" id="forth_header">
+                  <header>Forth header</header>
+                  <p></p>
+                  <li></li>
+                  <li></li>
+                  <p></p>
+                </section>
+                <!--Start of section 5--->
+                <section class="main-section" id="fith_header">
+                  <header>Fith header</header>
+                  <p></p>
+                  <li></li>
+                  <li></li>
+                  <p></p>
+                </section>
+              </div>
             </section>
-         <!--Start of section 2-->
-               <section class="main-section" id="second_header">
-      <header>Second header</header>
-            <p>When you put <code>backgroundcolor</code> and <code>font-color</code> in the CSS file the webpage will go well together.</p>
-      <li><code>display</code></li>
-      <li><code>flex</code></li>
-      <li><code>fixed</code></li>
-      <li><code>other</code></li>
-      <p></p>
-    </section>
-        <!--Start of section 3-->
-    <section class="main-section" id="third_header">
-      <header>Third header</header>
-            <p></p>
-      <li></li>
-      <li></li>
-      <p></p>
-    </section>
-        <!--Start of section 4-->
-    <section class="main-section" id="forth_header">
-      <header>Forth header</header>
-            <p></p>
-      <li></li>
-      <li></li>
-      <p></p>
-    </section>
-        <!--Start of section 5--->
-    <section class="main-section" id="fith_header">
-      <header>Fith header</header>
-            <p></p>
-      <li></li>
-      <li></li>
-      <p></p>
-    </section>
-       </div>
+          </section>
+          <!--Footer legal Items-->
+          <footer>
+            <div include-html="https://squarednode.github.io/FCC/footer"></div>
+          </footer>
+        </section>
       </main>
-      <!--Footer legal Items-->
-      <footer>
-        <div include-html="https://squarednode.github.io/FCC/footer"></div>
-      </footer>
       <script>
         includeHTML();
       </script>
+    </body>
+  </html>
 </html>
