@@ -43,8 +43,10 @@ main #main-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   height: 100%;
+  box-shadow: -5px 0 5px -5px #333, 5px 0 5px -5px #333;
 }
 .pic-wrapper {
   display: flex;
@@ -64,14 +66,16 @@ main #main-wrapper {
   flex-direction: column;
   width: 50%;
   list-style: none;
-  padding: 5% 0 5% 2%;
+  padding: 2.5% 0 2.5% 2%;
   text-align: left;
 }
 
 /* Section for Large Screen adjustments*/
 .scroll-pic {
   display: none;
-  padding: 0 2.5% 0 2.5%;
+  width: auto;
+  max-height: 50vh;
+  height: 100%;
 }
 
 li:hover + div img {
