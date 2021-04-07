@@ -1,3 +1,45 @@
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
+}
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+}
 /* Settings for website */
 * {
   box-sizing: border-box;
@@ -10,7 +52,6 @@ body {
   padding: 0;
   border: 0;
 }
-
 /*Welcome section with video and main message */
 #welcome-section {
   display: block;
@@ -63,48 +104,6 @@ body {
   padding-top: 3em;
   text-align: center;
 }
-@keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
-}
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
-  99% {
-    left: 0;
-  }
-}
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
 ol,
 li {
   list-style: none;
@@ -128,7 +127,9 @@ li {
   counter-reset: item;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow: hidden;
+}
+.carousel__viewport::-webkit-scrollbar {
+  width: 0;
 }
 #slide-1 {
   margin: 25% 0 0 0;
