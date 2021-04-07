@@ -79,11 +79,11 @@ main #main-wrapper {
   max-width: 50vw;
   height: auto;
 }
-li:hover {
+li:active {
   font-weight: 900;
 }
 
-li:hover + div img {
+li:active + div img {
   display: block;
 }
 
@@ -94,5 +94,12 @@ li:hover + div img {
     width: auto;
     max-height: 50vh;
     height: 100%;
+  }
+  li:hover {
+    font-weight: 900;
+  }
+
+  li:hover + div img {
+    display: block;
   }
 }
