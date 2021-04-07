@@ -33,11 +33,15 @@ main #main-wrapper {
 }
 
 #real-dino {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+}
+.img-caption {
+  font-size: 80%;
 }
 .tribute-info {
   text-align: left;
+  padding: 0 5%;
 }
 #scroll-wrapper {
   display: flex;
@@ -69,22 +73,11 @@ main #main-wrapper {
   padding: 2.5% 0 2.5% 2%;
   text-align: left;
 }
-
-/* Section for Large Screen adjustments*/
 .scroll-pic {
   display: none;
-  width: auto;
-  max-height: 50vh;
-  height: 100%;
-}
-@media (min-width: 800px) {
-  li:hover {
-    font-weight: 900;
-  }
-
-  li:hover + div img {
-    display: block;
-  }
+  width: 100%;
+  max-width: 50vw;
+  height: auto;
 }
 li:active {
   font-weight: 900;
@@ -92,4 +85,21 @@ li:active {
 
 li:active + div img {
   display: block;
+}
+
+/* Section for Large Screen adjustments*/
+@media (min-width: 800px) {
+  .scroll-pic {
+    display: none;
+    width: auto;
+    max-height: 50vh;
+    height: 100%;
+  }
+  li:hover {
+    font-weight: 900;
+  }
+
+  li:hover + div img {
+    display: block;
+  }
 }
