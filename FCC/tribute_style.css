@@ -77,10 +77,19 @@ main #main-wrapper {
   max-height: 50vh;
   height: 100%;
 }
-li:hover {
+@media (min-width: 800px) {
+  li:hover {
+    font-weight: 900;
+  }
+
+  li:hover + div img {
+    display: block;
+  }
+}
+li:active {
   font-weight: 900;
 }
 
-li:hover + div img {
+li:active + div img {
   display: block;
 }
