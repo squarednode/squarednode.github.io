@@ -10,6 +10,19 @@ body {
   padding: 0;
   border: 0;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main #main-wrapper {
+  flex: 1 0 auto;
+}
+/* Settings for header spacing*/
+#spacer {
+  min-width: 100%;
+  padding-bottom: 4.68em;
+}
 /* Styles for the first project */
 
 #main-content {
