@@ -36,12 +36,15 @@
     <header>
       <div include-html="https://squarednode.github.io/FCC/header"></div>
     </header>
+    <main>
+      <div id="main-wrapper">
+        <section id="spacer"></section>
 <div>
     <h1 id="title">Survey Form On My Current Web Development Skills. </h1>
 </div> 
-<body>
+<section>
   <p id="description">Fill out the following form to let me know how I am doing. Any input you can provide would be greatly appreciated.</p>
-  <form id="survey-form" >
+  <form id="survey-form">
     <div> <input id="name" placeholder="Squared Node" required><label id="name-label">Name</label></input>
    </div>
   <div>
@@ -70,8 +73,8 @@
   <div id="recomendations">
     <label><input id="checkbox" type="checkbox" value="I would recomend your work">Yes, I would recomend your work</label>
     <div></div>
-     <label><input id="checkbox" type="checkbox" value="I would not recomend your work">No, I would recomend your work</label
-       <div></div>
+     <label><input id="checkbox" type="checkbox" value="I would not recomend your work">No, I would recomend your work</label>
+    <div></div>
      <label><input id="checkbox" type="checkbox" value="I would maybe recomend your work">Maybe, I would recomend your work</label>
   </div>
   <textarea placeholder="Puns and Memes"></textarea>
@@ -80,10 +83,13 @@
   <button id="submit"><label id="submit-button">Click me for rewards!</label></button>
 </div>
   </form>
+</section>
+</div>
       <!--Footer legal Items-->
       <footer>
         <div include-html="https://squarednode.github.io/FCC/footer"></div>
       </footer>
+      </main>
       <script>
         includeHTML();
       </script>
