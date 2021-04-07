@@ -23,11 +23,13 @@ a {
   background-color: #ed7d31;
   margin-left: 60%;
   margin-right: auto;
-  width: 40%;
+  height: auto;
+  max-width: 40%;
 }
 .header li a {
   display: block;
-  padding: 20px 20px;
+  text-align: center;
+  padding: 0.5em 1em 0.5em 1em;
   border-left: 1px solid #3f3d3c;
   text-decoration: none;
 }
@@ -57,6 +59,8 @@ a {
 .header .menu {
   clear: both;
   max-height: 0;
+  padding: 0;
+  border: 0;
   transition: max-height 0.2s ease-out;
 }
 /* header mobile menu icon */
@@ -116,22 +120,12 @@ a {
 /* 59em = 940px for header image size full screen can be adjusted based on image size*/
 /* reset the margin and width from drop down menu*/
 @media (min-width: 59em) {
-  .header ul {
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
-  }
-  .header li {
-    float: left;
-  }
   /* Adjust position of button when full page and image is large */
   .header li a {
+    display: flex;
+    flex-direction: row;
+    width: auto;
     padding: 28px 30px;
-  }
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
   }
   /* removal of mobile first items*/
   .header .menu-icon {
@@ -142,8 +136,25 @@ a {
   }
   /* Main desktop header display*/
   .header .logo-img {
-    display: block;
-    float: left;
-    height: 100%;
+    display: inline;
+    font-size: 2em;
+    height: 2.34em;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+  .header .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .header ul {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    list-style: none;
+    padding: 0;
   }
 }
