@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="addfile.js"></script>
+  <script src="addfile.js"></script>
   <head>
     <title>Squared Node Web design and digital services</title>
     <link
@@ -37,54 +37,226 @@
     </header>
     <main>
       <div id="main-wrapper">
-        <section id="spacer">
-        </section>
-            <div>
-                <h1 id="title">Survey Form On My Current Web Development Skills.</h1>
-            </div> 
-        <section>
-             <p id="description">Fill out the following form to let me know how I am doing. Any input you can provide would be greatly appreciated.</p>
+        <section id="spacer"></section>
+        <div>
+          <h1 id="title">Survey Form On My Current Web Development Skills.</h1>
+        </div>
+        <section id="form-wrap">
           <form id="survey-form">
-                <div>
-                  <input id="name" placeholder="Squared Node" required><label id="name-label">Name</label></input>
-                </div>
-                <div>
-                  <input id="email" placeholder="xxxx@xxxx.com" type="email" required><label id="email-label">Email</label></input>
-                </div>
-                <div>
-                  <input id="number" placeholder="10" type="number" min="0" max="10" required><label id="number-label">Input a rating from 1 - 10 on the layout</label></input>
-                </div>
-            <div id="radio-group">
-                   <label><input name="my progress" id="radio" type="radio" value="I like your layout" checked/>Your layout looks great</label>
+            <p id="description">
+              <div class="text"><strong
+                >Fill out the following form to let me know how I am doing. Any
+                input you can provide would be greatly appreciated.</strong
+              ></div>
+            </p>
             <div>
-                   <label><input name="my progress" id="radio" type="radio" value="I dont like your layout"/>Your layout could use some work</label>
+              <input id="name" placeholder="Your Name" required /><label
+                id="name-label"
+              >
+                Name</label
+              >
             </div>
+            <div class="space"></div>
             <div>
-                    <label><input name="my progress" id="radio" type="radio" value="I am not sure"/>I'm riding the fence</label>
+              <input
+                id="email"
+                placeholder="example@gmail.com"
+                type="email"
+                required
+              /><label id="email-label"> Email</label>
             </div>
-            </div>
-            <div id="3rd-survey">
-                <div id="you-are">
-                  <select id="dropdown">
-                    <option name="web developer">Web Developer</option>
-                    <option name="student">Student</option>
-                    <option name="Free code camp">Part of Free codecamp</option>
-                  </select>
+            <div id="survey">
+              <div class="space"></div>
+              <div>
+                <div class="text"><strong
+                  >Right now if you had to give us a rating from 1-10 what would
+                  you score us?</strong
+                ></div>
+                <div class="space"></div>
+                <label id="number-label">
+                  <input
+                    id="number"
+                    placeholder="10"
+                    type="number"
+                    min="1"
+                    max="10"
+                    required
+                  />
+                  Input a rating from 1 - 10 on your experience</label
+                >
+              </div>
+              <div class="space"></div>
+              <div id="radio-group">
+                <div class="text"><strong>Tell us how the layout looks!</strong></div>
+                <div class="space"></div>
+                <label class="align-input"
+                  ><input
+                    name="my progress"
+                    class="radio"
+                    type="radio"
+                    value="I like your layout"
+                    checked
+                  />Your layout looks great</label
+                >
+                <div>
+                  <label class="align-input"
+                    ><input
+                      name="my progress"
+                      class="radio"
+                      type="radio"
+                      value="I dont like your layout"
+                    />Your layout could use some work</label
+                  >
                 </div>
-                    <div id="recomendations">
-                      <label><input id="checkbox" type="checkbox" value="I would recomend your work">Yes, I would recomend your work</label>
-                          <div></div>
-                      <label><input id="checkbox" type="checkbox" value="I would not recomend your work">No, I would recomend your work</label>
-                          <div></div>
-                      <label><input id="checkbox" type="checkbox" value="I would maybe recomend your work">Maybe, I would recomend your work</label>
-                    </div>
-              <textarea placeholder="Puns and Memes"></textarea>
+                <div>
+                  <label class="align-input"
+                    ><input
+                      name="my progress"
+                      class="radio"
+                      type="radio"
+                      value="I am not sure"
+                    />I'm riding the fence</label
+                  >
+                </div>
+              </div>
+              <div class="space"></div>
+              <div id="you-are">
+                <div class="text">
+                <strong>Please tell me about yourself and what you do.</strong></div>
+                <div class="space"></div>
+                <select id="dropdown">
+                  <option name="web developer">Web Developer</option>
+                  <option name="student">Student</option>
+                  <option name="Free code camp">Part of Free Code Camp</option>
+                  <option name="Coder">Software Engineer</option>
+                  <option name="Other">Other</option>
+                </select>
+              </div>
+              <div class="space"></div>
+              <div id="expectations">
+                <div class="text">
+                <strong
+                  >Check the boxes that you felt our webpages meet and you got
+                  to experience.</strong
+                ></div>
+                <div class="space"></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="The pages were responsive"
+                  />The pages were responsive</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="The pages worked in mobile"
+                  />The pages worked in mobile</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="The pages worked on desktop"
+                  />The pages worked on desktop</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="I found the tribute to be interactive"
+                  />I found the tribute to be interactive</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="I enjoyed the banter on the pages"
+                  />I enjoyed the banter on the pages</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="The landing page video played for me"
+                  />The landing page video played for me</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="I was able to navigate the site effectively"
+                  />I was able to navigate the site effectively</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    value="I learned something new on the technical page"
+                  />I learned something new on the technical page</label
+                >
+                <div></div>
+              </div>
+              <div class="space"></div>
+              <div id="recomendations">
+                <div class="text">
+                <strong>Let us know if you would recomend our work.</strong></div>
+                <div class="space"></div>
+                <label class="align-input"
+                  ><input
+                    name="recomendations"
+                    class="radio"
+                    type="radio"
+                    value="I would recomend your work"
+                    checked
+                  />Yes, I would recomend your work</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="recomendations"
+                    class="radio"
+                    type="radio"
+                    value="I would not recomend your work"
+                  />No, I would not recomend your work</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="recomendations"
+                    class="radio"
+                    type="radio"
+                    value="I would maybe recomend your work"
+                  />Maybe, I would recomend your work</label
+                >
+              </div>
+              <div class="space"></div>
+              <div>
+                <div class="text">
+                <strong
+                  >Leave us a note on anything else you would like us to know
+                  about your experience</strong
+                ></div>
+              </div>
+              <div class="space"></div>
+              <div id="center">
+                <textarea placeholder="Puns and Memes"></textarea>
+              </div>
             </div>
-                    <div id="send-me">
-                       <button id="submit">
-                         <label id="submit-button">Click me for rewards!</label>
-                       </button>
-                    </div>
+            <div class="space"></div>
+            <div id="send-me">
+              <button id="submit">
+                <label id="submit-button">Click me for rewards!</label>
+              </button>
+            </div>
           </form>
         </section>
       </div>
@@ -93,8 +265,8 @@
         <div include-html="https://squarednode.github.io/FCC/footer"></div>
       </footer>
     </main>
-      <script>
-        includeHTML();
-      </script>
+    <script>
+      includeHTML();
+    </script>
   </body>
 </html>

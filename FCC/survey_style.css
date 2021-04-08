@@ -23,3 +23,54 @@ main #main-wrapper {
   min-width: 100%;
   padding-bottom: 4.68em;
 }
+#title {
+  text-align: center;
+  margin: 2% 10%;
+}
+#form-wrap {
+  margin: 0 10% 5% 10%;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px 5px darkgray;
+}
+#survey-form {
+  padding: 0 10% 5% 10%;
+}
+.space {
+  padding: 0.5em;
+}
+#center {
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+textarea {
+  width: 100%;
+}
+#send-me {
+  text-align: center;
+}
+#number-label {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 75px;
+  position: relative;
+}
+#number-label input {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.align-input {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 25px;
+  position: relative;
+}
+.align-input input {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.text {
+  text-align: justify;
+}
