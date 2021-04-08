@@ -1,26 +1,3 @@
-@keyframes tonext {
-  18% {
-    left: 0;
-  }
-  22% {
-    left: 100%;
-  }
-  38% {
-    left: 100%;
-  }
-  42% {
-    left: 200%;
-  }
-  58% {
-    left: 200%;
-  }
-  62% {
-    left: 300%;
-  }
-  80% {
-    left: 300%;
-  }
-}
 @media (min-width: 800px) {
   @keyframes tonext {
     75% {
@@ -63,9 +40,6 @@
     100% {
       scroll-snap-align: center;
     }
-  }
-  .carousel__snapper {
-    animation-duration: 4s;
   }
 }
 /* Settings for website */
@@ -204,7 +178,7 @@ li {
 .carousel__snapper {
   animation-name: tonext, snap;
   animation-timing-function: ease-in;
-  animation-duration: 18s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
 }
 .carousel__slide:last-child .carousel__snapper {
