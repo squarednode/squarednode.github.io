@@ -79,7 +79,7 @@ main #main-wrapper {
   max-width: 50vw;
   height: auto;
 }
-li:active {
+.pictures:active {
   font-weight: 900;
 }
 
@@ -109,7 +109,7 @@ li:active + div img {
     max-height: 50vh;
     height: 100%;
   }
-  li:hover {
+  .pictures:hover {
     font-weight: 900;
   }
 
