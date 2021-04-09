@@ -23,24 +23,60 @@ main #main-wrapper {
   min-width: 100%;
   padding-bottom: 4.68em;
 }
-
-#header {
+/*Top products for sale*/
+#top-products {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgb(128, 0, 43);
+  width: 80%;
+  margin: 0 auto;
+  height: 50vh;
 }
-#header-img {
-  height: 50px;
-  width: 50px;
-  padding: 0% 5% 0% 0%;
+/*Products for web design*/
+#web-design {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid green;
+  width: 80%;
+  margin: 0 auto;
+  height: 50vh;
 }
-#nav-bar {
-  padding: 0% 0% 0% 10%;
+#web-left {
+  width: 50%;
+  border: 1px solid rgb(32, 56, 32);
+  height: auto;
+}
+#web-right {
+  width: 50%;
+  border: 1px solid rgb(62, 235, 62);
+  height: auto;
 }
 
-@media screen and (max-width: 600px) {
-  #nav-link a {
-    float: none;
-    width: 100%;
-  }
+/*Products for graphic design*/
+#graphic-design {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid blue;
+  width: 80%;
+  margin: 0 auto;
+  height: 50vh;
+}
+#graphic-left {
+  width: 50%;
+  border: 1px solid rgb(3, 112, 236);
+  height: auto;
+}
+#graphic-right {
+  width: 50%;
+  border: 1px solid rgb(46, 23, 126);
+  height: auto;
+}
+/*Form formatting*/
+#form-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(128, 0, 43);
+  width: 80%;
+  margin: 0 auto;
+  height: auto;
 }
