@@ -27,28 +27,17 @@ main #main-wrapper {
   text-align: center;
   margin: 2% 10%;
 }
+/* Center form and add borders for look*/
 #form-wrap {
   margin: 0 10% 5% 10%;
   border: 1px solid black;
   box-shadow: 5px 5px 5px 5px darkgray;
 }
-#survey-form {
-  padding: 0 10% 5% 10%;
+/* Remove borders on all fieldsets */
+.pure-group {
+  border: 0;
 }
-.space {
-  padding: 0.5em;
-}
-#center {
-  text-align: center;
-  width: 75%;
-  margin: auto;
-}
-textarea {
-  width: 100%;
-}
-#send-me {
-  text-align: center;
-}
+/* Allow text to be aligned left when page is shrunk */
 #number-label {
   display: inline-block;
   vertical-align: top;
@@ -60,6 +49,7 @@ textarea {
   left: 0;
   top: 0;
 }
+/* Allow text to be aligned left when page is shrunk */
 .align-input {
   display: inline-block;
   vertical-align: top;
@@ -71,6 +61,38 @@ textarea {
   left: 0;
   top: 0;
 }
+/* Header text adjustments */
 .text {
   text-align: justify;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+.texth {
+  text-align: center;
+  width: auto;
+  font-weight: bold;
+  margin: 0.5em 0.5em;
+}
+/* Alignment for text area */
+#center {
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+textarea {
+  width: 100%;
+}
+/* Hide the honeypot for spammers */
+.honeypot-field {
+  display: none;
+}
+/* Button properties */
+#send-me {
+  text-align: center;
+}
+.button-success {
+  color: black;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: #ed7d31;
 }
