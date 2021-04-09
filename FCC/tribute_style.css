@@ -86,6 +86,20 @@ li:active {
 li:active + div img {
   display: block;
 }
+.dino-gif {
+  width: 5em;
+  height: 5em;
+  animation: shimmy 10s infinite;
+  animation-direction: alternate;
+}
+@keyframes shimmy {
+  0% {
+    transform: translate(10vw);
+  }
+  100% {
+    transform: translate(80vw);
+  }
+}
 
 /* Section for Large Screen adjustments*/
 @media (min-width: 800px) {
