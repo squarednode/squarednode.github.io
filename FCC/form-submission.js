@@ -73,6 +73,7 @@
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         form.reset();
+        //comment out of pop up happening
         //var formElements = form.querySelector(".form-elements")
         //if (formElements) {
         //   formElements.style.display = "none"; // hide form
@@ -81,6 +82,7 @@
         //if (thankYouMessage) {
         //   thankYouMessage.style.display = "block";
         // }
+        // comment out below if you want pop-up and not webpage redirect
         event.preventDefault();
         window.location.href = "https://squarednode.github.io/FCC/thanks";
       }
