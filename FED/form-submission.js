@@ -84,7 +84,7 @@
         // }
         // comment out below if you want pop-up and not webpage redirect
         event.preventDefault();
-        window.location.href = "https://squarednode.github.io/FCC/thanks";
+        window.location.href = "https://squarednode.github.io/FED/thanks";
       }
     };
     // url encode form data for sending as post data
