@@ -46,7 +46,182 @@
             >
           </ul>
         </header>
-        <section></section>
+        <section>
+          <form
+            class="gform pure-form pure-form-stacked"
+            method="POST"
+            action="https://script.google.com/macros/s/AKfycbyH3k_HHnPtcnzEJ6IDDKKWtRQ6kzs5YavZj5jxIe2gL_B3_Tt7vFAD0Q6sCAcDWPCMfA/exec"
+          >
+            <div class="texth">
+              Fill out the following form to let us know what products you are
+              interested in.
+            </div>
+            <!-- change the form action to your google url script-->
+
+            <!-- Form data below -->
+            <div class="form-elements">
+              <fieldset class="pure-group">
+                <label for="name">Name: </label>
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="First and Last"
+                />
+              </fieldset>
+              <fieldset class="pure-group">
+                <label for="email">Email Address: </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value=""
+                  required
+                  placeholder="your.name@email.com"
+                />
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <div class="text">
+                  Tell us what products you are interested in.
+                </div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="Serving Trays"
+                  />Serving Trays</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="End tables"
+                  />End tables</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="Coffee Tables"
+                  />Coffee Tables</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="Office Desk"
+                  />Office Desk</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="Cabinetry"
+                  />Cabinetry</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="General Furniture"
+                  />General Furniture</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="product"
+                    class="checkbox"
+                    type="checkbox"
+                    value="Other"
+                  />Other</label
+                >
+                <div></div>
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <div class="text">
+                  Let us know what style of product you are looking for.
+                </div>
+                <label class="align-input"
+                  ><input
+                    name="wood_type"
+                    class="radio"
+                    type="radio"
+                    value="Solid wood"
+                    checked
+                  />Solid wood</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="wood_type"
+                    class="radio"
+                    type="radio"
+                    value="Colored epoxy and wood"
+                  />Colored epoxy and wood</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="wood_type"
+                    class="radio"
+                    type="radio"
+                    value="Graphic with wood"
+                  />Graphic with wood</label
+                >
+                <div></div>
+                <label class="align-input"
+                  ><input
+                    name="wood_type"
+                    class="radio"
+                    type="radio"
+                    value="Wood and glass"
+                  />Wood and glass</label
+                >
+              </fieldset>
+
+              <div id="center">
+                <fieldset class="pure-group">
+                  <div class="text">
+                    <label for="message"
+                      >Use the following space to tell us a little more about
+                      your project:
+                    </label>
+                  </div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="10"
+                    placeholder="I want to use oak. The size is approx..."
+                  ></textarea>
+                </fieldset>
+              </div>
+
+              <fieldset class="pure-group honeypot-field">
+                <label for="honeypot">To help avoid spam:</label>
+                <input id="honeypot" type="text" name="honeypot" value="" />
+              </fieldset>
+
+              <div class="text">
+                <div id="send-me">
+                  <button class="button-success pure-button">Send Form</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
         <footer>
           <p>
             Copyright &copy; 2021
