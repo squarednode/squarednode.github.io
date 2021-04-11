@@ -1,0 +1,80 @@
+#main-wrapper {
+  background-image: url(https://scontent.fcwb3-1.fna.fbcdn.net/v/t1.6435-9/117993210_154270302960544_3595860668665306049_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=730e14&_nc_ohc=rmBFduRdeJUAX8s7n5S&_nc_ht=scontent.fcwb3-1.fna&oh=6893df1ebd07516a0992700247ce9c8a&oe=6098BAEB);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#form-wrapper {
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 5px 5px 5px -5px #333;
+}
+/* Remove borders on all fieldsets */
+.pure-group {
+  border: 0;
+}
+/* Allow text to be aligned left when page is shrunk */
+#number-label {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 75px;
+  position: relative;
+}
+#number-label input {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* Allow text to be aligned left when page is shrunk */
+.align-input {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 25px;
+  position: relative;
+}
+.align-input input {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* Header text adjustments */
+.text {
+  text-align: justify;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+.texth {
+  text-align: center;
+  width: auto;
+  font-weight: bold;
+  margin: 0.5em 0.5em;
+}
+/* Alignment for text area */
+#center {
+  text-align: center;
+  width: 75%;
+  margin: auto;
+}
+textarea {
+  width: 100%;
+}
+/* Hide the honeypot for spammers */
+.honeypot-field {
+  display: none;
+}
+/* Button properties */
+#send-me {
+  text-align: center;
+  padding-bottom: 2%;
+}
+.button-success {
+  color: white;
+  border-radius: 4px;
+  padding: 2%;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  background: black;
+}
+.button-success:hover {
+  color: black;
+  background: #ffffff;
+}
