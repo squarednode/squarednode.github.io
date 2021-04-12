@@ -3,6 +3,24 @@
   <!-- If using added header footer files 
   <script src="addfile.js"></script>
     -->
+  <script src="InstagramFeed.min.js"></script>
+  <script>
+    (function () {
+      new InstagramFeed({
+        username: "flowingedgedesigns",
+        container: document.getElementById("instagram-feed1"),
+        display_profile: false,
+        display_biography: false,
+        display_gallery: true,
+        display_captions: false,
+        callback: null,
+        styling: true,
+        items: 12,
+        items_per_row: 6,
+        margin: 0.25,
+      });
+    })();
+  </script>
   <head>
     <title>Flowing Edge Design Woodworking and Craftsman</title>
     <link
@@ -46,7 +64,9 @@
             >
           </ul>
         </header>
-        <section></section>
+        <section>
+          <div id="instagram-feed1" class="instagram_feed"></div>
+        </section>
       </section>
       <footer>
         <p>
