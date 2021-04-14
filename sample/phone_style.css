@@ -19,7 +19,7 @@ main {
   width: auto;
   position: relative;
   border: 1px solid salmon;
-  height: 90vh;
+  height: auto;
   overflow: hidden;
 }
 #phone-img {
@@ -27,18 +27,26 @@ main {
   margin: 0 auto;
   z-index: 10;
   width: auto;
-  height: 100%;
+  height: 750px;
 }
-.img-scroller {
-  height: 65%;
-  width: 44%;
-  min-width: 250px;
+#img-wrapper {
+  height: 680px;
+  width: 320px;
   position: absolute;
-  top: 12.4%;
-  left: 26.5%;
+  top: 32px;
+  left: 68px;
   border-radius: 10%/5%;
   z-index: 1;
-  border: 2px solid green;
+  transform: scale(0.8, 0.8);
+  transform-origin: top left;
+  overflow: hidden;
+}
+.img-scroller {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  animation: scroller 18s linear infinite;
+  animation-play-state: running;
 }
 .img-scroller iframe {
   border-radius: 10%/5%;
@@ -50,4 +58,72 @@ main {
   width: 100%;
   height: auto;
   border: 2px solid orangered;
+}
+@media (max-width: 500px) {
+  .main-img {
+    width: 250px;
+  }
+  #phone-img {
+    width: 100%;
+    height: 100%;
+  }
+  #img-wrapper {
+    height: 550px;
+    width: 275px;
+    top: 20px;
+    left: 30px;
+    transform: scale(0.5, 0.5);
+    transform-origin: top left;
+    overflow: hidden;
+  }
+  .img-scroller {
+    animation: mini-scroller 18s linear infinite;
+    animation-play-state: running;
+  }
+  @keyframes mini-scroller {
+    20% {
+      margin-top: 0px;
+    }
+    30% {
+      margin-top: calc(-200% * 1.01);
+    }
+    50% {
+      margin-top: calc(-200% * 1.01);
+    }
+    60% {
+      margin-top: calc(-400% * 1.01);
+    }
+    70% {
+      margin-top: calc(-400% * 1.01);
+    }
+    80% {
+      margin-top: calc(-600% * 1.01);
+    }
+    90% {
+      margin-top: calc(-600% * 1.01);
+    }
+  }
+}
+@keyframes scroller {
+  20% {
+    margin-top: 0px;
+  }
+  30% {
+    margin-top: calc(-200% * 1.065);
+  }
+  50% {
+    margin-top: calc(-200% * 1.065);
+  }
+  60% {
+    margin-top: calc(-400% * 1.065);
+  }
+  70% {
+    margin-top: calc(-400% * 1.065);
+  }
+  80% {
+    margin-top: calc(-600% * 1.065);
+  }
+  90% {
+    margin-top: calc(-600% * 1.065);
+  }
 }
