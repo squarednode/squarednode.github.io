@@ -18,7 +18,6 @@ main {
   transform: translateX(-50%);
   width: auto;
   position: relative;
-  border: 1px solid salmon;
   height: auto;
   overflow: hidden;
 }
@@ -57,7 +56,6 @@ main {
 #img-spacer {
   width: 100%;
   height: auto;
-  border: 2px solid orangered;
 }
 @media (max-width: 500px) {
   .main-img {
