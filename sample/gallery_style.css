@@ -12,27 +12,35 @@ body {
 main {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100vh;
 }
-#title {
+#title-sec {
   display: flex;
-  flex-wrap: nowrap;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  background-image: url(https://lh3.googleusercontent.com/pw/ACtC-3cj5W83F2sW0t_e3rPs8LwsRIsldRr_hDuzNZn72KE_Fd8yDwjmdzyuMcYtyFt0Sy0roCJIsvU22DD8yLHWWT3RYMUwC7L6CBUiOEoaQLaP4O9KL5QJ9QkMraugIe9AOqxfcV8-mDmZ-HIVjc0-93z1Pw=s835-no?authuser=0);
-  opacity: 0.6;
+  height: 100vh;
+  background-image: linear-gradient(
+      0deg,
+      rgba(84, 57, 202, 0.4),
+      rgba(0, 183, 255, 0.2)
+    ),
+    url(https://lh3.googleusercontent.com/pw/ACtC-3cj5W83F2sW0t_e3rPs8LwsRIsldRr_hDuzNZn72KE_Fd8yDwjmdzyuMcYtyFt0Sy0roCJIsvU22DD8yLHWWT3RYMUwC7L6CBUiOEoaQLaP4O9KL5QJ9QkMraugIe9AOqxfcV8-mDmZ-HIVjc0-93z1Pw=s835-no?authuser=0);
+  opacity: 1;
   background-repeat: no-repeat;
   background-size: cover;
 }
-#title div {
+#title-sec div {
+  text-align: center;
+  font-size: 12vw;
+  font-weight: 900;
+  color: white;
   opacity: 1;
 }
 .img-block {
   display: grid;
   width: 40%;
   height: 100vh;
-  border: 2px solid green;
   overflow: scroll;
 }
 .img-block img {
