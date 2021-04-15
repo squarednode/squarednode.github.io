@@ -17,31 +17,58 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(
       0deg,
-      rgba(84, 57, 202, 0.4),
-      rgba(0, 183, 255, 0.2)
+      rgba(94, 93, 97, 0.2),
+      rgba(33, 52, 61, 0.8)
     ),
     url(https://lh3.googleusercontent.com/pw/ACtC-3cj5W83F2sW0t_e3rPs8LwsRIsldRr_hDuzNZn72KE_Fd8yDwjmdzyuMcYtyFt0Sy0roCJIsvU22DD8yLHWWT3RYMUwC7L6CBUiOEoaQLaP4O9KL5QJ9QkMraugIe9AOqxfcV8-mDmZ-HIVjc0-93z1Pw=s835-no?authuser=0);
-  opacity: 1;
   background-repeat: no-repeat;
   background-size: cover;
 }
-#title-sec div {
+.title-mid {
   text-align: center;
-  font-size: 12vw;
+  max-width: 16em;
+  margin: 0;
+  font-size: calc(1em + 5vh);
+  font-weight: bold;
+  line-height: 0.9;
   font-weight: 900;
   color: white;
-  opacity: 1;
+}
+.title-bot {
+  display: flex;
+  margin-bottom: 4em;
+  font-size: calc(0.8em + 0.9vh);
+}
+.button {
+  padding: 0.5em 0.67em;
+  color: white;
+  text-decoration: none;
+  border: 0.1em solid white;
+}
+
+.button-primary {
+  color: black;
+  background-color: white;
 }
 .img-block {
   display: grid;
   width: 40%;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
+}
+.img-block::-webkit-scrollbar {
+  width: 0.5em;
+}
+.img-block::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.img-block::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 .img-block img {
   width: 100%;
