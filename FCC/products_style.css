@@ -75,7 +75,12 @@ main #main-wrapper {
   grid: auto / auto auto auto auto;
   background-color: darkgrey;
   justify-items: center;
-  font: 70%vw;
+  font-size: 3.5vw;
+}
+@media (min-width: 600px) {
+  #web-bottom {
+    font-size: 100%;
+  }
 }
 #web-bottom > div {
   width: 100%;
