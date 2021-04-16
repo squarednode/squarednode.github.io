@@ -72,12 +72,14 @@ main #main-wrapper {
   list-style: none;
   padding: 2.5% 0 2.5% 2%;
   text-align: left;
+  cursor: pointer;
 }
 .scroll-pic {
   display: none;
   width: 100%;
   max-width: 50vw;
   height: auto;
+  object-fit: contain;
 }
 .pictures:active {
   font-weight: 900;
@@ -102,12 +104,13 @@ li:active + div img {
 }
 
 /* Section for Large Screen adjustments*/
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .scroll-pic {
     display: none;
     width: auto;
     max-height: 50vh;
     height: 100%;
+    object-fit: contain;
   }
   .pictures:hover {
     font-weight: 900;
