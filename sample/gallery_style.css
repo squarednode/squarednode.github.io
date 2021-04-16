@@ -120,7 +120,7 @@ main {
 /* Expanding image text */
 .large-img #imgtext {
   position: absolute;
-  bottom: 15px;
+  top: 15px;
   left: 15px;
   color: black;
   background-color: white;
