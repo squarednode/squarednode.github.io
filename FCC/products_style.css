@@ -35,11 +35,15 @@ main #main-wrapper {
 /*Products for web design*/
 #web-design {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border: 1px solid green;
   width: 80%;
   margin: 0 auto;
-  height: 50vh;
+  height: auto;
+}
+.web-products {
+  display: flex;
+  flex-direction: row;
 }
 #web-left {
   width: 50%;
@@ -51,15 +55,24 @@ main #main-wrapper {
   border: 1px solid rgb(62, 235, 62);
   height: auto;
 }
+.sample {
+  height: 400px;
+  width: 250px;
+  border: 1px solid red;
+}
 
 /*Products for graphic design*/
 #graphic-design {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border: 1px solid blue;
   width: 80%;
   margin: 0 auto;
-  height: 50vh;
+  height: auto;
+}
+.graphic-products {
+  display: flex;
+  flex-direction: row;
 }
 #graphic-left {
   width: 50%;
