@@ -54,6 +54,7 @@ main {
   color: white;
   text-decoration: none;
   border: 0.1em solid white;
+  cursor: pointer;
 }
 
 .button-primary {
@@ -87,6 +88,7 @@ main {
   max-width: 100%;
   height: 30%;
   overflow-x: scroll;
+  cursor: pointer;
 }
 .img-block img {
   width: 150px;
