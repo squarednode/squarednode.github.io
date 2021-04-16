@@ -20,7 +20,7 @@ main {
 .button-wrapper {
   position: sticky;
   top: 0;
-  left: 20%;
+  left: 0;
 }
 /* Main box for button layout*/
 #buttons {
