@@ -184,6 +184,7 @@ main #main-wrapper {
   object-fit: contain;
 }
 .orig-photo {
+  max-height: 100%;
   height: auto;
   width: 100%;
 }
@@ -191,6 +192,7 @@ main #main-wrapper {
   position: relative;
   top: 0;
   left: -100%;
+  max-height: 100%;
   height: auto;
   width: 100%;
   animation: fade 6s infinite;
@@ -215,10 +217,12 @@ main #main-wrapper {
 .logo-create {
   display: flex;
   width: 100%;
+  max-height: 100%;
   height: auto;
   object-fit: contain;
 }
 .logo-create img {
+  max-height: 100%;
   height: auto;
   width: 100%;
 }
