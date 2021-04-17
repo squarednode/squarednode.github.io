@@ -30,10 +30,9 @@ main #main-wrapper {
 #top-products {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(128, 0, 43);
   width: 80%;
   margin: 0 auto;
-  height: 50vh;
+  height: auto;
 }
 /*Products for web design*/
 #web-design {
@@ -141,7 +140,6 @@ main #main-wrapper {
 #graphic-design {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
   width: 80%;
   margin: 0 auto;
   height: auto;
