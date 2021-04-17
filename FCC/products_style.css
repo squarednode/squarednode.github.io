@@ -148,17 +148,79 @@ main #main-wrapper {
 }
 .graphic-products {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 #graphic-left {
-  width: 50%;
-  border: 1px solid rgb(3, 112, 236);
+  width: 100%;
   height: auto;
 }
 #graphic-right {
-  width: 50%;
-  border: 1px solid rgb(46, 23, 126);
+  width: 100%;
   height: auto;
+}
+@media (min-width: 600px) {
+  .graphic-products {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  #graphic-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 50%;
+    height: auto;
+    padding-right: 2%;
+  }
+  #graphic-right {
+    width: 50%;
+    height: auto;
+  }
+}
+.photo-edit {
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.orig-photo {
+  height: auto;
+  width: 100%;
+}
+.edit-photo {
+  position: relative;
+  top: 0;
+  left: -100%;
+  height: auto;
+  width: 100%;
+  animation: fade 6s infinite;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  53% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.logo-create {
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.logo-create img {
+  height: auto;
+  width: 100%;
 }
 /*Form formatting*/
 #form-wrapper {
