@@ -18,6 +18,9 @@ main {
 main #main-wrapper {
   flex: 1 0 auto;
 }
+.body-text {
+  margin-top: 0;
+}
 /* Settings for header spacing*/
 #spacer {
   min-width: 100%;
@@ -36,7 +39,6 @@ main #main-wrapper {
 #web-design {
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
   width: 80%;
   margin: 0 auto;
   height: auto;
@@ -49,17 +51,34 @@ main #main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  border: 1px solid rgb(32, 56, 32);
+  width: 100%;
   height: auto;
   font-weight: 900;
   font-size: 1.1em;
 }
 #web-right {
-  width: 50%;
-  border: 1px solid rgb(62, 235, 62);
-  height: auto;
+  display: none;
 }
+/* Specific settings for large screens*/
+@media (min-width: 650px) {
+  #web-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    font-weight: 900;
+    font-size: 1.1em;
+  }
+  #web-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    align-items: center;
+  }
+}
+/* iframe properties*/
 .sample {
   height: 400px;
   width: 250px;
@@ -70,12 +89,13 @@ main #main-wrapper {
   width: 250px;
   border: none;
 }
+/* Pricing grid */
 #web-bottom {
   display: grid;
-  grid: auto / auto auto auto auto;
+  grid: minmax(0, 1fr) / auto auto auto auto;
   background-color: darkgrey;
-  justify-items: center;
   font-size: 3.5vw;
+  height: auto;
 }
 @media (min-width: 600px) {
   #web-bottom {
@@ -83,6 +103,9 @@ main #main-wrapper {
   }
 }
 #web-bottom > div {
+  display: flex;
+  justify-items: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   border: 1px solid black;
@@ -101,23 +124,15 @@ main #main-wrapper {
 }
 .checkmark {
   padding-left: 50%;
-  margin: auto;
   color: red;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 1000;
-  justify-content: center;
+  font-size: 3vw;
 }
 .check {
-  transform: rotate(45deg);
-  margin: 0;
-  height: 3.5vw;
-  width: 1.5vw;
-  border-bottom: 0.9vw solid green;
-  border-right: 0.9vw solid green;
-}
-.body-text {
-  margin-top: 0;
+  color: green;
+  transform: scaleX(-1) rotate(-35deg);
 }
 
 /*Products for graphic design*/
