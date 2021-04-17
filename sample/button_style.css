@@ -21,6 +21,7 @@ main {
   position: sticky;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
 /* Main box for button layout*/
 #buttons {
@@ -90,20 +91,22 @@ main {
 }
 
 /* Hover functions for buttons*/
-#middle:hover {
-  transform: scale(1.1, 1.1);
-}
-#tleft:hover {
-  transform: translate(-10px, -10px) scale(1.2, 1.2);
-}
-#bleft:hover {
-  transform: translate(-10px, 10px) scale(1.2, 1.2);
-}
-#tright:hover {
-  transform: translate(10px, -10px) scale(1.2, 1.2);
-}
-#bright:hover {
-  transform: translate(10px, 10px) scale(1.2, 1.2);
+@media (min-width: 600px) {
+  #middle:hover {
+    transform: scale(1.1, 1.1);
+  }
+  #tleft:hover {
+    transform: translate(-10px, -10px) scale(1.2, 1.2);
+  }
+  #bleft:hover {
+    transform: translate(-10px, 10px) scale(1.2, 1.2);
+  }
+  #tright:hover {
+    transform: translate(10px, -10px) scale(1.2, 1.2);
+  }
+  #bright:hover {
+    transform: translate(10px, 10px) scale(1.2, 1.2);
+  }
 }
 
 /* Active fucntions on buttons */
