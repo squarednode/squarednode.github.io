@@ -88,19 +88,20 @@ main #main-wrapper {
   width: 250px;
   border: none;
 }
-/* Pricing grid */
+/* Pricing grid in flex */
 #web-bottom {
-  display: grid;
-  grid: minmax(0, 1fr) / auto auto auto auto;
-  background-color: darkgrey;
-  height: auto;
-  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 3.8vw;
 }
+
 #web-bottom > div {
   display: flex;
   justify-items: center;
   align-items: center;
-  width: 100%;
+  width: 25%;
+  height: auto;
   max-height: 100%;
   border: 1px solid black;
 }
@@ -113,10 +114,14 @@ main #main-wrapper {
   text-align: center;
 }
 .web-pack {
+  width: 100%;
+  height: 100%;
   padding: 0.25em;
 }
 .checkmark {
-  padding-left: 50%;
+  padding-left: 12.5%;
+  width: 100%;
+  height: 100%;
   color: rgb(168, 12, 12);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
