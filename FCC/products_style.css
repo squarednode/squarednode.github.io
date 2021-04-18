@@ -245,24 +245,36 @@ main #main-wrapper {
   bottom: 5%;
   right: 0;
   left: 100%;
-  background-color: grey;
-  border-radius: 25px 0 0 25px;
-  box-shadow: -5px 5px 5px -5px #333;
-  width: 100%;
+  width: 30px;
   min-width: 30px;
+  max-width: 230px;
   height: auto;
   padding-bottom: 2px;
 }
-.pure-group {
+#email-us {
   display: flex;
-  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  transform: translateX(-40%);
+  align-items: center;
+  background-color: grey;
+  border-radius: 25px 0 0 25px;
+  box-shadow: -5px 5px 5px -5px #333;
+}
+.pure-group {
   border: none;
 }
 #order-form {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 150px;
+  background-color: grey;
+  border-radius: 25px 0 0 25px;
+  box-shadow: -5px 5px 5px -5px #333;
 }
 #order-form p {
   margin: 2px 0;
@@ -276,32 +288,13 @@ main #main-wrapper {
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 0;
   display: block;
+  cursor: pointer;
 }
-#form-element {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border: 3px solid red;
-}
-/*
-.sidescroll:checked ~ .pure-group {
-  display: flex;
-  text-align: center;
-  border: none;
-}
-.sidescroll:checked + #order-form {
-  display: none;
-}
-*/
-
+/* Clickable functions for side form*/
 .sidescroll:checked ~ #form-element #order-form {
   display: none;
-}
-.sidescroll:checked ~ #form-element {
-  width: 100%;
-  height: 100%;
 }
 
 .sidescroll:not(:checked) ~ #form-element .pure-group {
