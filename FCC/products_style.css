@@ -226,6 +226,7 @@ main #main-wrapper {
 }
 .logo-create {
   display: flex;
+  align-items: flex-start;
   width: 100%;
   height: auto;
 }
