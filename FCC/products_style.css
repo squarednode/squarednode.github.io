@@ -169,6 +169,7 @@ main #main-wrapper {
 #graphic-right {
   width: 100%;
   height: auto;
+  border: 3px solid red;
 }
 @media (min-width: 600px) {
   .graphic-products {
@@ -187,6 +188,7 @@ main #main-wrapper {
   #graphic-right {
     width: 50%;
     height: auto;
+    border: 3px solid red;
   }
 }
 .photo-edit {
@@ -196,6 +198,7 @@ main #main-wrapper {
 .orig-photo {
   width: 100%;
   object-fit: contain;
+  border: 2px solid green;
 }
 .edit-photo {
   position: relative;
@@ -203,6 +206,7 @@ main #main-wrapper {
   left: -100%;
   width: 100%;
   object-fit: contain;
+  border: 2px solid green;
   animation: fade 4s infinite;
 }
 @keyframes fade {
