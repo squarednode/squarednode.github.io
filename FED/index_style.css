@@ -79,6 +79,8 @@ header .links a:hover {
   }
   header .title-wrap div h1 {
     padding: 0 0;
+    font-size: 3em;
+    font-family: "Great Vibes", cursive;
   }
 }
 /*Main Body design elements*/
