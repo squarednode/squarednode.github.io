@@ -34,6 +34,16 @@ main #main-wrapper {
   margin: 0 auto;
   height: auto;
 }
+#sale {
+  font-weight: 900;
+}
+#products {
+  font-weight: 900;
+}
+.products-text {
+  text-align: center;
+}
+
 /*Products for web design*/
 #web-design {
   display: flex;
@@ -197,7 +207,7 @@ main #main-wrapper {
   max-height: 100%;
   height: auto;
   width: 100%;
-  animation: fade 6s infinite;
+  animation: fade 4s infinite;
 }
 @keyframes fade {
   0% {
@@ -228,12 +238,27 @@ main #main-wrapper {
   height: auto;
   width: 100%;
 }
+
 /*Form formatting*/
 #form-wrapper {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(128, 0, 43);
-  width: 80%;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 5%;
+  right: 0;
+  left: 100%;
+  background-color: grey;
+  border-radius: 25px 0 0 25px;
+  box-shadow: -5px 5px 5px -5px #333;
+  width: 40%;
+  min-width: 192px;
+  max-width: 340px;
   height: auto;
+  padding-bottom: 2px;
+}
+.pure-group {
+  text-align: center;
+  border: none;
 }
