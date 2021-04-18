@@ -133,7 +133,7 @@ main {
   left: 12.5%;
   opacity: 0.5;
   transform: rotate(45deg);
-  font-size: 5em;
+  font-size: 3em;
 }
 
 /* Img properties for full screen*/
@@ -166,5 +166,13 @@ main {
     height: 100%;
     max-width: 100%;
     object-fit: contain;
+  }
+  #watermark {
+    position: absolute;
+    top: 50%;
+    left: 12.5%;
+    opacity: 0.5;
+    transform: rotate(45deg);
+    font-size: 5em;
   }
 }
