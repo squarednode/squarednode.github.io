@@ -129,7 +129,7 @@ main {
 }
 #watermark {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 12.5%;
   opacity: 0.5;
   transform: rotate(45deg);
