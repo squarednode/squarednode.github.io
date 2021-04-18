@@ -186,22 +186,25 @@ main #main-wrapper {
   }
   #graphic-right {
     width: 50%;
-    height: auto;
+    height: 100%;
   }
 }
 .photo-edit {
   display: flex;
+  align-items: flex-start;
   width: 100%;
   height: auto;
 }
 .photo-edit > .orig-photo {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 .photo-edit > .edit-photo {
   position: relative;
   top: 0;
   left: -100%;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   animation: fade 4s infinite;
 }
 @keyframes fade {
@@ -227,7 +230,8 @@ main #main-wrapper {
   height: auto;
 }
 .logo-create > img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 /*Form formatting*/
