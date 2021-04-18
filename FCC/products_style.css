@@ -199,6 +199,7 @@ main #main-wrapper {
   max-height: 100%;
   height: auto;
   width: 100%;
+  object-fit: contain;
 }
 .edit-photo {
   position: relative;
@@ -207,6 +208,7 @@ main #main-wrapper {
   max-height: 100%;
   height: auto;
   width: 100%;
+  object-fit: contain;
   animation: fade 4s infinite;
 }
 @keyframes fade {
@@ -237,6 +239,7 @@ main #main-wrapper {
   max-height: 100%;
   height: auto;
   width: 100%;
+  object-fit: contain;
 }
 
 /*Form formatting*/
