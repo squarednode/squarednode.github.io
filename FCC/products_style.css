@@ -238,7 +238,7 @@ main #main-wrapper {
 /*Form formatting*/
 #form-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   position: sticky;
@@ -248,13 +248,62 @@ main #main-wrapper {
   background-color: grey;
   border-radius: 25px 0 0 25px;
   box-shadow: -5px 5px 5px -5px #333;
-  width: 40%;
-  min-width: 192px;
-  max-width: 340px;
+  width: 100%;
+  min-width: 30px;
   height: auto;
   padding-bottom: 2px;
 }
 .pure-group {
+  display: flex;
   text-align: center;
   border: none;
+}
+#order-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: none;
+}
+#order-form p {
+  margin: 2px 0;
+}
+.sidescroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.5;
+  display: block;
+}
+#form-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 3px solid red;
+}
+/*
+.sidescroll:checked ~ .pure-group {
+  display: flex;
+  text-align: center;
+  border: none;
+}
+.sidescroll:checked + #order-form {
+  display: none;
+}
+*/
+
+.sidescroll:checked ~ #form-element #order-form {
+  display: none;
+}
+.sidescroll:checked ~ #form-element {
+  width: 100%;
+  height: 100%;
+}
+
+.sidescroll:not(:checked) ~ #form-element .pure-group {
+  display: none;
 }
