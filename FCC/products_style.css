@@ -265,6 +265,7 @@ main #main-wrapper {
 .pure-group {
   border: none;
 }
+
 #order-form {
   display: flex;
   flex-direction: column;
@@ -278,6 +279,14 @@ main #main-wrapper {
 }
 #order-form p {
   margin: 2px 0;
+}
+#close-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+#close-menu div {
+  padding-left: 3.125em;
 }
 .sidescroll {
   position: absolute;
