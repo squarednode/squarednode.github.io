@@ -127,6 +127,14 @@ main {
   font-size: 20px;
   padding: 0.2em;
 }
+#watermark {
+  position: absolute;
+  top: 50%;
+  left: 12.5%;
+  opacity: 0.5;
+  transform: rotate(45deg);
+  font-size: 10vw;
+}
 
 /* Img properties for full screen*/
 @media (min-width: 600px) {
