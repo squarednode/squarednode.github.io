@@ -133,7 +133,7 @@ main {
   left: 12.5%;
   opacity: 0.5;
   transform: rotate(45deg);
-  font-size: 10vw;
+  font-size: 5em;
 }
 
 /* Img properties for full screen*/
