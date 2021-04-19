@@ -50,8 +50,13 @@ header {
   margin: 0 auto;
   width: 90%;
   height: auto;
-  border-left: 3px solid #e0afa1;
-  border-right: 3px solid #e0afa1;
+  border-left: 0 solid #e0afa1;
+  border-right: 0 solid #e0afa1;
+}
+
+.sample {
+  width: 100%;
+  height: auto;
 }
 
 /*Footer design elements*/
