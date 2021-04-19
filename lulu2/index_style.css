@@ -26,9 +26,42 @@ main #main-wrapper {
 header {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   position: sticky;
   top: 0;
   background-color: #e0afa1;
   z-index: 100;
+}
+.header-img {
+  max-height: 50px;
+  width: auto;
+}
+@media (min-width: 400px) {
+  .header-img {
+    max-height: 100px;
+    width: auto;
+  }
+}
+
+/*Mid section of website content*/
+#display {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  border-left: 3px solid #e0afa1;
+  border-right: 3px solid #e0afa1;
+}
+
+/*Footer design elements*/
+footer {
+  border-top: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  padding: 0 1% 0 1%;
+  justify-content: space-between;
+  background-color: #e0afa1;
+  position: sticky;
+  bottom: 0;
 }
