@@ -720,6 +720,11 @@ img {
 #hero.services-hero {
   background: url(../images/DWells-2512-HiRes.jpg) center center no-repeat;
 }
+.servicers-pay {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
 .services-crystals {
   background: url(../images/services-block-stones.png) center center no-repeat;
@@ -728,7 +733,7 @@ img {
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
-  height: 700px;
+  height: 600px;
 }
 
 .services-healing {
@@ -807,7 +812,7 @@ img {
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    height: 100%;
+    height: 500px;
   }
 }
 
@@ -947,6 +952,35 @@ img {
 
 .new-block {
   text-align: left;
+  padding: 50px 50px;
+}
+.new-paypal {
+  text-align: center;
+}
+
+.interior-office {
+  background: url(../images/heal_4864.jpg) center no-repeat,
+    url(../images/heal_6256.jpg) top no-repeat,
+    url(../images/heal_6259.jpg) bottom no-repeat;
+  -webkit-background-size: 33.4%, 33.4%, 33.4%;
+  -moz-background-size: 33.4%, 33.4%, 33.4%;
+  -o-background-size: 33.4%, 33.4%, 33.4%;
+  background-size: 34vh, 34vh, 34vh;
+  width: 100%;
+  height: 600px;
+}
+@media screen and (min-width: 768px) {
+  .interior-office {
+    background: url(../images/heal_4864.jpg) center no-repeat,
+      url(../images/heal_6256.jpg) right no-repeat,
+      url(../images/heal_6259.jpg) left no-repeat;
+    -webkit-background-size: 33.4%, 33.4%, 33.4%;
+    -moz-background-size: 33.4%, 33.4%, 33.4%;
+    -o-background-size: 33.4%, 33.4%, 33.4%;
+    background-size: 33.4%, 33.4%, 33.4%;
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .ctct-custom-form input[type="checkbox"] {
