@@ -728,19 +728,24 @@ img {
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
-  height: auto;
+  height: 700px;
 }
 
 .services-healing {
-  background: url(../images/services-banner-1.png) center center no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 150px;
+  padding-top: 50px;
+}
+.services-location {
+  background: url(../images/exterior.jpg) left center no-repeat,
+    url(../images/main-entrance.jpg) right center no-repeat;
+  -webkit-background-size: 50%, 50%;
+  -moz-background-size: 50%, 50%;
+  -o-background-size: 50%, 50%;
+  background-size: 50%, 50%;
+  padding-top: 50px;
   width: 100%;
   height: 400px;
-  padding-top: 50px;
 }
 
 .services-bowl {
