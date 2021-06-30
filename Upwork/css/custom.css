@@ -378,7 +378,7 @@ img {
 }
 
 .block-padding {
-  padding: 50px;
+  padding: 50px 0;
 }
 
 .fluid-block-padding {
@@ -952,7 +952,8 @@ img {
 
 .new-block {
   text-align: left;
-  padding: 50px 50px;
+  padding: 50px 0;
+  margin: 15px;
 }
 .new-paypal {
   text-align: center;
