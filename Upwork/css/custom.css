@@ -728,7 +728,7 @@ img {
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
-  height: 800px;
+  height: auto;
 }
 
 .services-healing {
@@ -944,9 +944,7 @@ img {
 .new-block {
   text-align: left;
 }
-.new-paypal {
-  text-align: center;
-}
+
 .ctct-custom-form input[type="checkbox"] {
   margin-right: 10px;
 }
