@@ -1,0 +1,981 @@
+/********************************************NAV********************************************/
+
+.footer { 
+    background:#ccc;
+	text-align:center; 
+	color:#666;
+	font-size:12px;
+	padding:50px 0px;  
+}
+
+#hero.resources-hero {
+	background:url(../images/hero-resources.png) center center no-repeat;
+}
+
+
+/******************************************** TESTIMONIALS ********************************************/
+
+#hero.testimonials-hero {
+	background:url(../images/hero-testimonials.png) center center no-repeat;
+}
+
+/******************************************** HEALING ********************************************/
+#hero.healing-hero {
+	background:url(../images/HEAL-Banner.jpg) center center no-repeat;
+}
+
+/******************************************** CONTACT ********************************************/
+
+#hero.contact-hero {
+	background:url(../images/hero-contact.png) center center no-repeat;
+}
+
+
+input {
+    min-height:50px;
+    margin-bottom:25px;
+    border-radius:0px;
+    border:1px solid #ccc; 
+}
+
+input:focus {
+      border-color:#ffcc00;
+      -moz-box-shadow: 0px 0px 6px #dfdfdf;
+      -webkit-box-shadow: 0px 0px 6px #dfdfdf;
+      box-shadow: 0px 0px 6px #dfdfdf;
+}
+
+textarea {
+    width:100%;
+    margin-bottom:25px;
+    border-radius:0px;
+    border:1px solid #ccc;
+}
+
+textarea:focus {
+    overflow: auto;
+    outline: #ffcc00;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.submit-btn {
+    border: 1px solid #f6650a;
+    border-radius:0px;    
+    color: #fff!important;
+    background:#f6650a;
+    padding: 10px 70px;
+    transition: 0.5s ease; 
+    text-decoration: none;
+}
+
+.submit-btn:hover {
+   border: 0px;
+    background:#7a53a0;
+}
+
+.submit-btn:focus {
+    outline: none;
+}
+
+
+
+.navbar-custom {
+    background-color:#fff;
+}
+
+.icon-bar {
+    background-color:#444;
+}
+
+.navbar-nav {
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+
+.navbar-toggle {
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.navbar-default .navbar-nav li a {
+    color: #999;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:600;
+    font-size:14px;
+}
+
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+      color: #000;
+      background: none;
+     border-bottom: thick solid #f6650a;
+ }
+
+
+/*-------------NAV BREAKPOINT-------------*/
+@media (max-width: 990px) {
+.navbar-nav {
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background: none;
+    border-bottom: none;
+ }
+.navbar-header {
+    float: none;
+}
+.navbar-left,.navbar-right {
+    float: none !important;
+}
+.navbar-toggle {
+    display: block;
+}
+.navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+.navbar-collapse.collapse {
+    display: none!important;
+}
+.navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+}
+.navbar-nav>li {
+    float: none;
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.collapse.in{
+    display:block !important;
+}
+}
+
+
+/******************************************** BASICS ********************************************/
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    line-height:32px;
+}
+
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 36px;
+    line-height:50px;
+    font-weight:400;
+    color:#222;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size:30px;
+    line-height:35px;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size:18px;
+    line-height:28px;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size:16px;
+    line-height:25px;
+}
+
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size:14px;
+    line-height:25px;
+}
+
+.titles {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size:22px;
+    line-height:32px;
+    
+}
+
+p, ul {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size:16px;
+}
+
+li {
+    padding-bottom:10px;
+}
+
+.testimonial {  
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    line-height:50px;
+    font-weight:400;
+}
+
+a, a:active {
+    color: #f6650a;
+    font-size:14px;
+    font-weight:600;
+}
+
+a:hover {
+    color: #7a53a0;
+    text-decoration:none;
+}
+
+/* selected link */
+ {
+    color: blue;
+}
+
+.white {
+    color:#fff;
+}
+
+.black {
+   color: #000;
+}
+
+.grey {
+    color:#bbb;
+}
+
+.orange {
+    color:#f6650a;
+    font-weight:400;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin-left:auto;
+    margin-right:auto
+}
+
+.icons {
+    margin-left:0px;
+    padding-bottom:15px;
+}
+
+.city {
+    font-size:14px;
+    color:#999;
+}
+
+/*-------------Text BREAKPOINT-------------*/
+
+@media screen and (max-width: 992px) {
+h1 {
+    font-size: 25px;
+    line-height:30px;
+}
+}
+
+
+
+@media screen and (max-width: 768px) {
+body {
+    font-size:14px;
+    line-height:22px;
+}
+
+h1 {
+    font-size: 20px;
+    line-height:30px;
+}
+
+h2 {
+    font-size:20px;
+    line-height:30px;
+}
+
+h3 {
+    font-size:16px;
+    line-height:26px;
+}
+
+h4 {
+    font-size:14px;
+    line-height:20px;
+}
+
+h5 {
+    font-size:12px;
+    line-height:18px;
+}
+
+.titles {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size:22px;
+    line-height:32px;
+    
+}
+
+p, ul {
+    font-size:14px;
+}
+
+li {
+    padding-bottom:5px;
+}
+
+.testimonial {  
+    font-size: 18px;
+    line-height:27px;
+    font-weight:300;
+}
+
+a, a:active {
+    color: #f6650a;
+    font-size:14px;
+    font-weight:600;
+}
+
+.icons {
+    padding-bottom:5px;
+}
+}
+
+
+/******************************************** SECTIONS ********************************************/
+
+.sm-block {
+    height:425px;
+}
+
+.lg-block {
+    height:525px;
+}
+
+.lg-extra-block{
+height: 750px;
+}
+
+.prices-block {
+    height: auto;
+}
+
+.block-fluid {
+    height:auto;
+}
+
+.block-padding {
+    padding:50px;
+}
+
+.fluid-block-padding {
+    padding:100px 50px;
+}
+
+.sign-up-padding {
+  padding:100px 200px;
+}
+
+.newsletter-padding{
+padding-bottom:50px;
+}
+
+.col-padding {
+    padding:0px 35px;
+}
+
+.block-orange {
+    background-color:#f6650a;
+    height:100%;
+}
+
+.block-purple {
+    background-color:#7a53a0;
+    height:100%;
+}
+
+.block-white {
+    background-color:#fff;
+    height:100%;
+}
+
+.vcenter {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);   
+      -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+/*-------------Section BREAKPOINT-------------*/
+
+@media only screen and (min-width : 1200px) {
+    
+.sm-block {
+height:500px;
+}
+    
+.lg-block {
+    height:650px;
+}
+
+.lg-extra-block{
+height:750px;
+}
+    
+}
+
+@media only screen and (max-width : 768px) {
+    
+.sm-block {
+height:475px;
+}
+    
+.lg-block {
+    height:550px;
+}
+
+.lg-extra-block {
+    height: 1000px;
+}
+    
+.prices-block {
+    height:auto;
+}
+ 
+    
+.block-padding {
+    padding:15px;
+}
+    
+.fluid-block-padding {
+    padding:30px 10px;
+}
+}
+
+@media only screen and (max-width : 350px) {
+    
+.sm-block {
+height:550px;
+}
+    
+.lg-block {
+    height:650px;
+}
+
+.lg-extra-block {
+    height:1000px;
+}
+    
+}
+
+/******************************************** HERO HEADERS ********************************************/
+
+#hero {
+    margin-top:-20px;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover !important;
+    background-position:center;
+    width:100%;
+	height:325px;
+}
+
+.hero-title {
+    padding:75px 25px 0px 25px;
+}
+
+@media screen and (max-width: 992px) {
+    
+#hero {
+	height:auto;
+}
+    
+.hero-title {
+    padding:25px;
+}
+}
+
+@media only screen and (max-width : 768px) {
+    
+#hero {
+	height:auto;
+}
+    
+.hero-title {
+    padding:5px;
+}
+}
+
+@media only screen and (min-width : 1200px) {
+    
+#hero {
+	height:500px;
+}
+    
+.hero-title {
+    padding:140px;
+}
+    
+}
+
+/******************************************** HOME ********************************************/
+
+#hero.home-hero {
+	background:url(../images/hero-home.png) center center no-repeat;  
+}
+
+.home-info {
+	background:url(../images/home-testimonial.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    width:100%;
+	height: 450px;
+}
+
+.home-david {
+	background:url(../images/home-david.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.home-crystals {
+	background:url(../images/home-crystals.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.home-therapy {
+	background:url(../images/DWells-2421-Edit-HiRes.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+@media only screen and (min-width : 1200px) {
+    
+.home-david {
+	background:url(../images/home-david-lg.png) center top no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:top;
+}
+    
+.home-crystals {
+	background:url(../images/home-crystals-lg.png) center top no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+    
+.home-therapy {
+	background:url(../images/DWells-2421-Edit-HiRes.jpg) left bottom no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    height:100%;
+} 
+    
+.home-info {
+	background:url(../images/home-testimonial.png) center bottom no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    width:100%;
+	height: 450px;
+}
+    
+}
+
+@media only screen and (max-width : 427px) {
+    
+.home-david {
+	background:url(../images/home-david-lg.png) center top no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:top;
+}
+    
+.home-crystals {
+	background:url(../images/home-crystals-lg.png) left left no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:left;
+    height:100%;
+}
+    
+.home-therapy {
+	background:url(../images/home-therapy-lg.png) left center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:left;
+    height:100%;
+} 
+    
+.home-info {
+	background:url(../images/home-testimonial.png) center bottom no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    width:100%;
+	height: 450px;
+}
+    
+}
+
+/******************************************** ABOUT ********************************************/
+
+#hero.about-hero {
+	background:url(../images/hero-about.png) center center no-repeat;
+}
+
+.about-testimonial {
+	background:url(../images/about-banner-1.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    width:100%;
+	height: 450px;
+    padding-top:50px;
+}
+
+.about-zen {
+	background:url(../images/about-block-zen.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.about-meditation {
+	background:url(../images/about-block-meditation.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+@media only screen and (max-width : 427px) {
+    
+.about-zen {
+	background:url(../images/about-block-zen.png) right bottom no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    height:100%;
+}
+
+.about-meditation {
+	background:url(../images/about-block-meditation.png) left center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:right;
+    height:100%;
+}
+  
+}
+
+
+/******************************************** SERVICES ********************************************/
+
+#hero.services-hero {
+	background:url(../images/DWells-2512-HiRes.jpg) center center no-repeat;
+}
+
+
+.services-crystals {
+	background:url(../images/services-block-stones.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:800px;
+}
+
+.services-healing {
+	background:url(../images/services-banner-1.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    width:100%;
+	height: 400px;
+    padding-top:50px;
+}
+
+.services-bowl {
+	background:url(../images/services-block-stone-bowl.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.services-leaf {
+	background:url(../images/services-block-leaf.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.services-choices {
+	background:url(../images/services-banner-2.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    width:100%;
+	height: auto;
+    padding-bottom:45px;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
+
+/*-------------Section BREAKPOINT-------------*/
+@media only screen and (max-width : 768px) {
+    
+.services-choices {
+	height: auto;
+     padding-bottom:5px;
+}
+}
+
+@media only screen and (min-width : 1200px) {
+    
+.services-crystals {
+	background:url(../images/services-block-stones-lg.png) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+    
+.services-healing {
+	height: 550px;
+}   
+}
+
+/******************************************** HEALING ********************************************/
+
+.healing-resources-soul {
+	background:url(../images/b942f304d3c6fce7-Lessons-Child1.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.healing-resources-energy {
+	background:url(../images/AmazonPiranhasAndEels_2012_5x7_paper.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.healing-resources-who {
+	background:url(../images/bf2ddc5217cb086a-Lessons-Jodi01.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.healing-resources-location {
+	background:url(../images/HeavensDoor2560-1440px.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.healing-resources-about {
+	background:url(../images/P-24-lower-res-even-lower.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    height:100%;
+}
+
+.healing-being {
+	background:url(../images/KoiPond_2011_4x6_paper.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:center;
+    width:100%;
+	height: 100%;
+    padding-top:60px;
+}
+
+.being-h3 {
+margin-top: 0px;
+}
+
+
+
+@media only screen and (max-width : 427px) {
+    
+.healing-resources-soul {
+	background:url(../images/b942f304d3c6fce7-Lessons-Child1.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    height:100%;
+}
+
+.healing-resources-energy {
+	background:url(../images/AmazonPiranhasAndEels_2012_5x7_paper.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:right;
+    height:100%;
+}
+
+.healing-resources-who {
+	background:url(../images/bf2ddc5217cb086a-Lessons-Jodi01.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    height:100%;
+}
+
+.healing-resources-location {
+	background:url(../images/HeavensDoor2560-1440px.jpg) center center no-repeat;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:right;
+    height:100%;
+}
+
+.healing-resources-about {
+	background:url(../images/P-24-lower-res-even-lower.jpg) center center no-repeat;
+ -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    background-position:bottom;
+    height:100%;
+
+}
+  
+}
+
+.center-list ul{
+   display: inline-block;
+   text-align:left;
+}
+
+.new-block {
+   text-align: center;
+}
+.ctct-custom-form input[type="checkbox"] {
+   margin-right: 10px;
+}
+
+.prices-block .new-block a {
+    text-align: center;
+    font-size: 22px;
+    margin: 20px;
+}
+.prices-block .new-block img {
+    display: inline-block;
+    margin: 10px;
+}
