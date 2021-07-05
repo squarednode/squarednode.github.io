@@ -214,8 +214,9 @@ h5 {
 p,
 ul {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px;
+  line-height: 1.42857143;
 }
 
 li {
