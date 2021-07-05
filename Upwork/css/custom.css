@@ -964,6 +964,15 @@ img {
 .new-paypal img {
   padding-left: 15%;
 }
+@media screen and (max-width: 768px) {
+  .new-paypal {
+    float: none;
+    margin: 0 auto;
+  }
+  .new-paypal img {
+    padding: 0;
+  }
+}
 
 .interior-office {
   background: url(../images/heal_4864.jpg) center no-repeat,
