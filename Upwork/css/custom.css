@@ -383,7 +383,7 @@ img {
 }
 
 .fluid-block-padding {
-  padding: 100px 50px;
+  padding: 50px 50px;
 }
 
 .sign-up-padding {
@@ -800,7 +800,7 @@ img {
     padding-bottom: 5px;
   }
   .services-location {
-    height: 300px;
+    height: 200px;
   }
 }
 
@@ -953,11 +953,16 @@ img {
 
 .new-block {
   text-align: left;
-  padding: 50px 0;
+  padding: 50px 0 0 0;
   margin: 15px;
 }
 .new-paypal {
+  float: left;
+  margin: 15px;
   text-align: center;
+}
+.new-paypal img {
+  padding-left: 15%;
 }
 
 .interior-office {
