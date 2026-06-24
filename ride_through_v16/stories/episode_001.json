@@ -1,0 +1,242 @@
+{
+  "id": "episode_001_v16",
+  "title": "Full System Feature Test",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "output": "webm"
+  },
+  "style": {
+    "name": "simple_theme_park_svg_v3",
+    "lineWeight": 6,
+    "shapeLanguage": "rounded_cartoon",
+    "depth": "2.5d"
+  },
+  "shots": [
+    {
+      "id": "shot_001",
+      "title": "Human and creature rig test",
+      "duration": 8,
+      "environment": {
+        "asset": "park_entry_day",
+        "sky": "#dff4ff",
+        "ground": "#9dd77d"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [0, 0],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "guest1",
+          "asset": "human_guest_basic",
+          "position": [390, 250, 4],
+          "scale": 0.92,
+          "expression": "happy",
+          "wardrobe": {
+            "shirtColor": "#2f80ed",
+            "pantsColor": "#25324a",
+            "hatColor": "#ffd34d"
+          }
+        },
+        {
+          "id": "dino1",
+          "asset": "creature_red_dino",
+          "position": [650, 195, 5],
+          "scale": 0.72,
+          "expression": "happy",
+          "color": "#c7363e"
+        },
+        {
+          "id": "sign1",
+          "asset": "prop_sign_arrow",
+          "position": [850, 240, 3],
+          "scale": 0.75,
+          "text": "RIDE"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 1.4,
+          "actor": "guest1",
+          "action": "enter",
+          "from": "left",
+          "to": [390, 250, 4]
+        },
+        {
+          "start": 1.2,
+          "duration": 2.1,
+          "actor": "guest1",
+          "action": "wave"
+        },
+        {
+          "start": 2.4,
+          "duration": 2.5,
+          "actor": "guest1",
+          "action": "talk",
+          "expression": "happy",
+          "phonemes": ["smile", "open", "wide", "o"]
+        },
+        {
+          "start": 3.0,
+          "duration": 2.0,
+          "actor": "dino1",
+          "action": "talk",
+          "expression": "happy"
+        },
+        {
+          "start": 5.0,
+          "duration": 2.5,
+          "actor": "dino1",
+          "action": "wave",
+          "part": "rightArm"
+        },
+        {
+          "start": 5.5,
+          "duration": 2.0,
+          "actor": "sign1",
+          "action": "gesture",
+          "parts": {
+            "sign": [-8, 8]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_002",
+      "title": "2.5D camera and vehicle test",
+      "duration": 8,
+      "environment": {
+        "asset": "theme_park_path_day",
+        "sky": "#e8f7ff",
+        "ground": "#92d37a"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [0, 0],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "coaster1",
+          "asset": "ride_coaster_icon",
+          "position": [70, 40, 1],
+          "scale": 0.9,
+          "color": "#e0473f"
+        },
+        {
+          "id": "cart1",
+          "asset": "vehicle_cart_basic",
+          "position": [-180, 355, 5],
+          "scale": 0.72,
+          "color": "#f0b33f"
+        },
+        {
+          "id": "guest1",
+          "asset": "human_guest_basic",
+          "position": [250, 285, 4],
+          "scale": 0.75,
+          "expression": "surprised",
+          "shirtColor": "#9b59b6",
+          "pantsColor": "#1f2d3a"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 7.2,
+          "actor": "cart1",
+          "action": "drive",
+          "from": [-180, 355, 5],
+          "to": [1120, 395, 6]
+        },
+        {
+          "start": 1.0,
+          "duration": 4.5,
+          "action": "camera_move",
+          "from": [0, 0],
+          "to": [160, 30],
+          "fromZoom": 1,
+          "toZoom": 1.08
+        },
+        {
+          "start": 2.2,
+          "duration": 2.0,
+          "actor": "guest1",
+          "action": "gesture",
+          "parts": {
+            "leftUpperArm": [0, -55],
+            "rightUpperArm": [0, 42],
+            "head": [0, -8]
+          }
+        },
+        {
+          "start": 4.0,
+          "duration": 2.0,
+          "actor": "coaster1",
+          "action": "drive"
+        }
+      ]
+    },
+    {
+      "id": "shot_003",
+      "title": "Depth crossing test",
+      "duration": 7,
+      "environment": {
+        "asset": "park_entry_day"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [0, 0],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "dinoBack",
+          "asset": "creature_red_dino",
+          "position": [180, 205, 2],
+          "scale": 0.55,
+          "expression": "angry",
+          "color": "#a83242"
+        },
+        {
+          "id": "guestFront",
+          "asset": "human_guest_basic",
+          "position": [940, 285, 7],
+          "scale": 0.98,
+          "expression": "happy",
+          "shirtColor": "#27ae60",
+          "pantsColor": "#243447"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 5.8,
+          "actor": "dinoBack",
+          "action": "walk",
+          "from": [180, 205, 2],
+          "to": [820, 310, 8]
+        },
+        {
+          "start": 0.8,
+          "duration": 5.0,
+          "actor": "guestFront",
+          "action": "walk",
+          "from": [940, 285, 7],
+          "to": [250, 245, 3]
+        },
+        {
+          "start": 5.5,
+          "duration": 1.0,
+          "actor": "guestFront",
+          "action": "talk",
+          "expression": "surprised"
+        }
+      ]
+    }
+  ]
+}

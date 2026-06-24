@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ride Through Episode Maker - V16</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Ride Through Episode Maker <span>V16 Full Engine Build</span></h1>
+      <p>Offline SVG rigged scene player, story timeline, asset library browser, 2.5D camera, and WebM exporter.</p>
+    </div>
+    <div class="status" id="status">Loading...</div>
+  </header>
+
+  <main>
+    <section class="stage-wrap">
+      <svg id="stage" viewBox="0 0 1280 720" width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.22" />
+          </filter>
+        </defs>
+      </svg>
+    </section>
+
+    <aside class="panel">
+      <h2>Playback</h2>
+      <div class="buttons">
+        <button id="playShot">Play Shot</button>
+        <button id="playEpisode">Play Episode</button>
+        <button id="stop">Stop</button>
+      </div>
+
+      <label for="shotSelect">Shot</label>
+      <select id="shotSelect"></select>
+
+      <div class="buttons">
+        <button id="reloadStory">Reload Story</button>
+        <button id="exportShot">Export Current Shot WebM</button>
+        <button id="exportAll">Export All Shots</button>
+        <button id="copyShotTemplate">Copy Shot Template</button>
+      </div>
+
+      <h2>Asset Library</h2>
+      <div id="assetList" class="asset-list"></div>
+      <pre id="assetDetails" class="asset-details"></pre>
+
+      <label for="storyText">Story JSON</label>
+      <textarea id="storyText" spellcheck="false"></textarea>
+
+      <h2>Debug</h2>
+      <pre id="debug"></pre>
+    </aside>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
