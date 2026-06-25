@@ -3,6 +3,7 @@ import { TimelinePlayer } from './timeline.js';
 import { exportSvgShotAsWebM } from './exporter.js';
 import { loadAssetPacks } from './assetPackLoader.js';
 import { registerAssetPacks } from './assetFactory.js';
+import { validateAssetPacks, collectRenderedAssetDiagnostics, makeAssetTestShot } from './assetValidator.js';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');
@@ -11,11 +12,16 @@ const storyText = document.getElementById('storyText');
 const shotSelect = document.getElementById('shotSelect');
 const assetList = document.getElementById('assetList');
 const assetDetails = document.getElementById('assetDetails');
+const validationSummary = document.getElementById('validationSummary');
+const validationReport = document.getElementById('validationReport');
+const partTestSelect = document.getElementById('partTestSelect');
 
 const renderer = new Renderer(stage);
 const player = new TimelinePlayer(renderer, text => debug.textContent = text);
 let story;
 let assetPackReport = { loaded: [], errors: [] };
+let selectedAsset = null;
+let validation = null;
 
 async function init() {
   assetPackReport = await loadAssetPacks();
@@ -25,10 +31,11 @@ async function init() {
   storyText.value = JSON.stringify(story, null, 2);
   populateShots();
   populateAssets();
+  runValidation(false);
   renderer.buildShot(story.shots[0]);
   const packCount = assetPackReport.loaded.length;
   const errCount = assetPackReport.errors.length;
-  status.textContent = `Ready - V18 external SVG asset-pack engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
+  status.textContent = `Ready - V19 asset validation + rig test engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
   if (errCount) debug.textContent = JSON.stringify(assetPackReport.errors, null, 2);
 }
 
@@ -49,11 +56,73 @@ function populateAssets() {
     item.className = 'asset-card';
     item.innerHTML = `<strong>${asset.label}</strong><span>${asset.type} / ${asset.id}<br>${asset.source || 'core'}${asset.packId ? ' / ' + asset.packId : ''}</span>`;
     item.addEventListener('click', () => {
+      selectedAsset = asset;
       assetDetails.textContent = JSON.stringify(asset, null, 2);
+      populatePartTests(asset);
     });
     assetList.appendChild(item);
   }
-  assetDetails.textContent = JSON.stringify(renderer.getAssetLibrary()[0], null, 2);
+  selectedAsset = renderer.getAssetLibrary()[0] || null;
+  assetDetails.textContent = JSON.stringify(selectedAsset, null, 2);
+  populatePartTests(selectedAsset);
+}
+
+
+function populatePartTests(asset) {
+  partTestSelect.replaceChildren();
+  const any = document.createElement('option');
+  any.value = '';
+  any.textContent = 'Auto test / default motion';
+  partTestSelect.appendChild(any);
+  const parts = Array.isArray(asset?.parts) ? asset.parts : [];
+  for (const part of parts) {
+    const option = document.createElement('option');
+    option.value = part.name;
+    option.textContent = `${part.name}${part.file ? ' - ' + part.file : ''}`;
+    partTestSelect.appendChild(option);
+  }
+}
+
+function runValidation(includeRendered = true) {
+  validation = validateAssetPacks(assetPackReport, renderer.getAssetLibrary());
+  const summary = validation.summary;
+  validationSummary.textContent = `${summary.assetCount} external assets checked | ${summary.error} errors | ${summary.warning} warnings | ${summary.info} info`;
+  const checks = [...validation.checks];
+  if (includeRendered && renderer.actors.has('asset_test')) {
+    checks.push(...collectRenderedAssetDiagnostics(renderer, 'asset_test'));
+  }
+  renderValidationChecks(checks);
+}
+
+function renderValidationChecks(checks) {
+  const ordered = [...checks].sort((a, b) => severityRank(a.level) - severityRank(b.level));
+  validationReport.replaceChildren();
+  for (const check of ordered.slice(0, 180)) {
+    const row = document.createElement('div');
+    row.className = `validation-row ${check.level}`;
+    row.innerHTML = `<strong>${check.level.toUpperCase()}</strong><span>${check.message}</span><code>${check.target || ''}</code><em>${check.detail || ''}</em>`;
+    validationReport.appendChild(row);
+  }
+  if (!ordered.length) {
+    const row = document.createElement('div');
+    row.className = 'validation-row pass';
+    row.textContent = 'No validation issues found.';
+    validationReport.appendChild(row);
+  }
+}
+
+function severityRank(level) {
+  return { error: 0, warning: 1, info: 2, pass: 3 }[level] ?? 4;
+}
+
+function testSelectedAsset() {
+  if (!selectedAsset) return;
+  const partName = partTestSelect.value || null;
+  const shot = makeAssetTestShot(selectedAsset, partName);
+  player.stop();
+  renderer.buildShot(shot);
+  runValidation(true);
+  status.textContent = `Testing ${selectedAsset.id}${partName ? ' / ' + partName : ''}`;
 }
 
 function currentShot() {
@@ -67,6 +136,9 @@ function reloadStory() {
 }
 
 document.getElementById('playShot').addEventListener('click', () => player.playShot(currentShot()));
+document.getElementById('runValidation').addEventListener('click', () => { runValidation(true); status.textContent = 'Asset validation complete'; });
+document.getElementById('testAsset').addEventListener('click', testSelectedAsset);
+document.getElementById('playAssetTest').addEventListener('click', () => { if (!selectedAsset) return; const shot = makeAssetTestShot(selectedAsset, partTestSelect.value || null); player.playShot(shot); status.textContent = `Playing asset test: ${selectedAsset.id}`; });
 document.getElementById('playEpisode').addEventListener('click', () => player.playEpisode(story));
 document.getElementById('stop').addEventListener('click', () => player.stop());
 document.getElementById('reloadStory').addEventListener('click', () => {
@@ -77,7 +149,7 @@ document.getElementById('reloadStory').addEventListener('click', () => {
 document.getElementById('copyShotTemplate').addEventListener('click', async () => {
   const template = {
     id: 'shot_new',
-    title: 'New V18 external asset shot template',
+    title: 'New V19 external asset shot template',
     duration: 6,
     environment: { asset: 'park_entry_day' },
     camera: { type: '2.5d', position: [0, 0], zoom: 1 },

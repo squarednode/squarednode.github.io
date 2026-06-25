@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ride Through Episode Maker - V18</title>
+  <title>Ride Through Episode Maker - V19</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <div>
-      <h1>Ride Through Episode Maker <span>V18 External SVG Asset Engine</span></h1>
-      <p>Offline SVG rigged scene player with external SVG asset parts, story timeline, asset library browser, 2.5D camera, and WebM exporter.</p>
+      <h1>Ride Through Episode Maker <span>V19 Asset Validation + Rig Test Engine</span></h1>
+      <p>Offline SVG rigged scene player with external SVG asset parts, manifest validation, rig-part test controls, story timeline, 2.5D camera, and WebM exporter.</p>
     </div>
     <div class="status" id="status">Loading...</div>
   </header>
@@ -47,6 +47,17 @@
       <h2>Asset Library</h2>
       <div id="assetList" class="asset-list"></div>
       <pre id="assetDetails" class="asset-details"></pre>
+
+      <h2>Asset Validation / Rig Test</h2>
+      <div class="buttons">
+        <button id="runValidation">Run Asset Validation</button>
+        <button id="testAsset">Show Selected Asset</button>
+        <button id="playAssetTest">Play Rig Test</button>
+      </div>
+      <label for="partTestSelect">Rig Part Test</label>
+      <select id="partTestSelect"></select>
+      <div id="validationSummary" class="validation-summary">Validation not run yet.</div>
+      <div id="validationReport" class="validation-report"></div>
 
       <label for="storyText">Story JSON</label>
       <textarea id="storyText" spellcheck="false"></textarea>
