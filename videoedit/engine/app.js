@@ -28,7 +28,7 @@ async function init() {
   renderer.buildShot(story.shots[0]);
   const packCount = assetPackReport.loaded.length;
   const errCount = assetPackReport.errors.length;
-  status.textContent = `Ready - V17 asset-pack engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
+  status.textContent = `Ready - V18 external SVG asset-pack engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
   if (errCount) debug.textContent = JSON.stringify(assetPackReport.errors, null, 2);
 }
 
@@ -77,11 +77,11 @@ document.getElementById('reloadStory').addEventListener('click', () => {
 document.getElementById('copyShotTemplate').addEventListener('click', async () => {
   const template = {
     id: 'shot_new',
-    title: 'New shot template',
+    title: 'New V18 external asset shot template',
     duration: 6,
     environment: { asset: 'park_entry_day' },
     camera: { type: '2.5d', position: [0, 0], zoom: 1 },
-    actors: [{ id: 'guest1', asset: 'human_guest_basic', position: [480, 245, 4], scale: 0.9, expression: 'happy', wardrobe: { shirtColor: '#2f80ed', pantsColor: '#25324a', hatColor: '#ffd34d' } }],
+    actors: [{ id: 'guest1', asset: 'human_guest_basic', position: [480, 245, 4], scale: 0.9, expression: 'happy', wardrobe: { shirtColor: '#2f80ed', pantsColor: '#25324a', hatColor: '#ffd34d' } }, { id: 'prop1', asset: 'prop_popcorn_bucket', position: [700, 360, 5], scale: 0.45 }],
     timeline: [{ start: 0.5, duration: 2, actor: 'guest1', action: 'wave' }]
   };
   await navigator.clipboard.writeText(JSON.stringify(template, null, 2));

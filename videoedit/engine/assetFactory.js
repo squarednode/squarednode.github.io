@@ -44,6 +44,9 @@ export function svgEl(tag, attrs = {}, children = []) {
 export function makeAsset(actor) {
   const manifest = assetRegistry.get(actor.asset);
   const mergedActor = { ...(manifest?.defaults || {}), ...actor, manifest };
+
+  if (manifest?.mode === 'external-svg') return makeExternalSvgAsset(mergedActor, manifest);
+
   const factory = manifest?.factory || actor.asset;
   switch (factory) {
     case 'human_guest_basic': return makeRiggedHuman(mergedActor);
@@ -53,6 +56,43 @@ export function makeAsset(actor) {
     case 'creature_red_dino':
     default: return makeRiggedDino(mergedActor);
   }
+}
+
+function makeExternalSvgAsset(actor, manifest) {
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'external-svg', 'data-asset-id': manifest.id, filter: 'url(#softShadow)' });
+  const parts = {};
+  const sortedParts = [...(manifest.parts || [])].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+  for (const part of sortedParts) {
+    if (!part.svgText || part.loadError) continue;
+    const pivot = part.pivot || [0, 0];
+    const nodes = parseSvgNodes(applyTemplate(part.svgText, actor, manifest));
+    const partGroup = pivotGroup(part.name, pivot[0], pivot[1], nodes);
+    if (part.expression) partGroup.el.dataset.expression = part.expression;
+    if (part.phoneme) partGroup.el.dataset.phoneme = part.phoneme;
+    parts[part.name] = partGroup;
+    root.appendChild(partGroup.el);
+  }
+
+  return { root, parts, type: manifest.type, manifest };
+}
+
+function applyTemplate(text, actor, manifest) {
+  const values = { ...(manifest.defaults || {}), ...(actor.wardrobe || {}), ...actor };
+  return text.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_, key) => {
+    const value = key.split('.').reduce((acc, k) => acc && acc[k], values);
+    return value ?? '';
+  });
+}
+
+function parseSvgNodes(svgText) {
+  const doc = new DOMParser().parseFromString(svgText, 'image/svg+xml');
+  const parserError = doc.querySelector('parsererror');
+  if (parserError) return [];
+  const source = doc.documentElement?.tagName?.toLowerCase() === 'svg' ? doc.documentElement : doc;
+  return [...source.childNodes]
+    .filter(node => node.nodeType === Node.ELEMENT_NODE || (node.nodeType === Node.TEXT_NODE && node.textContent.trim()))
+    .map(node => document.importNode(node, true));
 }
 
 export function makeRiggedDino(actor) {
@@ -171,19 +211,23 @@ function makeArrowSign(actor) {
 export function setMouthShape(rig, shape = 'smile') {
   const mouth = rig?.parts?.mouth?.el;
   if (!mouth) return;
-  const path = mouth.querySelector('path');
+  const path = mouth.querySelector('[data-mouth-shape]') || mouth.querySelector('path');
   if (!path) return;
-  const d = {
-    smile: 'M150 104 C165 118 188 118 203 104',
-    happy: 'M150 104 C165 118 188 118 203 104',
-    neutral: 'M154 106 L198 106',
-    surprised: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105',
-    open: 'M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100',
-    o: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105',
-    wide: 'M143 101 C162 126 191 126 210 101'
-  }[shape] || 'M150 104 C165 118 188 118 203 104';
-  path.setAttribute('d', d);
-  path.setAttribute('fill', ['open','o','surprised'].includes(shape) ? '#111' : 'none');
+  const manifestShape = rig?.manifest?.mouthShapes?.[shape] || rig?.manifest?.mouthShapes?.smile;
+  const fallbackShape = {
+    smile: { d: 'M150 104 C165 118 188 118 203 104', fill: 'none' },
+    happy: { d: 'M150 104 C165 118 188 118 203 104', fill: 'none' },
+    neutral: { d: 'M154 106 L198 106', fill: 'none' },
+    surprised: { d: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105', fill: '#111' },
+    open: { d: 'M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100', fill: '#111' },
+    o: { d: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105', fill: '#111' },
+    wide: { d: 'M143 101 C162 126 191 126 210 101', fill: 'none' }
+  }[shape] || { d: 'M150 104 C165 118 188 118 203 104', fill: 'none' };
+  const nextShape = manifestShape || fallbackShape;
+  path.setAttribute('d', nextShape.d);
+  path.setAttribute('fill', nextShape.fill ?? 'none');
+  path.setAttribute('stroke', nextShape.stroke ?? '#111');
+  path.setAttribute('stroke-width', nextShape.strokeWidth ?? 5);
 }
 
 function pivotGroup(name, px, py, children) {
