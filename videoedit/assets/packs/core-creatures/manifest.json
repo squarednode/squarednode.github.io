@@ -1,20 +1,152 @@
 {
-  "schema": "ride_through_asset_pack_v1",
   "id": "core-creatures",
   "label": "Core Creatures",
-  "version": "17.0.0",
-  "style": "simple_theme_park_svg_v3",
+  "version": "18.0.0",
+  "style": "simple_theme_park_svg_v4",
   "assets": [
     {
       "id": "creature_red_dino",
       "type": "creature",
       "label": "Rigged Red Dino",
-      "factory": "creature_red_dino",
-      "source": "asset-pack",
-      "rig": ["head", "jaw", "leftArm", "rightArm", "leftLeg", "rightLeg", "tail"],
-      "expressions": ["happy", "angry", "surprised"],
-      "defaults": { "color": "#c7363e", "bellyColor": "#f1a3a5" },
-      "tags": ["creature", "mascot", "simple", "rigged"]
+      "mode": "external-svg",
+      "path": "creature_red_dino/",
+      "source": "external-svg",
+      "rig": [
+        "head",
+        "jaw",
+        "leftArm",
+        "rightArm",
+        "leftLeg",
+        "rightLeg",
+        "tail"
+      ],
+      "expressions": [
+        "happy",
+        "angry",
+        "surprised"
+      ],
+      "tags": [
+        "creature",
+        "mascot",
+        "external"
+      ],
+      "defaults": {
+        "color": "#c7363e",
+        "bellyColor": "#f1a3a5"
+      },
+      "parts": [
+        {
+          "name": "tail",
+          "file": "tail.svg",
+          "pivot": [
+            340,
+            245
+          ],
+          "order": 5
+        },
+        {
+          "name": "leftLeg",
+          "file": "left_leg.svg",
+          "pivot": [
+            215,
+            400
+          ],
+          "order": 10
+        },
+        {
+          "name": "rightLeg",
+          "file": "right_leg.svg",
+          "pivot": [
+            310,
+            400
+          ],
+          "order": 11
+        },
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            260,
+            265
+          ],
+          "order": 20
+        },
+        {
+          "name": "neck",
+          "file": "neck.svg",
+          "pivot": [
+            220,
+            170
+          ],
+          "order": 30
+        },
+        {
+          "name": "leftArm",
+          "file": "left_arm.svg",
+          "pivot": [
+            170,
+            230
+          ],
+          "order": 40
+        },
+        {
+          "name": "rightArm",
+          "file": "right_arm.svg",
+          "pivot": [
+            205,
+            230
+          ],
+          "order": 41
+        },
+        {
+          "name": "head",
+          "file": "head.svg",
+          "pivot": [
+            210,
+            105
+          ],
+          "order": 50
+        },
+        {
+          "name": "jaw",
+          "file": "jaw.svg",
+          "pivot": [
+            68,
+            138
+          ],
+          "order": 60
+        },
+        {
+          "name": "expression_happy",
+          "file": "expression_happy.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 70,
+          "expression": "happy"
+        },
+        {
+          "name": "expression_angry",
+          "file": "expression_angry.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 71,
+          "expression": "angry"
+        },
+        {
+          "name": "expression_surprised",
+          "file": "expression_surprised.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 72,
+          "expression": "surprised"
+        }
+      ]
     }
   ]
 }

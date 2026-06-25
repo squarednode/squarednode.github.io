@@ -1,19 +1,87 @@
 {
-  "schema": "ride_through_asset_pack_v1",
   "id": "core-props",
   "label": "Core Props",
-  "version": "17.0.0",
-  "style": "simple_theme_park_svg_v3",
+  "version": "18.0.0",
+  "style": "simple_theme_park_svg_v4",
   "assets": [
     {
       "id": "prop_sign_arrow",
       "type": "prop",
       "label": "Arrow Sign Prop",
-      "factory": "prop_sign_arrow",
-      "source": "asset-pack",
-      "rig": ["sign"],
-      "defaults": { "color": "#75c6ff", "text": "RIDE" },
-      "tags": ["prop", "sign", "rigged"]
+      "mode": "external-svg",
+      "path": "prop_sign_arrow/",
+      "source": "external-svg",
+      "rig": [
+        "sign"
+      ],
+      "tags": [
+        "prop",
+        "sign",
+        "external"
+      ],
+      "defaults": {
+        "color": "#75c6ff",
+        "text": "RIDE"
+      },
+      "parts": [
+        {
+          "name": "post",
+          "file": "post.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 10
+        },
+        {
+          "name": "sign",
+          "file": "sign.svg",
+          "pivot": [
+            102,
+            150
+          ],
+          "order": 20
+        }
+      ]
+    },
+    {
+      "id": "prop_popcorn_bucket",
+      "type": "prop",
+      "label": "Popcorn Bucket",
+      "mode": "external-svg",
+      "path": "prop_popcorn_bucket/",
+      "source": "external-svg",
+      "rig": [
+        "bucket",
+        "popcorn"
+      ],
+      "tags": [
+        "prop",
+        "food",
+        "theme-park",
+        "external"
+      ],
+      "defaults": {},
+      "parts": [
+        {
+          "name": "popcorn",
+          "file": "popcorn.svg",
+          "pivot": [
+            160,
+            95
+          ],
+          "order": 10
+        },
+        {
+          "name": "bucket",
+          "file": "bucket.svg",
+          "pivot": [
+            160,
+            190
+          ],
+          "order": 20
+        }
+      ]
     }
   ]
 }

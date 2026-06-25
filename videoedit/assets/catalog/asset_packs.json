@@ -1,10 +1,25 @@
 {
-  "schema": "ride_through_asset_catalog_v1",
-  "engineVersion": "v17",
+  "version": "18.0.0",
   "packs": [
-    { "id": "core-characters", "manifest": "../packs/core-characters/manifest.json" },
-    { "id": "core-creatures", "manifest": "../packs/core-creatures/manifest.json" },
-    { "id": "core-rides", "manifest": "../packs/core-rides/manifest.json" },
-    { "id": "core-props", "manifest": "../packs/core-props/manifest.json" }
+    {
+      "id": "core-characters",
+      "manifest": "../packs/core-characters/manifest.json"
+    },
+    {
+      "id": "core-creatures",
+      "manifest": "../packs/core-creatures/manifest.json"
+    },
+    {
+      "id": "core-rides",
+      "manifest": "../packs/core-rides/manifest.json"
+    },
+    {
+      "id": "core-props",
+      "manifest": "../packs/core-props/manifest.json"
+    },
+    {
+      "id": "core-landmarks",
+      "manifest": "../packs/core-landmarks/manifest.json"
+    }
   ]
 }

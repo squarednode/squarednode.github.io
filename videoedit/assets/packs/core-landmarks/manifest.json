@@ -1,0 +1,39 @@
+{
+  "id": "core-landmarks",
+  "label": "Core Landmarks",
+  "version": "18.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "assets": [
+    {
+      "id": "landmark_castle_gate",
+      "type": "landmark",
+      "label": "Castle Entry Gate",
+      "mode": "external-svg",
+      "path": "landmark_castle_gate/",
+      "source": "external-svg",
+      "rig": [
+        "gate"
+      ],
+      "tags": [
+        "landmark",
+        "entry",
+        "castle",
+        "external"
+      ],
+      "defaults": {
+        "roofColor": "#7c3aed"
+      },
+      "parts": [
+        {
+          "name": "gate",
+          "file": "gate.svg",
+          "pivot": [
+            295,
+            260
+          ],
+          "order": 10
+        }
+      ]
+    }
+  ]
+}
