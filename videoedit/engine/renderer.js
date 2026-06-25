@@ -1,4 +1,4 @@
-import { svgEl, makeAsset, ASSET_LIBRARY, setMouthShape } from './assetFactory.js';
+import { svgEl, makeAsset, getAssetLibrary, setMouthShape } from './assetFactory.js';
 
 export class Renderer {
   constructor(stage) {
@@ -57,7 +57,7 @@ export class Renderer {
     rig.root.setAttribute('transform', `translate(${x} ${y}) scale(${scale})`);
     rig.root.dataset.z = z;
     rig.root.dataset.asset = actor.asset;
-    rig.state = { id: actor.id, asset: actor.asset, x, y, z, scale, opacity: actor.opacity ?? 1, expression: actor.expression || 'happy', baseY: y };
+    rig.state = { id: actor.id, asset: actor.asset, x, y, z, scale, opacity: actor.opacity ?? 1, expression: actor.expression || 'happy', baseY: y, type: rig.type };
     rig.root.setAttribute('opacity', rig.state.opacity);
     this.sceneRoot.appendChild(rig.root);
     this.actors.set(actor.id, rig);
@@ -96,6 +96,9 @@ export class Renderer {
     for (const el of rig.root.querySelectorAll('[data-expression]')) {
       el.setAttribute('opacity', el.dataset.expression === expression ? '1' : '0');
     }
+    // V17 fix: characters use one mouth part controlled by expression/mouth commands,
+    // avoiding stacked base/expression mouths.
+    if (rig.parts?.mouth) this.setMouth(actorId, expression);
   }
 
   setMouth(actorId, shape) {
@@ -133,6 +136,6 @@ export class Renderer {
   }
 
   getAssetLibrary() {
-    return ASSET_LIBRARY;
+    return getAssetLibrary();
   }
 }

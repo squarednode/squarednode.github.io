@@ -1,6 +1,8 @@
 import { Renderer } from './renderer.js';
 import { TimelinePlayer } from './timeline.js';
 import { exportSvgShotAsWebM } from './exporter.js';
+import { loadAssetPacks } from './assetPackLoader.js';
+import { registerAssetPacks } from './assetFactory.js';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');
@@ -13,15 +15,21 @@ const assetDetails = document.getElementById('assetDetails');
 const renderer = new Renderer(stage);
 const player = new TimelinePlayer(renderer, text => debug.textContent = text);
 let story;
+let assetPackReport = { loaded: [], errors: [] };
 
 async function init() {
-  const res = await fetch('../stories/episode_001.json');
+  assetPackReport = await loadAssetPacks();
+  registerAssetPacks(assetPackReport.loaded);
+  const res = await fetch('../stories/episode_001.json', { cache: 'no-cache' });
   story = await res.json();
   storyText.value = JSON.stringify(story, null, 2);
   populateShots();
   populateAssets();
   renderer.buildShot(story.shots[0]);
-  status.textContent = 'Ready - V16 full engine';
+  const packCount = assetPackReport.loaded.length;
+  const errCount = assetPackReport.errors.length;
+  status.textContent = `Ready - V17 asset-pack engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
+  if (errCount) debug.textContent = JSON.stringify(assetPackReport.errors, null, 2);
 }
 
 function populateShots() {
@@ -39,7 +47,7 @@ function populateAssets() {
   for (const asset of renderer.getAssetLibrary()) {
     const item = document.createElement('button');
     item.className = 'asset-card';
-    item.innerHTML = `<strong>${asset.label}</strong><span>${asset.type} / ${asset.id}</span>`;
+    item.innerHTML = `<strong>${asset.label}</strong><span>${asset.type} / ${asset.id}<br>${asset.source || 'core'}${asset.packId ? ' / ' + asset.packId : ''}</span>`;
     item.addEventListener('click', () => {
       assetDetails.textContent = JSON.stringify(asset, null, 2);
     });

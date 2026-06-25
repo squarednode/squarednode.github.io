@@ -1,12 +1,36 @@
 const NS = 'http://www.w3.org/2000/svg';
 
-export const ASSET_LIBRARY = [
-  { id: 'creature_red_dino', type: 'creature', label: 'Rigged Red Dino', rig: ['head','jaw','leftArm','rightArm','leftLeg','rightLeg','tail'], expressions: ['happy','angry','surprised'], tags: ['creature','mascot','simple'] },
-  { id: 'human_guest_basic', type: 'character', label: 'Rigged Park Guest', rig: ['head','mouth','leftUpperArm','leftForearm','rightUpperArm','rightForearm','leftLeg','rightLeg'], expressions: ['happy','neutral','surprised'], wardrobe: ['shirtColor','pantsColor','hatColor'], tags: ['human','guest','wardrobe'] },
-  { id: 'ride_coaster_icon', type: 'ride', label: 'Iconic Coaster Silhouette', rig: ['train'], expressions: [], tags: ['ride','landmark','background'] },
-  { id: 'vehicle_cart_basic', type: 'vehicle', label: 'Rigged Ride Cart', rig: ['frontWheel','rearWheel'], expressions: [], tags: ['vehicle','wheels'] },
-  { id: 'prop_sign_arrow', type: 'prop', label: 'Arrow Sign Prop', rig: ['sign'], expressions: [], tags: ['prop','sign'] }
+const CORE_ASSET_LIBRARY = [
+  { id: 'creature_red_dino', type: 'creature', label: 'Rigged Red Dino', factory: 'creature_red_dino', source: 'core-fallback', rig: ['head','jaw','leftArm','rightArm','leftLeg','rightLeg','tail'], expressions: ['happy','angry','surprised'], tags: ['creature','mascot','simple'] },
+  { id: 'human_guest_basic', type: 'character', label: 'Rigged Park Guest', factory: 'human_guest_basic', source: 'core-fallback', rig: ['head','mouth','leftUpperArm','leftForearm','rightUpperArm','rightForearm','leftLeg','rightLeg'], expressions: ['happy','neutral','surprised'], wardrobe: ['shirtColor','pantsColor','hatColor'], tags: ['human','guest','wardrobe'] },
+  { id: 'ride_coaster_icon', type: 'ride', label: 'Iconic Coaster Silhouette', factory: 'ride_coaster_icon', source: 'core-fallback', rig: ['train'], expressions: [], tags: ['ride','landmark','background'] },
+  { id: 'vehicle_cart_basic', type: 'vehicle', label: 'Rigged Ride Cart', factory: 'vehicle_cart_basic', source: 'core-fallback', rig: ['frontWheel','rearWheel'], expressions: [], tags: ['vehicle','wheels'] },
+  { id: 'prop_sign_arrow', type: 'prop', label: 'Arrow Sign Prop', factory: 'prop_sign_arrow', source: 'core-fallback', rig: ['sign'], expressions: [], tags: ['prop','sign'] }
 ];
+
+const assetRegistry = new Map(CORE_ASSET_LIBRARY.map(asset => [asset.id, asset]));
+export let ASSET_LIBRARY = [...assetRegistry.values()];
+
+export function registerAssetPacks(packs = []) {
+  for (const pack of packs) {
+    for (const asset of pack.assets || []) {
+      assetRegistry.set(asset.id, {
+        ...asset,
+        packId: pack.id,
+        packLabel: pack.label,
+        packVersion: pack.version,
+        style: asset.style || pack.style,
+        source: asset.source || 'asset-pack'
+      });
+    }
+  }
+  ASSET_LIBRARY = [...assetRegistry.values()].sort((a, b) => `${a.type}-${a.id}`.localeCompare(`${b.type}-${b.id}`));
+  return ASSET_LIBRARY;
+}
+
+export function getAssetLibrary() {
+  return ASSET_LIBRARY;
+}
 
 export function svgEl(tag, attrs = {}, children = []) {
   const el = document.createElementNS(NS, tag);
@@ -18,26 +42,27 @@ export function svgEl(tag, attrs = {}, children = []) {
 }
 
 export function makeAsset(actor) {
-  switch (actor.asset) {
-    case 'human_guest_basic': return makeRiggedHuman(actor);
-    case 'ride_coaster_icon': return makeCoasterIcon(actor);
-    case 'vehicle_cart_basic': return makeRideCart(actor);
-    case 'prop_sign_arrow': return makeArrowSign(actor);
+  const manifest = assetRegistry.get(actor.asset);
+  const mergedActor = { ...(manifest?.defaults || {}), ...actor, manifest };
+  const factory = manifest?.factory || actor.asset;
+  switch (factory) {
+    case 'human_guest_basic': return makeRiggedHuman(mergedActor);
+    case 'ride_coaster_icon': return makeCoasterIcon(mergedActor);
+    case 'vehicle_cart_basic': return makeRideCart(mergedActor);
+    case 'prop_sign_arrow': return makeArrowSign(mergedActor);
     case 'creature_red_dino':
-    default: return makeRiggedDino(actor);
+    default: return makeRiggedDino(mergedActor);
   }
 }
 
 export function makeRiggedDino(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'creature_red_dino', filter: 'url(#softShadow)' });
   const parts = {};
   const outline = line(actor.lineWeight || 7);
   const red = actor.color || '#c7363e';
   const belly = actor.bellyColor || '#f1a3a5';
 
-  parts.tail = pivotGroup('tail', 340, 245, [
-    svgEl('path', { d: 'M335 245 C455 230 515 190 555 120 C525 225 455 310 335 300 Z', fill: red, ...outline })
-  ]);
+  parts.tail = pivotGroup('tail', 340, 245, [svgEl('path', { d: 'M335 245 C455 230 515 190 555 120 C525 225 455 310 335 300 Z', fill: red, ...outline })]);
   parts.body = pivotGroup('body', 260, 265, [
     svgEl('path', { d: 'M155 195 C235 150 365 178 405 265 C435 335 380 420 275 425 C170 430 105 365 115 280 C120 238 135 213 155 195 Z', fill: red, ...outline }),
     svgEl('path', { d: 'M185 230 C195 320 238 382 320 402 C250 420 175 382 150 315 C136 276 146 245 185 230 Z', fill: belly, stroke: '#111', 'stroke-width': 5, fillOpacity: 0.95 })
@@ -61,11 +86,11 @@ export function makeRiggedDino(actor) {
     surprised: [svgEl('circle', { cx: 124, cy: 154, r: 13, fill: '#111' })]
   });
   root.append(parts.tail.el, parts.leftLeg.el, parts.rightLeg.el, parts.body.el, parts.neck.el, parts.leftArm.el, parts.rightArm.el, parts.head.el, parts.jaw.el, expressions);
-  return { root, parts, type: 'creature' };
+  return { root, parts, type: 'creature', manifest: actor.manifest };
 }
 
 function makeRiggedHuman(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'human_guest_basic', filter: 'url(#softShadow)' });
   const parts = {};
   const skin = actor.skinColor || '#c98657';
   const shirt = actor.shirtColor || actor.wardrobe?.shirtColor || '#2f80ed';
@@ -90,6 +115,7 @@ function makeRiggedHuman(actor) {
     svgEl('circle', { cx: 154, cy: 78, r: 6, fill: '#111' }),
     svgEl('circle', { cx: 196, cy: 78, r: 6, fill: '#111' })
   ]);
+  // V17 fix: one mouth only. No extra expression-mouth overlays.
   parts.mouth = pivotGroup('mouth', 175, 102, [svgEl('path', { d: 'M150 104 C165 118 188 118 203 104', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round', 'data-mouth-shape': 'smile' })]);
   if (hat) {
     parts.hat = pivotGroup('hat', 175, 35, [
@@ -97,19 +123,13 @@ function makeRiggedHuman(actor) {
       svgEl('path', { d: 'M100 60 L255 60', stroke: '#111', 'stroke-width': 9, 'stroke-linecap': 'round' })
     ]);
   }
-  const expressions = expressionGroup({
-    happy: [svgEl('path', { d: 'M150 104 C165 118 188 118 203 104', fill: 'none', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round' })],
-    neutral: [svgEl('path', { d: 'M154 106 L198 106', stroke: '#111', 'stroke-width': 5, 'stroke-linecap': 'round' })],
-    surprised: [svgEl('ellipse', { cx: 176, cy: 108, rx: 13, ry: 18, fill: '#111' })]
-  });
   root.append(parts.leftLeg.el, parts.rightLeg.el, parts.body.el, parts.leftUpperArm.el, parts.leftForearm.el, parts.rightUpperArm.el, parts.rightForearm.el, parts.neck.el, parts.head.el, parts.mouth.el);
   if (parts.hat) root.append(parts.hat.el);
-  root.append(expressions);
-  return { root, parts, type: 'character' };
+  return { root, parts, type: 'character', manifest: actor.manifest };
 }
 
 function makeCoasterIcon(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'ride_coaster_icon', filter: 'url(#softShadow)' });
   const parts = {};
   const rail = actor.railColor || '#56606d';
   root.appendChild(svgEl('path', { d: 'M20 380 C170 110 340 110 505 380 S835 650 1010 260', fill: 'none', stroke: rail, 'stroke-width': 20, 'stroke-linecap': 'round' }));
@@ -121,11 +141,11 @@ function makeCoasterIcon(actor) {
     svgEl('circle', { cx: 540, cy: 404, r: 10, fill: '#111' })
   ]);
   root.appendChild(parts.train.el);
-  return { root, parts, type: 'ride' };
+  return { root, parts, type: 'ride', manifest: actor.manifest };
 }
 
 function makeRideCart(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'vehicle_cart_basic', filter: 'url(#softShadow)' });
   const parts = {};
   const outline = line(6);
   root.appendChild(svgEl('path', { d: 'M35 120 L290 120 L260 205 L70 205 Z', fill: actor.color || '#f0b33f', ...outline }));
@@ -133,11 +153,11 @@ function makeRideCart(actor) {
   parts.frontWheel = pivotGroup('frontWheel', 230, 215, wheel(230, 215));
   parts.rearWheel = pivotGroup('rearWheel', 95, 215, wheel(95, 215));
   root.append(parts.rearWheel.el, parts.frontWheel.el);
-  return { root, parts, type: 'vehicle' };
+  return { root, parts, type: 'vehicle', manifest: actor.manifest };
 }
 
 function makeArrowSign(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'prop_sign_arrow', filter: 'url(#softShadow)' });
   const parts = {};
   root.appendChild(svgEl('rect', { x: 90, y: 155, width: 24, height: 210, rx: 8, fill: '#7a4b2c', stroke: '#111', 'stroke-width': 5 }));
   parts.sign = pivotGroup('sign', 102, 150, [
@@ -145,25 +165,25 @@ function makeArrowSign(actor) {
     svgEl('text', { x: 80, y: 127, 'font-size': 42, 'font-family': 'Arial Black, Arial', fill: '#111' }, [document.createTextNode(actor.text || 'RIDE')])
   ]);
   root.appendChild(parts.sign.el);
-  return { root, parts, type: 'prop' };
+  return { root, parts, type: 'prop', manifest: actor.manifest };
 }
 
 export function setMouthShape(rig, shape = 'smile') {
   const mouth = rig?.parts?.mouth?.el;
   if (!mouth) return;
-  const path = mouth.querySelector('path, ellipse');
+  const path = mouth.querySelector('path');
   if (!path) return;
-  if (path.tagName.toLowerCase() === 'path') {
-    const d = {
-      smile: 'M150 104 C165 118 188 118 203 104',
-      neutral: 'M154 106 L198 106',
-      open: 'M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100',
-      o: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105',
-      wide: 'M143 101 C162 126 191 126 210 101'
-    }[shape] || 'M150 104 C165 118 188 118 203 104';
-    path.setAttribute('d', d);
-    path.setAttribute('fill', shape === 'open' || shape === 'o' ? '#111' : 'none');
-  }
+  const d = {
+    smile: 'M150 104 C165 118 188 118 203 104',
+    happy: 'M150 104 C165 118 188 118 203 104',
+    neutral: 'M154 106 L198 106',
+    surprised: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105',
+    open: 'M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100',
+    o: 'M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105',
+    wide: 'M143 101 C162 126 191 126 210 101'
+  }[shape] || 'M150 104 C165 118 188 118 203 104';
+  path.setAttribute('d', d);
+  path.setAttribute('fill', ['open','o','surprised'].includes(shape) ? '#111' : 'none');
 }
 
 function pivotGroup(name, px, py, children) {
