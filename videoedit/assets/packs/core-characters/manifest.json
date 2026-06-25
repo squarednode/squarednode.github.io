@@ -1,0 +1,22 @@
+{
+  "schema": "ride_through_asset_pack_v1",
+  "id": "core-characters",
+  "label": "Core Characters",
+  "version": "17.0.0",
+  "style": "simple_theme_park_svg_v3",
+  "assets": [
+    {
+      "id": "human_guest_basic",
+      "type": "character",
+      "label": "Rigged Park Guest",
+      "factory": "human_guest_basic",
+      "source": "asset-pack",
+      "rig": ["head", "mouth", "leftUpperArm", "leftForearm", "rightUpperArm", "rightForearm", "leftLeg", "rightLeg"],
+      "expressions": ["happy", "neutral", "surprised"],
+      "wardrobe": ["shirtColor", "pantsColor", "hatColor", "skinColor", "hairColor"],
+      "defaults": { "shirtColor": "#2f80ed", "pantsColor": "#25324a", "hatColor": "#ffd34d" },
+      "notes": "Hands intentionally removed for V17. Forearms provide readable arm motion without disconnected hand pieces. Mouth is a single controlled part, not stacked expression overlays.",
+      "tags": ["human", "guest", "wardrobe", "rigged"]
+    }
+  ]
+}

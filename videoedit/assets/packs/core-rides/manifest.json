@@ -1,0 +1,29 @@
+{
+  "schema": "ride_through_asset_pack_v1",
+  "id": "core-rides",
+  "label": "Core Rides and Vehicles",
+  "version": "17.0.0",
+  "style": "simple_theme_park_svg_v3",
+  "assets": [
+    {
+      "id": "ride_coaster_icon",
+      "type": "ride",
+      "label": "Iconic Coaster Silhouette",
+      "factory": "ride_coaster_icon",
+      "source": "asset-pack",
+      "rig": ["train"],
+      "defaults": { "color": "#e0473f", "railColor": "#56606d" },
+      "tags": ["ride", "landmark", "background"]
+    },
+    {
+      "id": "vehicle_cart_basic",
+      "type": "vehicle",
+      "label": "Rigged Ride Cart",
+      "factory": "vehicle_cart_basic",
+      "source": "asset-pack",
+      "rig": ["frontWheel", "rearWheel"],
+      "defaults": { "color": "#f0b33f" },
+      "tags": ["vehicle", "wheels", "rigged"]
+    }
+  ]
+}

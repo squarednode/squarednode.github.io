@@ -1,0 +1,20 @@
+{
+  "schema": "ride_through_asset_pack_v1",
+  "id": "core-creatures",
+  "label": "Core Creatures",
+  "version": "17.0.0",
+  "style": "simple_theme_park_svg_v3",
+  "assets": [
+    {
+      "id": "creature_red_dino",
+      "type": "creature",
+      "label": "Rigged Red Dino",
+      "factory": "creature_red_dino",
+      "source": "asset-pack",
+      "rig": ["head", "jaw", "leftArm", "rightArm", "leftLeg", "rightLeg", "tail"],
+      "expressions": ["happy", "angry", "surprised"],
+      "defaults": { "color": "#c7363e", "bellyColor": "#f1a3a5" },
+      "tags": ["creature", "mascot", "simple", "rigged"]
+    }
+  ]
+}

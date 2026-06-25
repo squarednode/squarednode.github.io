@@ -1,0 +1,19 @@
+{
+  "schema": "ride_through_asset_pack_v1",
+  "id": "core-props",
+  "label": "Core Props",
+  "version": "17.0.0",
+  "style": "simple_theme_park_svg_v3",
+  "assets": [
+    {
+      "id": "prop_sign_arrow",
+      "type": "prop",
+      "label": "Arrow Sign Prop",
+      "factory": "prop_sign_arrow",
+      "source": "asset-pack",
+      "rig": ["sign"],
+      "defaults": { "color": "#75c6ff", "text": "RIDE" },
+      "tags": ["prop", "sign", "rigged"]
+    }
+  ]
+}
