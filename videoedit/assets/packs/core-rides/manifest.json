@@ -1,7 +1,7 @@
 {
   "id": "core-rides",
   "label": "Core Rides and Vehicles",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
@@ -132,6 +132,98 @@
             170
           ],
           "order": 20
+        }
+      ]
+    },
+    {
+      "id": "ride_drop_tower_icon",
+      "type": "ride",
+      "label": "Drop Tower Icon",
+      "mode": "external-svg",
+      "path": "ride_drop_tower_icon/",
+      "source": "external-svg",
+      "rig": [
+        "carriage"
+      ],
+      "tags": [
+        "ride",
+        "tower",
+        "thrill",
+        "external"
+      ],
+      "defaults": {
+        "towerColor": "#596171",
+        "carColor": "#e0473f"
+      },
+      "parts": [
+        {
+          "name": "tower",
+          "file": "tower.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 10
+        },
+        {
+          "name": "carriage",
+          "file": "carriage.svg",
+          "pivot": [
+            265,
+            285
+          ],
+          "order": 20
+        }
+      ]
+    },
+    {
+      "id": "vehicle_omni_mover",
+      "type": "vehicle",
+      "label": "Omni Mover Ride Vehicle",
+      "mode": "external-svg",
+      "path": "vehicle_omni_mover/",
+      "source": "external-svg",
+      "rig": [
+        "frontWheel",
+        "rearWheel"
+      ],
+      "tags": [
+        "vehicle",
+        "dark-ride",
+        "wheels",
+        "external"
+      ],
+      "defaults": {
+        "color": "#56a0f5",
+        "accentColor": "#d9ecff"
+      },
+      "parts": [
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 10
+        },
+        {
+          "name": "rearWheel",
+          "file": "rear_wheel.svg",
+          "pivot": [
+            105,
+            215
+          ],
+          "order": 20
+        },
+        {
+          "name": "frontWheel",
+          "file": "front_wheel.svg",
+          "pivot": [
+            265,
+            215
+          ],
+          "order": 21
         }
       ]
     }

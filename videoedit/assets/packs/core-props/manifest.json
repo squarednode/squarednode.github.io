@@ -1,7 +1,7 @@
 {
   "id": "core-props",
   "label": "Core Props",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
@@ -78,6 +78,76 @@
           "pivot": [
             160,
             190
+          ],
+          "order": 20
+        }
+      ]
+    },
+    {
+      "id": "prop_ticket",
+      "type": "prop",
+      "label": "Admission Ticket",
+      "mode": "external-svg",
+      "path": "prop_ticket/",
+      "source": "external-svg",
+      "rig": [
+        "ticket"
+      ],
+      "tags": [
+        "prop",
+        "ticket",
+        "external"
+      ],
+      "defaults": {
+        "color": "#ffd66b",
+        "text": "ADMIT"
+      },
+      "parts": [
+        {
+          "name": "ticket",
+          "file": "ticket.svg",
+          "pivot": [
+            150,
+            90
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_balloon",
+      "type": "prop",
+      "label": "Theme Park Balloon",
+      "mode": "external-svg",
+      "path": "prop_balloon/",
+      "source": "external-svg",
+      "rig": [
+        "balloon"
+      ],
+      "tags": [
+        "prop",
+        "balloon",
+        "external"
+      ],
+      "defaults": {
+        "color": "#ff5ca8"
+      },
+      "parts": [
+        {
+          "name": "string",
+          "file": "string.svg",
+          "pivot": [
+            155,
+            190
+          ],
+          "order": 10
+        },
+        {
+          "name": "balloon",
+          "file": "balloon.svg",
+          "pivot": [
+            155,
+            105
           ],
           "order": 20
         }

@@ -1,7 +1,7 @@
 {
   "id": "core-landmarks",
   "label": "Core Landmarks",
-  "version": "18.0.0",
+  "version": "19.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
@@ -32,6 +32,47 @@
             260
           ],
           "order": 10
+        }
+      ]
+    },
+    {
+      "id": "landmark_iconic_globe",
+      "type": "landmark",
+      "label": "Iconic Studio Globe",
+      "mode": "external-svg",
+      "path": "landmark_iconic_globe/",
+      "source": "external-svg",
+      "rig": [
+        "globe"
+      ],
+      "tags": [
+        "landmark",
+        "globe",
+        "studio",
+        "external"
+      ],
+      "defaults": {
+        "color": "#5fb7ff",
+        "accentColor": "#f2cc5c"
+      },
+      "parts": [
+        {
+          "name": "base",
+          "file": "base.svg",
+          "pivot": [
+            0,
+            0
+          ],
+          "order": 10
+        },
+        {
+          "name": "globe",
+          "file": "globe.svg",
+          "pivot": [
+            250,
+            160
+          ],
+          "order": 20
         }
       ]
     }
