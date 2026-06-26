@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+<g fill="{{primaryColor}}" stroke="{{outlineColor}}" stroke-width="6" opacity="0.85">
+<circle cx="90" cy="330" r="28"/><path d="M45 435 C50 370 130 370 137 435Z"/>
+<circle cx="200" cy="310" r="34"/><path d="M150 435 C155 355 245 355 252 435Z"/>
+<circle cx="330" cy="340" r="26"/><path d="M285 435 C292 375 370 375 378 435Z"/>
+<circle cx="470" cy="315" r="32"/><path d="M420 435 C428 360 515 360 523 435Z"/>
+<circle cx="610" cy="335" r="28"/><path d="M565 435 C572 370 650 370 658 435Z"/>
+<circle cx="725" cy="315" r="34"/><path d="M675 435 C684 360 770 360 780 435Z"/>
+</g>
+</svg>

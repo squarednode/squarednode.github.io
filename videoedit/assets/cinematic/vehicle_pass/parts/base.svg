@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+<g stroke="{{primaryColor}}" stroke-width="18" stroke-linecap="round" opacity="0.58">
+<path d="M-20 105 H315"/><path d="M40 180 H445"/><path d="M-10 260 H360"/><path d="M90 345 H520"/><path d="M500 95 H830"/><path d="M430 240 H850"/><path d="M560 355 H840"/>
+</g><g stroke="{{accentColor}}" stroke-width="8" stroke-linecap="round" opacity="0.55"><path d="M120 130 H650"/><path d="M260 300 H740"/></g>
+</svg>

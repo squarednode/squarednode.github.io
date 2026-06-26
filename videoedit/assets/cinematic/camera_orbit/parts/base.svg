@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+<ellipse cx="400" cy="230" rx="260" ry="105" fill="none" stroke="{{primaryColor}}" stroke-width="18" stroke-dasharray="32 28" opacity="0.35"/>
+<path d="M620 205 l55 25 -55 25" fill="none" stroke="{{accentColor}}" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+</svg>

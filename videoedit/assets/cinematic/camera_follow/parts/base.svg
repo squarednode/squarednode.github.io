@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+<path d="M40 260 C190 190 350 320 520 245 S720 190 790 260" fill="none" stroke="{{primaryColor}}" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+<path d="M610 210 l70 45 -78 30" fill="none" stroke="{{accentColor}}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+</svg>
