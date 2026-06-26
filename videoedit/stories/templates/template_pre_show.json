@@ -1,0 +1,113 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_pre_show",
+  "templateName": "Pre Show",
+  "recommendedDuration": 8,
+  "purpose": "Briefing, warning, or setup scene before boarding.",
+  "assetRoles": [
+    "character",
+    "effect",
+    "overlay",
+    "prop"
+  ],
+  "shot": {
+    "id": "shot_pre_show",
+    "title": "Pre Show",
+    "duration": 8,
+    "environment": {
+      "asset": "environment_resistance_hangar",
+      "sky": "#dde8f2",
+      "ground": "#8796a3"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "host",
+        "asset": "character_space_resistance_pilot",
+        "position": [
+          360,
+          275,
+          5
+        ],
+        "scale": 0.75,
+        "role": "character",
+        "expression": "serious"
+      },
+      {
+        "id": "console",
+        "asset": "prop_lab_console",
+        "position": [
+          690,
+          285,
+          4
+        ],
+        "scale": 0.75,
+        "role": "prop"
+      },
+      {
+        "id": "warning",
+        "asset": "overlay_warning_panel",
+        "position": [
+          635,
+          105,
+          20
+        ],
+        "scale": 0.72,
+        "role": "overlay",
+        "title": "MISSION BRIEF"
+      },
+      {
+        "id": "scan",
+        "asset": "effect_hologram_scan",
+        "position": [
+          650,
+          210,
+          18
+        ],
+        "scale": 0.9,
+        "role": "effect",
+        "opacity": "0.45"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 3,
+        "actor": "host",
+        "action": "talk",
+        "expression": "serious"
+      },
+      {
+        "start": 1,
+        "duration": 5,
+        "actor": "scan",
+        "action": "gesture",
+        "parts": {
+          "scan": [
+            0,
+            10
+          ]
+        }
+      },
+      {
+        "start": 4,
+        "duration": 2,
+        "actor": "console",
+        "action": "gesture",
+        "parts": {
+          "screen": [
+            -5,
+            5
+          ]
+        }
+      }
+    ]
+  }
+}

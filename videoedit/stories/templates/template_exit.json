@@ -1,0 +1,109 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_exit",
+  "templateName": "Exit",
+  "recommendedDuration": 6,
+  "purpose": "Guests leave the attraction area.",
+  "assetRoles": [
+    "character",
+    "signage"
+  ],
+  "shot": {
+    "id": "shot_exit",
+    "title": "Exit",
+    "duration": 6,
+    "environment": {
+      "asset": "park_path_day",
+      "sky": "#dff4ff",
+      "ground": "#91d47c"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "exitArch",
+        "asset": "signage_exit",
+        "position": [
+          730,
+          215,
+          5
+        ],
+        "scale": 0.75,
+        "role": "signage",
+        "text": "EXIT"
+      },
+      {
+        "id": "guest1",
+        "asset": "human_guest_basic",
+        "position": [
+          400,
+          330,
+          6
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "guest2",
+        "asset": "human_child_basic",
+        "position": [
+          300,
+          350,
+          7
+        ],
+        "scale": 0.6,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "photo",
+        "asset": "signage_photo_spot",
+        "position": [
+          950,
+          250,
+          5
+        ],
+        "scale": 0.55,
+        "role": "signage",
+        "text": "PHOTO"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 3,
+        "actor": "guest1",
+        "action": "walk",
+        "to": [
+          790,
+          330,
+          6
+        ]
+      },
+      {
+        "start": 0.5,
+        "duration": 3,
+        "actor": "guest2",
+        "action": "walk",
+        "to": [
+          690,
+          350,
+          7
+        ]
+      },
+      {
+        "start": 3.5,
+        "duration": 1.5,
+        "actor": "guest1",
+        "action": "wave"
+      }
+    ]
+  }
+}

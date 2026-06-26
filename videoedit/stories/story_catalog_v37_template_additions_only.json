@@ -1,0 +1,11 @@
+{
+  "version": "37.0.0",
+  "stories": [
+    {
+      "id": "episode_full_ride_template",
+      "label": "V37 Full Ride Episode Template",
+      "path": "../stories/episode_full_ride_template.json",
+      "description": "Loadable 16-shot full ride episode structure assembled from the V37 story templates."
+    }
+  ]
+}

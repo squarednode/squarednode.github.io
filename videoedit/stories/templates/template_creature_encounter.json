@@ -1,0 +1,119 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_creature_encounter",
+  "templateName": "Creature Encounter",
+  "recommendedDuration": 8,
+  "purpose": "Creature enters, reacts, scares or surprises the characters.",
+  "assetRoles": [
+    "character",
+    "creature",
+    "effect",
+    "signage"
+  ],
+  "shot": {
+    "id": "shot_creature_encounter",
+    "title": "Creature Encounter",
+    "duration": 8,
+    "environment": {
+      "asset": "environment_jurassic_paddock",
+      "sky": "#dff4ff",
+      "ground": "#75b86a"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "creature",
+        "asset": "creature_raptor",
+        "position": [
+          770,
+          245,
+          6
+        ],
+        "scale": 0.72,
+        "role": "creature",
+        "expression": "angry"
+      },
+      {
+        "id": "handler",
+        "asset": "character_raptor_handler",
+        "position": [
+          300,
+          290,
+          7
+        ],
+        "scale": 0.72,
+        "role": "character",
+        "expression": "scared"
+      },
+      {
+        "id": "fence",
+        "asset": "signage_dinosaur_paddock",
+        "position": [
+          560,
+          250,
+          5
+        ],
+        "scale": 0.6,
+        "role": "signage",
+        "text": "PADDOCK"
+      },
+      {
+        "id": "dust",
+        "asset": "effect_dust_cloud",
+        "position": [
+          700,
+          405,
+          8
+        ],
+        "scale": 0.9,
+        "role": "effect",
+        "opacity": "0.5"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 2.5,
+        "actor": "creature",
+        "action": "walk",
+        "to": [
+          620,
+          245,
+          6
+        ]
+      },
+      {
+        "start": 1,
+        "duration": 2,
+        "actor": "handler",
+        "action": "look"
+      },
+      {
+        "start": 2.5,
+        "duration": 2,
+        "actor": "creature",
+        "action": "talk",
+        "expression": "angry"
+      },
+      {
+        "start": 3,
+        "duration": 2,
+        "actor": "dust",
+        "action": "gesture",
+        "parts": {
+          "dust": [
+            0,
+            8
+          ]
+        }
+      }
+    ]
+  }
+}

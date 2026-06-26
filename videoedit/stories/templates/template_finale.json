@@ -1,0 +1,123 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_finale",
+  "templateName": "Finale",
+  "recommendedDuration": 8,
+  "purpose": "Final show scene or emotional payoff.",
+  "assetRoles": [
+    "character",
+    "effect",
+    "landmark",
+    "overlay",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_finale",
+    "title": "Finale",
+    "duration": 8,
+    "environment": {
+      "asset": "environment_world_festival_waterway",
+      "sky": "#dff4ff",
+      "ground": "#8fd3ff"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "finalSet",
+        "asset": "landmark_world_facade_row",
+        "position": [
+          540,
+          70,
+          2
+        ],
+        "scale": 0.72,
+        "role": "landmark"
+      },
+      {
+        "id": "boat",
+        "asset": "vehicle_classic_boat",
+        "position": [
+          300,
+          365,
+          5
+        ],
+        "scale": 0.7,
+        "role": "vehicle"
+      },
+      {
+        "id": "performer",
+        "asset": "character_world_doll_performer",
+        "position": [
+          650,
+          285,
+          6
+        ],
+        "scale": 0.62,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "sparkle",
+        "asset": "effect_magic_sparkle",
+        "position": [
+          640,
+          245,
+          12
+        ],
+        "scale": 1.0,
+        "role": "effect",
+        "opacity": "0.65"
+      },
+      {
+        "id": "caption",
+        "asset": "overlay_chapter_card",
+        "position": [
+          640,
+          95,
+          20
+        ],
+        "scale": 0.7,
+        "role": "overlay",
+        "title": "Finale"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 4,
+        "actor": "boat",
+        "action": "drive",
+        "to": [
+          805,
+          365,
+          5
+        ]
+      },
+      {
+        "start": 1,
+        "duration": 4,
+        "actor": "performer",
+        "action": "wave"
+      },
+      {
+        "start": 2,
+        "duration": 3,
+        "actor": "sparkle",
+        "action": "gesture",
+        "parts": {
+          "sparkle": [
+            -8,
+            8
+          ]
+        }
+      }
+    ]
+  }
+}

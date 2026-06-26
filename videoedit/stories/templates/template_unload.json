@@ -1,0 +1,122 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_unload",
+  "templateName": "Unload",
+  "recommendedDuration": 6,
+  "purpose": "Unload platform and post-ride reaction.",
+  "assetRoles": [
+    "character",
+    "ride",
+    "signage",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_unload",
+    "title": "Unload",
+    "duration": 6,
+    "environment": {
+      "asset": "park_path_day",
+      "sky": "#dff4ff",
+      "ground": "#91d47c"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "vehicle",
+        "asset": "vehicle_cart_basic",
+        "position": [
+          620,
+          360,
+          5
+        ],
+        "scale": 0.75,
+        "role": "vehicle"
+      },
+      {
+        "id": "platform",
+        "asset": "ride_omnimover_track",
+        "position": [
+          410,
+          375,
+          2
+        ],
+        "scale": 0.85,
+        "role": "ride"
+      },
+      {
+        "id": "crew",
+        "asset": "character_coaster_crew",
+        "position": [
+          330,
+          290,
+          6
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "guest",
+        "asset": "human_rider_basic",
+        "position": [
+          590,
+          320,
+          7
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "exitSign",
+        "asset": "signage_exit",
+        "position": [
+          875,
+          230,
+          6
+        ],
+        "scale": 0.6,
+        "role": "signage",
+        "text": "EXIT"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 1.5,
+        "actor": "vehicle",
+        "action": "gesture",
+        "parts": {
+          "body": [
+            -2,
+            2
+          ]
+        }
+      },
+      {
+        "start": 1.5,
+        "duration": 2.5,
+        "actor": "guest",
+        "action": "walk",
+        "to": [
+          850,
+          320,
+          7
+        ]
+      },
+      {
+        "start": 2,
+        "duration": 2,
+        "actor": "crew",
+        "action": "wave"
+      }
+    ]
+  }
+}

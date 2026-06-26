@@ -1,0 +1,114 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_action_sequence",
+  "templateName": "Action Sequence",
+  "recommendedDuration": 7,
+  "purpose": "Fast movement/action beat with multiple actors and effects.",
+  "assetRoles": [
+    "effect",
+    "overlay",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_action_sequence",
+    "title": "Action Sequence",
+    "duration": 7,
+    "environment": {
+      "asset": "environment_street_race_city",
+      "sky": "#20273a",
+      "ground": "#3a3f49"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "vehicleA",
+        "asset": "vehicle_street_racer_car",
+        "position": [
+          130,
+          360,
+          6
+        ],
+        "scale": 0.75,
+        "role": "vehicle"
+      },
+      {
+        "id": "vehicleB",
+        "asset": "vehicle_transport_cab",
+        "position": [
+          420,
+          390,
+          5
+        ],
+        "scale": 0.72,
+        "role": "vehicle"
+      },
+      {
+        "id": "speed",
+        "asset": "effect_speed_lines",
+        "position": [
+          640,
+          260,
+          16
+        ],
+        "scale": 1.2,
+        "role": "effect",
+        "opacity": "0.65"
+      },
+      {
+        "id": "warning",
+        "asset": "overlay_warning_panel",
+        "position": [
+          650,
+          90,
+          20
+        ],
+        "scale": 0.55,
+        "role": "overlay",
+        "title": "ACTION"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 4,
+        "actor": "vehicleA",
+        "action": "drive",
+        "to": [
+          1050,
+          315,
+          6
+        ]
+      },
+      {
+        "start": 0.5,
+        "duration": 3,
+        "actor": "vehicleB",
+        "action": "drive",
+        "to": [
+          900,
+          365,
+          5
+        ]
+      },
+      {
+        "start": 0.5,
+        "duration": 4,
+        "actor": "speed",
+        "action": "gesture",
+        "parts": {
+          "lines": [
+            0,
+            18
+          ]
+        }
+      }
+    ]
+  }
+}

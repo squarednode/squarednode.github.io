@@ -1,0 +1,126 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_escape_sequence",
+  "templateName": "Escape Sequence",
+  "recommendedDuration": 7,
+  "purpose": "Urgent escape, chase, collapse, or danger beat.",
+  "assetRoles": [
+    "creature",
+    "effect",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_escape_sequence",
+    "title": "Escape Sequence",
+    "duration": 7,
+    "environment": {
+      "asset": "environment_mummy_tomb",
+      "sky": "#2b1f1f",
+      "ground": "#5a4636"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "vehicle",
+        "asset": "vehicle_mine_train_car",
+        "position": [
+          185,
+          370,
+          6
+        ],
+        "scale": 0.75,
+        "role": "vehicle"
+      },
+      {
+        "id": "monster",
+        "asset": "creature_scarab_swarm",
+        "position": [
+          715,
+          310,
+          7
+        ],
+        "scale": 0.7,
+        "role": "creature"
+      },
+      {
+        "id": "rocks",
+        "asset": "effect_falling_rocks",
+        "position": [
+          640,
+          170,
+          12
+        ],
+        "scale": 1.0,
+        "role": "effect",
+        "opacity": "0.85"
+      },
+      {
+        "id": "smoke",
+        "asset": "effect_smoke_puff",
+        "position": [
+          650,
+          410,
+          8
+        ],
+        "scale": 1.0,
+        "role": "effect",
+        "opacity": "0.5"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 4,
+        "actor": "vehicle",
+        "action": "drive",
+        "to": [
+          980,
+          340,
+          6
+        ]
+      },
+      {
+        "start": 1,
+        "duration": 3,
+        "actor": "monster",
+        "action": "walk",
+        "to": [
+          560,
+          310,
+          7
+        ]
+      },
+      {
+        "start": 1,
+        "duration": 4,
+        "actor": "rocks",
+        "action": "gesture",
+        "parts": {
+          "rocks": [
+            -7,
+            7
+          ]
+        }
+      },
+      {
+        "start": 2,
+        "duration": 2,
+        "actor": "smoke",
+        "action": "gesture",
+        "parts": {
+          "smoke": [
+            0,
+            8
+          ]
+        }
+      }
+    ]
+  }
+}

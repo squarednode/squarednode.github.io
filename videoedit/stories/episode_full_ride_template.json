@@ -1,0 +1,1669 @@
+{
+  "id": "episode_full_ride_template_v37",
+  "title": "Full Ride Episode Template",
+  "format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "output": "webm"
+  },
+  "style": {
+    "name": "simple_theme_park_svg_v5",
+    "lineWeight": 6,
+    "shapeLanguage": "rounded_cartoon",
+    "depth": "2.5d"
+  },
+  "shots": [
+    {
+      "id": "shot_park_intro",
+      "title": "Park Intro",
+      "duration": 7,
+      "environment": {
+        "asset": "park_path_day",
+        "sky": "#dff4ff",
+        "ground": "#91d47c"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "titleCard",
+          "asset": "overlay_title_card",
+          "position": [
+            640,
+            160,
+            20
+          ],
+          "scale": 0.95,
+          "role": "overlay",
+          "title": "RIDE THROUGH",
+          "subtitle": "Episode Title"
+        },
+        {
+          "id": "parkGate",
+          "asset": "landmark_iconic_globe",
+          "position": [
+            615,
+            110,
+            2
+          ],
+          "scale": 0.75,
+          "role": "landmark"
+        },
+        {
+          "id": "crowdGuest",
+          "asset": "human_guest_basic",
+          "position": [
+            330,
+            315,
+            5
+          ],
+          "scale": 0.72,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "arrow",
+          "asset": "overlay_arrow_pointer",
+          "position": [
+            1030,
+            255,
+            21
+          ],
+          "scale": 0.55,
+          "role": "overlay"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 1.5,
+          "actor": "titleCard",
+          "action": "enter",
+          "from": "top"
+        },
+        {
+          "start": 1,
+          "duration": 3,
+          "actor": "crowdGuest",
+          "action": "wave"
+        },
+        {
+          "start": 4,
+          "duration": 2,
+          "actor": "arrow",
+          "action": "gesture",
+          "parts": {
+            "arrow": [
+              -8,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_land_arrival",
+      "title": "Land Arrival",
+      "duration": 6,
+      "environment": {
+        "asset": "park_path_day",
+        "sky": "#dff4ff",
+        "ground": "#91d47c"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "landSign",
+          "asset": "signage_area_map",
+          "position": [
+            835,
+            210,
+            5
+          ],
+          "scale": 0.75,
+          "role": "signage",
+          "text": "NEW LAND"
+        },
+        {
+          "id": "landmark",
+          "asset": "landmark_jungle_research_outpost",
+          "position": [
+            560,
+            70,
+            2
+          ],
+          "scale": 0.7,
+          "role": "landmark"
+        },
+        {
+          "id": "host",
+          "asset": "human_guest_basic",
+          "position": [
+            285,
+            285,
+            6
+          ],
+          "scale": 0.8,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "location",
+          "asset": "overlay_location_card",
+          "position": [
+            260,
+            90,
+            20
+          ],
+          "scale": 0.75,
+          "role": "overlay",
+          "title": "Land Arrival"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 2,
+          "actor": "host",
+          "action": "walk",
+          "to": [
+            385,
+            285,
+            6
+          ]
+        },
+        {
+          "start": 2,
+          "duration": 2.5,
+          "actor": "host",
+          "action": "talk",
+          "expression": "happy"
+        },
+        {
+          "start": 3.2,
+          "duration": 1.8,
+          "actor": "landSign",
+          "action": "gesture",
+          "parts": {
+            "panel": [
+              -4,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_queue",
+      "title": "Queue",
+      "duration": 7,
+      "environment": {
+        "asset": "environment_jurassic_paddock",
+        "sky": "#dff4ff",
+        "ground": "#8fd17c"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "queueArch",
+          "asset": "ride_queue_arch",
+          "position": [
+            520,
+            105,
+            2
+          ],
+          "scale": 0.72,
+          "role": "ride"
+        },
+        {
+          "id": "rope",
+          "asset": "prop_rope_barrier",
+          "position": [
+            560,
+            370,
+            4
+          ],
+          "scale": 0.85,
+          "role": "prop"
+        },
+        {
+          "id": "sign",
+          "asset": "signage_wait_time",
+          "position": [
+            900,
+            245,
+            5
+          ],
+          "scale": 0.65,
+          "role": "signage",
+          "text": "45 MIN"
+        },
+        {
+          "id": "guest1",
+          "asset": "human_guest_basic",
+          "position": [
+            250,
+            330,
+            6
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "neutral"
+        },
+        {
+          "id": "guest2",
+          "asset": "human_child_basic",
+          "position": [
+            350,
+            355,
+            7
+          ],
+          "scale": 0.62,
+          "role": "character",
+          "expression": "happy"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 2,
+          "actor": "guest1",
+          "action": "walk",
+          "to": [
+            355,
+            330,
+            6
+          ]
+        },
+        {
+          "start": 1,
+          "duration": 2,
+          "actor": "guest2",
+          "action": "walk",
+          "to": [
+            455,
+            355,
+            7
+          ]
+        },
+        {
+          "start": 3,
+          "duration": 2,
+          "actor": "sign",
+          "action": "gesture",
+          "parts": {
+            "panel": [
+              -3,
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_pre_show",
+      "title": "Pre Show",
+      "duration": 8,
+      "environment": {
+        "asset": "environment_resistance_hangar",
+        "sky": "#dde8f2",
+        "ground": "#8796a3"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "host",
+          "asset": "character_space_resistance_pilot",
+          "position": [
+            360,
+            275,
+            5
+          ],
+          "scale": 0.75,
+          "role": "character",
+          "expression": "serious"
+        },
+        {
+          "id": "console",
+          "asset": "prop_lab_console",
+          "position": [
+            690,
+            285,
+            4
+          ],
+          "scale": 0.75,
+          "role": "prop"
+        },
+        {
+          "id": "warning",
+          "asset": "overlay_warning_panel",
+          "position": [
+            635,
+            105,
+            20
+          ],
+          "scale": 0.72,
+          "role": "overlay",
+          "title": "MISSION BRIEF"
+        },
+        {
+          "id": "scan",
+          "asset": "effect_hologram_scan",
+          "position": [
+            650,
+            210,
+            18
+          ],
+          "scale": 0.9,
+          "role": "effect",
+          "opacity": "0.45"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 3,
+          "actor": "host",
+          "action": "talk",
+          "expression": "serious"
+        },
+        {
+          "start": 1,
+          "duration": 5,
+          "actor": "scan",
+          "action": "gesture",
+          "parts": {
+            "scan": [
+              0,
+              10
+            ]
+          }
+        },
+        {
+          "start": 4,
+          "duration": 2,
+          "actor": "console",
+          "action": "gesture",
+          "parts": {
+            "screen": [
+              -5,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_boarding",
+      "title": "Boarding",
+      "duration": 7,
+      "environment": {
+        "asset": "park_path_day",
+        "sky": "#eaf7ff",
+        "ground": "#98d987"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "vehicle",
+          "asset": "vehicle_cart_basic",
+          "position": [
+            590,
+            350,
+            5
+          ],
+          "scale": 0.8,
+          "role": "vehicle"
+        },
+        {
+          "id": "platform",
+          "asset": "ride_omnimover_track",
+          "position": [
+            395,
+            365,
+            2
+          ],
+          "scale": 0.9,
+          "role": "ride"
+        },
+        {
+          "id": "crew",
+          "asset": "character_coaster_crew",
+          "position": [
+            310,
+            290,
+            6
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "guest",
+          "asset": "human_rider_basic",
+          "position": [
+            180,
+            320,
+            7
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "safety",
+          "asset": "signage_safety_warning",
+          "position": [
+            870,
+            240,
+            6
+          ],
+          "scale": 0.58,
+          "role": "signage",
+          "text": "CHECK LAP BAR"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 2,
+          "actor": "guest",
+          "action": "walk",
+          "to": [
+            455,
+            320,
+            7
+          ]
+        },
+        {
+          "start": 1.5,
+          "duration": 2,
+          "actor": "crew",
+          "action": "wave"
+        },
+        {
+          "start": 3,
+          "duration": 2,
+          "actor": "vehicle",
+          "action": "gesture",
+          "parts": {
+            "body": [
+              -2,
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_launch",
+      "title": "Launch",
+      "duration": 6,
+      "environment": {
+        "asset": "environment_deep_space_tunnel",
+        "sky": "#090b1b",
+        "ground": "#252d55"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1.05
+      },
+      "actors": [
+        {
+          "id": "track",
+          "asset": "ride_launch_coaster_track",
+          "position": [
+            140,
+            245,
+            2
+          ],
+          "scale": 0.9,
+          "role": "ride"
+        },
+        {
+          "id": "train",
+          "asset": "vehicle_launch_coaster_train",
+          "position": [
+            180,
+            360,
+            5
+          ],
+          "scale": 0.72,
+          "role": "vehicle"
+        },
+        {
+          "id": "speed",
+          "asset": "effect_speed_lines",
+          "position": [
+            640,
+            230,
+            15
+          ],
+          "scale": 1.2,
+          "role": "effect",
+          "opacity": "0.55"
+        },
+        {
+          "id": "flash",
+          "asset": "transition_flash",
+          "position": [
+            640,
+            360,
+            25
+          ],
+          "scale": 1,
+          "role": "transition",
+          "opacity": "0.25"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 3.5,
+          "actor": "train",
+          "action": "drive",
+          "to": [
+            1030,
+            250,
+            5
+          ]
+        },
+        {
+          "start": 0.5,
+          "duration": 3,
+          "actor": "speed",
+          "action": "gesture",
+          "parts": {
+            "lines": [
+              0,
+              15
+            ]
+          }
+        },
+        {
+          "start": 2.5,
+          "duration": 1,
+          "actor": "flash",
+          "action": "gesture",
+          "parts": {
+            "panel": [
+              0,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_first_reveal",
+      "title": "First Reveal",
+      "duration": 7,
+      "environment": {
+        "asset": "environment_alien_forest_canopy",
+        "sky": "#c9f0ff",
+        "ground": "#3b7c62"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 0.95
+      },
+      "actors": [
+        {
+          "id": "revealLandmark",
+          "asset": "landmark_floating_mountain",
+          "position": [
+            560,
+            20,
+            2
+          ],
+          "scale": 0.72,
+          "role": "landmark"
+        },
+        {
+          "id": "mist",
+          "asset": "effect_ground_mist",
+          "position": [
+            640,
+            405,
+            8
+          ],
+          "scale": 1.2,
+          "role": "effect",
+          "opacity": "0.45"
+        },
+        {
+          "id": "guest",
+          "asset": "human_rider_basic",
+          "position": [
+            250,
+            320,
+            7
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "surprised"
+        },
+        {
+          "id": "caption",
+          "asset": "overlay_fact_card",
+          "position": [
+            905,
+            120,
+            20
+          ],
+          "scale": 0.65,
+          "role": "overlay",
+          "title": "First Reveal",
+          "body": "The big visual moment"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 3,
+          "actor": "guest",
+          "action": "look"
+        },
+        {
+          "start": 1,
+          "duration": 3,
+          "actor": "mist",
+          "action": "gesture",
+          "parts": {
+            "mist": [
+              0,
+              5
+            ]
+          }
+        },
+        {
+          "start": 2,
+          "duration": 2,
+          "actor": "caption",
+          "action": "enter",
+          "from": "right"
+        }
+      ]
+    },
+    {
+      "id": "shot_show_scene",
+      "title": "Show Scene",
+      "duration": 8,
+      "environment": {
+        "asset": "environment_wizard_castle_interior",
+        "sky": "#ded5ff",
+        "ground": "#8f83aa"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "setPiece",
+          "asset": "landmark_wizard_castle_towers",
+          "position": [
+            575,
+            45,
+            2
+          ],
+          "scale": 0.6,
+          "role": "landmark"
+        },
+        {
+          "id": "performer",
+          "asset": "character_wizard_student",
+          "position": [
+            360,
+            265,
+            6
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "prop",
+          "asset": "prop_spell_book",
+          "position": [
+            555,
+            320,
+            7
+          ],
+          "scale": 0.45,
+          "role": "prop"
+        },
+        {
+          "id": "sparkle",
+          "asset": "effect_magic_sparkle",
+          "position": [
+            575,
+            230,
+            14
+          ],
+          "scale": 0.9,
+          "role": "effect",
+          "opacity": "0.7"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 3,
+          "actor": "performer",
+          "action": "talk",
+          "expression": "happy"
+        },
+        {
+          "start": 1,
+          "duration": 4,
+          "actor": "sparkle",
+          "action": "gesture",
+          "parts": {
+            "sparkle": [
+              -10,
+              10
+            ]
+          }
+        },
+        {
+          "start": 3,
+          "duration": 2,
+          "actor": "prop",
+          "action": "gesture",
+          "parts": {
+            "book": [
+              -5,
+              5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_creature_encounter",
+      "title": "Creature Encounter",
+      "duration": 8,
+      "environment": {
+        "asset": "environment_jurassic_paddock",
+        "sky": "#dff4ff",
+        "ground": "#75b86a"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "creature",
+          "asset": "creature_raptor",
+          "position": [
+            770,
+            245,
+            6
+          ],
+          "scale": 0.72,
+          "role": "creature",
+          "expression": "angry"
+        },
+        {
+          "id": "handler",
+          "asset": "character_raptor_handler",
+          "position": [
+            300,
+            290,
+            7
+          ],
+          "scale": 0.72,
+          "role": "character",
+          "expression": "scared"
+        },
+        {
+          "id": "fence",
+          "asset": "signage_dinosaur_paddock",
+          "position": [
+            560,
+            250,
+            5
+          ],
+          "scale": 0.6,
+          "role": "signage",
+          "text": "PADDOCK"
+        },
+        {
+          "id": "dust",
+          "asset": "effect_dust_cloud",
+          "position": [
+            700,
+            405,
+            8
+          ],
+          "scale": 0.9,
+          "role": "effect",
+          "opacity": "0.5"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 2.5,
+          "actor": "creature",
+          "action": "walk",
+          "to": [
+            620,
+            245,
+            6
+          ]
+        },
+        {
+          "start": 1,
+          "duration": 2,
+          "actor": "handler",
+          "action": "look"
+        },
+        {
+          "start": 2.5,
+          "duration": 2,
+          "actor": "creature",
+          "action": "talk",
+          "expression": "angry"
+        },
+        {
+          "start": 3,
+          "duration": 2,
+          "actor": "dust",
+          "action": "gesture",
+          "parts": {
+            "dust": [
+              0,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_action_sequence",
+      "title": "Action Sequence",
+      "duration": 7,
+      "environment": {
+        "asset": "environment_street_race_city",
+        "sky": "#20273a",
+        "ground": "#3a3f49"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "vehicleA",
+          "asset": "vehicle_street_racer_car",
+          "position": [
+            130,
+            360,
+            6
+          ],
+          "scale": 0.75,
+          "role": "vehicle"
+        },
+        {
+          "id": "vehicleB",
+          "asset": "vehicle_transport_cab",
+          "position": [
+            420,
+            390,
+            5
+          ],
+          "scale": 0.72,
+          "role": "vehicle"
+        },
+        {
+          "id": "speed",
+          "asset": "effect_speed_lines",
+          "position": [
+            640,
+            260,
+            16
+          ],
+          "scale": 1.2,
+          "role": "effect",
+          "opacity": "0.65"
+        },
+        {
+          "id": "warning",
+          "asset": "overlay_warning_panel",
+          "position": [
+            650,
+            90,
+            20
+          ],
+          "scale": 0.55,
+          "role": "overlay",
+          "title": "ACTION"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 4,
+          "actor": "vehicleA",
+          "action": "drive",
+          "to": [
+            1050,
+            315,
+            6
+          ]
+        },
+        {
+          "start": 0.5,
+          "duration": 3,
+          "actor": "vehicleB",
+          "action": "drive",
+          "to": [
+            900,
+            365,
+            5
+          ]
+        },
+        {
+          "start": 0.5,
+          "duration": 4,
+          "actor": "speed",
+          "action": "gesture",
+          "parts": {
+            "lines": [
+              0,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_best_moment",
+      "title": "Best Moment",
+      "duration": 8,
+      "environment": {
+        "asset": "environment_neon_grid",
+        "sky": "#050714",
+        "ground": "#11183b"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1.12
+      },
+      "actors": [
+        {
+          "id": "heroVehicle",
+          "asset": "vehicle_lightcycle_bike",
+          "position": [
+            535,
+            350,
+            7
+          ],
+          "scale": 0.82,
+          "role": "vehicle"
+        },
+        {
+          "id": "glow",
+          "asset": "effect_neon_glow",
+          "position": [
+            560,
+            335,
+            12
+          ],
+          "scale": 1.05,
+          "role": "effect",
+          "opacity": "0.55"
+        },
+        {
+          "id": "rating",
+          "asset": "overlay_rating_stars",
+          "position": [
+            640,
+            110,
+            21
+          ],
+          "scale": 0.75,
+          "role": "overlay"
+        },
+        {
+          "id": "caption",
+          "asset": "overlay_comic_caption",
+          "position": [
+            640,
+            560,
+            22
+          ],
+          "scale": 0.75,
+          "role": "overlay",
+          "text": "BEST MOMENT"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 2,
+          "actor": "glow",
+          "action": "gesture",
+          "parts": {
+            "glow": [
+              0,
+              10
+            ]
+          }
+        },
+        {
+          "start": 1,
+          "duration": 3,
+          "actor": "heroVehicle",
+          "action": "gesture",
+          "parts": {
+            "body": [
+              -3,
+              3
+            ]
+          }
+        },
+        {
+          "start": 2,
+          "duration": 2,
+          "actor": "rating",
+          "action": "enter",
+          "from": "top"
+        }
+      ]
+    },
+    {
+      "id": "shot_escape_sequence",
+      "title": "Escape Sequence",
+      "duration": 7,
+      "environment": {
+        "asset": "environment_mummy_tomb",
+        "sky": "#2b1f1f",
+        "ground": "#5a4636"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "vehicle",
+          "asset": "vehicle_mine_train_car",
+          "position": [
+            185,
+            370,
+            6
+          ],
+          "scale": 0.75,
+          "role": "vehicle"
+        },
+        {
+          "id": "monster",
+          "asset": "creature_scarab_swarm",
+          "position": [
+            715,
+            310,
+            7
+          ],
+          "scale": 0.7,
+          "role": "creature"
+        },
+        {
+          "id": "rocks",
+          "asset": "effect_falling_rocks",
+          "position": [
+            640,
+            170,
+            12
+          ],
+          "scale": 1.0,
+          "role": "effect",
+          "opacity": "0.85"
+        },
+        {
+          "id": "smoke",
+          "asset": "effect_smoke_puff",
+          "position": [
+            650,
+            410,
+            8
+          ],
+          "scale": 1.0,
+          "role": "effect",
+          "opacity": "0.5"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 4,
+          "actor": "vehicle",
+          "action": "drive",
+          "to": [
+            980,
+            340,
+            6
+          ]
+        },
+        {
+          "start": 1,
+          "duration": 3,
+          "actor": "monster",
+          "action": "walk",
+          "to": [
+            560,
+            310,
+            7
+          ]
+        },
+        {
+          "start": 1,
+          "duration": 4,
+          "actor": "rocks",
+          "action": "gesture",
+          "parts": {
+            "rocks": [
+              -7,
+              7
+            ]
+          }
+        },
+        {
+          "start": 2,
+          "duration": 2,
+          "actor": "smoke",
+          "action": "gesture",
+          "parts": {
+            "smoke": [
+              0,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_finale",
+      "title": "Finale",
+      "duration": 8,
+      "environment": {
+        "asset": "environment_world_festival_waterway",
+        "sky": "#dff4ff",
+        "ground": "#8fd3ff"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "finalSet",
+          "asset": "landmark_world_facade_row",
+          "position": [
+            540,
+            70,
+            2
+          ],
+          "scale": 0.72,
+          "role": "landmark"
+        },
+        {
+          "id": "boat",
+          "asset": "vehicle_classic_boat",
+          "position": [
+            300,
+            365,
+            5
+          ],
+          "scale": 0.7,
+          "role": "vehicle"
+        },
+        {
+          "id": "performer",
+          "asset": "character_world_doll_performer",
+          "position": [
+            650,
+            285,
+            6
+          ],
+          "scale": 0.62,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "sparkle",
+          "asset": "effect_magic_sparkle",
+          "position": [
+            640,
+            245,
+            12
+          ],
+          "scale": 1.0,
+          "role": "effect",
+          "opacity": "0.65"
+        },
+        {
+          "id": "caption",
+          "asset": "overlay_chapter_card",
+          "position": [
+            640,
+            95,
+            20
+          ],
+          "scale": 0.7,
+          "role": "overlay",
+          "title": "Finale"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 4,
+          "actor": "boat",
+          "action": "drive",
+          "to": [
+            805,
+            365,
+            5
+          ]
+        },
+        {
+          "start": 1,
+          "duration": 4,
+          "actor": "performer",
+          "action": "wave"
+        },
+        {
+          "start": 2,
+          "duration": 3,
+          "actor": "sparkle",
+          "action": "gesture",
+          "parts": {
+            "sparkle": [
+              -8,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "shot_unload",
+      "title": "Unload",
+      "duration": 6,
+      "environment": {
+        "asset": "park_path_day",
+        "sky": "#dff4ff",
+        "ground": "#91d47c"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "vehicle",
+          "asset": "vehicle_cart_basic",
+          "position": [
+            620,
+            360,
+            5
+          ],
+          "scale": 0.75,
+          "role": "vehicle"
+        },
+        {
+          "id": "platform",
+          "asset": "ride_omnimover_track",
+          "position": [
+            410,
+            375,
+            2
+          ],
+          "scale": 0.85,
+          "role": "ride"
+        },
+        {
+          "id": "crew",
+          "asset": "character_coaster_crew",
+          "position": [
+            330,
+            290,
+            6
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "guest",
+          "asset": "human_rider_basic",
+          "position": [
+            590,
+            320,
+            7
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "exitSign",
+          "asset": "signage_exit",
+          "position": [
+            875,
+            230,
+            6
+          ],
+          "scale": 0.6,
+          "role": "signage",
+          "text": "EXIT"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 1.5,
+          "actor": "vehicle",
+          "action": "gesture",
+          "parts": {
+            "body": [
+              -2,
+              2
+            ]
+          }
+        },
+        {
+          "start": 1.5,
+          "duration": 2.5,
+          "actor": "guest",
+          "action": "walk",
+          "to": [
+            850,
+            320,
+            7
+          ]
+        },
+        {
+          "start": 2,
+          "duration": 2,
+          "actor": "crew",
+          "action": "wave"
+        }
+      ]
+    },
+    {
+      "id": "shot_exit",
+      "title": "Exit",
+      "duration": 6,
+      "environment": {
+        "asset": "park_path_day",
+        "sky": "#dff4ff",
+        "ground": "#91d47c"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "exitArch",
+          "asset": "signage_exit",
+          "position": [
+            730,
+            215,
+            5
+          ],
+          "scale": 0.75,
+          "role": "signage",
+          "text": "EXIT"
+        },
+        {
+          "id": "guest1",
+          "asset": "human_guest_basic",
+          "position": [
+            400,
+            330,
+            6
+          ],
+          "scale": 0.7,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "guest2",
+          "asset": "human_child_basic",
+          "position": [
+            300,
+            350,
+            7
+          ],
+          "scale": 0.6,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "photo",
+          "asset": "signage_photo_spot",
+          "position": [
+            950,
+            250,
+            5
+          ],
+          "scale": 0.55,
+          "role": "signage",
+          "text": "PHOTO"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 3,
+          "actor": "guest1",
+          "action": "walk",
+          "to": [
+            790,
+            330,
+            6
+          ]
+        },
+        {
+          "start": 0.5,
+          "duration": 3,
+          "actor": "guest2",
+          "action": "walk",
+          "to": [
+            690,
+            350,
+            7
+          ]
+        },
+        {
+          "start": 3.5,
+          "duration": 1.5,
+          "actor": "guest1",
+          "action": "wave"
+        }
+      ]
+    },
+    {
+      "id": "shot_outro",
+      "title": "Outro",
+      "duration": 7,
+      "environment": {
+        "asset": "park_path_day",
+        "sky": "#dff4ff",
+        "ground": "#91d47c"
+      },
+      "camera": {
+        "type": "2.5d",
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "host",
+          "asset": "human_guest_basic",
+          "position": [
+            315,
+            305,
+            6
+          ],
+          "scale": 0.75,
+          "role": "character",
+          "expression": "happy"
+        },
+        {
+          "id": "title",
+          "asset": "overlay_title_card",
+          "position": [
+            640,
+            145,
+            20
+          ],
+          "scale": 0.8,
+          "role": "overlay",
+          "title": "Thanks for Riding",
+          "subtitle": "Like / Subscribe / Next Episode"
+        },
+        {
+          "id": "stars",
+          "asset": "overlay_rating_stars",
+          "position": [
+            640,
+            460,
+            21
+          ],
+          "scale": 0.75,
+          "role": "overlay"
+        },
+        {
+          "id": "arrow",
+          "asset": "overlay_arrow_pointer",
+          "position": [
+            1005,
+            310,
+            22
+          ],
+          "scale": 0.55,
+          "role": "overlay"
+        }
+      ],
+      "timeline": [
+        {
+          "start": 0,
+          "duration": 3,
+          "actor": "host",
+          "action": "talk",
+          "expression": "happy"
+        },
+        {
+          "start": 1,
+          "duration": 2,
+          "actor": "title",
+          "action": "enter",
+          "from": "top"
+        },
+        {
+          "start": 3,
+          "duration": 2,
+          "actor": "host",
+          "action": "wave"
+        },
+        {
+          "start": 4,
+          "duration": 2,
+          "actor": "arrow",
+          "action": "gesture",
+          "parts": {
+            "arrow": [
+              -8,
+              8
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

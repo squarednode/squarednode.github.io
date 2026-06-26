@@ -1,0 +1,106 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_park_intro",
+  "templateName": "Park Intro",
+  "recommendedDuration": 7,
+  "purpose": "Opening hook with title card, park/landmark, and guest energy.",
+  "assetRoles": [
+    "character",
+    "landmark",
+    "overlay"
+  ],
+  "shot": {
+    "id": "shot_park_intro",
+    "title": "Park Intro",
+    "duration": 7,
+    "environment": {
+      "asset": "park_path_day",
+      "sky": "#dff4ff",
+      "ground": "#91d47c"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "titleCard",
+        "asset": "overlay_title_card",
+        "position": [
+          640,
+          160,
+          20
+        ],
+        "scale": 0.95,
+        "role": "overlay",
+        "title": "RIDE THROUGH",
+        "subtitle": "Episode Title"
+      },
+      {
+        "id": "parkGate",
+        "asset": "landmark_iconic_globe",
+        "position": [
+          615,
+          110,
+          2
+        ],
+        "scale": 0.75,
+        "role": "landmark"
+      },
+      {
+        "id": "crowdGuest",
+        "asset": "human_guest_basic",
+        "position": [
+          330,
+          315,
+          5
+        ],
+        "scale": 0.72,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "arrow",
+        "asset": "overlay_arrow_pointer",
+        "position": [
+          1030,
+          255,
+          21
+        ],
+        "scale": 0.55,
+        "role": "overlay"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 1.5,
+        "actor": "titleCard",
+        "action": "enter",
+        "from": "top"
+      },
+      {
+        "start": 1,
+        "duration": 3,
+        "actor": "crowdGuest",
+        "action": "wave"
+      },
+      {
+        "start": 4,
+        "duration": 2,
+        "actor": "arrow",
+        "action": "gesture",
+        "parts": {
+          "arrow": [
+            -8,
+            8
+          ]
+        }
+      }
+    ]
+  }
+}

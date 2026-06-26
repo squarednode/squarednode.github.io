@@ -1,0 +1,127 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_queue",
+  "templateName": "Queue",
+  "recommendedDuration": 7,
+  "purpose": "Queue approach, signage, barriers, and anticipation.",
+  "assetRoles": [
+    "character",
+    "prop",
+    "ride",
+    "signage"
+  ],
+  "shot": {
+    "id": "shot_queue",
+    "title": "Queue",
+    "duration": 7,
+    "environment": {
+      "asset": "environment_jurassic_paddock",
+      "sky": "#dff4ff",
+      "ground": "#8fd17c"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "queueArch",
+        "asset": "ride_queue_arch",
+        "position": [
+          520,
+          105,
+          2
+        ],
+        "scale": 0.72,
+        "role": "ride"
+      },
+      {
+        "id": "rope",
+        "asset": "prop_rope_barrier",
+        "position": [
+          560,
+          370,
+          4
+        ],
+        "scale": 0.85,
+        "role": "prop"
+      },
+      {
+        "id": "sign",
+        "asset": "signage_wait_time",
+        "position": [
+          900,
+          245,
+          5
+        ],
+        "scale": 0.65,
+        "role": "signage",
+        "text": "45 MIN"
+      },
+      {
+        "id": "guest1",
+        "asset": "human_guest_basic",
+        "position": [
+          250,
+          330,
+          6
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "neutral"
+      },
+      {
+        "id": "guest2",
+        "asset": "human_child_basic",
+        "position": [
+          350,
+          355,
+          7
+        ],
+        "scale": 0.62,
+        "role": "character",
+        "expression": "happy"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 2,
+        "actor": "guest1",
+        "action": "walk",
+        "to": [
+          355,
+          330,
+          6
+        ]
+      },
+      {
+        "start": 1,
+        "duration": 2,
+        "actor": "guest2",
+        "action": "walk",
+        "to": [
+          455,
+          355,
+          7
+        ]
+      },
+      {
+        "start": 3,
+        "duration": 2,
+        "actor": "sign",
+        "action": "gesture",
+        "parts": {
+          "panel": [
+            -3,
+            3
+          ]
+        }
+      }
+    ]
+  }
+}

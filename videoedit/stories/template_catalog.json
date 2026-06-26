@@ -1,0 +1,118 @@
+{
+  "version": "37.0.0",
+  "description": "Shot template catalog for reusable ride-story episode building.",
+  "templates": [
+    {
+      "id": "park_intro",
+      "label": "Park Intro",
+      "path": "../stories/templates/template_park_intro.json",
+      "recommendedDuration": 7,
+      "purpose": "Opening hook with title card, park/landmark, and guest energy."
+    },
+    {
+      "id": "land_arrival",
+      "label": "Land Arrival",
+      "path": "../stories/templates/template_land_arrival.json",
+      "recommendedDuration": 6,
+      "purpose": "Establish the land/area before the attraction."
+    },
+    {
+      "id": "queue",
+      "label": "Queue",
+      "path": "../stories/templates/template_queue.json",
+      "recommendedDuration": 7,
+      "purpose": "Queue approach, signage, barriers, and anticipation."
+    },
+    {
+      "id": "pre_show",
+      "label": "Pre Show",
+      "path": "../stories/templates/template_pre_show.json",
+      "recommendedDuration": 8,
+      "purpose": "Briefing, warning, or setup scene before boarding."
+    },
+    {
+      "id": "boarding",
+      "label": "Boarding",
+      "path": "../stories/templates/template_boarding.json",
+      "recommendedDuration": 7,
+      "purpose": "Boarding platform and safety setup."
+    },
+    {
+      "id": "launch",
+      "label": "Launch",
+      "path": "../stories/templates/template_launch.json",
+      "recommendedDuration": 6,
+      "purpose": "Launch moment with speed lines and vehicle motion."
+    },
+    {
+      "id": "first_reveal",
+      "label": "First Reveal",
+      "path": "../stories/templates/template_first_reveal.json",
+      "recommendedDuration": 7,
+      "purpose": "First large visual reveal of the ride world."
+    },
+    {
+      "id": "show_scene",
+      "label": "Show Scene",
+      "path": "../stories/templates/template_show_scene.json",
+      "recommendedDuration": 8,
+      "purpose": "Character, prop, effect, and scenic storytelling beat."
+    },
+    {
+      "id": "creature_encounter",
+      "label": "Creature Encounter",
+      "path": "../stories/templates/template_creature_encounter.json",
+      "recommendedDuration": 8,
+      "purpose": "Creature enters, reacts, scares or surprises the characters."
+    },
+    {
+      "id": "action_sequence",
+      "label": "Action Sequence",
+      "path": "../stories/templates/template_action_sequence.json",
+      "recommendedDuration": 7,
+      "purpose": "Fast movement/action beat with multiple actors and effects."
+    },
+    {
+      "id": "best_moment",
+      "label": "Best Moment",
+      "path": "../stories/templates/template_best_moment.json",
+      "recommendedDuration": 8,
+      "purpose": "Hero shot for the best/most memorable ride moment."
+    },
+    {
+      "id": "escape_sequence",
+      "label": "Escape Sequence",
+      "path": "../stories/templates/template_escape_sequence.json",
+      "recommendedDuration": 7,
+      "purpose": "Urgent escape, chase, collapse, or danger beat."
+    },
+    {
+      "id": "finale",
+      "label": "Finale",
+      "path": "../stories/templates/template_finale.json",
+      "recommendedDuration": 8,
+      "purpose": "Final show scene or emotional payoff."
+    },
+    {
+      "id": "unload",
+      "label": "Unload",
+      "path": "../stories/templates/template_unload.json",
+      "recommendedDuration": 6,
+      "purpose": "Unload platform and post-ride reaction."
+    },
+    {
+      "id": "exit",
+      "label": "Exit",
+      "path": "../stories/templates/template_exit.json",
+      "recommendedDuration": 6,
+      "purpose": "Guests leave the attraction area."
+    },
+    {
+      "id": "outro",
+      "label": "Outro",
+      "path": "../stories/templates/template_outro.json",
+      "recommendedDuration": 7,
+      "purpose": "Closing call-to-action and episode outro."
+    }
+  ]
+}

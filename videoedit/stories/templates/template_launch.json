@@ -1,0 +1,116 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_launch",
+  "templateName": "Launch",
+  "recommendedDuration": 6,
+  "purpose": "Launch moment with speed lines and vehicle motion.",
+  "assetRoles": [
+    "effect",
+    "ride",
+    "transition",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_launch",
+    "title": "Launch",
+    "duration": 6,
+    "environment": {
+      "asset": "environment_deep_space_tunnel",
+      "sky": "#090b1b",
+      "ground": "#252d55"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1.05
+    },
+    "actors": [
+      {
+        "id": "track",
+        "asset": "ride_launch_coaster_track",
+        "position": [
+          140,
+          245,
+          2
+        ],
+        "scale": 0.9,
+        "role": "ride"
+      },
+      {
+        "id": "train",
+        "asset": "vehicle_launch_coaster_train",
+        "position": [
+          180,
+          360,
+          5
+        ],
+        "scale": 0.72,
+        "role": "vehicle"
+      },
+      {
+        "id": "speed",
+        "asset": "effect_speed_lines",
+        "position": [
+          640,
+          230,
+          15
+        ],
+        "scale": 1.2,
+        "role": "effect",
+        "opacity": "0.55"
+      },
+      {
+        "id": "flash",
+        "asset": "transition_flash",
+        "position": [
+          640,
+          360,
+          25
+        ],
+        "scale": 1,
+        "role": "transition",
+        "opacity": "0.25"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 3.5,
+        "actor": "train",
+        "action": "drive",
+        "to": [
+          1030,
+          250,
+          5
+        ]
+      },
+      {
+        "start": 0.5,
+        "duration": 3,
+        "actor": "speed",
+        "action": "gesture",
+        "parts": {
+          "lines": [
+            0,
+            15
+          ]
+        }
+      },
+      {
+        "start": 2.5,
+        "duration": 1,
+        "actor": "flash",
+        "action": "gesture",
+        "parts": {
+          "panel": [
+            0,
+            5
+          ]
+        }
+      }
+    ]
+  }
+}

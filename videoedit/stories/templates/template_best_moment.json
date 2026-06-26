@@ -1,0 +1,111 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_best_moment",
+  "templateName": "Best Moment",
+  "recommendedDuration": 8,
+  "purpose": "Hero shot for the best/most memorable ride moment.",
+  "assetRoles": [
+    "effect",
+    "overlay",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_best_moment",
+    "title": "Best Moment",
+    "duration": 8,
+    "environment": {
+      "asset": "environment_neon_grid",
+      "sky": "#050714",
+      "ground": "#11183b"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1.12
+    },
+    "actors": [
+      {
+        "id": "heroVehicle",
+        "asset": "vehicle_lightcycle_bike",
+        "position": [
+          535,
+          350,
+          7
+        ],
+        "scale": 0.82,
+        "role": "vehicle"
+      },
+      {
+        "id": "glow",
+        "asset": "effect_neon_glow",
+        "position": [
+          560,
+          335,
+          12
+        ],
+        "scale": 1.05,
+        "role": "effect",
+        "opacity": "0.55"
+      },
+      {
+        "id": "rating",
+        "asset": "overlay_rating_stars",
+        "position": [
+          640,
+          110,
+          21
+        ],
+        "scale": 0.75,
+        "role": "overlay"
+      },
+      {
+        "id": "caption",
+        "asset": "overlay_comic_caption",
+        "position": [
+          640,
+          560,
+          22
+        ],
+        "scale": 0.75,
+        "role": "overlay",
+        "text": "BEST MOMENT"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 2,
+        "actor": "glow",
+        "action": "gesture",
+        "parts": {
+          "glow": [
+            0,
+            10
+          ]
+        }
+      },
+      {
+        "start": 1,
+        "duration": 3,
+        "actor": "heroVehicle",
+        "action": "gesture",
+        "parts": {
+          "body": [
+            -3,
+            3
+          ]
+        }
+      },
+      {
+        "start": 2,
+        "duration": 2,
+        "actor": "rating",
+        "action": "enter",
+        "from": "top"
+      }
+    ]
+  }
+}

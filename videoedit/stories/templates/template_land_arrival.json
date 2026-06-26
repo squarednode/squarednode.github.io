@@ -1,0 +1,112 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_land_arrival",
+  "templateName": "Land Arrival",
+  "recommendedDuration": 6,
+  "purpose": "Establish the land/area before the attraction.",
+  "assetRoles": [
+    "character",
+    "landmark",
+    "overlay",
+    "signage"
+  ],
+  "shot": {
+    "id": "shot_land_arrival",
+    "title": "Land Arrival",
+    "duration": 6,
+    "environment": {
+      "asset": "park_path_day",
+      "sky": "#dff4ff",
+      "ground": "#91d47c"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "landSign",
+        "asset": "signage_area_map",
+        "position": [
+          835,
+          210,
+          5
+        ],
+        "scale": 0.75,
+        "role": "signage",
+        "text": "NEW LAND"
+      },
+      {
+        "id": "landmark",
+        "asset": "landmark_jungle_research_outpost",
+        "position": [
+          560,
+          70,
+          2
+        ],
+        "scale": 0.7,
+        "role": "landmark"
+      },
+      {
+        "id": "host",
+        "asset": "human_guest_basic",
+        "position": [
+          285,
+          285,
+          6
+        ],
+        "scale": 0.8,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "location",
+        "asset": "overlay_location_card",
+        "position": [
+          260,
+          90,
+          20
+        ],
+        "scale": 0.75,
+        "role": "overlay",
+        "title": "Land Arrival"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 2,
+        "actor": "host",
+        "action": "walk",
+        "to": [
+          385,
+          285,
+          6
+        ]
+      },
+      {
+        "start": 2,
+        "duration": 2.5,
+        "actor": "host",
+        "action": "talk",
+        "expression": "happy"
+      },
+      {
+        "start": 3.2,
+        "duration": 1.8,
+        "actor": "landSign",
+        "action": "gesture",
+        "parts": {
+          "panel": [
+            -4,
+            4
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_boarding",
+  "templateName": "Boarding",
+  "recommendedDuration": 7,
+  "purpose": "Boarding platform and safety setup.",
+  "assetRoles": [
+    "character",
+    "ride",
+    "signage",
+    "vehicle"
+  ],
+  "shot": {
+    "id": "shot_boarding",
+    "title": "Boarding",
+    "duration": 7,
+    "environment": {
+      "asset": "park_path_day",
+      "sky": "#eaf7ff",
+      "ground": "#98d987"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "vehicle",
+        "asset": "vehicle_cart_basic",
+        "position": [
+          590,
+          350,
+          5
+        ],
+        "scale": 0.8,
+        "role": "vehicle"
+      },
+      {
+        "id": "platform",
+        "asset": "ride_omnimover_track",
+        "position": [
+          395,
+          365,
+          2
+        ],
+        "scale": 0.9,
+        "role": "ride"
+      },
+      {
+        "id": "crew",
+        "asset": "character_coaster_crew",
+        "position": [
+          310,
+          290,
+          6
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "guest",
+        "asset": "human_rider_basic",
+        "position": [
+          180,
+          320,
+          7
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "safety",
+        "asset": "signage_safety_warning",
+        "position": [
+          870,
+          240,
+          6
+        ],
+        "scale": 0.58,
+        "role": "signage",
+        "text": "CHECK LAP BAR"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 2,
+        "actor": "guest",
+        "action": "walk",
+        "to": [
+          455,
+          320,
+          7
+        ]
+      },
+      {
+        "start": 1.5,
+        "duration": 2,
+        "actor": "crew",
+        "action": "wave"
+      },
+      {
+        "start": 3,
+        "duration": 2,
+        "actor": "vehicle",
+        "action": "gesture",
+        "parts": {
+          "body": [
+            -2,
+            2
+          ]
+        }
+      }
+    ]
+  }
+}

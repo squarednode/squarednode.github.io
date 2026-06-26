@@ -1,0 +1,112 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_show_scene",
+  "templateName": "Show Scene",
+  "recommendedDuration": 8,
+  "purpose": "Character, prop, effect, and scenic storytelling beat.",
+  "assetRoles": [
+    "character",
+    "effect",
+    "landmark",
+    "prop"
+  ],
+  "shot": {
+    "id": "shot_show_scene",
+    "title": "Show Scene",
+    "duration": 8,
+    "environment": {
+      "asset": "environment_wizard_castle_interior",
+      "sky": "#ded5ff",
+      "ground": "#8f83aa"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "setPiece",
+        "asset": "landmark_wizard_castle_towers",
+        "position": [
+          575,
+          45,
+          2
+        ],
+        "scale": 0.6,
+        "role": "landmark"
+      },
+      {
+        "id": "performer",
+        "asset": "character_wizard_student",
+        "position": [
+          360,
+          265,
+          6
+        ],
+        "scale": 0.7,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "prop",
+        "asset": "prop_spell_book",
+        "position": [
+          555,
+          320,
+          7
+        ],
+        "scale": 0.45,
+        "role": "prop"
+      },
+      {
+        "id": "sparkle",
+        "asset": "effect_magic_sparkle",
+        "position": [
+          575,
+          230,
+          14
+        ],
+        "scale": 0.9,
+        "role": "effect",
+        "opacity": "0.7"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 3,
+        "actor": "performer",
+        "action": "talk",
+        "expression": "happy"
+      },
+      {
+        "start": 1,
+        "duration": 4,
+        "actor": "sparkle",
+        "action": "gesture",
+        "parts": {
+          "sparkle": [
+            -10,
+            10
+          ]
+        }
+      },
+      {
+        "start": 3,
+        "duration": 2,
+        "actor": "prop",
+        "action": "gesture",
+        "parts": {
+          "book": [
+            -5,
+            5
+          ]
+        }
+      }
+    ]
+  }
+}

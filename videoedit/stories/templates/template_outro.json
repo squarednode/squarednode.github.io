@@ -1,0 +1,112 @@
+{
+  "templateVersion": "37.0",
+  "templateId": "template_outro",
+  "templateName": "Outro",
+  "recommendedDuration": 7,
+  "purpose": "Closing call-to-action and episode outro.",
+  "assetRoles": [
+    "character",
+    "overlay"
+  ],
+  "shot": {
+    "id": "shot_outro",
+    "title": "Outro",
+    "duration": 7,
+    "environment": {
+      "asset": "park_path_day",
+      "sky": "#dff4ff",
+      "ground": "#91d47c"
+    },
+    "camera": {
+      "type": "2.5d",
+      "position": [
+        0,
+        0
+      ],
+      "zoom": 1
+    },
+    "actors": [
+      {
+        "id": "host",
+        "asset": "human_guest_basic",
+        "position": [
+          315,
+          305,
+          6
+        ],
+        "scale": 0.75,
+        "role": "character",
+        "expression": "happy"
+      },
+      {
+        "id": "title",
+        "asset": "overlay_title_card",
+        "position": [
+          640,
+          145,
+          20
+        ],
+        "scale": 0.8,
+        "role": "overlay",
+        "title": "Thanks for Riding",
+        "subtitle": "Like / Subscribe / Next Episode"
+      },
+      {
+        "id": "stars",
+        "asset": "overlay_rating_stars",
+        "position": [
+          640,
+          460,
+          21
+        ],
+        "scale": 0.75,
+        "role": "overlay"
+      },
+      {
+        "id": "arrow",
+        "asset": "overlay_arrow_pointer",
+        "position": [
+          1005,
+          310,
+          22
+        ],
+        "scale": 0.55,
+        "role": "overlay"
+      }
+    ],
+    "timeline": [
+      {
+        "start": 0,
+        "duration": 3,
+        "actor": "host",
+        "action": "talk",
+        "expression": "happy"
+      },
+      {
+        "start": 1,
+        "duration": 2,
+        "actor": "title",
+        "action": "enter",
+        "from": "top"
+      },
+      {
+        "start": 3,
+        "duration": 2,
+        "actor": "host",
+        "action": "wave"
+      },
+      {
+        "start": 4,
+        "duration": 2,
+        "actor": "arrow",
+        "action": "gesture",
+        "parts": {
+          "arrow": [
+            -8,
+            8
+          ]
+        }
+      }
+    ]
+  }
+}
