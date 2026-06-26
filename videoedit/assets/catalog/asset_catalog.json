@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "24.0.0",
-  "version": "24.0.0",
+  "schemaVersion": "22.0",
+  "version": "39.0.0",
   "assetRoot": "../assets",
   "preferredStructure": "category-folders",
   "categories": {
@@ -15,7 +15,10 @@
     "facial_features": "facial_features",
     "effects": "effects",
     "signage": "signage",
-    "background_layers": "background_layers"
+    "background_layers": "background_layers",
+    "overlays": "overlays",
+    "transitions": "transitions",
+    "cinematic": "cinematic"
   },
   "assets": [
     {
@@ -379,12 +382,156 @@
       "path": "../creatures/creature_yeti/manifest.json"
     },
     {
+      "id": "effect_bubbles",
+      "category": "effects",
+      "path": "effects/effect_bubbles/manifest.json"
+    },
+    {
+      "id": "effect_dust_cloud",
+      "category": "effects",
+      "path": "effects/effect_dust_cloud/manifest.json"
+    },
+    {
+      "id": "effect_explosion_puff",
+      "category": "effects",
+      "path": "effects/effect_explosion_puff/manifest.json"
+    },
+    {
+      "id": "effect_falling_rocks",
+      "category": "effects",
+      "path": "effects/effect_falling_rocks/manifest.json"
+    },
+    {
+      "id": "effect_fire_flame",
+      "category": "effects",
+      "path": "effects/effect_fire_flame/manifest.json"
+    },
+    {
+      "id": "effect_floating_particles",
+      "category": "effects",
+      "path": "effects/effect_floating_particles/manifest.json"
+    },
+    {
+      "id": "effect_fog_bank",
+      "category": "effects",
+      "path": "effects/effect_fog_bank/manifest.json"
+    },
+    {
+      "id": "effect_ghost_aura",
+      "category": "effects",
+      "path": "effects/effect_ghost_aura/manifest.json"
+    },
+    {
+      "id": "effect_ground_mist",
+      "category": "effects",
+      "path": "effects/effect_ground_mist/manifest.json"
+    },
+    {
+      "id": "effect_hologram_scan",
+      "category": "effects",
+      "path": "effects/effect_hologram_scan/manifest.json"
+    },
+    {
+      "id": "effect_laser_grid",
+      "category": "effects",
+      "path": "effects/effect_laser_grid/manifest.json"
+    },
+    {
+      "id": "effect_light_beam",
+      "category": "effects",
+      "path": "effects/effect_light_beam/manifest.json"
+    },
+    {
+      "id": "effect_lightning_bolt",
+      "category": "effects",
+      "path": "effects/effect_lightning_bolt/manifest.json"
+    },
+    {
+      "id": "effect_magic_sparkle",
+      "category": "effects",
+      "path": "effects/effect_magic_sparkle/manifest.json"
+    },
+    {
+      "id": "effect_neon_glow",
+      "category": "effects",
+      "path": "effects/effect_neon_glow/manifest.json"
+    },
+    {
+      "id": "effect_portal_ring",
+      "category": "effects",
+      "path": "effects/effect_portal_ring/manifest.json"
+    },
+    {
+      "id": "effect_rain_streaks",
+      "category": "effects",
+      "path": "effects/effect_rain_streaks/manifest.json"
+    },
+    {
+      "id": "effect_smoke_puff",
+      "category": "effects",
+      "path": "effects/effect_smoke_puff/manifest.json"
+    },
+    {
+      "id": "effect_snow_flurry",
+      "category": "effects",
+      "path": "effects/effect_snow_flurry/manifest.json"
+    },
+    {
+      "id": "effect_sparks",
+      "category": "effects",
+      "path": "effects/effect_sparks/manifest.json"
+    },
+    {
+      "id": "effect_speed_lines",
+      "category": "effects",
+      "path": "effects/effect_speed_lines/manifest.json"
+    },
+    {
+      "id": "effect_steam_jet",
+      "category": "effects",
+      "path": "effects/effect_steam_jet/manifest.json"
+    },
+    {
+      "id": "effect_water_splash",
+      "category": "effects",
+      "path": "effects/effect_water_splash/manifest.json"
+    },
+    {
+      "id": "effect_web_net",
+      "category": "effects",
+      "path": "effects/effect_web_net/manifest.json"
+    },
+    {
+      "id": "environment_alien_forest_canopy",
+      "category": "environments",
+      "subcategory": "alien forest",
+      "type": "environment",
+      "label": "Alien Forest Canopy Environment",
+      "path": "../environments/environment_alien_forest_canopy/manifest.json"
+    },
+    {
       "id": "environment_city_night",
       "category": "environments",
       "subcategory": "city",
       "type": "environment",
       "label": "City Night Environment",
       "path": "../environments/environment_city_night/manifest.json"
+    },
+    {
+      "id": "environment_comic_city_street",
+      "category": "environments",
+      "subcategory": "comic city",
+      "type": "environment",
+      "label": "Comic City Street Environment",
+      "path": "../environments/environment_comic_city_street/manifest.json"
+    },
+    {
+      "id": "environment_deep_space_tunnel",
+      "category": "environments",
+      "subcategory": "space coaster",
+      "type": "environment",
+      "label": "Deep Space Tunnel Environment",
+      "path": "../environments/environment_deep_space_tunnel/manifest.json"
     },
     {
       "id": "environment_desert_canyon",
@@ -395,12 +542,108 @@
       "path": "../environments/environment_desert_canyon/manifest.json"
     },
     {
+      "id": "environment_forest_motorbike_path",
+      "category": "environments",
+      "subcategory": "forest path",
+      "type": "environment",
+      "label": "Forest Motorbike Path Environment",
+      "path": "../environments/environment_forest_motorbike_path/manifest.json"
+    },
+    {
+      "id": "environment_frontier_desert_mine",
+      "category": "environments",
+      "subcategory": "frontier mine",
+      "type": "environment",
+      "label": "Frontier Desert Mine Environment",
+      "path": "../environments/environment_frontier_desert_mine/manifest.json"
+    },
+    {
+      "id": "environment_gamma_lab_interior",
+      "category": "environments",
+      "subcategory": "science lab",
+      "type": "environment",
+      "label": "Gamma Lab Interior Environment",
+      "path": "../environments/environment_gamma_lab_interior/manifest.json"
+    },
+    {
+      "id": "environment_giga_coaster_midway",
+      "category": "environments",
+      "subcategory": "coaster midway",
+      "type": "environment",
+      "label": "Giga Coaster Midway Environment",
+      "path": "../environments/environment_giga_coaster_midway/manifest.json"
+    },
+    {
+      "id": "environment_haunted_gallery",
+      "category": "environments",
+      "subcategory": "haunted mansion",
+      "type": "environment",
+      "label": "Haunted Gallery Environment",
+      "path": "../environments/environment_haunted_gallery/manifest.json"
+    },
+    {
       "id": "environment_jungle_path",
       "category": "environments",
       "subcategory": "jungle",
       "type": "environment",
       "label": "Jungle Path Environment",
       "path": "../environments/environment_jungle_path/manifest.json"
+    },
+    {
+      "id": "environment_jurassic_paddock",
+      "category": "environments",
+      "subcategory": "jungle dinosaur paddock",
+      "type": "environment",
+      "label": "Jurassic Paddock Environment",
+      "path": "../environments/environment_jurassic_paddock/manifest.json"
+    },
+    {
+      "id": "environment_mischief_lab_interior",
+      "category": "environments",
+      "subcategory": "comedy lab",
+      "type": "environment",
+      "label": "Mischief Lab Interior Environment",
+      "path": "../environments/environment_mischief_lab_interior/manifest.json"
+    },
+    {
+      "id": "environment_mummy_tomb",
+      "category": "environments",
+      "subcategory": "ancient tomb",
+      "type": "environment",
+      "label": "Mummy Tomb Environment",
+      "path": "../environments/environment_mummy_tomb/manifest.json"
+    },
+    {
+      "id": "environment_neon_grid",
+      "category": "environments",
+      "subcategory": "neon grid",
+      "type": "environment",
+      "label": "Neon Grid Environment",
+      "path": "../environments/environment_neon_grid/manifest.json"
+    },
+    {
+      "id": "environment_pirate_cavern",
+      "category": "environments",
+      "subcategory": "pirate cavern",
+      "type": "environment",
+      "label": "Pirate Cavern Environment",
+      "path": "../environments/environment_pirate_cavern/manifest.json"
+    },
+    {
+      "id": "environment_resistance_hangar",
+      "category": "environments",
+      "subcategory": "space hangar",
+      "type": "environment",
+      "label": "Resistance Hangar Environment",
+      "path": "../environments/environment_resistance_hangar/manifest.json"
+    },
+    {
+      "id": "environment_snowy_alpine_peak",
+      "category": "environments",
+      "subcategory": "alpine snow",
+      "type": "environment",
+      "label": "Snowy Alpine Peak Environment",
+      "path": "../environments/environment_snowy_alpine_peak/manifest.json"
     },
     {
       "id": "environment_space_port",
@@ -411,6 +654,30 @@
       "path": "../environments/environment_space_port/manifest.json"
     },
     {
+      "id": "environment_street_race_city",
+      "category": "environments",
+      "subcategory": "street race",
+      "type": "environment",
+      "label": "Street Race City Environment",
+      "path": "../environments/environment_street_race_city/manifest.json"
+    },
+    {
+      "id": "environment_temple_jungle_ruins",
+      "category": "environments",
+      "subcategory": "temple ruins",
+      "type": "environment",
+      "label": "Temple Jungle Ruins Environment",
+      "path": "../environments/environment_temple_jungle_ruins/manifest.json"
+    },
+    {
+      "id": "environment_volcanic_underground",
+      "category": "environments",
+      "subcategory": "volcanic cavern",
+      "type": "environment",
+      "label": "Volcanic Underground Environment",
+      "path": "../environments/environment_volcanic_underground/manifest.json"
+    },
+    {
       "id": "environment_waterfront",
       "category": "environments",
       "subcategory": "waterfront",
@@ -419,12 +686,44 @@
       "path": "../environments/environment_waterfront/manifest.json"
     },
     {
+      "id": "environment_wizard_castle_interior",
+      "category": "environments",
+      "subcategory": "wizard castle",
+      "type": "environment",
+      "label": "Wizard Castle Interior Environment",
+      "path": "../environments/environment_wizard_castle_interior/manifest.json"
+    },
+    {
+      "id": "environment_world_festival_waterway",
+      "category": "environments",
+      "subcategory": "world waterway",
+      "type": "environment",
+      "label": "World Festival Waterway Environment",
+      "path": "../environments/environment_world_festival_waterway/manifest.json"
+    },
+    {
       "id": "park_path_day",
       "category": "environments",
       "subcategory": "theme_park_path",
       "type": "environment",
       "label": "Theme Park Path Day",
       "path": "../environments/park_path_day/manifest.json"
+    },
+    {
+      "id": "landmark_adventure_temple_ruins",
+      "category": "landmarks",
+      "subcategory": "temple_adventure",
+      "type": "landmark",
+      "label": "Adventure Temple Ruins",
+      "path": "../landmarks/landmark_adventure_temple_ruins/manifest.json"
+    },
+    {
+      "id": "landmark_alpine_mountain",
+      "category": "landmarks",
+      "subcategory": "alpine",
+      "type": "landmark",
+      "label": "Alpine Mountain",
+      "path": "../landmarks/landmark_alpine_mountain/manifest.json"
     },
     {
       "id": "landmark_castle_gate",
@@ -443,12 +742,76 @@
       "path": "../landmarks/landmark_city_facade/manifest.json"
     },
     {
+      "id": "landmark_comic_city_skyline",
+      "category": "landmarks",
+      "subcategory": "superhero_city",
+      "type": "landmark",
+      "label": "Comic City Skyline",
+      "path": "../landmarks/landmark_comic_city_skyline/manifest.json"
+    },
+    {
+      "id": "landmark_floating_mountain",
+      "category": "landmarks",
+      "subcategory": "alien_forest",
+      "type": "landmark",
+      "label": "Floating Mountain",
+      "path": "../landmarks/landmark_floating_mountain/manifest.json"
+    },
+    {
+      "id": "landmark_forest_motorbike_hut",
+      "category": "landmarks",
+      "subcategory": "forest",
+      "type": "landmark",
+      "label": "Forest Motorbike Hut",
+      "path": "../landmarks/landmark_forest_motorbike_hut/manifest.json"
+    },
+    {
+      "id": "landmark_frontier_mine_town",
+      "category": "landmarks",
+      "subcategory": "frontier",
+      "type": "landmark",
+      "label": "Frontier Mine Town",
+      "path": "../landmarks/landmark_frontier_mine_town/manifest.json"
+    },
+    {
+      "id": "landmark_gamma_lab",
+      "category": "landmarks",
+      "subcategory": "science_lab",
+      "type": "landmark",
+      "label": "Gamma Lab",
+      "path": "../landmarks/landmark_gamma_lab/manifest.json"
+    },
+    {
+      "id": "landmark_giga_coaster_station",
+      "category": "landmarks",
+      "subcategory": "coaster_station",
+      "type": "landmark",
+      "label": "Giga Coaster Station",
+      "path": "../landmarks/landmark_giga_coaster_station/manifest.json"
+    },
+    {
+      "id": "landmark_haunted_manor",
+      "category": "landmarks",
+      "subcategory": "haunted",
+      "type": "landmark",
+      "label": "Haunted Manor",
+      "path": "../landmarks/landmark_haunted_manor/manifest.json"
+    },
+    {
       "id": "landmark_iconic_globe",
       "category": "landmarks",
       "subcategory": "studio_landmark",
       "type": "landmark",
       "label": "Iconic Studio Globe",
       "path": "../landmarks/landmark_iconic_globe/manifest.json"
+    },
+    {
+      "id": "landmark_jungle_research_outpost",
+      "category": "landmarks",
+      "subcategory": "jungle_facility",
+      "type": "landmark",
+      "label": "Jungle Research Outpost",
+      "path": "../landmarks/landmark_jungle_research_outpost/manifest.json"
     },
     {
       "id": "landmark_lighthouse",
@@ -459,12 +822,60 @@
       "path": "../landmarks/landmark_lighthouse/manifest.json"
     },
     {
+      "id": "landmark_mischief_lab_facade",
+      "category": "landmarks",
+      "subcategory": "mischief_lab",
+      "type": "landmark",
+      "label": "Mischief Lab Facade",
+      "path": "../landmarks/landmark_mischief_lab_facade/manifest.json"
+    },
+    {
       "id": "landmark_mountain_peak",
       "category": "landmarks",
       "subcategory": "mountain",
       "type": "landmark",
       "label": "Mountain Peak",
       "path": "../landmarks/landmark_mountain_peak/manifest.json"
+    },
+    {
+      "id": "landmark_mummy_temple",
+      "category": "landmarks",
+      "subcategory": "ancient_mummy",
+      "type": "landmark",
+      "label": "Mummy Temple",
+      "path": "../landmarks/landmark_mummy_temple/manifest.json"
+    },
+    {
+      "id": "landmark_neon_grid_arch",
+      "category": "landmarks",
+      "subcategory": "neon_sci_fi",
+      "type": "landmark",
+      "label": "Neon Grid Arch",
+      "path": "../landmarks/landmark_neon_grid_arch/manifest.json"
+    },
+    {
+      "id": "landmark_pirate_fortress",
+      "category": "landmarks",
+      "subcategory": "pirate",
+      "type": "landmark",
+      "label": "Pirate Fortress",
+      "path": "../landmarks/landmark_pirate_fortress/manifest.json"
+    },
+    {
+      "id": "landmark_resistance_base",
+      "category": "landmarks",
+      "subcategory": "space_base",
+      "type": "landmark",
+      "label": "Resistance Base",
+      "path": "../landmarks/landmark_resistance_base/manifest.json"
+    },
+    {
+      "id": "landmark_space_launch_terminal",
+      "category": "landmarks",
+      "subcategory": "space_terminal",
+      "type": "landmark",
+      "label": "Space Launch Terminal",
+      "path": "../landmarks/landmark_space_launch_terminal/manifest.json"
     },
     {
       "id": "landmark_space_portal",
@@ -475,12 +886,49 @@
       "path": "../landmarks/landmark_space_portal/manifest.json"
     },
     {
+      "id": "landmark_street_garage",
+      "category": "landmarks",
+      "subcategory": "street_city",
+      "type": "landmark",
+      "label": "Street Racing Garage",
+      "path": "../landmarks/landmark_street_garage/manifest.json"
+    },
+    {
       "id": "landmark_temple_gate",
       "category": "landmarks",
       "subcategory": "gate",
       "type": "landmark",
       "label": "Temple Gate",
       "path": "../landmarks/landmark_temple_gate/manifest.json"
+    },
+    {
+      "id": "landmark_volcanic_cavern",
+      "category": "landmarks",
+      "subcategory": "underground",
+      "type": "landmark",
+      "label": "Volcanic Cavern",
+      "path": "../landmarks/landmark_volcanic_cavern/manifest.json"
+    },
+    {
+      "id": "landmark_wizard_castle_towers",
+      "category": "landmarks",
+      "subcategory": "fantasy_castle",
+      "type": "landmark",
+      "label": "Wizard Castle Towers",
+      "path": "../landmarks/landmark_wizard_castle_towers/manifest.json"
+    },
+    {
+      "id": "landmark_world_facade_row",
+      "category": "landmarks",
+      "subcategory": "world_show",
+      "type": "landmark",
+      "label": "World Facade Row",
+      "path": "../landmarks/landmark_world_facade_row/manifest.json"
+    },
+    {
+      "id": "prop_ancient_scroll",
+      "category": "props",
+      "path": "../props/prop_ancient_scroll/manifest.json"
     },
     {
       "id": "prop_backpack",
@@ -499,12 +947,32 @@
       "path": "../props/prop_balloon/manifest.json"
     },
     {
+      "id": "prop_banana",
+      "category": "props",
+      "path": "../props/prop_banana/manifest.json"
+    },
+    {
       "id": "prop_camera",
       "category": "props",
       "subcategory": "device",
       "type": "prop",
       "label": "Camera",
       "path": "../props/prop_camera/manifest.json"
+    },
+    {
+      "id": "prop_clock_tower_face",
+      "category": "props",
+      "path": "../props/prop_clock_tower_face/manifest.json"
+    },
+    {
+      "id": "prop_coaster_height_sign",
+      "category": "props",
+      "path": "../props/prop_coaster_height_sign/manifest.json"
+    },
+    {
+      "id": "prop_compass",
+      "category": "props",
+      "path": "../props/prop_compass/manifest.json"
     },
     {
       "id": "prop_crate",
@@ -515,6 +983,26 @@
       "path": "../props/prop_crate/manifest.json"
     },
     {
+      "id": "prop_data_pad",
+      "category": "props",
+      "path": "../props/prop_data_pad/manifest.json"
+    },
+    {
+      "id": "prop_dinosaur_egg",
+      "category": "props",
+      "path": "../props/prop_dinosaur_egg/manifest.json"
+    },
+    {
+      "id": "prop_energy_sword",
+      "category": "props",
+      "path": "../props/prop_energy_sword/manifest.json"
+    },
+    {
+      "id": "prop_engine_wrench",
+      "category": "props",
+      "path": "../props/prop_engine_wrench/manifest.json"
+    },
+    {
       "id": "prop_flashlight",
       "category": "props",
       "subcategory": "tool",
@@ -523,12 +1011,57 @@
       "path": "../props/prop_flashlight/manifest.json"
     },
     {
+      "id": "prop_floating_candle",
+      "category": "props",
+      "path": "../props/prop_floating_candle/manifest.json"
+    },
+    {
       "id": "prop_food_tray",
       "category": "props",
       "subcategory": "food",
       "type": "prop",
       "label": "Food Tray",
       "path": "../props/prop_food_tray/manifest.json"
+    },
+    {
+      "id": "prop_fossil_bone",
+      "category": "props",
+      "path": "../props/prop_fossil_bone/manifest.json"
+    },
+    {
+      "id": "prop_gem_crystal",
+      "category": "props",
+      "path": "../props/prop_gem_crystal/manifest.json"
+    },
+    {
+      "id": "prop_glowing_plant",
+      "category": "props",
+      "path": "../props/prop_glowing_plant/manifest.json"
+    },
+    {
+      "id": "prop_haunted_portrait",
+      "category": "props",
+      "path": "../props/prop_haunted_portrait/manifest.json"
+    },
+    {
+      "id": "prop_ice_axe",
+      "category": "props",
+      "path": "../props/prop_ice_axe/manifest.json"
+    },
+    {
+      "id": "prop_lab_console",
+      "category": "props",
+      "path": "../props/prop_lab_console/manifest.json"
+    },
+    {
+      "id": "prop_lab_gadget",
+      "category": "props",
+      "path": "../props/prop_lab_gadget/manifest.json"
+    },
+    {
+      "id": "prop_lab_vial",
+      "category": "props",
+      "path": "../props/prop_lab_vial/manifest.json"
     },
     {
       "id": "prop_lantern",
@@ -547,12 +1080,37 @@
       "path": "../props/prop_map/manifest.json"
     },
     {
+      "id": "prop_neon_disc",
+      "category": "props",
+      "path": "../props/prop_neon_disc/manifest.json"
+    },
+    {
+      "id": "prop_nitro_tank",
+      "category": "props",
+      "path": "../props/prop_nitro_tank/manifest.json"
+    },
+    {
+      "id": "prop_pickaxe",
+      "category": "props",
+      "path": "../props/prop_pickaxe/manifest.json"
+    },
+    {
+      "id": "prop_pirate_sword",
+      "category": "props",
+      "path": "../props/prop_pirate_sword/manifest.json"
+    },
+    {
       "id": "prop_popcorn_bucket",
       "category": "props",
       "subcategory": "food",
       "type": "prop",
       "label": "Popcorn Bucket",
       "path": "../props/prop_popcorn_bucket/manifest.json"
+    },
+    {
+      "id": "prop_racing_cone",
+      "category": "props",
+      "path": "../props/prop_racing_cone/manifest.json"
     },
     {
       "id": "prop_rope_barrier",
@@ -563,12 +1121,37 @@
       "path": "../props/prop_rope_barrier/manifest.json"
     },
     {
+      "id": "prop_rope_whip",
+      "category": "props",
+      "path": "../props/prop_rope_whip/manifest.json"
+    },
+    {
+      "id": "prop_sarcophagus",
+      "category": "props",
+      "path": "../props/prop_sarcophagus/manifest.json"
+    },
+    {
+      "id": "prop_seed_pod",
+      "category": "props",
+      "path": "../props/prop_seed_pod/manifest.json"
+    },
+    {
       "id": "prop_sign_arrow",
       "category": "props",
       "subcategory": "signage",
       "type": "prop",
       "label": "Arrow Sign Prop",
       "path": "../props/prop_sign_arrow/manifest.json"
+    },
+    {
+      "id": "prop_snow_marker",
+      "category": "props",
+      "path": "../props/prop_snow_marker/manifest.json"
+    },
+    {
+      "id": "prop_space_blaster",
+      "category": "props",
+      "path": "../props/prop_space_blaster/manifest.json"
     },
     {
       "id": "prop_speech_bubble",
@@ -579,12 +1162,22 @@
       "path": "../props/prop_speech_bubble/manifest.json"
     },
     {
+      "id": "prop_spell_book",
+      "category": "props",
+      "path": "../props/prop_spell_book/manifest.json"
+    },
+    {
       "id": "prop_star_marker",
       "category": "props",
       "subcategory": "marker",
       "type": "prop",
       "label": "Star Marker",
       "path": "../props/prop_star_marker/manifest.json"
+    },
+    {
+      "id": "prop_temple_idol",
+      "category": "props",
+      "path": "../props/prop_temple_idol/manifest.json"
     },
     {
       "id": "prop_ticket",
@@ -595,6 +1188,34 @@
       "path": "../props/prop_ticket/manifest.json"
     },
     {
+      "id": "prop_treasure_chest",
+      "category": "props",
+      "path": "../props/prop_treasure_chest/manifest.json"
+    },
+    {
+      "id": "prop_web_emitter",
+      "category": "props",
+      "path": "../props/prop_web_emitter/manifest.json"
+    },
+    {
+      "id": "prop_wizard_wand",
+      "category": "props",
+      "path": "../props/prop_wizard_wand/manifest.json"
+    },
+    {
+      "id": "prop_world_flag",
+      "category": "props",
+      "path": "../props/prop_world_flag/manifest.json"
+    },
+    {
+      "id": "ride_bobsled_mountain_track",
+      "category": "rides",
+      "subcategory": "mountain_track",
+      "type": "ride",
+      "label": "Mountain Bobsled Track",
+      "path": "../rides/ride_bobsled_mountain_track/manifest.json"
+    },
+    {
       "id": "ride_coaster_track",
       "category": "rides",
       "subcategory": "coaster_track",
@@ -603,12 +1224,28 @@
       "path": "../rides/ride_coaster_track/manifest.json"
     },
     {
+      "id": "ride_dark_boat_channel",
+      "category": "rides",
+      "subcategory": "boat_channel",
+      "type": "ride",
+      "label": "Dark Ride Boat Channel",
+      "path": "../rides/ride_dark_boat_channel/manifest.json"
+    },
+    {
       "id": "ride_drop_tower_icon",
       "category": "rides",
       "subcategory": "thrill_ride",
       "type": "ride",
       "label": "Drop Tower Icon",
       "path": "../rides/ride_drop_tower_icon/manifest.json"
+    },
+    {
+      "id": "ride_elevator_mine_lift",
+      "category": "rides",
+      "subcategory": "vertical_lift",
+      "type": "ride",
+      "label": "Elevator Mine Lift",
+      "path": "../rides/ride_elevator_mine_lift/manifest.json"
     },
     {
       "id": "ride_ferris_wheel_icon",
@@ -627,12 +1264,84 @@
       "path": "../rides/ride_flat_spinner/manifest.json"
     },
     {
+      "id": "ride_flying_theater_linkage",
+      "category": "rides",
+      "subcategory": "flying_theater",
+      "type": "ride",
+      "label": "Flying Theater Linkage",
+      "path": "../rides/ride_flying_theater_linkage/manifest.json"
+    },
+    {
+      "id": "ride_hyper_coaster_track",
+      "category": "rides",
+      "subcategory": "coaster_track",
+      "type": "ride",
+      "label": "Hyper Coaster Track",
+      "path": "../rides/ride_hyper_coaster_track/manifest.json"
+    },
+    {
+      "id": "ride_indoor_space_coaster_track",
+      "category": "rides",
+      "subcategory": "coaster_track",
+      "type": "ride",
+      "label": "Indoor Space Coaster Track",
+      "path": "../rides/ride_indoor_space_coaster_track/manifest.json"
+    },
+    {
+      "id": "ride_launch_coaster_track",
+      "category": "rides",
+      "subcategory": "coaster_track",
+      "type": "ride",
+      "label": "Launch Coaster Track",
+      "path": "../rides/ride_launch_coaster_track/manifest.json"
+    },
+    {
+      "id": "ride_lightcycle_track",
+      "category": "rides",
+      "subcategory": "cycle_track",
+      "type": "ride",
+      "label": "Lightcycle Launch Track",
+      "path": "../rides/ride_lightcycle_track/manifest.json"
+    },
+    {
+      "id": "ride_mine_train_track",
+      "category": "rides",
+      "subcategory": "mine_train_track",
+      "type": "ride",
+      "label": "Mine Train Track",
+      "path": "../rides/ride_mine_train_track/manifest.json"
+    },
+    {
+      "id": "ride_motorbike_coaster_track",
+      "category": "rides",
+      "subcategory": "coaster_track",
+      "type": "ride",
+      "label": "Motorbike Coaster Track",
+      "path": "../rides/ride_motorbike_coaster_track/manifest.json"
+    },
+    {
+      "id": "ride_omnimover_track",
+      "category": "rides",
+      "subcategory": "dark_ride_track",
+      "type": "ride",
+      "label": "Omnimover Track",
+      "path": "../rides/ride_omnimover_track/manifest.json"
+    },
+    {
       "id": "ride_queue_arch",
       "category": "rides",
       "subcategory": "queue",
       "type": "ride",
       "label": "Queue Arch",
       "path": "../rides/ride_queue_arch/manifest.json"
+    },
+    {
+      "id": "ride_robot_arm_track",
+      "category": "rides",
+      "subcategory": "robot_arm_track",
+      "type": "ride",
+      "label": "Robot Arm Ride Track",
+      "path": "../rides/ride_robot_arm_track/manifest.json"
     },
     {
       "id": "ride_show_stage",
@@ -643,12 +1352,44 @@
       "path": "../rides/ride_show_stage/manifest.json"
     },
     {
+      "id": "ride_simulator_platform",
+      "category": "rides",
+      "subcategory": "simulator_platform",
+      "type": "ride",
+      "label": "Simulator Platform",
+      "path": "../rides/ride_simulator_platform/manifest.json"
+    },
+    {
+      "id": "ride_small_boat_facade_channel",
+      "category": "rides",
+      "subcategory": "boat_channel",
+      "type": "ride",
+      "label": "Storybook Boat Facade Channel",
+      "path": "../rides/ride_small_boat_facade_channel/manifest.json"
+    },
+    {
       "id": "ride_swing_tower",
       "category": "rides",
       "subcategory": "swing",
       "type": "ride",
       "label": "Swing Tower Ride",
       "path": "../rides/ride_swing_tower/manifest.json"
+    },
+    {
+      "id": "ride_temple_jeep_track",
+      "category": "rides",
+      "subcategory": "jeep_track",
+      "type": "ride",
+      "label": "Temple Jeep Track",
+      "path": "../rides/ride_temple_jeep_track/manifest.json"
+    },
+    {
+      "id": "ride_trackless_dark_ride_path",
+      "category": "rides",
+      "subcategory": "dark_ride_path",
+      "type": "ride",
+      "label": "Trackless Dark Ride Path",
+      "path": "../rides/ride_trackless_dark_ride_path/manifest.json"
     },
     {
       "id": "ride_water_flume_track",
@@ -659,12 +1400,165 @@
       "path": "../rides/ride_water_flume_track/manifest.json"
     },
     {
+      "id": "signage_accessibility",
+      "category": "signage",
+      "path": "signage/signage_accessibility/manifest.json"
+    },
+    {
+      "id": "signage_alien_forest",
+      "category": "signage",
+      "path": "signage/signage_alien_forest/manifest.json"
+    },
+    {
+      "id": "signage_alpine_trail",
+      "category": "signage",
+      "path": "signage/signage_alpine_trail/manifest.json"
+    },
+    {
+      "id": "signage_area_map",
+      "category": "signage",
+      "path": "signage/signage_area_map/manifest.json"
+    },
+    {
+      "id": "signage_dinosaur_paddock",
+      "category": "signage",
+      "path": "signage/signage_dinosaur_paddock/manifest.json"
+    },
+    {
+      "id": "signage_emergency_exit",
+      "category": "signage",
+      "path": "signage/signage_emergency_exit/manifest.json"
+    },
+    {
+      "id": "signage_exit",
+      "category": "signage",
+      "path": "signage/signage_exit/manifest.json"
+    },
+    {
+      "id": "signage_express_lane",
+      "category": "signage",
+      "path": "signage/signage_express_lane/manifest.json"
+    },
+    {
+      "id": "signage_food_drink",
+      "category": "signage",
+      "path": "signage/signage_food_drink/manifest.json"
+    },
+    {
+      "id": "signage_guest_services",
+      "category": "signage",
+      "path": "signage/signage_guest_services/manifest.json"
+    },
+    {
+      "id": "signage_haunted_estate",
+      "category": "signage",
+      "path": "signage/signage_haunted_estate/manifest.json"
+    },
+    {
+      "id": "signage_height_requirement",
+      "category": "signage",
+      "path": "signage/signage_height_requirement/manifest.json"
+    },
+    {
+      "id": "signage_hero_city",
+      "category": "signage",
+      "path": "signage/signage_hero_city/manifest.json"
+    },
+    {
+      "id": "signage_lab_hazard",
+      "category": "signage",
+      "path": "signage/signage_lab_hazard/manifest.json"
+    },
+    {
+      "id": "signage_mine_town",
+      "category": "signage",
+      "path": "signage/signage_mine_town/manifest.json"
+    },
+    {
+      "id": "signage_mummy_tomb",
+      "category": "signage",
+      "path": "signage/signage_mummy_tomb/manifest.json"
+    },
+    {
+      "id": "signage_neon_grid",
+      "category": "signage",
+      "path": "signage/signage_neon_grid/manifest.json"
+    },
+    {
+      "id": "signage_photo_spot",
+      "category": "signage",
+      "path": "signage/signage_photo_spot/manifest.json"
+    },
+    {
+      "id": "signage_pirate_cove",
+      "category": "signage",
+      "path": "signage/signage_pirate_cove/manifest.json"
+    },
+    {
+      "id": "signage_racing_garage",
+      "category": "signage",
+      "path": "signage/signage_racing_garage/manifest.json"
+    },
+    {
+      "id": "signage_restrooms",
+      "category": "signage",
+      "path": "signage/signage_restrooms/manifest.json"
+    },
+    {
+      "id": "signage_ride_entrance",
+      "category": "signage",
+      "path": "signage/signage_ride_entrance/manifest.json"
+    },
+    {
+      "id": "signage_safety_warning",
+      "category": "signage",
+      "path": "signage/signage_safety_warning/manifest.json"
+    },
+    {
+      "id": "signage_space_hangar",
+      "category": "signage",
+      "path": "signage/signage_space_hangar/manifest.json"
+    },
+    {
+      "id": "signage_standby_queue",
+      "category": "signage",
+      "path": "signage/signage_standby_queue/manifest.json"
+    },
+    {
+      "id": "signage_temple_warning",
+      "category": "signage",
+      "path": "signage/signage_temple_warning/manifest.json"
+    },
+    {
+      "id": "signage_wait_time",
+      "category": "signage",
+      "path": "signage/signage_wait_time/manifest.json"
+    },
+    {
+      "id": "signage_wizard_school",
+      "category": "signage",
+      "path": "signage/signage_wizard_school/manifest.json"
+    },
+    {
+      "id": "signage_world_festival",
+      "category": "signage",
+      "path": "signage/signage_world_festival/manifest.json"
+    },
+    {
       "id": "vehicle_boat",
       "category": "vehicles",
       "subcategory": "water_vehicle",
       "type": "vehicle",
       "label": "Ride Boat",
       "path": "../vehicles/vehicle_boat/manifest.json"
+    },
+    {
+      "id": "vehicle_bobsled",
+      "category": "vehicles",
+      "subcategory": "sled_vehicle",
+      "type": "vehicle",
+      "label": "Mountain Bobsled",
+      "path": "../vehicles/vehicle_bobsled/manifest.json"
     },
     {
       "id": "vehicle_cart_basic",
@@ -675,12 +1569,52 @@
       "path": "../vehicles/vehicle_cart_basic/manifest.json"
     },
     {
+      "id": "vehicle_classic_boat",
+      "category": "vehicles",
+      "subcategory": "boat_vehicle",
+      "type": "vehicle",
+      "label": "Classic Ride Boat",
+      "path": "../vehicles/vehicle_classic_boat/manifest.json"
+    },
+    {
       "id": "vehicle_coaster_train",
       "category": "vehicles",
       "subcategory": "ride_vehicle",
       "type": "vehicle",
       "label": "Coaster Train",
       "path": "../vehicles/vehicle_coaster_train/manifest.json"
+    },
+    {
+      "id": "vehicle_doom_buggy",
+      "category": "vehicles",
+      "subcategory": "dark_ride_vehicle",
+      "type": "vehicle",
+      "label": "Clamshell Dark Ride Vehicle",
+      "path": "../vehicles/vehicle_doom_buggy/manifest.json"
+    },
+    {
+      "id": "vehicle_drill_explorer",
+      "category": "vehicles",
+      "subcategory": "explorer_vehicle",
+      "type": "vehicle",
+      "label": "Drill Explorer Vehicle",
+      "path": "../vehicles/vehicle_drill_explorer/manifest.json"
+    },
+    {
+      "id": "vehicle_enchanted_bench",
+      "category": "vehicles",
+      "subcategory": "suspended_dark_ride_vehicle",
+      "type": "vehicle",
+      "label": "Enchanted Bench Vehicle",
+      "path": "../vehicles/vehicle_enchanted_bench/manifest.json"
+    },
+    {
+      "id": "vehicle_flying_saddle",
+      "category": "vehicles",
+      "subcategory": "flying_theater_vehicle",
+      "type": "vehicle",
+      "label": "Flying Saddle Ride Vehicle",
+      "path": "../vehicles/vehicle_flying_saddle/manifest.json"
     },
     {
       "id": "vehicle_jeep",
@@ -691,12 +1625,76 @@
       "path": "../vehicles/vehicle_jeep/manifest.json"
     },
     {
+      "id": "vehicle_lab_hover_pod",
+      "category": "vehicles",
+      "subcategory": "simulator_vehicle",
+      "type": "vehicle",
+      "label": "Lab Hover Pod",
+      "path": "../vehicles/vehicle_lab_hover_pod/manifest.json"
+    },
+    {
+      "id": "vehicle_launch_coaster_train",
+      "category": "vehicles",
+      "subcategory": "coaster_vehicle",
+      "type": "vehicle",
+      "label": "Launch Coaster Train",
+      "path": "../vehicles/vehicle_launch_coaster_train/manifest.json"
+    },
+    {
+      "id": "vehicle_lightcycle_bike",
+      "category": "vehicles",
+      "subcategory": "cycle_vehicle",
+      "type": "vehicle",
+      "label": "Lightcycle Bike",
+      "path": "../vehicles/vehicle_lightcycle_bike/manifest.json"
+    },
+    {
+      "id": "vehicle_mine_train_car",
+      "category": "vehicles",
+      "subcategory": "coaster_vehicle",
+      "type": "vehicle",
+      "label": "Mine Train Car",
+      "path": "../vehicles/vehicle_mine_train_car/manifest.json"
+    },
+    {
+      "id": "vehicle_motorbike_sidecar",
+      "category": "vehicles",
+      "subcategory": "cycle_vehicle",
+      "type": "vehicle",
+      "label": "Motorbike With Sidecar",
+      "path": "../vehicles/vehicle_motorbike_sidecar/manifest.json"
+    },
+    {
       "id": "vehicle_omni_mover",
       "category": "vehicles",
       "subcategory": "dark_ride_vehicle",
       "type": "vehicle",
       "label": "Omni Mover Ride Vehicle",
       "path": "../vehicles/vehicle_omni_mover/manifest.json"
+    },
+    {
+      "id": "vehicle_raft",
+      "category": "vehicles",
+      "subcategory": "water_vehicle",
+      "type": "vehicle",
+      "label": "Round Raft Vehicle",
+      "path": "../vehicles/vehicle_raft/manifest.json"
+    },
+    {
+      "id": "vehicle_resistance_transport",
+      "category": "vehicles",
+      "subcategory": "shuttle_vehicle",
+      "type": "vehicle",
+      "label": "Armored Transport Shuttle",
+      "path": "../vehicles/vehicle_resistance_transport/manifest.json"
+    },
+    {
+      "id": "vehicle_scoop_dark_ride_car",
+      "category": "vehicles",
+      "subcategory": "dark_ride_vehicle",
+      "type": "vehicle",
+      "label": "Motion Base Scoop Vehicle",
+      "path": "../vehicles/vehicle_scoop_dark_ride_car/manifest.json"
     },
     {
       "id": "vehicle_sky_bucket",
@@ -707,16 +1705,638 @@
       "path": "../vehicles/vehicle_sky_bucket/manifest.json"
     },
     {
+      "id": "vehicle_space_rocket_car",
+      "category": "vehicles",
+      "subcategory": "space_vehicle",
+      "type": "vehicle",
+      "label": "Rocket Ride Vehicle",
+      "path": "../vehicles/vehicle_space_rocket_car/manifest.json"
+    },
+    {
+      "id": "vehicle_street_racer_car",
+      "category": "vehicles",
+      "subcategory": "road_vehicle",
+      "type": "vehicle",
+      "label": "Street Racer Car",
+      "path": "../vehicles/vehicle_street_racer_car/manifest.json"
+    },
+    {
+      "id": "vehicle_temple_transport_jeep",
+      "category": "vehicles",
+      "subcategory": "road_vehicle",
+      "type": "vehicle",
+      "label": "Temple Transport Jeep",
+      "path": "../vehicles/vehicle_temple_transport_jeep/manifest.json"
+    },
+    {
       "id": "vehicle_tram",
       "category": "vehicles",
       "subcategory": "transport",
       "type": "vehicle",
       "label": "Park Tram",
       "path": "../vehicles/vehicle_tram/manifest.json"
+    },
+    {
+      "id": "vehicle_transport_cab",
+      "category": "vehicles",
+      "subcategory": "transport",
+      "type": "vehicle",
+      "label": "Transport Cab",
+      "path": "../vehicles/vehicle_transport_cab/manifest.json"
+    },
+    {
+      "id": "wardrobe_aviator_goggles",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_aviator_goggles/manifest.json"
+    },
+    {
+      "id": "wardrobe_backpack_guest",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_backpack_guest/manifest.json"
+    },
+    {
+      "id": "wardrobe_cape_basic",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_cape_basic/manifest.json"
+    },
+    {
+      "id": "wardrobe_cloak_wizard",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_cloak_wizard/manifest.json"
+    },
+    {
+      "id": "wardrobe_fedora_adventurer",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_fedora_adventurer/manifest.json"
+    },
+    {
+      "id": "wardrobe_ghost_top_hat",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_ghost_top_hat/manifest.json"
+    },
+    {
+      "id": "wardrobe_hard_hat",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_hard_hat/manifest.json"
+    },
+    {
+      "id": "wardrobe_hat_basic",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_hat_basic/manifest.json"
+    },
+    {
+      "id": "wardrobe_headset",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_headset/manifest.json"
+    },
+    {
+      "id": "wardrobe_helmet_space",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_helmet_space/manifest.json"
+    },
+    {
+      "id": "wardrobe_lab_goggles",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_lab_goggles/manifest.json"
+    },
+    {
+      "id": "wardrobe_life_vest",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_life_vest/manifest.json"
+    },
+    {
+      "id": "wardrobe_mask_web_hero",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_mask_web_hero/manifest.json"
+    },
+    {
+      "id": "wardrobe_name_badge",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_name_badge/manifest.json"
+    },
+    {
+      "id": "wardrobe_neon_helmet",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_neon_helmet/manifest.json"
+    },
+    {
+      "id": "wardrobe_pirate_hat",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_pirate_hat/manifest.json"
+    },
+    {
+      "id": "wardrobe_racing_helmet",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_racing_helmet/manifest.json"
+    },
+    {
+      "id": "wardrobe_round_glasses",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_round_glasses/manifest.json"
+    },
+    {
+      "id": "wardrobe_safety_vest",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_safety_vest/manifest.json"
+    },
+    {
+      "id": "wardrobe_satchel_adventure",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_satchel_adventure/manifest.json"
+    },
+    {
+      "id": "wardrobe_scarf",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_scarf/manifest.json"
+    },
+    {
+      "id": "wardrobe_snow_cap",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_snow_cap/manifest.json"
+    },
+    {
+      "id": "wardrobe_tool_belt",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_tool_belt/manifest.json"
+    },
+    {
+      "id": "wardrobe_utility_belt",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_utility_belt/manifest.json"
+    },
+    {
+      "id": "wardrobe_wizard_hat",
+      "category": "wardrobe",
+      "path": "wardrobe/wardrobe_wizard_hat/manifest.json"
+    },
+    {
+      "id": "face_neutral",
+      "category": "facial_features",
+      "path": "facial_features/face_neutral/manifest.json"
+    },
+    {
+      "id": "face_happy",
+      "category": "facial_features",
+      "path": "facial_features/face_happy/manifest.json"
+    },
+    {
+      "id": "face_surprised",
+      "category": "facial_features",
+      "path": "facial_features/face_surprised/manifest.json"
+    },
+    {
+      "id": "face_scared",
+      "category": "facial_features",
+      "path": "facial_features/face_scared/manifest.json"
+    },
+    {
+      "id": "face_angry",
+      "category": "facial_features",
+      "path": "facial_features/face_angry/manifest.json"
+    },
+    {
+      "id": "face_sleepy",
+      "category": "facial_features",
+      "path": "facial_features/face_sleepy/manifest.json"
+    },
+    {
+      "id": "face_confused",
+      "category": "facial_features",
+      "path": "facial_features/face_confused/manifest.json"
+    },
+    {
+      "id": "face_talking",
+      "category": "facial_features",
+      "path": "facial_features/face_talking/manifest.json"
+    },
+    {
+      "id": "eyes_normal",
+      "category": "facial_features",
+      "path": "facial_features/eyes_normal/manifest.json"
+    },
+    {
+      "id": "eyes_wide",
+      "category": "facial_features",
+      "path": "facial_features/eyes_wide/manifest.json"
+    },
+    {
+      "id": "eyes_squint",
+      "category": "facial_features",
+      "path": "facial_features/eyes_squint/manifest.json"
+    },
+    {
+      "id": "eyes_closed",
+      "category": "facial_features",
+      "path": "facial_features/eyes_closed/manifest.json"
+    },
+    {
+      "id": "eyes_looking_left",
+      "category": "facial_features",
+      "path": "facial_features/eyes_looking_left/manifest.json"
+    },
+    {
+      "id": "eyes_looking_right",
+      "category": "facial_features",
+      "path": "facial_features/eyes_looking_right/manifest.json"
+    },
+    {
+      "id": "brows_neutral",
+      "category": "facial_features",
+      "path": "facial_features/brows_neutral/manifest.json"
+    },
+    {
+      "id": "brows_raised",
+      "category": "facial_features",
+      "path": "facial_features/brows_raised/manifest.json"
+    },
+    {
+      "id": "brows_angry",
+      "category": "facial_features",
+      "path": "facial_features/brows_angry/manifest.json"
+    },
+    {
+      "id": "brows_worried",
+      "category": "facial_features",
+      "path": "facial_features/brows_worried/manifest.json"
+    },
+    {
+      "id": "mouth_smile",
+      "category": "facial_features",
+      "path": "facial_features/mouth_smile/manifest.json"
+    },
+    {
+      "id": "mouth_frown",
+      "category": "facial_features",
+      "path": "facial_features/mouth_frown/manifest.json"
+    },
+    {
+      "id": "mouth_open",
+      "category": "facial_features",
+      "path": "facial_features/mouth_open/manifest.json"
+    },
+    {
+      "id": "mouth_round",
+      "category": "facial_features",
+      "path": "facial_features/mouth_round/manifest.json"
+    },
+    {
+      "id": "mouth_closed",
+      "category": "facial_features",
+      "path": "facial_features/mouth_closed/manifest.json"
+    },
+    {
+      "id": "mouth_grin",
+      "category": "facial_features",
+      "path": "facial_features/mouth_grin/manifest.json"
+    },
+    {
+      "id": "background_clouds",
+      "category": "background_layers",
+      "path": "background_layers/background_clouds/manifest.json"
+    },
+    {
+      "id": "background_stars",
+      "category": "background_layers",
+      "path": "background_layers/background_stars/manifest.json"
+    },
+    {
+      "id": "background_moon",
+      "category": "background_layers",
+      "path": "background_layers/background_moon/manifest.json"
+    },
+    {
+      "id": "background_sun",
+      "category": "background_layers",
+      "path": "background_layers/background_sun/manifest.json"
+    },
+    {
+      "id": "background_mountains",
+      "category": "background_layers",
+      "path": "background_layers/background_mountains/manifest.json"
+    },
+    {
+      "id": "background_city_skyline",
+      "category": "background_layers",
+      "path": "background_layers/background_city_skyline/manifest.json"
+    },
+    {
+      "id": "background_jungle_vines",
+      "category": "background_layers",
+      "path": "background_layers/background_jungle_vines/manifest.json"
+    },
+    {
+      "id": "background_cavern_wall",
+      "category": "background_layers",
+      "path": "background_layers/background_cavern_wall/manifest.json"
+    },
+    {
+      "id": "background_snow_hills",
+      "category": "background_layers",
+      "path": "background_layers/background_snow_hills/manifest.json"
+    },
+    {
+      "id": "background_desert_rocks",
+      "category": "background_layers",
+      "path": "background_layers/background_desert_rocks/manifest.json"
+    },
+    {
+      "id": "background_water_surface",
+      "category": "background_layers",
+      "path": "background_layers/background_water_surface/manifest.json"
+    },
+    {
+      "id": "background_fog_horizon",
+      "category": "background_layers",
+      "path": "background_layers/background_fog_horizon/manifest.json"
+    },
+    {
+      "id": "background_forest_trees",
+      "category": "background_layers",
+      "path": "background_layers/background_forest_trees/manifest.json"
+    },
+    {
+      "id": "background_castle_silhouette",
+      "category": "background_layers",
+      "path": "background_layers/background_castle_silhouette/manifest.json"
+    },
+    {
+      "id": "background_space_stars",
+      "category": "background_layers",
+      "path": "background_layers/background_space_stars/manifest.json"
+    },
+    {
+      "id": "background_light_grid_floor",
+      "category": "background_layers",
+      "path": "background_layers/background_light_grid_floor/manifest.json"
+    },
+    {
+      "id": "background_lab_panels",
+      "category": "background_layers",
+      "path": "background_layers/background_lab_panels/manifest.json"
+    },
+    {
+      "id": "background_mine_timber",
+      "category": "background_layers",
+      "path": "background_layers/background_mine_timber/manifest.json"
+    },
+    {
+      "id": "background_temple_wall",
+      "category": "background_layers",
+      "path": "background_layers/background_temple_wall/manifest.json"
+    },
+    {
+      "id": "background_pirate_cove_rocks",
+      "category": "background_layers",
+      "path": "background_layers/background_pirate_cove_rocks/manifest.json"
+    },
+    {
+      "id": "background_volcano_glow",
+      "category": "background_layers",
+      "path": "background_layers/background_volcano_glow/manifest.json"
+    },
+    {
+      "id": "background_alien_floating_rocks",
+      "category": "background_layers",
+      "path": "background_layers/background_alien_floating_rocks/manifest.json"
+    },
+    {
+      "id": "background_haunted_wallpaper",
+      "category": "background_layers",
+      "path": "background_layers/background_haunted_wallpaper/manifest.json"
+    },
+    {
+      "id": "background_comic_burst",
+      "category": "background_layers",
+      "path": "background_layers/background_comic_burst/manifest.json"
+    },
+    {
+      "id": "overlay_title_card",
+      "category": "overlays",
+      "path": "overlays/overlay_title_card/manifest.json"
+    },
+    {
+      "id": "overlay_location_card",
+      "category": "overlays",
+      "path": "overlays/overlay_location_card/manifest.json"
+    },
+    {
+      "id": "overlay_chapter_card",
+      "category": "overlays",
+      "path": "overlays/overlay_chapter_card/manifest.json"
+    },
+    {
+      "id": "overlay_timer",
+      "category": "overlays",
+      "path": "overlays/overlay_timer/manifest.json"
+    },
+    {
+      "id": "overlay_warning_panel",
+      "category": "overlays",
+      "path": "overlays/overlay_warning_panel/manifest.json"
+    },
+    {
+      "id": "overlay_map_marker",
+      "category": "overlays",
+      "path": "overlays/overlay_map_marker/manifest.json"
+    },
+    {
+      "id": "overlay_arrow_pointer",
+      "category": "overlays",
+      "path": "overlays/overlay_arrow_pointer/manifest.json"
+    },
+    {
+      "id": "overlay_subtitle_box",
+      "category": "overlays",
+      "path": "overlays/overlay_subtitle_box/manifest.json"
+    },
+    {
+      "id": "overlay_fact_card",
+      "category": "overlays",
+      "path": "overlays/overlay_fact_card/manifest.json"
+    },
+    {
+      "id": "overlay_rating_stars",
+      "category": "overlays",
+      "path": "overlays/overlay_rating_stars/manifest.json"
+    },
+    {
+      "id": "overlay_lower_third",
+      "category": "overlays",
+      "path": "overlays/overlay_lower_third/manifest.json"
+    },
+    {
+      "id": "overlay_thought_bubble",
+      "category": "overlays",
+      "path": "overlays/overlay_thought_bubble/manifest.json"
+    },
+    {
+      "id": "overlay_speech_caption",
+      "category": "overlays",
+      "path": "overlays/overlay_speech_caption/manifest.json"
+    },
+    {
+      "id": "overlay_progress_bar",
+      "category": "overlays",
+      "path": "overlays/overlay_progress_bar/manifest.json"
+    },
+    {
+      "id": "overlay_score_badge",
+      "category": "overlays",
+      "path": "overlays/overlay_score_badge/manifest.json"
+    },
+    {
+      "id": "overlay_map_route",
+      "category": "overlays",
+      "path": "overlays/overlay_map_route/manifest.json"
+    },
+    {
+      "id": "overlay_comic_caption",
+      "category": "overlays",
+      "path": "overlays/overlay_comic_caption/manifest.json"
+    },
+    {
+      "id": "overlay_pause_stamp",
+      "category": "overlays",
+      "path": "overlays/overlay_pause_stamp/manifest.json"
+    },
+    {
+      "id": "transition_fade",
+      "category": "transitions",
+      "path": "transitions/transition_fade/manifest.json"
+    },
+    {
+      "id": "transition_wipe_left",
+      "category": "transitions",
+      "path": "transitions/transition_wipe_left/manifest.json"
+    },
+    {
+      "id": "transition_wipe_right",
+      "category": "transitions",
+      "path": "transitions/transition_wipe_right/manifest.json"
+    },
+    {
+      "id": "transition_wipe_up",
+      "category": "transitions",
+      "path": "transitions/transition_wipe_up/manifest.json"
+    },
+    {
+      "id": "transition_wipe_down",
+      "category": "transitions",
+      "path": "transitions/transition_wipe_down/manifest.json"
+    },
+    {
+      "id": "transition_circle_close",
+      "category": "transitions",
+      "path": "transitions/transition_circle_close/manifest.json"
+    },
+    {
+      "id": "transition_circle_open",
+      "category": "transitions",
+      "path": "transitions/transition_circle_open/manifest.json"
+    },
+    {
+      "id": "transition_flash",
+      "category": "transitions",
+      "path": "transitions/transition_flash/manifest.json"
+    },
+    {
+      "id": "transition_smoke_cover",
+      "category": "transitions",
+      "path": "transitions/transition_smoke_cover/manifest.json"
+    },
+    {
+      "id": "transition_map_swipe",
+      "category": "transitions",
+      "path": "transitions/transition_map_swipe/manifest.json"
+    },
+    {
+      "id": "transition_speed_blur",
+      "category": "transitions",
+      "path": "transitions/transition_speed_blur/manifest.json"
+    },
+    {
+      "id": "transition_portal_wipe",
+      "category": "transitions",
+      "path": "transitions/transition_portal_wipe/manifest.json"
+    },
+    {
+      "id": "transition_shutter_bars",
+      "category": "transitions",
+      "path": "transitions/transition_shutter_bars/manifest.json"
+    },
+    {
+      "id": "transition_comic_panel_wipe",
+      "category": "transitions",
+      "path": "transitions/transition_comic_panel_wipe/manifest.json"
+    },
+    {
+      "id": "transition_curtain_reveal",
+      "category": "transitions",
+      "path": "transitions/transition_curtain_reveal/manifest.json"
+    },
+    {
+      "id": "camera_reveal",
+      "category": "cinematic",
+      "path": "cinematic/camera_reveal/manifest.json"
+    },
+    {
+      "id": "camera_orbit",
+      "category": "cinematic",
+      "path": "cinematic/camera_orbit/manifest.json"
+    },
+    {
+      "id": "camera_follow",
+      "category": "cinematic",
+      "path": "cinematic/camera_follow/manifest.json"
+    },
+    {
+      "id": "slow_pan",
+      "category": "cinematic",
+      "path": "cinematic/slow_pan/manifest.json"
+    },
+    {
+      "id": "dramatic_zoom",
+      "category": "cinematic",
+      "path": "cinematic/dramatic_zoom/manifest.json"
+    },
+    {
+      "id": "lighting_flash",
+      "category": "cinematic",
+      "path": "cinematic/lighting_flash/manifest.json"
+    },
+    {
+      "id": "explosion_effect",
+      "category": "cinematic",
+      "path": "cinematic/explosion_effect/manifest.json"
+    },
+    {
+      "id": "fog_pass",
+      "category": "cinematic",
+      "path": "cinematic/fog_pass/manifest.json"
+    },
+    {
+      "id": "portal_transition",
+      "category": "cinematic",
+      "path": "cinematic/portal_transition/manifest.json"
+    },
+    {
+      "id": "crowd_reaction",
+      "category": "cinematic",
+      "path": "cinematic/crowd_reaction/manifest.json"
+    },
+    {
+      "id": "vehicle_pass",
+      "category": "cinematic",
+      "path": "cinematic/vehicle_pass/manifest.json"
     }
   ],
   "legacyFallback": {
     "enabled": true,
     "catalog": "asset_packs_legacy.json"
+  },
+  "notes": {
+    "mergedFrom": "V36 full catalog plus V38 cinematic additions",
+    "storyTemplates": "V37 story template catalog is included separately under stories/",
+    "install": "Replace assets/catalog/asset_catalog.json with this file, then copy included assets/cinematic and stories folders."
   }
 }
