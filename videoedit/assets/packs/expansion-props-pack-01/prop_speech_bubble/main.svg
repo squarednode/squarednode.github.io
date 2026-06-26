@@ -1,0 +1,1 @@
+<svg xmlns='http://www.w3.org/2000/svg'><path d='M50 65 C65 35 240 35 255 65 L255 140 C245 170 160 170 120 165 L75 205 L88 158 C60 152 50 135 50 110 Z' fill='{{color}}' stroke='#111' stroke-width='7' stroke-linejoin='round'/><text x='153' y='115' text-anchor='middle' font-family='Arial Black, Arial' font-size='30' fill='#111'>{{text}}</text></svg>

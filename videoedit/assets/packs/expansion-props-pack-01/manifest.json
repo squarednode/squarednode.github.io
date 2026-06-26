@@ -1,0 +1,640 @@
+{
+  "id": "expansion-props-pack-01",
+  "label": "Expansion Props Pack 01",
+  "version": "21.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "schemaVersion": "20.0.0",
+  "assets": [
+    {
+      "id": "prop_map",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "paper",
+      "label": "Park Map",
+      "mode": "external-svg",
+      "path": "prop_map/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "paper"
+      ],
+      "defaults": {
+        "color": "#f7f2d0",
+        "trimColor": "#2d9cdb"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_flashlight",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "tool",
+      "label": "Flashlight",
+      "mode": "external-svg",
+      "path": "prop_flashlight/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "tool"
+      ],
+      "defaults": {
+        "color": "#56504b",
+        "trimColor": "#f2c94c"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_backpack",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "bag",
+      "label": "Backpack",
+      "mode": "external-svg",
+      "path": "prop_backpack/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "bag"
+      ],
+      "defaults": {
+        "color": "#8b6f47",
+        "trimColor": "#d6c197"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_camera",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "device",
+      "label": "Camera",
+      "mode": "external-svg",
+      "path": "prop_camera/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "device"
+      ],
+      "defaults": {
+        "color": "#3d454f",
+        "trimColor": "#9aa4b5"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_food_tray",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "food",
+      "label": "Food Tray",
+      "mode": "external-svg",
+      "path": "prop_food_tray/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "food"
+      ],
+      "defaults": {
+        "color": "#e9eef7",
+        "trimColor": "#f2994a"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_rope_barrier",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "queue",
+      "label": "Rope Barrier",
+      "mode": "external-svg",
+      "path": "prop_rope_barrier/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "queue"
+      ],
+      "defaults": {
+        "color": "#56504b",
+        "trimColor": "#bb6bd9"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_lantern",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "light",
+      "label": "Lantern",
+      "mode": "external-svg",
+      "path": "prop_lantern/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "light"
+      ],
+      "defaults": {
+        "color": "#56504b",
+        "trimColor": "#ffe18a"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_crate",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "box",
+      "label": "Supply Crate",
+      "mode": "external-svg",
+      "path": "prop_crate/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "box"
+      ],
+      "defaults": {
+        "color": "#8b6f47",
+        "trimColor": "#5c3b25"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_star_marker",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "marker",
+      "label": "Star Marker",
+      "mode": "external-svg",
+      "path": "prop_star_marker/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "marker"
+      ],
+      "defaults": {
+        "color": "#f2c94c",
+        "trimColor": "#f2c94c"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "prop_speech_bubble",
+      "type": "prop",
+      "category": "props",
+      "subcategory": "dialogue",
+      "label": "Speech Bubble",
+      "mode": "external-svg",
+      "path": "prop_speech_bubble/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "prop_basic",
+      "scaleClass": "prop_standard",
+      "artboard": [
+        300,
+        260
+      ],
+      "groundPoint": [
+        150,
+        240
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          240
+        ],
+        "center": [
+          150,
+          150
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "prop",
+        "dialogue"
+      ],
+      "defaults": {
+        "color": "#ffffff",
+        "trimColor": "#ffffff",
+        "text": "HI"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            150,
+            150
+          ],
+          "order": 10
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+<svg xmlns='http://www.w3.org/2000/svg'><rect x='55' y='70' width='190' height='150' rx='10' fill='{{color}}' stroke='#111' stroke-width='7'/><path d='M70 85 L230 205 M230 85 L70 205 M55 120 L245 120 M55 170 L245 170' stroke='{{trimColor}}' stroke-width='7'/></svg>
