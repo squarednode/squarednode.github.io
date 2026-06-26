@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "23.0.0",
+  "version": "23.0.0",
+  "id": "character_world_doll_performer",
+  "type": "character",
+  "label": "World Doll Performer",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "category-catalog",
+  "category": "characters",
+  "subcategory": "doll",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "humanoid_basic",
+  "scaleClass": "character_standard",
+  "artboard": [
+    300,
+    400
+  ],
+  "groundPoint": [
+    150,
+    400
+  ],
+  "rig": [
+    "head",
+    "mouth",
+    "leftUpperArm",
+    "rightUpperArm",
+    "leftLeg",
+    "rightLeg"
+  ],
+  "expressions": {
+    "happy": {},
+    "neutral": {},
+    "surprised": {},
+    "serious": {}
+  },
+  "wardrobe": [
+    "shirtColor",
+    "pantsColor",
+    "sleeveColor",
+    "hatColor",
+    "accentColor"
+  ],
+  "tags": [
+    "character",
+    "story-pack-01",
+    "attraction-archetype",
+    "external",
+    "doll",
+    "musical",
+    "costume"
+  ],
+  "defaults": {
+    "shirtColor": "#f0d36a",
+    "sleeveColor": "#f0d36a",
+    "pantsColor": "#5b8edb",
+    "skinColor": "#d8a06d",
+    "hairColor": "#3b2418",
+    "accentColor": "#ff8ab3",
+    "hatColor": "#f7f1e3",
+    "outlineColor": "#111111"
+  },
+  "colorSlots": {
+    "shirtColor": "#f0d36a",
+    "sleeveColor": "#f0d36a",
+    "pantsColor": "#5b8edb",
+    "skinColor": "#d8a06d",
+    "hairColor": "#3b2418",
+    "accentColor": "#ff8ab3",
+    "hatColor": "#f7f1e3",
+    "outlineColor": "#111111"
+  },
+  "mouthShapes": {
+    "smile": {
+      "d": "M154 104 C165 116 188 116 200 104",
+      "fill": "none"
+    },
+    "happy": {
+      "d": "M154 104 C165 116 188 116 200 104",
+      "fill": "none"
+    },
+    "neutral": {
+      "d": "M154 106 L198 106",
+      "fill": "none"
+    },
+    "serious": {
+      "d": "M152 109 L200 103",
+      "fill": "none"
+    },
+    "surprised": {
+      "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+      "fill": "#111"
+    },
+    "open": {
+      "d": "M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100",
+      "fill": "#111"
+    },
+    "o": {
+      "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+      "fill": "#111"
+    },
+    "wide": {
+      "d": "M143 101 C162 126 191 126 210 101",
+      "fill": "none"
+    }
+  },
+  "parts": [
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        145,
+        265
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        205,
+        265
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        175,
+        180
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftUpperArm",
+      "file": "parts/left_upper_arm.svg",
+      "pivot": [
+        118,
+        135
+      ],
+      "order": 30
+    },
+    {
+      "name": "rightUpperArm",
+      "file": "parts/right_upper_arm.svg",
+      "pivot": [
+        232,
+        135
+      ],
+      "order": 32
+    },
+    {
+      "name": "neck",
+      "file": "parts/neck.svg",
+      "pivot": [
+        175,
+        118
+      ],
+      "order": 40
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        175,
+        80
+      ],
+      "order": 50
+    },
+    {
+      "name": "mouth",
+      "file": "parts/mouth.svg",
+      "pivot": [
+        175,
+        102
+      ],
+      "order": 60
+    },
+    {
+      "name": "doll_costume",
+      "file": "parts/doll_costume.svg",
+      "pivot": [
+        175,
+        80
+      ],
+      "order": 70
+    }
+  ],
+  "anchors": {
+    "ground": [
+      150,
+      400
+    ],
+    "head": [
+      175,
+      80
+    ],
+    "mouth": [
+      175,
+      102
+    ],
+    "hat": [
+      175,
+      35
+    ],
+    "leftHand": [
+      105,
+      220
+    ],
+    "rightHand": [
+      247,
+      220
+    ],
+    "speechBubble": [
+      210,
+      45
+    ],
+    "chest": [
+      175,
+      170
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "notes": "V23 character expansion archetype. Asset ID avoids color/IP-specific naming; color and wardrobe are story-level overrides."
+}
