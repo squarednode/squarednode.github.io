@@ -1,0 +1,99 @@
+{
+  "id": "signage_pirate_cove",
+  "type": "signage",
+  "category": "signage",
+  "subcategory": "themed",
+  "label": "Pirate Cove Sign",
+  "displayName": "Pirate Cove Sign",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "signage_standard",
+  "artboard": [
+    360,
+    260
+  ],
+  "groundPoint": [
+    180,
+    240
+  ],
+  "anchors": {
+    "ground": [
+      180,
+      240
+    ],
+    "center": [
+      180,
+      130
+    ],
+    "textCenter": [
+      180,
+      128
+    ],
+    "top": [
+      180,
+      45
+    ],
+    "leftEdge": [
+      45,
+      130
+    ],
+    "rightEdge": [
+      315,
+      130
+    ]
+  },
+  "motions": [
+    "idle",
+    "bob",
+    "sway",
+    "flash",
+    "gesture",
+    "scale",
+    "enter",
+    "exit"
+  ],
+  "rigType": "static_signage",
+  "rig": [
+    "sign"
+  ],
+  "parts": [
+    {
+      "name": "sign",
+      "file": "parts/sign.svg",
+      "order": 10,
+      "pivot": [
+        180,
+        130
+      ]
+    }
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "signage",
+    "themed",
+    "wood"
+  ],
+  "description": "Weathered pirate / coastal sign.",
+  "defaults": {
+    "panelColor": "#f4d35e",
+    "accentColor": "#2f6eea",
+    "outlineColor": "#111111",
+    "textColor": "#111111",
+    "postColor": "#7a4b2c",
+    "glowColor": "#7df9ff",
+    "text": "COVE"
+  },
+  "colorSlots": {
+    "panelColor": "#f4d35e",
+    "accentColor": "#2f6eea",
+    "outlineColor": "#111111",
+    "textColor": "#111111",
+    "postColor": "#7a4b2c",
+    "glowColor": "#7df9ff"
+  },
+  "thumbnail": "thumbnail.svg"
+}
