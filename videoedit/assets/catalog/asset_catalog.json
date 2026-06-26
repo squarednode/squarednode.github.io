@@ -1,6 +1,6 @@
 {
   "schemaVersion": "22.0",
-  "version": "39.0.0",
+  "version": "39.1",
   "assetRoot": "../assets",
   "preferredStructure": "category-folders",
   "categories": {
@@ -384,122 +384,122 @@
     {
       "id": "effect_bubbles",
       "category": "effects",
-      "path": "effects/effect_bubbles/manifest.json"
+      "path": "../effects/effect_bubbles/manifest.json"
     },
     {
       "id": "effect_dust_cloud",
       "category": "effects",
-      "path": "effects/effect_dust_cloud/manifest.json"
+      "path": "../effects/effect_dust_cloud/manifest.json"
     },
     {
       "id": "effect_explosion_puff",
       "category": "effects",
-      "path": "effects/effect_explosion_puff/manifest.json"
+      "path": "../effects/effect_explosion_puff/manifest.json"
     },
     {
       "id": "effect_falling_rocks",
       "category": "effects",
-      "path": "effects/effect_falling_rocks/manifest.json"
+      "path": "../effects/effect_falling_rocks/manifest.json"
     },
     {
       "id": "effect_fire_flame",
       "category": "effects",
-      "path": "effects/effect_fire_flame/manifest.json"
+      "path": "../effects/effect_fire_flame/manifest.json"
     },
     {
       "id": "effect_floating_particles",
       "category": "effects",
-      "path": "effects/effect_floating_particles/manifest.json"
+      "path": "../effects/effect_floating_particles/manifest.json"
     },
     {
       "id": "effect_fog_bank",
       "category": "effects",
-      "path": "effects/effect_fog_bank/manifest.json"
+      "path": "../effects/effect_fog_bank/manifest.json"
     },
     {
       "id": "effect_ghost_aura",
       "category": "effects",
-      "path": "effects/effect_ghost_aura/manifest.json"
+      "path": "../effects/effect_ghost_aura/manifest.json"
     },
     {
       "id": "effect_ground_mist",
       "category": "effects",
-      "path": "effects/effect_ground_mist/manifest.json"
+      "path": "../effects/effect_ground_mist/manifest.json"
     },
     {
       "id": "effect_hologram_scan",
       "category": "effects",
-      "path": "effects/effect_hologram_scan/manifest.json"
+      "path": "../effects/effect_hologram_scan/manifest.json"
     },
     {
       "id": "effect_laser_grid",
       "category": "effects",
-      "path": "effects/effect_laser_grid/manifest.json"
+      "path": "../effects/effect_laser_grid/manifest.json"
     },
     {
       "id": "effect_light_beam",
       "category": "effects",
-      "path": "effects/effect_light_beam/manifest.json"
+      "path": "../effects/effect_light_beam/manifest.json"
     },
     {
       "id": "effect_lightning_bolt",
       "category": "effects",
-      "path": "effects/effect_lightning_bolt/manifest.json"
+      "path": "../effects/effect_lightning_bolt/manifest.json"
     },
     {
       "id": "effect_magic_sparkle",
       "category": "effects",
-      "path": "effects/effect_magic_sparkle/manifest.json"
+      "path": "../effects/effect_magic_sparkle/manifest.json"
     },
     {
       "id": "effect_neon_glow",
       "category": "effects",
-      "path": "effects/effect_neon_glow/manifest.json"
+      "path": "../effects/effect_neon_glow/manifest.json"
     },
     {
       "id": "effect_portal_ring",
       "category": "effects",
-      "path": "effects/effect_portal_ring/manifest.json"
+      "path": "../effects/effect_portal_ring/manifest.json"
     },
     {
       "id": "effect_rain_streaks",
       "category": "effects",
-      "path": "effects/effect_rain_streaks/manifest.json"
+      "path": "../effects/effect_rain_streaks/manifest.json"
     },
     {
       "id": "effect_smoke_puff",
       "category": "effects",
-      "path": "effects/effect_smoke_puff/manifest.json"
+      "path": "../effects/effect_smoke_puff/manifest.json"
     },
     {
       "id": "effect_snow_flurry",
       "category": "effects",
-      "path": "effects/effect_snow_flurry/manifest.json"
+      "path": "../effects/effect_snow_flurry/manifest.json"
     },
     {
       "id": "effect_sparks",
       "category": "effects",
-      "path": "effects/effect_sparks/manifest.json"
+      "path": "../effects/effect_sparks/manifest.json"
     },
     {
       "id": "effect_speed_lines",
       "category": "effects",
-      "path": "effects/effect_speed_lines/manifest.json"
+      "path": "../effects/effect_speed_lines/manifest.json"
     },
     {
       "id": "effect_steam_jet",
       "category": "effects",
-      "path": "effects/effect_steam_jet/manifest.json"
+      "path": "../effects/effect_steam_jet/manifest.json"
     },
     {
       "id": "effect_water_splash",
       "category": "effects",
-      "path": "effects/effect_water_splash/manifest.json"
+      "path": "../effects/effect_water_splash/manifest.json"
     },
     {
       "id": "effect_web_net",
       "category": "effects",
-      "path": "effects/effect_web_net/manifest.json"
+      "path": "../effects/effect_web_net/manifest.json"
     },
     {
       "id": "environment_alien_forest_canopy",
@@ -1402,147 +1402,147 @@
     {
       "id": "signage_accessibility",
       "category": "signage",
-      "path": "signage/signage_accessibility/manifest.json"
+      "path": "../signage/signage_accessibility/manifest.json"
     },
     {
       "id": "signage_alien_forest",
       "category": "signage",
-      "path": "signage/signage_alien_forest/manifest.json"
+      "path": "../signage/signage_alien_forest/manifest.json"
     },
     {
       "id": "signage_alpine_trail",
       "category": "signage",
-      "path": "signage/signage_alpine_trail/manifest.json"
+      "path": "../signage/signage_alpine_trail/manifest.json"
     },
     {
       "id": "signage_area_map",
       "category": "signage",
-      "path": "signage/signage_area_map/manifest.json"
+      "path": "../signage/signage_area_map/manifest.json"
     },
     {
       "id": "signage_dinosaur_paddock",
       "category": "signage",
-      "path": "signage/signage_dinosaur_paddock/manifest.json"
+      "path": "../signage/signage_dinosaur_paddock/manifest.json"
     },
     {
       "id": "signage_emergency_exit",
       "category": "signage",
-      "path": "signage/signage_emergency_exit/manifest.json"
+      "path": "../signage/signage_emergency_exit/manifest.json"
     },
     {
       "id": "signage_exit",
       "category": "signage",
-      "path": "signage/signage_exit/manifest.json"
+      "path": "../signage/signage_exit/manifest.json"
     },
     {
       "id": "signage_express_lane",
       "category": "signage",
-      "path": "signage/signage_express_lane/manifest.json"
+      "path": "../signage/signage_express_lane/manifest.json"
     },
     {
       "id": "signage_food_drink",
       "category": "signage",
-      "path": "signage/signage_food_drink/manifest.json"
+      "path": "../signage/signage_food_drink/manifest.json"
     },
     {
       "id": "signage_guest_services",
       "category": "signage",
-      "path": "signage/signage_guest_services/manifest.json"
+      "path": "../signage/signage_guest_services/manifest.json"
     },
     {
       "id": "signage_haunted_estate",
       "category": "signage",
-      "path": "signage/signage_haunted_estate/manifest.json"
+      "path": "../signage/signage_haunted_estate/manifest.json"
     },
     {
       "id": "signage_height_requirement",
       "category": "signage",
-      "path": "signage/signage_height_requirement/manifest.json"
+      "path": "../signage/signage_height_requirement/manifest.json"
     },
     {
       "id": "signage_hero_city",
       "category": "signage",
-      "path": "signage/signage_hero_city/manifest.json"
+      "path": "../signage/signage_hero_city/manifest.json"
     },
     {
       "id": "signage_lab_hazard",
       "category": "signage",
-      "path": "signage/signage_lab_hazard/manifest.json"
+      "path": "../signage/signage_lab_hazard/manifest.json"
     },
     {
       "id": "signage_mine_town",
       "category": "signage",
-      "path": "signage/signage_mine_town/manifest.json"
+      "path": "../signage/signage_mine_town/manifest.json"
     },
     {
       "id": "signage_mummy_tomb",
       "category": "signage",
-      "path": "signage/signage_mummy_tomb/manifest.json"
+      "path": "../signage/signage_mummy_tomb/manifest.json"
     },
     {
       "id": "signage_neon_grid",
       "category": "signage",
-      "path": "signage/signage_neon_grid/manifest.json"
+      "path": "../signage/signage_neon_grid/manifest.json"
     },
     {
       "id": "signage_photo_spot",
       "category": "signage",
-      "path": "signage/signage_photo_spot/manifest.json"
+      "path": "../signage/signage_photo_spot/manifest.json"
     },
     {
       "id": "signage_pirate_cove",
       "category": "signage",
-      "path": "signage/signage_pirate_cove/manifest.json"
+      "path": "../signage/signage_pirate_cove/manifest.json"
     },
     {
       "id": "signage_racing_garage",
       "category": "signage",
-      "path": "signage/signage_racing_garage/manifest.json"
+      "path": "../signage/signage_racing_garage/manifest.json"
     },
     {
       "id": "signage_restrooms",
       "category": "signage",
-      "path": "signage/signage_restrooms/manifest.json"
+      "path": "../signage/signage_restrooms/manifest.json"
     },
     {
       "id": "signage_ride_entrance",
       "category": "signage",
-      "path": "signage/signage_ride_entrance/manifest.json"
+      "path": "../signage/signage_ride_entrance/manifest.json"
     },
     {
       "id": "signage_safety_warning",
       "category": "signage",
-      "path": "signage/signage_safety_warning/manifest.json"
+      "path": "../signage/signage_safety_warning/manifest.json"
     },
     {
       "id": "signage_space_hangar",
       "category": "signage",
-      "path": "signage/signage_space_hangar/manifest.json"
+      "path": "../signage/signage_space_hangar/manifest.json"
     },
     {
       "id": "signage_standby_queue",
       "category": "signage",
-      "path": "signage/signage_standby_queue/manifest.json"
+      "path": "../signage/signage_standby_queue/manifest.json"
     },
     {
       "id": "signage_temple_warning",
       "category": "signage",
-      "path": "signage/signage_temple_warning/manifest.json"
+      "path": "../signage/signage_temple_warning/manifest.json"
     },
     {
       "id": "signage_wait_time",
       "category": "signage",
-      "path": "signage/signage_wait_time/manifest.json"
+      "path": "../signage/signage_wait_time/manifest.json"
     },
     {
       "id": "signage_wizard_school",
       "category": "signage",
-      "path": "signage/signage_wizard_school/manifest.json"
+      "path": "../signage/signage_wizard_school/manifest.json"
     },
     {
       "id": "signage_world_festival",
       "category": "signage",
-      "path": "signage/signage_world_festival/manifest.json"
+      "path": "../signage/signage_world_festival/manifest.json"
     },
     {
       "id": "vehicle_boat",
@@ -1747,596 +1747,599 @@
     {
       "id": "wardrobe_aviator_goggles",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_aviator_goggles/manifest.json"
+      "path": "../wardrobe/wardrobe_aviator_goggles/manifest.json"
     },
     {
       "id": "wardrobe_backpack_guest",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_backpack_guest/manifest.json"
+      "path": "../wardrobe/wardrobe_backpack_guest/manifest.json"
     },
     {
       "id": "wardrobe_cape_basic",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_cape_basic/manifest.json"
+      "path": "../wardrobe/wardrobe_cape_basic/manifest.json"
     },
     {
       "id": "wardrobe_cloak_wizard",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_cloak_wizard/manifest.json"
+      "path": "../wardrobe/wardrobe_cloak_wizard/manifest.json"
     },
     {
       "id": "wardrobe_fedora_adventurer",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_fedora_adventurer/manifest.json"
+      "path": "../wardrobe/wardrobe_fedora_adventurer/manifest.json"
     },
     {
       "id": "wardrobe_ghost_top_hat",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_ghost_top_hat/manifest.json"
+      "path": "../wardrobe/wardrobe_ghost_top_hat/manifest.json"
     },
     {
       "id": "wardrobe_hard_hat",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_hard_hat/manifest.json"
+      "path": "../wardrobe/wardrobe_hard_hat/manifest.json"
     },
     {
       "id": "wardrobe_hat_basic",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_hat_basic/manifest.json"
+      "path": "../wardrobe/wardrobe_hat_basic/manifest.json"
     },
     {
       "id": "wardrobe_headset",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_headset/manifest.json"
+      "path": "../wardrobe/wardrobe_headset/manifest.json"
     },
     {
       "id": "wardrobe_helmet_space",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_helmet_space/manifest.json"
+      "path": "../wardrobe/wardrobe_helmet_space/manifest.json"
     },
     {
       "id": "wardrobe_lab_goggles",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_lab_goggles/manifest.json"
+      "path": "../wardrobe/wardrobe_lab_goggles/manifest.json"
     },
     {
       "id": "wardrobe_life_vest",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_life_vest/manifest.json"
+      "path": "../wardrobe/wardrobe_life_vest/manifest.json"
     },
     {
       "id": "wardrobe_mask_web_hero",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_mask_web_hero/manifest.json"
+      "path": "../wardrobe/wardrobe_mask_web_hero/manifest.json"
     },
     {
       "id": "wardrobe_name_badge",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_name_badge/manifest.json"
+      "path": "../wardrobe/wardrobe_name_badge/manifest.json"
     },
     {
       "id": "wardrobe_neon_helmet",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_neon_helmet/manifest.json"
+      "path": "../wardrobe/wardrobe_neon_helmet/manifest.json"
     },
     {
       "id": "wardrobe_pirate_hat",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_pirate_hat/manifest.json"
+      "path": "../wardrobe/wardrobe_pirate_hat/manifest.json"
     },
     {
       "id": "wardrobe_racing_helmet",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_racing_helmet/manifest.json"
+      "path": "../wardrobe/wardrobe_racing_helmet/manifest.json"
     },
     {
       "id": "wardrobe_round_glasses",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_round_glasses/manifest.json"
+      "path": "../wardrobe/wardrobe_round_glasses/manifest.json"
     },
     {
       "id": "wardrobe_safety_vest",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_safety_vest/manifest.json"
+      "path": "../wardrobe/wardrobe_safety_vest/manifest.json"
     },
     {
       "id": "wardrobe_satchel_adventure",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_satchel_adventure/manifest.json"
+      "path": "../wardrobe/wardrobe_satchel_adventure/manifest.json"
     },
     {
       "id": "wardrobe_scarf",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_scarf/manifest.json"
+      "path": "../wardrobe/wardrobe_scarf/manifest.json"
     },
     {
       "id": "wardrobe_snow_cap",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_snow_cap/manifest.json"
+      "path": "../wardrobe/wardrobe_snow_cap/manifest.json"
     },
     {
       "id": "wardrobe_tool_belt",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_tool_belt/manifest.json"
+      "path": "../wardrobe/wardrobe_tool_belt/manifest.json"
     },
     {
       "id": "wardrobe_utility_belt",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_utility_belt/manifest.json"
+      "path": "../wardrobe/wardrobe_utility_belt/manifest.json"
     },
     {
       "id": "wardrobe_wizard_hat",
       "category": "wardrobe",
-      "path": "wardrobe/wardrobe_wizard_hat/manifest.json"
+      "path": "../wardrobe/wardrobe_wizard_hat/manifest.json"
     },
     {
       "id": "face_neutral",
       "category": "facial_features",
-      "path": "facial_features/face_neutral/manifest.json"
+      "path": "../facial_features/face_neutral/manifest.json"
     },
     {
       "id": "face_happy",
       "category": "facial_features",
-      "path": "facial_features/face_happy/manifest.json"
+      "path": "../facial_features/face_happy/manifest.json"
     },
     {
       "id": "face_surprised",
       "category": "facial_features",
-      "path": "facial_features/face_surprised/manifest.json"
+      "path": "../facial_features/face_surprised/manifest.json"
     },
     {
       "id": "face_scared",
       "category": "facial_features",
-      "path": "facial_features/face_scared/manifest.json"
+      "path": "../facial_features/face_scared/manifest.json"
     },
     {
       "id": "face_angry",
       "category": "facial_features",
-      "path": "facial_features/face_angry/manifest.json"
+      "path": "../facial_features/face_angry/manifest.json"
     },
     {
       "id": "face_sleepy",
       "category": "facial_features",
-      "path": "facial_features/face_sleepy/manifest.json"
+      "path": "../facial_features/face_sleepy/manifest.json"
     },
     {
       "id": "face_confused",
       "category": "facial_features",
-      "path": "facial_features/face_confused/manifest.json"
+      "path": "../facial_features/face_confused/manifest.json"
     },
     {
       "id": "face_talking",
       "category": "facial_features",
-      "path": "facial_features/face_talking/manifest.json"
+      "path": "../facial_features/face_talking/manifest.json"
     },
     {
       "id": "eyes_normal",
       "category": "facial_features",
-      "path": "facial_features/eyes_normal/manifest.json"
+      "path": "../facial_features/eyes_normal/manifest.json"
     },
     {
       "id": "eyes_wide",
       "category": "facial_features",
-      "path": "facial_features/eyes_wide/manifest.json"
+      "path": "../facial_features/eyes_wide/manifest.json"
     },
     {
       "id": "eyes_squint",
       "category": "facial_features",
-      "path": "facial_features/eyes_squint/manifest.json"
+      "path": "../facial_features/eyes_squint/manifest.json"
     },
     {
       "id": "eyes_closed",
       "category": "facial_features",
-      "path": "facial_features/eyes_closed/manifest.json"
+      "path": "../facial_features/eyes_closed/manifest.json"
     },
     {
       "id": "eyes_looking_left",
       "category": "facial_features",
-      "path": "facial_features/eyes_looking_left/manifest.json"
+      "path": "../facial_features/eyes_looking_left/manifest.json"
     },
     {
       "id": "eyes_looking_right",
       "category": "facial_features",
-      "path": "facial_features/eyes_looking_right/manifest.json"
+      "path": "../facial_features/eyes_looking_right/manifest.json"
     },
     {
       "id": "brows_neutral",
       "category": "facial_features",
-      "path": "facial_features/brows_neutral/manifest.json"
+      "path": "../facial_features/brows_neutral/manifest.json"
     },
     {
       "id": "brows_raised",
       "category": "facial_features",
-      "path": "facial_features/brows_raised/manifest.json"
+      "path": "../facial_features/brows_raised/manifest.json"
     },
     {
       "id": "brows_angry",
       "category": "facial_features",
-      "path": "facial_features/brows_angry/manifest.json"
+      "path": "../facial_features/brows_angry/manifest.json"
     },
     {
       "id": "brows_worried",
       "category": "facial_features",
-      "path": "facial_features/brows_worried/manifest.json"
+      "path": "../facial_features/brows_worried/manifest.json"
     },
     {
       "id": "mouth_smile",
       "category": "facial_features",
-      "path": "facial_features/mouth_smile/manifest.json"
+      "path": "../facial_features/mouth_smile/manifest.json"
     },
     {
       "id": "mouth_frown",
       "category": "facial_features",
-      "path": "facial_features/mouth_frown/manifest.json"
+      "path": "../facial_features/mouth_frown/manifest.json"
     },
     {
       "id": "mouth_open",
       "category": "facial_features",
-      "path": "facial_features/mouth_open/manifest.json"
+      "path": "../facial_features/mouth_open/manifest.json"
     },
     {
       "id": "mouth_round",
       "category": "facial_features",
-      "path": "facial_features/mouth_round/manifest.json"
+      "path": "../facial_features/mouth_round/manifest.json"
     },
     {
       "id": "mouth_closed",
       "category": "facial_features",
-      "path": "facial_features/mouth_closed/manifest.json"
+      "path": "../facial_features/mouth_closed/manifest.json"
     },
     {
       "id": "mouth_grin",
       "category": "facial_features",
-      "path": "facial_features/mouth_grin/manifest.json"
+      "path": "../facial_features/mouth_grin/manifest.json"
     },
     {
       "id": "background_clouds",
       "category": "background_layers",
-      "path": "background_layers/background_clouds/manifest.json"
+      "path": "../background_layers/background_clouds/manifest.json"
     },
     {
       "id": "background_stars",
       "category": "background_layers",
-      "path": "background_layers/background_stars/manifest.json"
+      "path": "../background_layers/background_stars/manifest.json"
     },
     {
       "id": "background_moon",
       "category": "background_layers",
-      "path": "background_layers/background_moon/manifest.json"
+      "path": "../background_layers/background_moon/manifest.json"
     },
     {
       "id": "background_sun",
       "category": "background_layers",
-      "path": "background_layers/background_sun/manifest.json"
+      "path": "../background_layers/background_sun/manifest.json"
     },
     {
       "id": "background_mountains",
       "category": "background_layers",
-      "path": "background_layers/background_mountains/manifest.json"
+      "path": "../background_layers/background_mountains/manifest.json"
     },
     {
       "id": "background_city_skyline",
       "category": "background_layers",
-      "path": "background_layers/background_city_skyline/manifest.json"
+      "path": "../background_layers/background_city_skyline/manifest.json"
     },
     {
       "id": "background_jungle_vines",
       "category": "background_layers",
-      "path": "background_layers/background_jungle_vines/manifest.json"
+      "path": "../background_layers/background_jungle_vines/manifest.json"
     },
     {
       "id": "background_cavern_wall",
       "category": "background_layers",
-      "path": "background_layers/background_cavern_wall/manifest.json"
+      "path": "../background_layers/background_cavern_wall/manifest.json"
     },
     {
       "id": "background_snow_hills",
       "category": "background_layers",
-      "path": "background_layers/background_snow_hills/manifest.json"
+      "path": "../background_layers/background_snow_hills/manifest.json"
     },
     {
       "id": "background_desert_rocks",
       "category": "background_layers",
-      "path": "background_layers/background_desert_rocks/manifest.json"
+      "path": "../background_layers/background_desert_rocks/manifest.json"
     },
     {
       "id": "background_water_surface",
       "category": "background_layers",
-      "path": "background_layers/background_water_surface/manifest.json"
+      "path": "../background_layers/background_water_surface/manifest.json"
     },
     {
       "id": "background_fog_horizon",
       "category": "background_layers",
-      "path": "background_layers/background_fog_horizon/manifest.json"
+      "path": "../background_layers/background_fog_horizon/manifest.json"
     },
     {
       "id": "background_forest_trees",
       "category": "background_layers",
-      "path": "background_layers/background_forest_trees/manifest.json"
+      "path": "../background_layers/background_forest_trees/manifest.json"
     },
     {
       "id": "background_castle_silhouette",
       "category": "background_layers",
-      "path": "background_layers/background_castle_silhouette/manifest.json"
+      "path": "../background_layers/background_castle_silhouette/manifest.json"
     },
     {
       "id": "background_space_stars",
       "category": "background_layers",
-      "path": "background_layers/background_space_stars/manifest.json"
+      "path": "../background_layers/background_space_stars/manifest.json"
     },
     {
       "id": "background_light_grid_floor",
       "category": "background_layers",
-      "path": "background_layers/background_light_grid_floor/manifest.json"
+      "path": "../background_layers/background_light_grid_floor/manifest.json"
     },
     {
       "id": "background_lab_panels",
       "category": "background_layers",
-      "path": "background_layers/background_lab_panels/manifest.json"
+      "path": "../background_layers/background_lab_panels/manifest.json"
     },
     {
       "id": "background_mine_timber",
       "category": "background_layers",
-      "path": "background_layers/background_mine_timber/manifest.json"
+      "path": "../background_layers/background_mine_timber/manifest.json"
     },
     {
       "id": "background_temple_wall",
       "category": "background_layers",
-      "path": "background_layers/background_temple_wall/manifest.json"
+      "path": "../background_layers/background_temple_wall/manifest.json"
     },
     {
       "id": "background_pirate_cove_rocks",
       "category": "background_layers",
-      "path": "background_layers/background_pirate_cove_rocks/manifest.json"
+      "path": "../background_layers/background_pirate_cove_rocks/manifest.json"
     },
     {
       "id": "background_volcano_glow",
       "category": "background_layers",
-      "path": "background_layers/background_volcano_glow/manifest.json"
+      "path": "../background_layers/background_volcano_glow/manifest.json"
     },
     {
       "id": "background_alien_floating_rocks",
       "category": "background_layers",
-      "path": "background_layers/background_alien_floating_rocks/manifest.json"
+      "path": "../background_layers/background_alien_floating_rocks/manifest.json"
     },
     {
       "id": "background_haunted_wallpaper",
       "category": "background_layers",
-      "path": "background_layers/background_haunted_wallpaper/manifest.json"
+      "path": "../background_layers/background_haunted_wallpaper/manifest.json"
     },
     {
       "id": "background_comic_burst",
       "category": "background_layers",
-      "path": "background_layers/background_comic_burst/manifest.json"
+      "path": "../background_layers/background_comic_burst/manifest.json"
     },
     {
       "id": "overlay_title_card",
       "category": "overlays",
-      "path": "overlays/overlay_title_card/manifest.json"
+      "path": "../overlays/overlay_title_card/manifest.json"
     },
     {
       "id": "overlay_location_card",
       "category": "overlays",
-      "path": "overlays/overlay_location_card/manifest.json"
+      "path": "../overlays/overlay_location_card/manifest.json"
     },
     {
       "id": "overlay_chapter_card",
       "category": "overlays",
-      "path": "overlays/overlay_chapter_card/manifest.json"
+      "path": "../overlays/overlay_chapter_card/manifest.json"
     },
     {
       "id": "overlay_timer",
       "category": "overlays",
-      "path": "overlays/overlay_timer/manifest.json"
+      "path": "../overlays/overlay_timer/manifest.json"
     },
     {
       "id": "overlay_warning_panel",
       "category": "overlays",
-      "path": "overlays/overlay_warning_panel/manifest.json"
+      "path": "../overlays/overlay_warning_panel/manifest.json"
     },
     {
       "id": "overlay_map_marker",
       "category": "overlays",
-      "path": "overlays/overlay_map_marker/manifest.json"
+      "path": "../overlays/overlay_map_marker/manifest.json"
     },
     {
       "id": "overlay_arrow_pointer",
       "category": "overlays",
-      "path": "overlays/overlay_arrow_pointer/manifest.json"
+      "path": "../overlays/overlay_arrow_pointer/manifest.json"
     },
     {
       "id": "overlay_subtitle_box",
       "category": "overlays",
-      "path": "overlays/overlay_subtitle_box/manifest.json"
+      "path": "../overlays/overlay_subtitle_box/manifest.json"
     },
     {
       "id": "overlay_fact_card",
       "category": "overlays",
-      "path": "overlays/overlay_fact_card/manifest.json"
+      "path": "../overlays/overlay_fact_card/manifest.json"
     },
     {
       "id": "overlay_rating_stars",
       "category": "overlays",
-      "path": "overlays/overlay_rating_stars/manifest.json"
+      "path": "../overlays/overlay_rating_stars/manifest.json"
     },
     {
       "id": "overlay_lower_third",
       "category": "overlays",
-      "path": "overlays/overlay_lower_third/manifest.json"
+      "path": "../overlays/overlay_lower_third/manifest.json"
     },
     {
       "id": "overlay_thought_bubble",
       "category": "overlays",
-      "path": "overlays/overlay_thought_bubble/manifest.json"
+      "path": "../overlays/overlay_thought_bubble/manifest.json"
     },
     {
       "id": "overlay_speech_caption",
       "category": "overlays",
-      "path": "overlays/overlay_speech_caption/manifest.json"
+      "path": "../overlays/overlay_speech_caption/manifest.json"
     },
     {
       "id": "overlay_progress_bar",
       "category": "overlays",
-      "path": "overlays/overlay_progress_bar/manifest.json"
+      "path": "../overlays/overlay_progress_bar/manifest.json"
     },
     {
       "id": "overlay_score_badge",
       "category": "overlays",
-      "path": "overlays/overlay_score_badge/manifest.json"
+      "path": "../overlays/overlay_score_badge/manifest.json"
     },
     {
       "id": "overlay_map_route",
       "category": "overlays",
-      "path": "overlays/overlay_map_route/manifest.json"
+      "path": "../overlays/overlay_map_route/manifest.json"
     },
     {
       "id": "overlay_comic_caption",
       "category": "overlays",
-      "path": "overlays/overlay_comic_caption/manifest.json"
+      "path": "../overlays/overlay_comic_caption/manifest.json"
     },
     {
       "id": "overlay_pause_stamp",
       "category": "overlays",
-      "path": "overlays/overlay_pause_stamp/manifest.json"
+      "path": "../overlays/overlay_pause_stamp/manifest.json"
     },
     {
       "id": "transition_fade",
       "category": "transitions",
-      "path": "transitions/transition_fade/manifest.json"
+      "path": "../transitions/transition_fade/manifest.json"
     },
     {
       "id": "transition_wipe_left",
       "category": "transitions",
-      "path": "transitions/transition_wipe_left/manifest.json"
+      "path": "../transitions/transition_wipe_left/manifest.json"
     },
     {
       "id": "transition_wipe_right",
       "category": "transitions",
-      "path": "transitions/transition_wipe_right/manifest.json"
+      "path": "../transitions/transition_wipe_right/manifest.json"
     },
     {
       "id": "transition_wipe_up",
       "category": "transitions",
-      "path": "transitions/transition_wipe_up/manifest.json"
+      "path": "../transitions/transition_wipe_up/manifest.json"
     },
     {
       "id": "transition_wipe_down",
       "category": "transitions",
-      "path": "transitions/transition_wipe_down/manifest.json"
+      "path": "../transitions/transition_wipe_down/manifest.json"
     },
     {
       "id": "transition_circle_close",
       "category": "transitions",
-      "path": "transitions/transition_circle_close/manifest.json"
+      "path": "../transitions/transition_circle_close/manifest.json"
     },
     {
       "id": "transition_circle_open",
       "category": "transitions",
-      "path": "transitions/transition_circle_open/manifest.json"
+      "path": "../transitions/transition_circle_open/manifest.json"
     },
     {
       "id": "transition_flash",
       "category": "transitions",
-      "path": "transitions/transition_flash/manifest.json"
+      "path": "../transitions/transition_flash/manifest.json"
     },
     {
       "id": "transition_smoke_cover",
       "category": "transitions",
-      "path": "transitions/transition_smoke_cover/manifest.json"
+      "path": "../transitions/transition_smoke_cover/manifest.json"
     },
     {
       "id": "transition_map_swipe",
       "category": "transitions",
-      "path": "transitions/transition_map_swipe/manifest.json"
+      "path": "../transitions/transition_map_swipe/manifest.json"
     },
     {
       "id": "transition_speed_blur",
       "category": "transitions",
-      "path": "transitions/transition_speed_blur/manifest.json"
+      "path": "../transitions/transition_speed_blur/manifest.json"
     },
     {
       "id": "transition_portal_wipe",
       "category": "transitions",
-      "path": "transitions/transition_portal_wipe/manifest.json"
+      "path": "../transitions/transition_portal_wipe/manifest.json"
     },
     {
       "id": "transition_shutter_bars",
       "category": "transitions",
-      "path": "transitions/transition_shutter_bars/manifest.json"
+      "path": "../transitions/transition_shutter_bars/manifest.json"
     },
     {
       "id": "transition_comic_panel_wipe",
       "category": "transitions",
-      "path": "transitions/transition_comic_panel_wipe/manifest.json"
+      "path": "../transitions/transition_comic_panel_wipe/manifest.json"
     },
     {
       "id": "transition_curtain_reveal",
       "category": "transitions",
-      "path": "transitions/transition_curtain_reveal/manifest.json"
+      "path": "../transitions/transition_curtain_reveal/manifest.json"
     },
     {
       "id": "camera_reveal",
       "category": "cinematic",
-      "path": "cinematic/camera_reveal/manifest.json"
+      "path": "../cinematic/camera_reveal/manifest.json"
     },
     {
       "id": "camera_orbit",
       "category": "cinematic",
-      "path": "cinematic/camera_orbit/manifest.json"
+      "path": "../cinematic/camera_orbit/manifest.json"
     },
     {
       "id": "camera_follow",
       "category": "cinematic",
-      "path": "cinematic/camera_follow/manifest.json"
+      "path": "../cinematic/camera_follow/manifest.json"
     },
     {
       "id": "slow_pan",
       "category": "cinematic",
-      "path": "cinematic/slow_pan/manifest.json"
+      "path": "../cinematic/slow_pan/manifest.json"
     },
     {
       "id": "dramatic_zoom",
       "category": "cinematic",
-      "path": "cinematic/dramatic_zoom/manifest.json"
+      "path": "../cinematic/dramatic_zoom/manifest.json"
     },
     {
       "id": "lighting_flash",
       "category": "cinematic",
-      "path": "cinematic/lighting_flash/manifest.json"
+      "path": "../cinematic/lighting_flash/manifest.json"
     },
     {
       "id": "explosion_effect",
       "category": "cinematic",
-      "path": "cinematic/explosion_effect/manifest.json"
+      "path": "../cinematic/explosion_effect/manifest.json"
     },
     {
       "id": "fog_pass",
       "category": "cinematic",
-      "path": "cinematic/fog_pass/manifest.json"
+      "path": "../cinematic/fog_pass/manifest.json"
     },
     {
       "id": "portal_transition",
       "category": "cinematic",
-      "path": "cinematic/portal_transition/manifest.json"
+      "path": "../cinematic/portal_transition/manifest.json"
     },
     {
       "id": "crowd_reaction",
       "category": "cinematic",
-      "path": "cinematic/crowd_reaction/manifest.json"
+      "path": "../cinematic/crowd_reaction/manifest.json"
     },
     {
       "id": "vehicle_pass",
       "category": "cinematic",
-      "path": "cinematic/vehicle_pass/manifest.json"
+      "path": "../cinematic/vehicle_pass/manifest.json"
     }
   ],
   "legacyFallback": {
     "enabled": true,
     "catalog": "asset_packs_legacy.json"
   },
-  "notes": {
-    "mergedFrom": "V36 full catalog plus V38 cinematic additions",
-    "storyTemplates": "V37 story template catalog is included separately under stories/",
-    "install": "Replace assets/catalog/asset_catalog.json with this file, then copy included assets/cinematic and stories folders."
-  }
+  "notes": [
+    {
+      "mergedFrom": "V36 full catalog plus V38 cinematic additions",
+      "storyTemplates": "V37 story template catalog is included separately under stories/",
+      "install": "Replace assets/catalog/asset_catalog.json with this file, then copy included assets/cinematic and stories folders."
+    },
+    "V39.1 fixes category catalog manifest paths to resolve from assets/catalog/ back to assets/."
+  ]
 }
