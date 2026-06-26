@@ -1,0 +1,18 @@
+{
+  "version": "21.1",
+  "defaultStory": "../stories/episode_001.json",
+  "stories": [
+    {
+      "id": "episode_001",
+      "label": "Episode 001 - V20 Foundation Test",
+      "path": "../stories/episode_001.json",
+      "description": "Original rig, validation, and foundation-lock feature test."
+    },
+    {
+      "id": "episode_expansion_test",
+      "label": "V21 Expansion Pack Test",
+      "path": "../stories/episode_expansion_test.json",
+      "description": "Test story using the first broad asset expansion packs."
+    }
+  ]
+}
