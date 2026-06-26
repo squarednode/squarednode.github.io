@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "22.0",
+  "id": "explosion_effect",
+  "displayName": "Explosion Effect",
+  "category": "cinematic",
+  "subcategory": "effect",
+  "style": "simple_theme_park_svg_v1",
+  "rigType": "cinematic_overlay",
+  "scaleClass": "fullscreen_overlay",
+  "artboard": [
+    800,
+    450
+  ],
+  "groundPoint": [
+    400,
+    450
+  ],
+  "description": "Layerable burst/smoke effect for action beats.",
+  "thumbnail": "thumbnail.svg",
+  "colorSlots": {
+    "primaryColor": "#d8f1ff",
+    "secondaryColor": "#ffffff",
+    "accentColor": "#f4d35e",
+    "outlineColor": "#111111"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.65
+  },
+  "motions": [
+    "idle",
+    "fadeIn",
+    "fadeOut",
+    "move",
+    "scale",
+    "pulse"
+  ],
+  "anchors": {
+    "center": [
+      400,
+      225
+    ]
+  },
+  "parts": [
+    {
+      "name": "base",
+      "file": "parts/base.svg",
+      "order": 10
+    }
+  ]
+}
