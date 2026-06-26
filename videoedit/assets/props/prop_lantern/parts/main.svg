@@ -1,0 +1,1 @@
+<svg xmlns='http://www.w3.org/2000/svg'><path d='M110 55 C110 25 190 25 190 55' fill='none' stroke='#111' stroke-width='6'/><rect x='90' y='75' width='120' height='130' rx='25' fill='{{color}}' stroke='#111' stroke-width='7'/><ellipse cx='150' cy='140' rx='42' ry='55' fill='{{trimColor}}' opacity='.75' stroke='#111' stroke-width='4'/></svg>

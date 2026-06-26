@@ -1,0 +1,66 @@
+{
+  "id": "prop_rope_barrier",
+  "type": "prop",
+  "category": "props",
+  "subcategory": "queue",
+  "label": "Rope Barrier",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "prop_basic",
+  "scaleClass": "prop_standard",
+  "artboard": [
+    300,
+    260
+  ],
+  "groundPoint": [
+    150,
+    240
+  ],
+  "anchors": {
+    "ground": [
+      150,
+      240
+    ],
+    "center": [
+      150,
+      150
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "bob",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "prop",
+    "queue"
+  ],
+  "defaults": {
+    "color": "#56504b",
+    "trimColor": "#bb6bd9"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        150,
+        150
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/props/prop_rope_barrier",
+  "librarySource": "category-catalog",
+  "packId": null
+}

@@ -1,0 +1,77 @@
+{
+  "id": "prop_balloon",
+  "type": "prop",
+  "label": "Theme Park Balloon",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "balloon"
+  ],
+  "tags": [
+    "prop",
+    "balloon",
+    "external"
+  ],
+  "defaults": {
+    "color": "#ff5ca8"
+  },
+  "parts": [
+    {
+      "name": "string",
+      "file": "parts/string.svg",
+      "pivot": [
+        155,
+        190
+      ],
+      "order": 10
+    },
+    {
+      "name": "balloon",
+      "file": "parts/balloon.svg",
+      "pivot": [
+        155,
+        105
+      ],
+      "order": 20
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "props",
+  "subcategory": "handheld",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "prop_basic",
+  "scaleClass": "prop_standard",
+  "artboard": [
+    220,
+    220
+  ],
+  "groundPoint": [
+    110,
+    220
+  ],
+  "anchors": {
+    "ground": [
+      120,
+      220
+    ],
+    "stringEnd": [
+      120,
+      220
+    ],
+    "balloon": [
+      120,
+      70
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "bob",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/props/prop_balloon",
+  "librarySource": "category-catalog",
+  "packId": null
+}

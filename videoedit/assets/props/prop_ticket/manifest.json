@@ -1,0 +1,65 @@
+{
+  "id": "prop_ticket",
+  "type": "prop",
+  "label": "Admission Ticket",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "ticket"
+  ],
+  "tags": [
+    "prop",
+    "ticket",
+    "external"
+  ],
+  "defaults": {
+    "color": "#ffd66b",
+    "text": "ADMIT"
+  },
+  "parts": [
+    {
+      "name": "ticket",
+      "file": "parts/ticket.svg",
+      "pivot": [
+        150,
+        90
+      ],
+      "order": 10
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "props",
+  "subcategory": "ticketing",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "prop_basic",
+  "scaleClass": "prop_standard",
+  "artboard": [
+    220,
+    220
+  ],
+  "groundPoint": [
+    110,
+    220
+  ],
+  "anchors": {
+    "ground": [
+      130,
+      180
+    ],
+    "text": [
+      95,
+      105
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "bob",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/props/prop_ticket",
+  "librarySource": "category-catalog",
+  "packId": null
+}

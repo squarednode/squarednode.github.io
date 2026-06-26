@@ -1,0 +1,74 @@
+{
+  "id": "prop_sign_arrow",
+  "type": "prop",
+  "label": "Arrow Sign Prop",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "sign"
+  ],
+  "tags": [
+    "prop",
+    "sign",
+    "external"
+  ],
+  "defaults": {
+    "color": "#75c6ff",
+    "text": "RIDE"
+  },
+  "parts": [
+    {
+      "name": "post",
+      "file": "parts/post.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 10
+    },
+    {
+      "name": "sign",
+      "file": "parts/sign.svg",
+      "pivot": [
+        102,
+        150
+      ],
+      "order": 20
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "props",
+  "subcategory": "signage",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "prop_basic",
+  "scaleClass": "prop_standard",
+  "artboard": [
+    220,
+    220
+  ],
+  "groundPoint": [
+    110,
+    220
+  ],
+  "anchors": {
+    "ground": [
+      102,
+      365
+    ],
+    "signText": [
+      150,
+      125
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "bob",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/props/prop_sign_arrow",
+  "librarySource": "category-catalog",
+  "packId": null
+}

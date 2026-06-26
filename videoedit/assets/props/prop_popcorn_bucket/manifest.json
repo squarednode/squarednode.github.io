@@ -1,0 +1,73 @@
+{
+  "id": "prop_popcorn_bucket",
+  "type": "prop",
+  "label": "Popcorn Bucket",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "bucket",
+    "popcorn"
+  ],
+  "tags": [
+    "prop",
+    "food",
+    "theme-park",
+    "external"
+  ],
+  "defaults": {},
+  "parts": [
+    {
+      "name": "popcorn",
+      "file": "parts/popcorn.svg",
+      "pivot": [
+        160,
+        95
+      ],
+      "order": 10
+    },
+    {
+      "name": "bucket",
+      "file": "parts/bucket.svg",
+      "pivot": [
+        160,
+        190
+      ],
+      "order": 20
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "props",
+  "subcategory": "food",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "prop_basic",
+  "scaleClass": "prop_standard",
+  "artboard": [
+    220,
+    220
+  ],
+  "groundPoint": [
+    110,
+    220
+  ],
+  "anchors": {
+    "ground": [
+      160,
+      220
+    ],
+    "top": [
+      160,
+      95
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "bob",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/props/prop_popcorn_bucket",
+  "librarySource": "category-catalog",
+  "packId": null
+}

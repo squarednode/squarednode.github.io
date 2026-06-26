@@ -1,0 +1,1 @@
+<svg xmlns='http://www.w3.org/2000/svg'><rect x='55' y='85' width='190' height='115' rx='22' fill='{{color}}' stroke='#111' stroke-width='7'/><circle cx='150' cy='142' r='42' fill='{{trimColor}}' stroke='#111' stroke-width='6'/><circle cx='150' cy='142' r='18' fill='#111'/><rect x='82' y='55' width='62' height='35' rx='10' fill='{{color}}' stroke='#111' stroke-width='5'/></svg>
