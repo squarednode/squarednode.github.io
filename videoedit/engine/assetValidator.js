@@ -18,7 +18,8 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
       if (!asset.schemaVersion) checks.push(issue('warning', 'schema-version', 'Asset is missing schemaVersion', asset.id || pack.id, 'V20 assets should declare schemaVersion.'));
       if (!asset.category) checks.push(issue('warning', 'asset-category', 'Asset is missing category', asset.id || pack.id, 'Use characters, creatures, vehicles, rides, landmarks, environments, props, wardrobe, facial_features, effects, signage, or background_layers.'));
       if (!asset.subcategory) checks.push(issue('info', 'asset-subcategory', 'Asset is missing subcategory', asset.id || pack.id, 'Subcategory helps library filtering.'));
-      if (!asset.rigType) checks.push(issue('warning', 'rig-type', 'Asset is missing rigType', asset.id || pack.id, 'Examples: humanoid_basic, creature_basic, wheeled_vehicle_basic.'));
+      if (!asset.rigType && asset.type !== 'environment') checks.push(issue('warning', 'rig-type', 'Asset is missing rigType', asset.id || pack.id, 'Examples: humanoid_basic, creature_basic, wheeled_vehicle_basic.'));
+      if (!asset.rigType && asset.type === 'environment') asset.rigType = 'layered_environment';
       if (!asset.scaleClass) checks.push(issue('warning', 'scale-class', 'Asset is missing scaleClass', asset.id || pack.id, 'Examples: character_standard, vehicle_standard, ride_large.'));
       if (!isGoodPivot(asset.groundPoint)) checks.push(issue('warning', 'ground-point', 'Asset is missing valid groundPoint', asset.id || pack.id, JSON.stringify(asset.groundPoint)));
       if (!Array.isArray(asset.artboard) || asset.artboard.length !== 2) checks.push(issue('warning', 'artboard', 'Asset is missing artboard [width, height]', asset.id || pack.id, JSON.stringify(asset.artboard)));

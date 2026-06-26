@@ -13,7 +13,7 @@ export async function loadAssetPacks(catalogUrl = '../assets/catalog/asset_catal
       for (const item of catalog.assets) {
         try {
           const manifestUrl = new URL(item.path, catalogBaseUrl).toString();
-          const manifestRes = await fetch(manifestUrl, { cache: 'no-cache' });
+          const manifestRes = await fetchWithRetry(manifestUrl);
           if (!manifestRes.ok) throw new Error(`Asset manifest not found: ${item.path}`);
           const rawAsset = await manifestRes.json();
           const assetBaseUrl = new URL(rawAsset.path || './', manifestUrl).toString();
@@ -75,7 +75,7 @@ async function loadLegacyPacks(catalog, catalogBaseUrl) {
   for (const pack of catalog.packs || []) {
     try {
       const manifestUrl = new URL(pack.manifest, catalogBaseUrl).toString();
-      const manifestRes = await fetch(manifestUrl, { cache: 'no-cache' });
+      const manifestRes = await fetchWithRetry(manifestUrl);
       if (!manifestRes.ok) throw new Error(`Manifest not found: ${pack.manifest}`);
       const manifest = await manifestRes.json();
       const manifestBaseUrl = new URL('.', manifestUrl).toString();
@@ -107,7 +107,7 @@ async function hydrateExternalSvgAsset(asset) {
   if (asset.thumbnail) {
     try {
       const thumbUrl = new URL(asset.thumbnail, asset.baseUrl).toString();
-      const thumbRes = await fetch(thumbUrl, { cache: 'no-cache' });
+      const thumbRes = await fetchWithRetry(thumbUrl);
       if (thumbRes.ok) {
         asset.thumbnailText = await thumbRes.text();
         asset.thumbnailUrl = thumbUrl;
@@ -125,13 +125,26 @@ async function hydrateSvgEntry(entry, baseUrl, kind = 'part') {
   if (!entry.file) return;
   try {
     const url = new URL(entry.file, baseUrl).toString();
-    const res = await fetch(url, { cache: 'no-cache' });
-    if (!res.ok) throw new Error(`Missing ${kind} ${entry.file}`);
+    const res = await fetchWithRetry(url);
+    if (!res.ok) throw new Error(`Missing ${kind} ${entry.file} HTTP ${res.status}`);
     entry.svgText = await res.text();
     entry.url = url;
   } catch (err) {
     entry.loadError = String(err);
   }
+}
+
+async function fetchWithRetry(url) {
+  let res = await fetch(url, { cache: 'no-store' });
+  if (res.ok) return res;
+
+  // GitHub Pages can briefly serve stale or unavailable asset files right after a deploy.
+  // Retry once with a cache-busting query string so individual SVG part files do not
+  // get falsely marked missing during Pages propagation or hard-refresh testing.
+  const retryUrl = new URL(url, window.location.href);
+  retryUrl.searchParams.set('_rtv', String(Date.now()));
+  res = await fetch(retryUrl.toString(), { cache: 'no-store' });
+  return res;
 }
 
 function categoryLabel(category) {
