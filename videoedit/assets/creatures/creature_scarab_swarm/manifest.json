@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "24.0.0",
+  "id": "creature_scarab_swarm",
+  "type": "creature",
+  "label": "Scarab Swarm Creature",
+  "category": "creatures",
+  "subcategory": "scarab",
+  "style": "simple_theme_park_svg_v5",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rigType": "creature_insect",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    300,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      300,
+      370
+    ],
+    "head": [
+      300,
+      185
+    ],
+    "mouth": [
+      300,
+      210
+    ],
+    "speechBubble": [
+      300,
+      75
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "defaults": {
+    "bodyColor": "#3c2f2f",
+    "bellyColor": "#5a4545",
+    "accentColor": "#d6a54b",
+    "outlineColor": "#111111",
+    "eyeColor": "#ffd45a"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        300,
+        275
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_legs.svg",
+      "pivot": [
+        190,
+        275
+      ],
+      "order": 15
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_legs.svg",
+      "pivot": [
+        410,
+        275
+      ],
+      "order": 16
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        300,
+        185
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        300,
+        205
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "scarab",
+    "insect",
+    "mummy"
+  ],
+  "assetFolder": "assets/creatures/creature_scarab_swarm",
+  "librarySource": "category-catalog",
+  "packId": null
+}

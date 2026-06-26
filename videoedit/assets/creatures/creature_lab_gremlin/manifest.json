@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "24.0.0",
+  "id": "creature_lab_gremlin",
+  "type": "creature",
+  "label": "Lab Mischief Creature",
+  "category": "creatures",
+  "subcategory": "lab creature",
+  "style": "simple_theme_park_svg_v5",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rigType": "creature_basic",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    300,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      300,
+      455
+    ],
+    "head": [
+      300,
+      135
+    ],
+    "mouth": [
+      300,
+      195
+    ],
+    "leftGrip": [
+      180,
+      365
+    ],
+    "rightGrip": [
+      420,
+      365
+    ],
+    "speechBubble": [
+      300,
+      55
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "defaults": {
+    "bodyColor": "#f0c942",
+    "bellyColor": "#f7e9a5",
+    "accentColor": "#111111",
+    "goggleColor": "#222222",
+    "lensColor": "#d8f7ff",
+    "outlineColor": "#111111",
+    "eyeColor": "#111111"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        255,
+        350
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        345,
+        350
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        300,
+        270
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_arm.svg",
+      "pivot": [
+        220,
+        245
+      ],
+      "order": 35
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_arm.svg",
+      "pivot": [
+        380,
+        245
+      ],
+      "order": 36
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        300,
+        135
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        300,
+        190
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "lab",
+    "mischief",
+    "small"
+  ],
+  "assetFolder": "assets/creatures/creature_lab_gremlin",
+  "librarySource": "category-catalog",
+  "packId": null
+}
