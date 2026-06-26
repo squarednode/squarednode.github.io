@@ -1,15 +1,15 @@
 {
   "id": "core-creatures",
   "label": "Core Creatures",
-  "version": "18.0.0",
+  "version": "20.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
-      "id": "creature_red_dino",
+      "id": "creature_trex",
       "type": "creature",
-      "label": "Rigged Red Dino",
+      "label": "Rigged T-Rex Creature",
       "mode": "external-svg",
-      "path": "creature_red_dino/",
+      "path": "creature_trex/",
       "source": "external-svg",
       "rig": [
         "head",
@@ -20,11 +20,11 @@
         "rightLeg",
         "tail"
       ],
-      "expressions": [
-        "happy",
-        "angry",
-        "surprised"
-      ],
+      "expressions": {
+        "happy": {},
+        "angry": {},
+        "surprised": {}
+      },
       "tags": [
         "creature",
         "mascot",
@@ -146,7 +146,73 @@
           "order": 72,
           "expression": "surprised"
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "creatures",
+      "subcategory": "dinosaur",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "creature_basic",
+      "scaleClass": "creature_standard",
+      "artboard": [
+        600,
+        500
+      ],
+      "groundPoint": [
+        275,
+        480
+      ],
+      "anchors": {
+        "ground": [
+          275,
+          480
+        ],
+        "head": [
+          210,
+          105
+        ],
+        "mouth": [
+          115,
+          150
+        ],
+        "leftHand": [
+          166,
+          288
+        ],
+        "rightHand": [
+          201,
+          288
+        ],
+        "tailTip": [
+          555,
+          120
+        ],
+        "speechBubble": [
+          280,
+          50
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg",
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      }
     }
-  ]
+  ],
+  "schemaVersion": "20.0.0"
 }

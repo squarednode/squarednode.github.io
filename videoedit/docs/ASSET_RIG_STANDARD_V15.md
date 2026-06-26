@@ -6,7 +6,7 @@ Every reusable render asset should follow this pattern.
 
 ```json
 {
-  "id": "creature_red_dino",
+  "id": "creature_trex",
   "type": "creature",
   "style": "simple_theme_park_svg_v2",
   "parts": {},

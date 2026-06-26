@@ -1,0 +1,91 @@
+{
+  "id": "core-environments",
+  "label": "Core Environments",
+  "version": "20.0.0",
+  "schemaVersion": "20.0.0",
+  "style": "simple_theme_park_svg_v5",
+  "assets": [
+    {
+      "id": "park_path_day",
+      "type": "environment",
+      "category": "environments",
+      "subcategory": "theme_park_path",
+      "label": "Theme Park Path Day",
+      "mode": "external-svg",
+      "path": "park_path_day/",
+      "source": "external-svg",
+      "style": "simple_theme_park_svg_v5",
+      "rigType": "layered_environment",
+      "scaleClass": "environment_1280x720",
+      "artboard": [
+        1280,
+        720
+      ],
+      "groundPoint": [
+        640,
+        720
+      ],
+      "anchors": {
+        "groundCenter": [
+          640,
+          600
+        ],
+        "farStage": [
+          640,
+          350
+        ],
+        "nearStage": [
+          640,
+          620
+        ]
+      },
+      "motions": [
+        "idle",
+        "camera_move"
+      ],
+      "tags": [
+        "environment",
+        "theme-park",
+        "day",
+        "layered",
+        "external"
+      ],
+      "thumbnail": "thumbnail.svg",
+      "defaults": {
+        "sky": "#dff4ff",
+        "farGround": "#78c16a",
+        "ground": "#9dd77d"
+      },
+      "layers": [
+        {
+          "id": "sky",
+          "file": "sky.svg",
+          "depth": -100,
+          "parallax": 0.05,
+          "order": 0
+        },
+        {
+          "id": "far",
+          "file": "far_hills.svg",
+          "depth": 0,
+          "parallax": 0.35,
+          "order": 10
+        },
+        {
+          "id": "mid",
+          "file": "mid_ground.svg",
+          "depth": 1,
+          "parallax": 0.7,
+          "order": 20
+        },
+        {
+          "id": "near",
+          "file": "near_shadow.svg",
+          "depth": 2,
+          "parallax": 1.05,
+          "order": 30
+        }
+      ]
+    }
+  ]
+}

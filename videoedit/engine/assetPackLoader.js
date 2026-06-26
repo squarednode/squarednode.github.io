@@ -34,18 +34,39 @@ async function hydrateExternalSvgAssets(pack) {
     asset.baseUrl = new URL(asset.path || '', pack.baseUrl).toString();
     if (asset.mode !== 'external-svg') continue;
     const parts = Array.isArray(asset.parts) ? asset.parts : [];
-    for (const part of parts) {
-      if (!part.file) continue;
+    for (const part of parts) await hydrateSvgEntry(part, asset.baseUrl, 'part');
+
+    const layers = Array.isArray(asset.layers) ? asset.layers : [];
+    for (const layer of layers) await hydrateSvgEntry(layer, asset.baseUrl, 'layer');
+
+    if (asset.thumbnail) {
       try {
-        const partUrl = new URL(part.file, asset.baseUrl).toString();
-        const res = await fetch(partUrl, { cache: 'no-cache' });
-        if (!res.ok) throw new Error(`Missing part ${part.file}`);
-        part.svgText = await res.text();
-        part.url = partUrl;
+        const thumbUrl = new URL(asset.thumbnail, asset.baseUrl).toString();
+        const thumbRes = await fetch(thumbUrl, { cache: 'no-cache' });
+        if (thumbRes.ok) {
+          asset.thumbnailText = await thumbRes.text();
+          asset.thumbnailUrl = thumbUrl;
+        } else {
+          asset.thumbnailLoadError = `Missing thumbnail ${asset.thumbnail}`;
+        }
       } catch (err) {
-        part.loadError = String(err);
+        asset.thumbnailLoadError = String(err);
       }
     }
   }
   return pack;
+}
+
+
+async function hydrateSvgEntry(entry, baseUrl, kind = 'part') {
+  if (!entry.file) return;
+  try {
+    const url = new URL(entry.file, baseUrl).toString();
+    const res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`Missing ${kind} ${entry.file}`);
+    entry.svgText = await res.text();
+    entry.url = url;
+  } catch (err) {
+    entry.loadError = String(err);
+  }
 }

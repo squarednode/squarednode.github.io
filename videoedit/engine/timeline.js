@@ -105,11 +105,11 @@ export class TimelinePlayer {
     }
 
     if (cmd.action === 'wave') {
-      const part = cmd.part || (rig.parts.rightForearm ? 'rightUpperArm' : 'rightArm');
+      const part = cmd.part || (rig.parts.rightUpperArm ? 'rightUpperArm' : (rig.parts.rightArm ? 'rightArm' : 'head'));
       const base = cmd.baseAngle ?? -35;
       const wave = Math.sin(t * 14) * (cmd.amount ?? 30);
       this.renderer.setPartAngle(cmd.actor, part, base + wave);
-      this.renderer.setPartAngle(cmd.actor, 'rightForearm', -20 + wave * 0.45);
+      if (rig.parts.rightForearm) this.renderer.setPartAngle(cmd.actor, 'rightForearm', -20 + wave * 0.45);
     }
 
     if (cmd.action === 'gesture') {

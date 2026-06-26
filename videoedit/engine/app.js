@@ -4,6 +4,7 @@ import { exportSvgShotAsWebM } from './exporter.js';
 import { loadAssetPacks } from './assetPackLoader.js';
 import { registerAssetPacks } from './assetFactory.js';
 import { validateAssetPacks, collectRenderedAssetDiagnostics, makeAssetTestShot } from './assetValidator.js';
+import { validateStory } from './storyValidator.js';
 
 const stage = document.getElementById('stage');
 const status = document.getElementById('status');
@@ -15,6 +16,8 @@ const assetDetails = document.getElementById('assetDetails');
 const validationSummary = document.getElementById('validationSummary');
 const validationReport = document.getElementById('validationReport');
 const partTestSelect = document.getElementById('partTestSelect');
+const storyValidationSummary = document.getElementById('storyValidationSummary');
+const storyValidationReport = document.getElementById('storyValidationReport');
 
 const renderer = new Renderer(stage);
 const player = new TimelinePlayer(renderer, text => debug.textContent = text);
@@ -32,10 +35,11 @@ async function init() {
   populateShots();
   populateAssets();
   runValidation(false);
+  runStoryValidation();
   renderer.buildShot(story.shots[0]);
   const packCount = assetPackReport.loaded.length;
   const errCount = assetPackReport.errors.length;
-  status.textContent = `Ready - V19 asset validation + rig test engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
+  status.textContent = `Ready - V20 foundation lock + story validation engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
   if (errCount) debug.textContent = JSON.stringify(assetPackReport.errors, null, 2);
 }
 
@@ -54,7 +58,7 @@ function populateAssets() {
   for (const asset of renderer.getAssetLibrary()) {
     const item = document.createElement('button');
     item.className = 'asset-card';
-    item.innerHTML = `<strong>${asset.label}</strong><span>${asset.type} / ${asset.id}<br>${asset.source || 'core'}${asset.packId ? ' / ' + asset.packId : ''}</span>`;
+    item.innerHTML = `<strong>${asset.label}</strong><span>${asset.category || asset.type} / ${asset.subcategory || '-'}<br>${asset.id}<br>${asset.source || 'core'}${asset.packId ? ' / ' + asset.packId : ''}</span>`;
     item.addEventListener('click', () => {
       selectedAsset = asset;
       assetDetails.textContent = JSON.stringify(asset, null, 2);
@@ -94,20 +98,40 @@ function runValidation(includeRendered = true) {
   renderValidationChecks(checks);
 }
 
+
+function runStoryValidation() {
+  let parsed = story;
+  try {
+    parsed = JSON.parse(storyText.value);
+  } catch (err) {
+    storyValidationSummary.textContent = 'Story JSON parse error';
+    renderChecks(storyValidationReport, [{ level: 'error', message: 'Story JSON cannot be parsed', target: 'storyText', detail: String(err) }]);
+    return;
+  }
+  const report = validateStory(parsed, renderer.getAssetLibrary());
+  const s = report.summary;
+  storyValidationSummary.textContent = `${s.error || 0} errors | ${s.warning || 0} warnings | ${s.info || 0} info`;
+  renderChecks(storyValidationReport, report.checks);
+}
+
 function renderValidationChecks(checks) {
+  renderChecks(validationReport, checks);
+}
+
+function renderChecks(container, checks) {
   const ordered = [...checks].sort((a, b) => severityRank(a.level) - severityRank(b.level));
-  validationReport.replaceChildren();
-  for (const check of ordered.slice(0, 180)) {
+  container.replaceChildren();
+  for (const check of ordered.slice(0, 220)) {
     const row = document.createElement('div');
     row.className = `validation-row ${check.level}`;
-    row.innerHTML = `<strong>${check.level.toUpperCase()}</strong><span>${check.message}</span><code>${check.target || ''}</code><em>${check.detail || ''}</em>`;
-    validationReport.appendChild(row);
+    row.innerHTML = `<strong>${String(check.level || 'info').toUpperCase()}</strong><span>${check.message}</span><code>${check.target || ''}</code><em>${check.detail || ''}</em>`;
+    container.appendChild(row);
   }
   if (!ordered.length) {
     const row = document.createElement('div');
     row.className = 'validation-row pass';
     row.textContent = 'No validation issues found.';
-    validationReport.appendChild(row);
+    container.appendChild(row);
   }
 }
 
@@ -133,10 +157,12 @@ function reloadStory() {
   story = JSON.parse(storyText.value);
   populateShots();
   renderer.buildShot(currentShot());
+  runStoryValidation();
 }
 
 document.getElementById('playShot').addEventListener('click', () => player.playShot(currentShot()));
 document.getElementById('runValidation').addEventListener('click', () => { runValidation(true); status.textContent = 'Asset validation complete'; });
+document.getElementById('runStoryValidation').addEventListener('click', () => { runStoryValidation(); status.textContent = 'Story validation complete'; });
 document.getElementById('testAsset').addEventListener('click', testSelectedAsset);
 document.getElementById('playAssetTest').addEventListener('click', () => { if (!selectedAsset) return; const shot = makeAssetTestShot(selectedAsset, partTestSelect.value || null); player.playShot(shot); status.textContent = `Playing asset test: ${selectedAsset.id}`; });
 document.getElementById('playEpisode').addEventListener('click', () => player.playEpisode(story));
@@ -149,9 +175,9 @@ document.getElementById('reloadStory').addEventListener('click', () => {
 document.getElementById('copyShotTemplate').addEventListener('click', async () => {
   const template = {
     id: 'shot_new',
-    title: 'New V19 external asset shot template',
+    title: 'New V20 validated shot template',
     duration: 6,
-    environment: { asset: 'park_entry_day' },
+    environment: { asset: 'park_path_day' },
     camera: { type: '2.5d', position: [0, 0], zoom: 1 },
     actors: [{ id: 'guest1', asset: 'human_guest_basic', position: [480, 245, 4], scale: 0.9, expression: 'happy', wardrobe: { shirtColor: '#2f80ed', pantsColor: '#25324a', hatColor: '#ffd34d' } }, { id: 'prop1', asset: 'prop_popcorn_bucket', position: [700, 360, 5], scale: 0.45 }],
     timeline: [{ start: 0.5, duration: 2, actor: 'guest1', action: 'wave' }]

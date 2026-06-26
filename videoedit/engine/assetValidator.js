@@ -15,6 +15,16 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
       assets.push(asset);
       if (!asset.id) checks.push(issue('error', 'asset-id', 'Asset is missing id', pack.id, asset.label || 'Unnamed asset'));
       if (!asset.type) checks.push(issue('warning', 'asset-type', 'Asset is missing type', asset.id || pack.id, 'Use character, creature, ride, vehicle, prop, landmark, or environment.'));
+      if (!asset.schemaVersion) checks.push(issue('warning', 'schema-version', 'Asset is missing schemaVersion', asset.id || pack.id, 'V20 assets should declare schemaVersion.'));
+      if (!asset.category) checks.push(issue('warning', 'asset-category', 'Asset is missing category', asset.id || pack.id, 'Use characters, creatures, vehicles, rides, landmarks, environments, props, wardrobe, facial_features, effects, signage, or background_layers.'));
+      if (!asset.subcategory) checks.push(issue('info', 'asset-subcategory', 'Asset is missing subcategory', asset.id || pack.id, 'Subcategory helps library filtering.'));
+      if (!asset.rigType) checks.push(issue('warning', 'rig-type', 'Asset is missing rigType', asset.id || pack.id, 'Examples: humanoid_basic, creature_basic, wheeled_vehicle_basic.'));
+      if (!asset.scaleClass) checks.push(issue('warning', 'scale-class', 'Asset is missing scaleClass', asset.id || pack.id, 'Examples: character_standard, vehicle_standard, ride_large.'));
+      if (!isGoodPivot(asset.groundPoint)) checks.push(issue('warning', 'ground-point', 'Asset is missing valid groundPoint', asset.id || pack.id, JSON.stringify(asset.groundPoint)));
+      if (!Array.isArray(asset.artboard) || asset.artboard.length !== 2) checks.push(issue('warning', 'artboard', 'Asset is missing artboard [width, height]', asset.id || pack.id, JSON.stringify(asset.artboard)));
+      if (!asset.anchors || typeof asset.anchors !== 'object') checks.push(issue('warning', 'anchors', 'Asset is missing semantic anchors', asset.id || pack.id, 'Add ground, mouth, hand, seat, wheel, or other useful attach points.'));
+      if (!Array.isArray(asset.motions) || !asset.motions.length) checks.push(issue('warning', 'motions', 'Asset is missing supported motion list', asset.id || pack.id, 'Declare allowed motions to validate story timelines.'));
+      if (hasColorWord(asset.id || '')) checks.push(issue('warning', 'color-in-id', 'Asset id appears to contain a color word', asset.id, 'Use neutral ids like creature_trex and drive colors through defaults or story overrides.'));
       if (asset.id) {
         if (seenIds.has(asset.id)) checks.push(issue('warning', 'duplicate-id', 'Duplicate asset id overrides earlier asset', asset.id, `First seen in ${seenIds.get(asset.id)}, repeated in ${pack.id}.`));
         seenIds.set(asset.id, pack.id);
@@ -25,7 +35,7 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
       const parts = Array.isArray(asset.parts) ? asset.parts : [];
       const rig = Array.isArray(asset.rig) ? asset.rig : [];
       const partNames = new Set();
-      if (!parts.length) checks.push(issue('error', 'parts', 'Asset has no parts', asset.id || '(unknown asset)', 'Add at least one SVG part.'));
+      if (!parts.length && asset.type !== 'environment') checks.push(issue('error', 'parts', 'Asset has no parts', asset.id || '(unknown asset)', 'Add at least one SVG part.'));
 
       for (const part of parts) {
         const label = `${asset.id || '(unknown asset)'}.${part.name || '(unnamed part)'}`;
@@ -43,6 +53,22 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
       for (const rigPart of rig) {
         if (!partNames.has(rigPart)) checks.push(issue('warning', 'rig-missing-part', 'Rig entry has no matching part', `${asset.id}.${rigPart}`, 'Motion command may not affect anything.'));
       }
+
+
+      const layers = Array.isArray(asset.layers) ? asset.layers : [];
+      if (asset.type === 'environment') {
+        if (!layers.length) checks.push(issue('error', 'environment-layers', 'Environment asset has no layers', asset.id || '(unknown asset)', 'Add ordered layer definitions.'));
+        for (const layer of layers) {
+          const label = `${asset.id || '(unknown asset)'}.${layer.id || '(unnamed layer)'}`;
+          if (!layer.id) checks.push(issue('error', 'layer-id', 'Environment layer is missing id', asset.id || '(unknown asset)', layer.file || 'No file'));
+          if (!layer.file) checks.push(issue('error', 'layer-file', 'Environment layer is missing file', label, 'Add file property.'));
+          if (layer.loadError) checks.push(issue('error', 'missing-layer-svg', 'Environment layer failed to load', label, `${layer.file}: ${layer.loadError}`));
+          if (!Number.isFinite(Number(layer.depth))) checks.push(issue('warning', 'layer-depth', 'Environment layer missing numeric depth', label, String(layer.depth)));
+          if (!Number.isFinite(Number(layer.parallax))) checks.push(issue('warning', 'layer-parallax', 'Environment layer missing numeric parallax', label, String(layer.parallax)));
+        }
+      }
+
+      if (asset.thumbnail && asset.thumbnailLoadError) checks.push(issue('info', 'thumbnail', 'Thumbnail declared but failed to load', asset.id || '(unknown asset)', asset.thumbnailLoadError));
     }
   }
 
@@ -80,12 +106,23 @@ export function collectRenderedAssetDiagnostics(renderer, actorId = 'asset_test'
 
 export function makeAssetTestShot(asset, partName = null) {
   const type = asset.type || 'prop';
+  if (type === 'environment') {
+    return {
+      id: 'asset_test_shot',
+      title: `Environment test - ${asset.id}`,
+      duration: 6,
+      environment: { asset: asset.id, sky: '#dff4ff', farGround: '#78c16a', ground: '#9dd77d' },
+      camera: { type: '2.5d', position: [0, 0], zoom: 1 },
+      actors: [],
+      timeline: [{ start: 0.2, duration: 5, action: 'camera_move', from: [-80, 0], to: [80, 0], fromZoom: 1, toZoom: 1.04 }]
+    };
+  }
   const scale = type === 'landmark' || type === 'ride' ? 0.85 : type === 'vehicle' ? 1.15 : type === 'prop' ? 1.1 : 0.9;
   return {
     id: 'asset_test_shot',
     title: `Asset test - ${asset.id}`,
     duration: 6,
-    environment: { asset: 'park_entry_day' },
+    environment: { asset: 'park_path_day' },
     camera: { type: '2.5d', position: [0, 0], zoom: 1 },
     actors: [
       {
@@ -109,7 +146,7 @@ function makeDefaultTimeline(type) {
   if (type === 'vehicle') return [{ start: 0.3, duration: 4, actor: 'asset_test', action: 'drive', from: [340, 330, 5], to: [760, 330, 5] }];
   if (type === 'character') return [{ start: 0.4, duration: 3, actor: 'asset_test', action: 'wave' }, { start: 3.2, duration: 2, actor: 'asset_test', action: 'talk' }];
   if (type === 'creature') return [{ start: 0.4, duration: 3, actor: 'asset_test', action: 'talk' }, { start: 3.2, duration: 2, actor: 'asset_test', action: 'gesture', parts: { tail: [-10, 12], head: [-6, 8] } }];
-  if (type === 'ride') return [{ start: 0.4, duration: 4, actor: 'asset_test', action: 'gesture', parts: { wheel: [0, 360], train: [-4, 4] } }];
+  if (type === 'ride') return [{ start: 0.4, duration: 4, actor: 'asset_test', action: 'gesture', parts: { wheel: [0, 360], carriage: [-6, 6], gate: [-1, 1] } }];
   return [{ start: 0.4, duration: 2.2, actor: 'asset_test', action: 'gesture', parts: { sign: [-8, 8], gate: [-1, 1], balloon: [-12, 12] } }];
 }
 
@@ -119,6 +156,10 @@ function isGoodPivot(pivot) {
 
 function looksLikeSvg(text) {
   return /<svg[\s>]/i.test(text) || /<(path|circle|rect|g|polygon|ellipse|line|polyline|text)[\s>]/i.test(text);
+}
+
+function hasColorWord(id) {
+  return /(^|_)(red|blue|green|yellow|purple|orange|black|white|brown|pink|gray|grey|gold|silver)(_|$)/i.test(id);
 }
 
 function issue(level, code, message, target, detail) {

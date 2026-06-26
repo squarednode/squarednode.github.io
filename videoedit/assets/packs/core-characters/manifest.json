@@ -1,7 +1,7 @@
 {
   "id": "core-characters",
   "label": "Core Characters",
-  "version": "18.0.0",
+  "version": "20.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
@@ -15,17 +15,15 @@
         "head",
         "mouth",
         "leftUpperArm",
-        "leftForearm",
         "rightUpperArm",
-        "rightForearm",
         "leftLeg",
         "rightLeg"
       ],
-      "expressions": [
-        "happy",
-        "neutral",
-        "surprised"
-      ],
+      "expressions": {
+        "happy": {},
+        "neutral": {},
+        "surprised": {}
+      },
       "wardrobe": [
         "shirtColor",
         "pantsColor",
@@ -112,15 +110,6 @@
           "order": 30
         },
         {
-          "name": "leftForearm",
-          "file": "left_forearm.svg",
-          "pivot": [
-            105,
-            217
-          ],
-          "order": 31
-        },
-        {
           "name": "rightUpperArm",
           "file": "right_upper_arm.svg",
           "pivot": [
@@ -128,15 +117,6 @@
             135
           ],
           "order": 32
-        },
-        {
-          "name": "rightForearm",
-          "file": "right_forearm.svg",
-          "pivot": [
-            247,
-            217
-          ],
-          "order": 33
         },
         {
           "name": "neck",
@@ -174,7 +154,75 @@
           ],
           "order": 70
         }
-      ]
+      ],
+      "version": "19.1.0",
+      "notes": "V20 locks the simplified upper-arm humanoid rig; invisible hand anchors remain available for held objects.",
+      "schemaVersion": "20.0.0",
+      "category": "characters",
+      "subcategory": "guest",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "humanoid_basic",
+      "scaleClass": "character_standard",
+      "artboard": [
+        300,
+        400
+      ],
+      "groundPoint": [
+        150,
+        400
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          400
+        ],
+        "head": [
+          175,
+          80
+        ],
+        "mouth": [
+          175,
+          102
+        ],
+        "hat": [
+          175,
+          35
+        ],
+        "leftHand": [
+          105,
+          220
+        ],
+        "rightHand": [
+          247,
+          220
+        ],
+        "speechBubble": [
+          210,
+          45
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg",
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      }
     }
-  ]
+  ],
+  "schemaVersion": "20.0.0"
 }

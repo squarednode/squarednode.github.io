@@ -1,28 +1,25 @@
 {
   "id": "core-rides",
   "label": "Core Rides and Vehicles",
-  "version": "19.0.0",
+  "version": "20.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
-      "id": "ride_coaster_icon",
+      "id": "ride_coaster_track",
       "type": "ride",
-      "label": "Iconic Coaster Silhouette",
+      "label": "Coaster Track",
       "mode": "external-svg",
-      "path": "ride_coaster_icon/",
+      "path": "ride_coaster_track/",
       "source": "external-svg",
-      "rig": [
-        "train"
-      ],
+      "rig": [],
       "tags": [
         "ride",
         "coaster",
-        "background",
-        "external"
+        "external",
+        "track"
       ],
       "defaults": {
-        "railColor": "#56606d",
-        "color": "#e0473f"
+        "railColor": "#56606d"
       },
       "parts": [
         {
@@ -33,17 +30,36 @@
             0
           ],
           "order": 10
-        },
-        {
-          "name": "train",
-          "file": "train.svg",
-          "pivot": [
-            505,
-            380
-          ],
-          "order": 20
         }
-      ]
+      ],
+      "version": "19.1.0",
+      "notes": "V20 track-only scenic asset. Vehicles are separate actors.",
+      "schemaVersion": "20.0.0",
+      "category": "rides",
+      "subcategory": "coaster_track",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_ride_static",
+      "scaleClass": "ride_large",
+      "artboard": [
+        900,
+        520
+      ],
+      "groundPoint": [
+        450,
+        500
+      ],
+      "anchors": {
+        "ground": [
+          450,
+          500
+        ]
+      },
+      "motions": [
+        "idle",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     },
     {
       "id": "vehicle_cart_basic",
@@ -93,7 +109,50 @@
           ],
           "order": 21
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "vehicles",
+      "subcategory": "ride_vehicle",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "wheeled_vehicle_basic",
+      "scaleClass": "vehicle_standard",
+      "artboard": [
+        500,
+        300
+      ],
+      "groundPoint": [
+        250,
+        250
+      ],
+      "anchors": {
+        "ground": [
+          165,
+          245
+        ],
+        "seat": [
+          165,
+          120
+        ],
+        "wheelRear": [
+          95,
+          215
+        ],
+        "wheelFront": [
+          230,
+          215
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "drive",
+        "rollWheels",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     },
     {
       "id": "ride_ferris_wheel_icon",
@@ -133,7 +192,46 @@
           ],
           "order": 20
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "rides",
+      "subcategory": "observation_ride",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_ride_static",
+      "scaleClass": "ride_large",
+      "artboard": [
+        900,
+        520
+      ],
+      "groundPoint": [
+        450,
+        500
+      ],
+      "anchors": {
+        "ground": [
+          360,
+          500
+        ],
+        "center": [
+          360,
+          170
+        ],
+        "seat": [
+          360,
+          270
+        ]
+      },
+      "motions": [
+        "idle",
+        "spin",
+        "swing",
+        "drop",
+        "openGate",
+        "flashLights",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     },
     {
       "id": "ride_drop_tower_icon",
@@ -174,7 +272,42 @@
           ],
           "order": 20
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "rides",
+      "subcategory": "thrill_ride",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_ride_static",
+      "scaleClass": "ride_large",
+      "artboard": [
+        900,
+        520
+      ],
+      "groundPoint": [
+        450,
+        500
+      ],
+      "anchors": {
+        "ground": [
+          265,
+          500
+        ],
+        "carriage": [
+          265,
+          285
+        ]
+      },
+      "motions": [
+        "idle",
+        "spin",
+        "swing",
+        "drop",
+        "openGate",
+        "flashLights",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     },
     {
       "id": "vehicle_omni_mover",
@@ -225,7 +358,51 @@
           ],
           "order": 21
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "vehicles",
+      "subcategory": "dark_ride_vehicle",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "wheeled_vehicle_basic",
+      "scaleClass": "vehicle_standard",
+      "artboard": [
+        500,
+        300
+      ],
+      "groundPoint": [
+        250,
+        250
+      ],
+      "anchors": {
+        "ground": [
+          185,
+          245
+        ],
+        "seat": [
+          185,
+          120
+        ],
+        "wheelRear": [
+          105,
+          215
+        ],
+        "wheelFront": [
+          265,
+          215
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "drive",
+        "rollWheels",
+        "bob",
+        "gesture",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     }
-  ]
+  ],
+  "schemaVersion": "20.0.0"
 }

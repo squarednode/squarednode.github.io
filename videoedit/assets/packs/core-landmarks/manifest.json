@@ -1,7 +1,7 @@
 {
   "id": "core-landmarks",
   "label": "Core Landmarks",
-  "version": "19.0.0",
+  "version": "20.0.0",
   "style": "simple_theme_park_svg_v4",
   "assets": [
     {
@@ -33,7 +33,38 @@
           ],
           "order": 10
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "landmarks",
+      "subcategory": "entry_gate",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "landmark_static",
+      "scaleClass": "landmark_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        500
+      ],
+      "anchors": {
+        "ground": [
+          295,
+          430
+        ],
+        "gate": [
+          295,
+          260
+        ]
+      },
+      "motions": [
+        "idle",
+        "gesture",
+        "flashLights",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     },
     {
       "id": "landmark_iconic_globe",
@@ -74,7 +105,39 @@
           ],
           "order": 20
         }
-      ]
+      ],
+      "schemaVersion": "20.0.0",
+      "category": "landmarks",
+      "subcategory": "studio_landmark",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "landmark_static",
+      "scaleClass": "landmark_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        500
+      ],
+      "anchors": {
+        "ground": [
+          250,
+          360
+        ],
+        "center": [
+          250,
+          160
+        ]
+      },
+      "motions": [
+        "idle",
+        "gesture",
+        "flashLights",
+        "scale"
+      ],
+      "thumbnail": "thumbnail.svg"
     }
-  ]
+  ],
+  "schemaVersion": "20.0.0"
 }

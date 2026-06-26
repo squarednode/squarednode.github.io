@@ -1,4 +1,4 @@
-import { svgEl, makeAsset, getAssetLibrary, setMouthShape } from './assetFactory.js';
+import { svgEl, makeAsset, getAssetLibrary, setMouthShape, makeEnvironmentNodes } from './assetFactory.js';
 
 export class Renderer {
   constructor(stage) {
@@ -25,6 +25,12 @@ export class Renderer {
   }
 
   drawEnvironment(environment = {}) {
+    const externalLayers = makeEnvironmentNodes(environment);
+    if (externalLayers) {
+      for (const layer of externalLayers) this.sceneRoot.appendChild(layer);
+      return;
+    }
+
     const sky = svgEl('rect', { x: -2000, y: -900, width: 5000, height: 2200, fill: environment.sky || '#dff4ff', 'data-depth': -100 });
     this.sceneRoot.appendChild(sky);
 
@@ -123,7 +129,7 @@ export class Renderer {
     this.sceneRoot.setAttribute('transform', `translate(${640} ${360}) scale(${zoom}) translate(${-640 - x} ${-360 - y})`);
     for (const node of this.sceneRoot.children) {
       const depth = Number(node.dataset.depth || node.dataset.z || 1);
-      const parallax = node.dataset.layer === 'far' ? 0.35 : node.dataset.layer === 'mid' ? 0.7 : node.dataset.layer === 'near' ? 1.05 : 1;
+      const parallax = node.dataset.parallax ? Number(node.dataset.parallax) : node.dataset.layer === 'far' ? 0.35 : node.dataset.layer === 'mid' ? 0.7 : node.dataset.layer === 'near' ? 1.05 : 1;
       if (node.dataset.layer) node.setAttribute('transform', `translate(${x * (1 - parallax)} ${y * (1 - parallax)})`);
       node.dataset.sortKey = depth;
     }

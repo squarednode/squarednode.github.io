@@ -1,11 +1,11 @@
 const NS = 'http://www.w3.org/2000/svg';
 
 const CORE_ASSET_LIBRARY = [
-  { id: 'creature_red_dino', type: 'creature', label: 'Rigged Red Dino', factory: 'creature_red_dino', source: 'core-fallback', rig: ['head','jaw','leftArm','rightArm','leftLeg','rightLeg','tail'], expressions: ['happy','angry','surprised'], tags: ['creature','mascot','simple'] },
-  { id: 'human_guest_basic', type: 'character', label: 'Rigged Park Guest', factory: 'human_guest_basic', source: 'core-fallback', rig: ['head','mouth','leftUpperArm','leftForearm','rightUpperArm','rightForearm','leftLeg','rightLeg'], expressions: ['happy','neutral','surprised'], wardrobe: ['shirtColor','pantsColor','hatColor'], tags: ['human','guest','wardrobe'] },
-  { id: 'ride_coaster_icon', type: 'ride', label: 'Iconic Coaster Silhouette', factory: 'ride_coaster_icon', source: 'core-fallback', rig: ['train'], expressions: [], tags: ['ride','landmark','background'] },
-  { id: 'vehicle_cart_basic', type: 'vehicle', label: 'Rigged Ride Cart', factory: 'vehicle_cart_basic', source: 'core-fallback', rig: ['frontWheel','rearWheel'], expressions: [], tags: ['vehicle','wheels'] },
-  { id: 'prop_sign_arrow', type: 'prop', label: 'Arrow Sign Prop', factory: 'prop_sign_arrow', source: 'core-fallback', rig: ['sign'], expressions: [], tags: ['prop','sign'] }
+  { id: 'creature_trex', type: 'creature', category: 'creatures', subcategory: 'dinosaur', label: 'Rigged T-Rex Creature', factory: 'creature_trex', source: 'core-fallback', rigType: 'creature_basic', scaleClass: 'creature_standard', artboard: [600, 500], groundPoint: [275, 480], anchors: { ground: [275, 480], head: [210, 105], mouth: [115, 150], leftHand: [166, 288], rightHand: [201, 288], tailTip: [555, 120] }, motions: ['idle','enter','exit','walk','wave','talk','look','expression','mouth','gesture','scale'], rig: ['head','jaw','leftArm','rightArm','leftLeg','rightLeg','tail'], expressions: { happy: {}, angry: {}, surprised: {} }, phonemes: { rest: 'smile', A: 'open', E: 'wide', O: 'o', M: 'neutral' }, tags: ['creature','dinosaur','simple'] },
+  { id: 'human_guest_basic', type: 'character', category: 'characters', subcategory: 'guest', label: 'Rigged Park Guest', factory: 'human_guest_basic', source: 'core-fallback', rigType: 'humanoid_basic', scaleClass: 'character_standard', artboard: [300, 400], groundPoint: [150, 400], anchors: { ground: [150, 400], head: [175, 80], mouth: [175, 102], hat: [175, 35], leftHand: [105, 220], rightHand: [247, 220] }, motions: ['idle','enter','exit','walk','wave','talk','look','expression','mouth','gesture','scale'], rig: ['head','mouth','leftUpperArm','rightUpperArm','leftLeg','rightLeg'], expressions: { happy: {}, neutral: {}, surprised: {} }, phonemes: { rest: 'smile', A: 'open', E: 'wide', O: 'o', M: 'neutral' }, wardrobe: ['shirtColor','pantsColor','hatColor'], tags: ['human','guest','wardrobe'] },
+  { id: 'ride_coaster_track', type: 'ride', category: 'rides', subcategory: 'coaster_track', label: 'Coaster Track', factory: 'ride_coaster_track', source: 'core-fallback', rigType: 'scenic_ride_static', scaleClass: 'ride_large', artboard: [900, 520], groundPoint: [450, 500], anchors: { ground: [450, 500], trackStart: [20, 380], trackEnd: [1010, 260] }, motions: ['idle','gesture','scale'], rig: [], expressions: {}, tags: ['ride','track','background'] },
+  { id: 'vehicle_cart_basic', type: 'vehicle', category: 'vehicles', subcategory: 'ride_vehicle', label: 'Rigged Ride Cart', factory: 'vehicle_cart_basic', source: 'core-fallback', rigType: 'wheeled_vehicle_basic', scaleClass: 'vehicle_standard', artboard: [500, 300], groundPoint: [250, 250], anchors: { ground: [165, 245], seat: [165, 120], wheelRear: [95, 215], wheelFront: [230, 215] }, motions: ['idle','enter','exit','drive','rollWheels','bob','gesture','scale'], rig: ['frontWheel','rearWheel'], expressions: {}, tags: ['vehicle','wheels'] },
+  { id: 'prop_sign_arrow', type: 'prop', category: 'props', subcategory: 'signage', label: 'Arrow Sign Prop', factory: 'prop_sign_arrow', source: 'core-fallback', rigType: 'prop_basic', scaleClass: 'prop_standard', artboard: [220, 220], groundPoint: [110, 220], anchors: { ground: [102, 365], signText: [150, 125] }, motions: ['idle','gesture','bob','scale'], rig: ['sign'], expressions: {}, tags: ['prop','sign'] }
 ];
 
 const assetRegistry = new Map(CORE_ASSET_LIBRARY.map(asset => [asset.id, asset]));
@@ -32,6 +32,10 @@ export function getAssetLibrary() {
   return ASSET_LIBRARY;
 }
 
+export function getAssetManifest(assetId) {
+  return assetRegistry.get(assetId);
+}
+
 export function svgEl(tag, attrs = {}, children = []) {
   const el = document.createElementNS(NS, tag);
   for (const [key, value] of Object.entries(attrs)) {
@@ -50,10 +54,10 @@ export function makeAsset(actor) {
   const factory = manifest?.factory || actor.asset;
   switch (factory) {
     case 'human_guest_basic': return makeRiggedHuman(mergedActor);
-    case 'ride_coaster_icon': return makeCoasterIcon(mergedActor);
+    case 'ride_coaster_track': return makeCoasterIcon(mergedActor);
     case 'vehicle_cart_basic': return makeRideCart(mergedActor);
     case 'prop_sign_arrow': return makeArrowSign(mergedActor);
-    case 'creature_red_dino':
+    case 'creature_trex':
     default: return makeRiggedDino(mergedActor);
   }
 }
@@ -74,7 +78,7 @@ function makeExternalSvgAsset(actor, manifest) {
     root.appendChild(partGroup.el);
   }
 
-  return { root, parts, type: manifest.type, manifest };
+  return { root, parts, anchors: manifest.anchors || {}, scaleClass: manifest.scaleClass, type: manifest.type, manifest };
 }
 
 function applyTemplate(text, actor, manifest) {
@@ -96,7 +100,7 @@ function parseSvgNodes(svgText) {
 }
 
 export function makeRiggedDino(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'creature_red_dino', filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'creature_trex', filter: 'url(#softShadow)' });
   const parts = {};
   const outline = line(actor.lineWeight || 7);
   const red = actor.color || '#c7363e';
@@ -145,9 +149,7 @@ function makeRiggedHuman(actor) {
     svgEl('path', { d: 'M120 125 C150 150 200 150 230 125', fill: 'none', stroke: '#111', 'stroke-width': 4 })
   ]);
   parts.leftUpperArm = pivotGroup('leftUpperArm', 118, 135, [svgEl('path', { d: 'M118 135 C88 170 82 215 105 220 C124 202 135 165 138 142 Z', fill: shirt, ...outline })]);
-  parts.leftForearm = pivotGroup('leftForearm', 105, 217, [svgEl('path', { d: 'M105 217 C95 250 100 280 120 282 C135 260 136 235 122 215 Z', fill: skin, ...outline })]);
   parts.rightUpperArm = pivotGroup('rightUpperArm', 232, 135, [svgEl('path', { d: 'M232 135 C265 170 270 215 247 220 C228 202 215 165 212 142 Z', fill: shirt, ...outline })]);
-  parts.rightForearm = pivotGroup('rightForearm', 247, 217, [svgEl('path', { d: 'M247 217 C260 250 256 280 236 282 C220 260 218 235 232 215 Z', fill: skin, ...outline })]);
   parts.neck = pivotGroup('neck', 175, 118, [svgEl('rect', { x: 158, y: 100, width: 34, height: 34, rx: 12, fill: skin, ...outline })]);
   parts.head = pivotGroup('head', 175, 80, [
     svgEl('circle', { cx: 175, cy: 78, r: 58, fill: skin, ...outline }),
@@ -163,24 +165,18 @@ function makeRiggedHuman(actor) {
       svgEl('path', { d: 'M100 60 L255 60', stroke: '#111', 'stroke-width': 9, 'stroke-linecap': 'round' })
     ]);
   }
-  root.append(parts.leftLeg.el, parts.rightLeg.el, parts.body.el, parts.leftUpperArm.el, parts.leftForearm.el, parts.rightUpperArm.el, parts.rightForearm.el, parts.neck.el, parts.head.el, parts.mouth.el);
+  root.append(parts.leftLeg.el, parts.rightLeg.el, parts.body.el, parts.leftUpperArm.el, parts.rightUpperArm.el, parts.neck.el, parts.head.el, parts.mouth.el);
   if (parts.hat) root.append(parts.hat.el);
   return { root, parts, type: 'character', manifest: actor.manifest };
 }
 
 function makeCoasterIcon(actor) {
-  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'ride_coaster_icon', filter: 'url(#softShadow)' });
+  const root = svgEl('g', { 'data-actor': actor.id, 'data-factory': 'ride_coaster_track', filter: 'url(#softShadow)' });
   const parts = {};
   const rail = actor.railColor || '#56606d';
   root.appendChild(svgEl('path', { d: 'M20 380 C170 110 340 110 505 380 S835 650 1010 260', fill: 'none', stroke: rail, 'stroke-width': 20, 'stroke-linecap': 'round' }));
   root.appendChild(svgEl('path', { d: 'M20 420 C170 150 340 150 505 420 S835 690 1010 300', fill: 'none', stroke: '#9aa4b5', 'stroke-width': 7, 'stroke-linecap': 'round' }));
   for (const x of [120, 250, 390, 560, 730, 900]) root.appendChild(svgEl('path', { d: `M${x} 395 L${x+35} 610`, stroke: '#3d454f', 'stroke-width': 10 }));
-  parts.train = pivotGroup('train', 505, 380, [
-    svgEl('rect', { x: 455, y: 345, width: 110, height: 55, rx: 15, fill: actor.color || '#e0473f', stroke: '#111', 'stroke-width': 6 }),
-    svgEl('circle', { cx: 480, cy: 404, r: 10, fill: '#111' }),
-    svgEl('circle', { cx: 540, cy: 404, r: 10, fill: '#111' })
-  ]);
-  root.appendChild(parts.train.el);
   return { root, parts, type: 'ride', manifest: actor.manifest };
 }
 
@@ -206,6 +202,27 @@ function makeArrowSign(actor) {
   ]);
   root.appendChild(parts.sign.el);
   return { root, parts, type: 'prop', manifest: actor.manifest };
+}
+
+
+export function makeEnvironmentNodes(environment = {}) {
+  const manifest = assetRegistry.get(environment.asset);
+  if (!manifest || manifest.type !== 'environment' || manifest.mode !== 'external-svg') return null;
+  const groups = [];
+  const layers = [...(manifest.layers || [])].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+  for (const layer of layers) {
+    if (!layer.svgText || layer.loadError) continue;
+    const nodes = parseSvgNodes(applyTemplate(layer.svgText, environment, manifest));
+    const group = svgEl('g', {
+      'data-depth': layer.depth ?? 0,
+      'data-layer': layer.id,
+      'data-parallax': layer.parallax ?? 1,
+      'data-environment-layer': 'true'
+    });
+    for (const node of nodes) group.appendChild(node);
+    groups.push(group);
+  }
+  return groups.length ? groups : null;
 }
 
 export function setMouthShape(rig, shape = 'smile') {

@@ -1,5 +1,5 @@
 {
-  "version": "19.0.0",
+  "version": "20.0.0",
   "packs": [
     {
       "id": "core-characters",
@@ -20,6 +20,10 @@
     {
       "id": "core-landmarks",
       "manifest": "../packs/core-landmarks/manifest.json"
+    },
+    {
+      "id": "core-environments",
+      "manifest": "../packs/core-environments/manifest.json"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "id": "episode_001_v17",
-  "title": "Asset-Pack Loading Feature Test",
+  "id": "episode_001_v20",
+  "title": "V20 Foundation Lock Feature Test",
   "format": {
     "width": 1280,
     "height": 720,
@@ -8,7 +8,7 @@
     "output": "webm"
   },
   "style": {
-    "name": "simple_theme_park_svg_v3",
+    "name": "simple_theme_park_svg_v5",
     "lineWeight": 6,
     "shapeLanguage": "rounded_cartoon",
     "depth": "2.5d"
@@ -16,23 +16,41 @@
   "shots": [
     {
       "id": "shot_001",
-      "title": "Human and creature rig test",
+      "title": "External human and dino rig test",
       "duration": 8,
       "environment": {
-        "asset": "park_entry_day",
+        "asset": "park_path_day",
         "sky": "#dff4ff",
         "ground": "#9dd77d"
       },
       "camera": {
         "type": "2.5d",
-        "position": [0, 0],
+        "position": [
+          0,
+          0
+        ],
         "zoom": 1
       },
       "actors": [
         {
+          "id": "gate1",
+          "asset": "landmark_castle_gate",
+          "position": [
+            685,
+            55,
+            1
+          ],
+          "scale": 0.72,
+          "roofColor": "#7c3aed"
+        },
+        {
           "id": "guest1",
           "asset": "human_guest_basic",
-          "position": [390, 250, 4],
+          "position": [
+            365,
+            250,
+            4
+          ],
           "scale": 0.92,
           "expression": "happy",
           "wardrobe": {
@@ -43,8 +61,12 @@
         },
         {
           "id": "dino1",
-          "asset": "creature_red_dino",
-          "position": [650, 195, 5],
+          "asset": "creature_trex",
+          "position": [
+            610,
+            195,
+            5
+          ],
           "scale": 0.72,
           "expression": "happy",
           "color": "#c7363e"
@@ -52,9 +74,23 @@
         {
           "id": "sign1",
           "asset": "prop_sign_arrow",
-          "position": [850, 240, 3],
+          "position": [
+            890,
+            240,
+            3
+          ],
           "scale": 0.75,
-          "text": "RIDE"
+          "text": "V20"
+        },
+        {
+          "id": "popcorn1",
+          "asset": "prop_popcorn_bucket",
+          "position": [
+            1025,
+            385,
+            6
+          ],
+          "scale": 0.55
         }
       ],
       "timeline": [
@@ -64,7 +100,11 @@
           "actor": "guest1",
           "action": "enter",
           "from": "left",
-          "to": [390, 250, 4]
+          "to": [
+            365,
+            250,
+            4
+          ]
         },
         {
           "start": 1.2,
@@ -78,7 +118,12 @@
           "actor": "guest1",
           "action": "talk",
           "expression": "happy",
-          "phonemes": ["smile", "open", "wide", "o"]
+          "phonemes": [
+            "smile",
+            "open",
+            "wide",
+            "o"
+          ]
         },
         {
           "start": 3.0,
@@ -100,48 +145,90 @@
           "actor": "sign1",
           "action": "gesture",
           "parts": {
-            "sign": [-8, 8]
+            "sign": [
+              -8,
+              8
+            ]
+          }
+        },
+        {
+          "start": 5.5,
+          "duration": 2.0,
+          "actor": "popcorn1",
+          "action": "gesture",
+          "parts": {
+            "popcorn": [
+              -6,
+              6
+            ]
           }
         }
       ]
     },
     {
       "id": "shot_002",
-      "title": "2.5D camera and vehicle test",
+      "title": "Ride, vehicle, and 2.5D camera test",
       "duration": 8,
       "environment": {
-        "asset": "theme_park_path_day",
+        "asset": "park_path_day",
         "sky": "#e8f7ff",
         "ground": "#92d37a"
       },
       "camera": {
         "type": "2.5d",
-        "position": [0, 0],
+        "position": [
+          0,
+          0
+        ],
         "zoom": 1
       },
       "actors": [
         {
           "id": "coaster1",
-          "asset": "ride_coaster_icon",
-          "position": [70, 40, 1],
+          "asset": "ride_coaster_track",
+          "position": [
+            70,
+            40,
+            1
+          ],
           "scale": 0.9,
           "color": "#e0473f"
         },
         {
+          "id": "wheel1",
+          "asset": "ride_ferris_wheel_icon",
+          "position": [
+            710,
+            145,
+            2
+          ],
+          "scale": 0.65,
+          "color": "#65a8ff"
+        },
+        {
           "id": "cart1",
           "asset": "vehicle_cart_basic",
-          "position": [-180, 355, 5],
+          "position": [
+            -180,
+            355,
+            5
+          ],
           "scale": 0.72,
           "color": "#f0b33f"
         },
         {
           "id": "guest1",
           "asset": "human_guest_basic",
-          "position": [250, 285, 4],
+          "position": [
+            250,
+            285,
+            4
+          ],
           "scale": 0.75,
           "expression": "surprised",
           "shirtColor": "#9b59b6",
-          "pantsColor": "#1f2d3a"
+          "pantsColor": "#1f2d3a",
+          "hatColor": "#ffffff"
         }
       ],
       "timeline": [
@@ -150,91 +237,238 @@
           "duration": 7.2,
           "actor": "cart1",
           "action": "drive",
-          "from": [-180, 355, 5],
-          "to": [1120, 395, 6]
+          "from": [
+            -180,
+            355,
+            5
+          ],
+          "to": [
+            1120,
+            395,
+            6
+          ]
+        },
+        {
+          "start": 0,
+          "duration": 8,
+          "actor": "wheel1",
+          "action": "gesture",
+          "parts": {
+            "wheel": [
+              0,
+              90
+            ]
+          }
         },
         {
           "start": 1.0,
           "duration": 4.5,
           "action": "camera_move",
-          "from": [0, 0],
-          "to": [160, 30],
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            210,
+            10
+          ],
           "fromZoom": 1,
-          "toZoom": 1.08
+          "toZoom": 1.13
         },
         {
-          "start": 2.2,
+          "start": 2.0,
           "duration": 2.0,
           "actor": "guest1",
-          "action": "gesture",
-          "parts": {
-            "leftUpperArm": [0, -55],
-            "rightUpperArm": [0, 42],
-            "head": [0, -8]
-          }
+          "action": "expression",
+          "expression": "surprised"
         },
         {
-          "start": 4.0,
+          "start": 4.5,
           "duration": 2.0,
-          "actor": "coaster1",
-          "action": "drive"
+          "actor": "guest1",
+          "action": "wave"
         }
       ]
     },
     {
       "id": "shot_003",
-      "title": "Depth crossing test",
-      "duration": 7,
+      "title": "New V20 foundation elements test",
+      "duration": 8,
       "environment": {
-        "asset": "park_entry_day"
+        "asset": "park_path_day",
+        "sky": "#e7f7ff",
+        "ground": "#9dd77d"
       },
       "camera": {
         "type": "2.5d",
-        "position": [0, 0],
+        "position": [
+          0,
+          0
+        ],
         "zoom": 1
       },
       "actors": [
         {
-          "id": "dinoBack",
-          "asset": "creature_red_dino",
-          "position": [180, 205, 2],
-          "scale": 0.55,
-          "expression": "angry",
-          "color": "#a83242"
+          "id": "globe1",
+          "asset": "landmark_iconic_globe",
+          "position": [
+            75,
+            70,
+            1
+          ],
+          "scale": 0.78,
+          "color": "#5fb7ff",
+          "accentColor": "#f2cc5c"
         },
         {
-          "id": "guestFront",
+          "id": "tower1",
+          "asset": "ride_drop_tower_icon",
+          "position": [
+            535,
+            60,
+            2
+          ],
+          "scale": 0.75,
+          "towerColor": "#596171",
+          "carColor": "#e0473f"
+        },
+        {
+          "id": "omni1",
+          "asset": "vehicle_omni_mover",
+          "position": [
+            150,
+            355,
+            5
+          ],
+          "scale": 0.78,
+          "color": "#56a0f5",
+          "accentColor": "#d9ecff"
+        },
+        {
+          "id": "ticket1",
+          "asset": "prop_ticket",
+          "position": [
+            910,
+            260,
+            6
+          ],
+          "scale": 0.72,
+          "color": "#ffd66b",
+          "text": "ADMIT"
+        },
+        {
+          "id": "balloon1",
+          "asset": "prop_balloon",
+          "position": [
+            1035,
+            170,
+            6
+          ],
+          "scale": 0.62,
+          "color": "#ff5ca8"
+        },
+        {
+          "id": "guest1",
           "asset": "human_guest_basic",
-          "position": [940, 285, 7],
-          "scale": 0.98,
+          "position": [
+            760,
+            270,
+            5
+          ],
+          "scale": 0.78,
           "expression": "happy",
-          "shirtColor": "#27ae60",
-          "pantsColor": "#243447"
+          "wardrobe": {
+            "shirtColor": "#2fbf71",
+            "pantsColor": "#25324a",
+            "hatColor": "#ffd34d"
+          }
         }
       ],
       "timeline": [
         {
-          "start": 0,
-          "duration": 5.8,
-          "actor": "dinoBack",
-          "action": "walk",
-          "from": [180, 205, 2],
-          "to": [820, 310, 8]
+          "start": 0.2,
+          "duration": 6.5,
+          "actor": "omni1",
+          "action": "drive",
+          "from": [
+            120,
+            355,
+            5
+          ],
+          "to": [
+            720,
+            360,
+            5
+          ]
         },
         {
-          "start": 0.8,
+          "start": 0.5,
+          "duration": 5.5,
+          "actor": "tower1",
+          "action": "gesture",
+          "parts": {
+            "carriage": [
+              0,
+              -4
+            ]
+          }
+        },
+        {
+          "start": 1.0,
+          "duration": 3.0,
+          "actor": "globe1",
+          "action": "gesture",
+          "parts": {
+            "globe": [
+              0,
+              25
+            ]
+          }
+        },
+        {
+          "start": 1.5,
+          "duration": 4.5,
+          "actor": "balloon1",
+          "action": "gesture",
+          "parts": {
+            "balloon": [
+              -10,
+              12
+            ]
+          }
+        },
+        {
+          "start": 2.0,
+          "duration": 2.5,
+          "actor": "guest1",
+          "action": "wave"
+        },
+        {
+          "start": 4.5,
+          "duration": 2.0,
+          "actor": "ticket1",
+          "action": "gesture",
+          "parts": {
+            "ticket": [
+              -8,
+              8
+            ]
+          }
+        },
+        {
+          "start": 1.0,
           "duration": 5.0,
-          "actor": "guestFront",
-          "action": "walk",
-          "from": [940, 285, 7],
-          "to": [250, 245, 3]
-        },
-        {
-          "start": 5.5,
-          "duration": 1.0,
-          "actor": "guestFront",
-          "action": "talk",
-          "expression": "surprised"
+          "action": "camera_move",
+          "from": [
+            0,
+            0
+          ],
+          "to": [
+            160,
+            0
+          ],
+          "fromZoom": 1,
+          "toZoom": 1.08
         }
       ]
     }
