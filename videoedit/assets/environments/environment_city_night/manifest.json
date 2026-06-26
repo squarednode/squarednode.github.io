@@ -1,0 +1,76 @@
+{
+  "id": "environment_city_night",
+  "type": "environment",
+  "category": "environments",
+  "subcategory": "city",
+  "label": "City Night Environment",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "environment_wide",
+  "artboard": [
+    1280,
+    720
+  ],
+  "groundPoint": [
+    640,
+    620
+  ],
+  "anchors": {
+    "ground": [
+      640,
+      620
+    ],
+    "center": [
+      640,
+      360
+    ]
+  },
+  "motions": [
+    "idle"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "environment",
+    "city"
+  ],
+  "defaults": {},
+  "thumbnail": "thumbnail.svg",
+  "layers": [
+    {
+      "id": "sky",
+      "file": "layers/sky.svg",
+      "depth": -100,
+      "parallax": 0.05,
+      "order": 0
+    },
+    {
+      "id": "far",
+      "file": "layers/far.svg",
+      "depth": -20,
+      "parallax": 0.25,
+      "order": 10
+    },
+    {
+      "id": "mid",
+      "file": "layers/mid.svg",
+      "depth": 0,
+      "parallax": 0.7,
+      "order": 20
+    },
+    {
+      "id": "near",
+      "file": "layers/near.svg",
+      "depth": 3,
+      "parallax": 1.05,
+      "order": 30
+    }
+  ],
+  "assetFolder": "assets/environments/environment_city_night",
+  "librarySource": "category-catalog",
+  "packId": null
+}
