@@ -1,0 +1,374 @@
+{
+  "id": "expansion-environments-pack-01",
+  "label": "Expansion Environments Pack 01",
+  "version": "21.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "schemaVersion": "20.0.0",
+  "assets": [
+    {
+      "id": "environment_city_night",
+      "type": "environment",
+      "category": "environments",
+      "subcategory": "city",
+      "label": "City Night Environment",
+      "mode": "external-svg",
+      "path": "environment_city_night/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "scaleClass": "environment_wide",
+      "artboard": [
+        1280,
+        720
+      ],
+      "groundPoint": [
+        640,
+        620
+      ],
+      "anchors": {
+        "ground": [
+          640,
+          620
+        ],
+        "center": [
+          640,
+          360
+        ]
+      },
+      "motions": [
+        "idle"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "environment",
+        "city"
+      ],
+      "defaults": {},
+      "thumbnail": "thumbnail.svg",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "sky.svg",
+          "depth": -100,
+          "parallax": 0.05,
+          "order": 0
+        },
+        {
+          "id": "far",
+          "file": "far.svg",
+          "depth": -20,
+          "parallax": 0.25,
+          "order": 10
+        },
+        {
+          "id": "mid",
+          "file": "mid.svg",
+          "depth": 0,
+          "parallax": 0.7,
+          "order": 20
+        },
+        {
+          "id": "near",
+          "file": "near.svg",
+          "depth": 3,
+          "parallax": 1.05,
+          "order": 30
+        }
+      ]
+    },
+    {
+      "id": "environment_jungle_path",
+      "type": "environment",
+      "category": "environments",
+      "subcategory": "jungle",
+      "label": "Jungle Path Environment",
+      "mode": "external-svg",
+      "path": "environment_jungle_path/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "scaleClass": "environment_wide",
+      "artboard": [
+        1280,
+        720
+      ],
+      "groundPoint": [
+        640,
+        620
+      ],
+      "anchors": {
+        "ground": [
+          640,
+          620
+        ],
+        "center": [
+          640,
+          360
+        ]
+      },
+      "motions": [
+        "idle"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "environment",
+        "jungle"
+      ],
+      "defaults": {},
+      "thumbnail": "thumbnail.svg",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "sky.svg",
+          "depth": -100,
+          "parallax": 0.05,
+          "order": 0
+        },
+        {
+          "id": "far",
+          "file": "far.svg",
+          "depth": -20,
+          "parallax": 0.25,
+          "order": 10
+        },
+        {
+          "id": "mid",
+          "file": "mid.svg",
+          "depth": 0,
+          "parallax": 0.7,
+          "order": 20
+        },
+        {
+          "id": "near",
+          "file": "near.svg",
+          "depth": 3,
+          "parallax": 1.05,
+          "order": 30
+        }
+      ]
+    },
+    {
+      "id": "environment_desert_canyon",
+      "type": "environment",
+      "category": "environments",
+      "subcategory": "desert",
+      "label": "Desert Canyon Environment",
+      "mode": "external-svg",
+      "path": "environment_desert_canyon/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "scaleClass": "environment_wide",
+      "artboard": [
+        1280,
+        720
+      ],
+      "groundPoint": [
+        640,
+        620
+      ],
+      "anchors": {
+        "ground": [
+          640,
+          620
+        ],
+        "center": [
+          640,
+          360
+        ]
+      },
+      "motions": [
+        "idle"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "environment",
+        "desert"
+      ],
+      "defaults": {},
+      "thumbnail": "thumbnail.svg",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "sky.svg",
+          "depth": -100,
+          "parallax": 0.05,
+          "order": 0
+        },
+        {
+          "id": "far",
+          "file": "far.svg",
+          "depth": -20,
+          "parallax": 0.25,
+          "order": 10
+        },
+        {
+          "id": "mid",
+          "file": "mid.svg",
+          "depth": 0,
+          "parallax": 0.7,
+          "order": 20
+        },
+        {
+          "id": "near",
+          "file": "near.svg",
+          "depth": 3,
+          "parallax": 1.05,
+          "order": 30
+        }
+      ]
+    },
+    {
+      "id": "environment_space_port",
+      "type": "environment",
+      "category": "environments",
+      "subcategory": "space",
+      "label": "Space Port Environment",
+      "mode": "external-svg",
+      "path": "environment_space_port/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "scaleClass": "environment_wide",
+      "artboard": [
+        1280,
+        720
+      ],
+      "groundPoint": [
+        640,
+        620
+      ],
+      "anchors": {
+        "ground": [
+          640,
+          620
+        ],
+        "center": [
+          640,
+          360
+        ]
+      },
+      "motions": [
+        "idle"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "environment",
+        "space"
+      ],
+      "defaults": {},
+      "thumbnail": "thumbnail.svg",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "sky.svg",
+          "depth": -100,
+          "parallax": 0.05,
+          "order": 0
+        },
+        {
+          "id": "far",
+          "file": "far.svg",
+          "depth": -20,
+          "parallax": 0.25,
+          "order": 10
+        },
+        {
+          "id": "mid",
+          "file": "mid.svg",
+          "depth": 0,
+          "parallax": 0.7,
+          "order": 20
+        },
+        {
+          "id": "near",
+          "file": "near.svg",
+          "depth": 3,
+          "parallax": 1.05,
+          "order": 30
+        }
+      ]
+    },
+    {
+      "id": "environment_waterfront",
+      "type": "environment",
+      "category": "environments",
+      "subcategory": "waterfront",
+      "label": "Waterfront Environment",
+      "mode": "external-svg",
+      "path": "environment_waterfront/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "scaleClass": "environment_wide",
+      "artboard": [
+        1280,
+        720
+      ],
+      "groundPoint": [
+        640,
+        620
+      ],
+      "anchors": {
+        "ground": [
+          640,
+          620
+        ],
+        "center": [
+          640,
+          360
+        ]
+      },
+      "motions": [
+        "idle"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "environment",
+        "waterfront"
+      ],
+      "defaults": {},
+      "thumbnail": "thumbnail.svg",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "sky.svg",
+          "depth": -100,
+          "parallax": 0.05,
+          "order": 0
+        },
+        {
+          "id": "far",
+          "file": "far.svg",
+          "depth": -20,
+          "parallax": 0.25,
+          "order": 10
+        },
+        {
+          "id": "mid",
+          "file": "mid.svg",
+          "depth": 0,
+          "parallax": 0.7,
+          "order": 20
+        },
+        {
+          "id": "near",
+          "file": "near.svg",
+          "depth": 3,
+          "parallax": 1.05,
+          "order": 30
+        }
+      ]
+    }
+  ]
+}
