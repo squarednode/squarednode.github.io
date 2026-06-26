@@ -1,0 +1,61 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_resistance_transport",
+  "label": "Armored Transport Shuttle",
+  "subcategory": "shuttle_vehicle",
+  "rigType": "vehicle_basic",
+  "defaults": {
+    "color": "#7b8491",
+    "trimColor": "#d5d9df",
+    "accentColor": "#315c8f",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      245
+    ],
+    "seat": [
+      250,
+      120
+    ],
+    "door": [
+      250,
+      155
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "shuttle_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_resistance_transport"
+}

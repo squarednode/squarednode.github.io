@@ -1,0 +1,84 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale",
+    "rollWheels"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_launch_coaster_train",
+  "label": "Launch Coaster Train",
+  "subcategory": "coaster_vehicle",
+  "rigType": "wheeled_vehicle_basic",
+  "rig": [
+    "frontWheel",
+    "midWheel",
+    "rearWheel"
+  ],
+  "defaults": {
+    "color": "#2f6eea",
+    "trimColor": "#d9e4ff",
+    "accentColor": "#111111",
+    "wheelColor": "#222222",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      250
+    ],
+    "seatFront": [
+      315,
+      116
+    ],
+    "seatMid": [
+      240,
+      116
+    ],
+    "seatRear": [
+      165,
+      116
+    ],
+    "wheelRear": [
+      145,
+      225
+    ],
+    "wheelMid": [
+      250,
+      225
+    ],
+    "wheelFront": [
+      355,
+      225
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "coaster_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_launch_coaster_train"
+}

@@ -1,0 +1,71 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale",
+    "rollWheels"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_transport_cab",
+  "label": "Transport Cab",
+  "subcategory": "transport",
+  "rigType": "wheeled_vehicle_basic",
+  "rig": [
+    "rearWheel",
+    "frontWheel"
+  ],
+  "defaults": {
+    "color": "#5d83a8",
+    "trimColor": "#e8edf2",
+    "accentColor": "#222222",
+    "wheelColor": "#222222",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      250
+    ],
+    "driverSeat": [
+      235,
+      115
+    ],
+    "wheelRear": [
+      150,
+      225
+    ],
+    "wheelFront": [
+      350,
+      225
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "transport"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_transport_cab"
+}

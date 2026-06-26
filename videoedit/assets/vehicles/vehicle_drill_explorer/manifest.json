@@ -1,0 +1,71 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale",
+    "rollWheels"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_drill_explorer",
+  "label": "Drill Explorer Vehicle",
+  "subcategory": "explorer_vehicle",
+  "rigType": "wheeled_vehicle_basic",
+  "rig": [
+    "frontDrill",
+    "rearWheel"
+  ],
+  "defaults": {
+    "color": "#8b5a2b",
+    "trimColor": "#c7b37a",
+    "accentColor": "#777777",
+    "wheelColor": "#222222",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      250
+    ],
+    "seat": [
+      245,
+      120
+    ],
+    "drillTip": [
+      430,
+      150
+    ],
+    "wheelRear": [
+      150,
+      220
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "explorer_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_drill_explorer"
+}

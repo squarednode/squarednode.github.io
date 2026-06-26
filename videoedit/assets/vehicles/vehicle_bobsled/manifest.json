@@ -1,0 +1,61 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_bobsled",
+  "label": "Mountain Bobsled",
+  "subcategory": "sled_vehicle",
+  "rigType": "vehicle_basic",
+  "defaults": {
+    "color": "#d8e3ef",
+    "trimColor": "#2f6eea",
+    "accentColor": "#555555",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      245
+    ],
+    "seatFront": [
+      285,
+      120
+    ],
+    "seatRear": [
+      205,
+      120
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "sled_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_bobsled"
+}

@@ -1,0 +1,61 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_doom_buggy",
+  "label": "Clamshell Dark Ride Vehicle",
+  "subcategory": "dark_ride_vehicle",
+  "rigType": "vehicle_basic",
+  "defaults": {
+    "color": "#30323a",
+    "trimColor": "#8c92a3",
+    "accentColor": "#16171b",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      245
+    ],
+    "seat": [
+      250,
+      135
+    ],
+    "back": [
+      250,
+      85
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "dark_ride_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_doom_buggy"
+}

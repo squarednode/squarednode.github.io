@@ -1,0 +1,65 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_classic_boat",
+  "label": "Classic Ride Boat",
+  "subcategory": "boat_vehicle",
+  "rigType": "vehicle_basic",
+  "defaults": {
+    "color": "#7a4a2b",
+    "trimColor": "#d8b16f",
+    "accentColor": "#f2e8c9",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      245
+    ],
+    "seatFront": [
+      310,
+      130
+    ],
+    "seatRear": [
+      190,
+      130
+    ],
+    "bow": [
+      420,
+      155
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "boat_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_classic_boat"
+}

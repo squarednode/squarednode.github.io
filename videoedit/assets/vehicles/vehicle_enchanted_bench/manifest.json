@@ -1,0 +1,65 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_enchanted_bench",
+  "label": "Enchanted Bench Vehicle",
+  "subcategory": "suspended_dark_ride_vehicle",
+  "rigType": "vehicle_basic",
+  "defaults": {
+    "color": "#6b3f2a",
+    "trimColor": "#cfa15a",
+    "accentColor": "#444444",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      245
+    ],
+    "seatLeft": [
+      180,
+      135
+    ],
+    "seatRight": [
+      305,
+      135
+    ],
+    "hanger": [
+      250,
+      60
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "suspended_dark_ride_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_enchanted_bench"
+}

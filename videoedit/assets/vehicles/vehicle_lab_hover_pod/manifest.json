@@ -1,0 +1,61 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_lab_hover_pod",
+  "label": "Lab Hover Pod",
+  "subcategory": "simulator_vehicle",
+  "rigType": "vehicle_basic",
+  "defaults": {
+    "color": "#d9d9d9",
+    "trimColor": "#3c75d9",
+    "accentColor": "#f2c230",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      245
+    ],
+    "seat": [
+      250,
+      125
+    ],
+    "console": [
+      250,
+      165
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "simulator_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_lab_hover_pod"
+}

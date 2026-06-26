@@ -1,0 +1,71 @@
+{
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "scale",
+    "rollWheels"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "thumbnail": "thumbnail.svg",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "id": "vehicle_street_racer_car",
+  "label": "Street Racer Car",
+  "subcategory": "road_vehicle",
+  "rigType": "wheeled_vehicle_basic",
+  "rig": [
+    "rearWheel",
+    "frontWheel"
+  ],
+  "defaults": {
+    "color": "#d94133",
+    "trimColor": "#222222",
+    "accentColor": "#ffffff",
+    "wheelColor": "#222222",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      250,
+      250
+    ],
+    "seat": [
+      245,
+      115
+    ],
+    "wheelRear": [
+      145,
+      220
+    ],
+    "wheelFront": [
+      355,
+      220
+    ]
+  },
+  "type": "vehicle",
+  "category": "vehicles",
+  "tags": [
+    "vehicle",
+    "road_vehicle"
+  ],
+  "parts": [],
+  "assetFolder": "assets/vehicles/vehicle_street_racer_car"
+}
