@@ -1,1 +1,3 @@
-<svg xmlns='http://www.w3.org/2000/svg'><path d='M335 245 C455 230 515 190 555 120 C525 225 455 310 335 300 Z' fill='{{color}}' stroke='#111' stroke-width='7' stroke-linejoin='round' stroke-linecap='round'/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+<path d="M360 265 C455 240 520 178 575 95 C555 210 500 332 365 335 Z" fill="{bodyColor}" stroke="{{outlineColor}}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

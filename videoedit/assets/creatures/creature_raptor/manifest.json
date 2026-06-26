@@ -1,14 +1,14 @@
 {
+  "schemaVersion": "24.0.0",
   "id": "creature_raptor",
   "type": "creature",
+  "label": "Raptor Creature",
   "category": "creatures",
   "subcategory": "dinosaur",
-  "label": "Raptor Creature",
+  "style": "simple_theme_park_svg_v5",
   "mode": "external-svg",
   "path": "./",
   "source": "external-svg",
-  "schemaVersion": "22.0.0",
-  "style": "simple_theme_park_svg_v4",
   "rigType": "creature_basic",
   "scaleClass": "creature_standard",
   "artboard": [
@@ -16,33 +16,37 @@
     500
   ],
   "groundPoint": [
-    275,
+    290,
     480
   ],
   "anchors": {
     "ground": [
-      275,
+      290,
       480
     ],
     "head": [
-      210,
-      105
+      160,
+      160
     ],
     "mouth": [
-      115,
-      150
+      125,
+      170
     ],
-    "leftHand": [
-      166,
-      288
+    "leftGrip": [
+      205,
+      284
     ],
-    "rightHand": [
-      201,
-      288
+    "rightGrip": [
+      245,
+      284
     ],
     "tailTip": [
-      555,
-      120
+      590,
+      180
+    ],
+    "speechBubble": [
+      280,
+      70
     ]
   },
   "motions": [
@@ -65,18 +69,35 @@
     "leftArm",
     "rightArm",
     "head",
-    "jaw"
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
   ],
-  "expressions": {},
-  "phonemes": {},
-  "tags": [
-    "creature",
-    "dinosaur"
-  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
   "defaults": {
-    "color": "#8b6f47",
-    "bellyColor": "#d6c197",
-    "wingColor": "#8b6f47"
+    "bodyColor": "#5a8f5a",
+    "bellyColor": "#c7d98f",
+    "accentColor": "#fff3ad",
+    "outlineColor": "#111111",
+    "eyeColor": "#050505"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
   },
   "thumbnail": "thumbnail.svg",
   "parts": [
@@ -84,8 +105,8 @@
       "name": "tail",
       "file": "parts/tail.svg",
       "pivot": [
-        340,
-        245
+        345,
+        260
       ],
       "order": 5
     },
@@ -93,8 +114,8 @@
       "name": "leftLeg",
       "file": "parts/left_leg.svg",
       "pivot": [
-        215,
-        400
+        245,
+        365
       ],
       "order": 10
     },
@@ -102,8 +123,8 @@
       "name": "rightLeg",
       "file": "parts/right_leg.svg",
       "pivot": [
-        310,
-        400
+        318,
+        365
       ],
       "order": 11
     },
@@ -111,8 +132,8 @@
       "name": "body",
       "file": "parts/body.svg",
       "pivot": [
-        260,
-        265
+        300,
+        260
       ],
       "order": 20
     },
@@ -120,26 +141,26 @@
       "name": "leftArm",
       "file": "parts/left_arm.svg",
       "pivot": [
-        170,
-        230
+        205,
+        245
       ],
-      "order": 30
+      "order": 40
     },
     {
       "name": "rightArm",
       "file": "parts/right_arm.svg",
       "pivot": [
-        205,
-        230
+        245,
+        245
       ],
-      "order": 31
+      "order": 41
     },
     {
       "name": "head",
       "file": "parts/head.svg",
       "pivot": [
-        210,
-        105
+        160,
+        160
       ],
       "order": 50
     },
@@ -147,11 +168,49 @@
       "name": "jaw",
       "file": "parts/jaw.svg",
       "pivot": [
-        68,
-        138
+        88,
+        158
       ],
       "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
     }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "dinosaur",
+    "raptor",
+    "slender"
   ],
   "assetFolder": "assets/creatures/creature_raptor",
   "librarySource": "category-catalog",

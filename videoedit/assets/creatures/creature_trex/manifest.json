@@ -1,150 +1,14 @@
 {
+  "schemaVersion": "24.0.0",
   "id": "creature_trex",
   "type": "creature",
-  "label": "Rigged T-Rex Creature",
+  "label": "T-Rex Creature",
+  "category": "creatures",
+  "subcategory": "dinosaur",
+  "style": "simple_theme_park_svg_v5",
   "mode": "external-svg",
   "path": "./",
   "source": "external-svg",
-  "rig": [
-    "head",
-    "jaw",
-    "leftArm",
-    "rightArm",
-    "leftLeg",
-    "rightLeg",
-    "tail"
-  ],
-  "expressions": {
-    "happy": {},
-    "angry": {},
-    "surprised": {}
-  },
-  "tags": [
-    "creature",
-    "mascot",
-    "external"
-  ],
-  "defaults": {
-    "color": "#c7363e",
-    "bellyColor": "#f1a3a5"
-  },
-  "parts": [
-    {
-      "name": "tail",
-      "file": "parts/tail.svg",
-      "pivot": [
-        340,
-        245
-      ],
-      "order": 5
-    },
-    {
-      "name": "leftLeg",
-      "file": "parts/left_leg.svg",
-      "pivot": [
-        215,
-        400
-      ],
-      "order": 10
-    },
-    {
-      "name": "rightLeg",
-      "file": "parts/right_leg.svg",
-      "pivot": [
-        310,
-        400
-      ],
-      "order": 11
-    },
-    {
-      "name": "body",
-      "file": "parts/body.svg",
-      "pivot": [
-        260,
-        265
-      ],
-      "order": 20
-    },
-    {
-      "name": "neck",
-      "file": "parts/neck.svg",
-      "pivot": [
-        220,
-        170
-      ],
-      "order": 30
-    },
-    {
-      "name": "leftArm",
-      "file": "parts/left_arm.svg",
-      "pivot": [
-        170,
-        230
-      ],
-      "order": 40
-    },
-    {
-      "name": "rightArm",
-      "file": "parts/right_arm.svg",
-      "pivot": [
-        205,
-        230
-      ],
-      "order": 41
-    },
-    {
-      "name": "head",
-      "file": "parts/head.svg",
-      "pivot": [
-        210,
-        105
-      ],
-      "order": 50
-    },
-    {
-      "name": "jaw",
-      "file": "parts/jaw.svg",
-      "pivot": [
-        68,
-        138
-      ],
-      "order": 60
-    },
-    {
-      "name": "expression_happy",
-      "file": "parts/expression_happy.svg",
-      "pivot": [
-        0,
-        0
-      ],
-      "order": 70,
-      "expression": "happy"
-    },
-    {
-      "name": "expression_angry",
-      "file": "parts/expression_angry.svg",
-      "pivot": [
-        0,
-        0
-      ],
-      "order": 71,
-      "expression": "angry"
-    },
-    {
-      "name": "expression_surprised",
-      "file": "parts/expression_surprised.svg",
-      "pivot": [
-        0,
-        0
-      ],
-      "order": 72,
-      "expression": "surprised"
-    }
-  ],
-  "schemaVersion": "22.0.0",
-  "category": "creatures",
-  "subcategory": "dinosaur",
-  "style": "simple_theme_park_svg_v4",
   "rigType": "creature_basic",
   "scaleClass": "creature_standard",
   "artboard": [
@@ -152,37 +16,37 @@
     500
   ],
   "groundPoint": [
-    275,
+    290,
     480
   ],
   "anchors": {
     "ground": [
-      275,
+      290,
       480
     ],
     "head": [
-      210,
-      105
+      215,
+      102
     ],
     "mouth": [
-      115,
-      150
+      130,
+      155
     ],
-    "leftHand": [
-      166,
-      288
+    "leftGrip": [
+      165,
+      286
     ],
-    "rightHand": [
-      201,
-      288
+    "rightGrip": [
+      208,
+      286
     ],
     "tailTip": [
-      555,
-      120
+      575,
+      95
     ],
     "speechBubble": [
-      280,
-      50
+      300,
+      60
     ]
   },
   "motions": [
@@ -198,7 +62,23 @@
     "gesture",
     "scale"
   ],
-  "thumbnail": "thumbnail.svg",
+  "rig": [
+    "tail",
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
   "phonemes": {
     "rest": "smile",
     "A": "open",
@@ -206,6 +86,141 @@
     "O": "o",
     "M": "neutral"
   },
+  "defaults": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#fff2a8",
+    "outlineColor": "#111111",
+    "eyeColor": "#050505"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "tail",
+      "file": "parts/tail.svg",
+      "pivot": [
+        382,
+        270
+      ],
+      "order": 5
+    },
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        235,
+        392
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        330,
+        392
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        285,
+        270
+      ],
+      "order": 20
+    },
+    {
+      "name": "neck",
+      "file": "parts/neck.svg",
+      "pivot": [
+        225,
+        175
+      ],
+      "order": 30
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_arm.svg",
+      "pivot": [
+        165,
+        238
+      ],
+      "order": 40
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_arm.svg",
+      "pivot": [
+        208,
+        238
+      ],
+      "order": 41
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        215,
+        102
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        72,
+        140
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "dinosaur",
+    "large",
+    "trex"
+  ],
   "assetFolder": "assets/creatures/creature_trex",
   "librarySource": "category-catalog",
   "packId": null
