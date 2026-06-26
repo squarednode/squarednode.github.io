@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "prop_floating_candle",
+  "displayName": "Floating Candle",
+  "type": "prop",
+  "category": "props",
+  "subcategory": "haunted",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "prop_basic",
+  "scaleClass": "prop_standard",
+  "artboard": [
+    220,
+    220
+  ],
+  "groundPoint": [
+    110,
+    200
+  ],
+  "colorSlots": {
+    "bodyColor": "#6c6c8f",
+    "secondaryColor": "#ddd7ff",
+    "accentColor": "#bfe8ff",
+    "outlineColor": "#111111",
+    "text": "42 IN"
+  },
+  "defaults": {
+    "bodyColor": "#6c6c8f",
+    "secondaryColor": "#ddd7ff",
+    "accentColor": "#bfe8ff",
+    "outlineColor": "#111111",
+    "text": "42 IN"
+  },
+  "anchors": {
+    "ground": [
+      110,
+      200
+    ],
+    "center": [
+      110,
+      110
+    ],
+    "grip": [
+      110,
+      150
+    ],
+    "top": [
+      110,
+      40
+    ],
+    "text": [
+      110,
+      130
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "bob",
+    "scale",
+    "enter",
+    "exit"
+  ],
+  "tags": [
+    "prop",
+    "haunted",
+    "candle",
+    "ghost",
+    "haunted",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/props/prop_floating_candle",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        110,
+        110
+      ],
+      "order": 10
+    }
+  ]
+}
