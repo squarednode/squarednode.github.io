@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450"><polygon points="-40,0 520,0 345,450 -40,450" fill="{{panelColor}}" opacity="{{opacity}}" stroke="{{outlineColor}}" stroke-width="8"/><polygon points="520,0 840,0 665,450 345,450" fill="{{accentColor}}" opacity="0.55" stroke="{{outlineColor}}" stroke-width="8"/></svg>

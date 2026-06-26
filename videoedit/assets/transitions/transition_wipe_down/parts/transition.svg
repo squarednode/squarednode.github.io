@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450"><rect width="800" height="450" fill="{{panelColor}}" opacity="{{opacity}}"/><path d="M0 40 Q180 70 390 35 T800 50 L800 0 L0 0Z" fill="{{accentColor}}" opacity="0.4"/></svg>

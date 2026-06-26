@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450"><circle cx="400" cy="225" r="330" fill="{{panelColor}}" opacity="{{opacity}}"/><circle cx="400" cy="225" r="235" fill="none" stroke="{{accentColor}}" stroke-width="28" opacity="0.5"/><circle cx="400" cy="225" r="150" fill="none" stroke="{{accentColor}}" stroke-width="18" opacity="0.3"/></svg>

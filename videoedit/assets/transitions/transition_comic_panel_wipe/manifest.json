@@ -1,0 +1,90 @@
+{
+  "id": "transition_comic_panel_wipe",
+  "type": "transition",
+  "category": "transitions",
+  "subcategory": "comic",
+  "label": "Comic Panel Wipe",
+  "displayName": "Comic Panel Wipe",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "fullscreen_transition",
+  "artboard": [
+    800,
+    450
+  ],
+  "groundPoint": [
+    400,
+    450
+  ],
+  "anchors": {
+    "center": [
+      400,
+      225
+    ],
+    "topLeft": [
+      0,
+      0
+    ],
+    "bottomCenter": [
+      400,
+      450
+    ]
+  },
+  "motions": [
+    "idle",
+    "fadeIn",
+    "fadeOut",
+    "slideIn",
+    "slideOut",
+    "scale",
+    "pulse",
+    "enter",
+    "exit"
+  ],
+  "rigType": "static_transition",
+  "rig": [
+    "transition"
+  ],
+  "parts": [
+    {
+      "name": "transition",
+      "file": "parts/transition.svg",
+      "order": 10,
+      "pivot": [
+        400,
+        225
+      ]
+    }
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "colorSlots": {
+    "panelColor": "#111111",
+    "accentColor": "#f4d35e",
+    "outlineColor": "#111111",
+    "effectColor": "#d8f1ff",
+    "secondaryColor": "#ffffff",
+    "paperColor": "#f4ead2",
+    "markerColor": "#d83a34",
+    "lineColor": "#ffffff",
+    "portalColor": "#69e4ff",
+    "cutoutColor": "#ffffff",
+    "opacity": "0.82"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.82
+  },
+  "tags": [
+    "transition",
+    "comic",
+    "storytelling",
+    "fullscreen"
+  ],
+  "description": "comic-book diagonal panel wipe",
+  "thumbnail": "thumbnail.svg"
+}
