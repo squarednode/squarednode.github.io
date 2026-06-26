@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <rect x="170" y="310" width="560" height="95" rx="28" fill="{{platformColor}}"/>
+    <path d="M250 310 L225 220 L330 220 L305 310 Z" fill="{{cabColor}}"/>
+    <path d="M395 310 L370 220 L475 220 L450 310 Z" fill="{{cabColor}}"/>
+    <path d="M540 310 L515 220 L620 220 L595 310 Z" fill="{{cabColor}}"/>
+    <path d="M255 405 L190 475 M445 405 L445 475 M635 405 L710 475" stroke="{{actuatorColor}}"/>
+    <path d="M160 475 L740 475" stroke="{{baseColor}}"/>
+    <circle cx="285" cy="258" r="15" fill="{{lightColor}}"/><circle cx="430" cy="258" r="15" fill="{{lightColor}}"/><circle cx="575" cy="258" r="15" fill="{{lightColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Simulator Platform</text>
+</svg>

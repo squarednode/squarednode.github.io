@@ -1,0 +1,74 @@
+{
+  "id": "ride_indoor_space_coaster_track",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "coaster_track",
+  "label": "Indoor Space Coaster Track",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_ride_static",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "coaster_track"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "buildingColor": "#1f2937",
+    "railColor": "#9ca3af",
+    "supportColor": "#6b7280",
+    "starColor": "#fef3c7"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_indoor_space_coaster_track",
+  "librarySource": "category-catalog",
+  "packId": null
+}

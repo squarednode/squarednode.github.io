@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M80 390 C210 335 315 345 430 395 C545 445 650 445 820 380 L840 450 C660 505 520 495 400 445 C285 395 190 400 80 455 Z" fill="{{waterColor}}"/>
+    <path d="M155 245 L255 160 L355 245 L355 365 L155 365 Z" fill="{{facadeColor}}"/>
+    <path d="M375 260 L455 190 L535 260 L535 365 L375 365 Z" fill="{{facadeColor}}"/>
+    <path d="M555 235 L655 145 L755 235 L755 365 L555 365 Z" fill="{{facadeColor}}"/>
+    <path d="M190 300 L240 300 M405 305 L465 305 M595 290 L705 290" stroke="{{trimColor}}"/>
+    <path d="M110 372 C240 317 325 330 435 380 C550 430 655 430 825 365" fill="none" stroke="{{edgeColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Storybook Boat Facade Channel</text>
+</svg>

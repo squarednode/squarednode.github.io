@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M85 420 C190 335 280 335 385 395 C495 460 605 440 815 335" fill="none" stroke="{{trackColor}}"/>
+    <path d="M95 455 C200 370 290 370 395 430 C505 495 615 475 825 370" fill="none" stroke="{{trackColor}}"/>
+    <path d="M210 370 L260 300 L345 345" fill="none" stroke="{{armColor}}"/>
+    <circle cx="260" cy="300" r="28" fill="{{jointColor}}"/>
+    <path d="M570 430 L620 330 L720 350" fill="none" stroke="{{armColor}}"/>
+    <circle cx="620" cy="330" r="28" fill="{{jointColor}}"/>
+    <path d="M735 350 L790 320" stroke="{{armColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Robot Arm Ride Track</text>
+</svg>

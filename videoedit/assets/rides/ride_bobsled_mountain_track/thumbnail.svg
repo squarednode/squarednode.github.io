@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M100 430 L250 160 L355 310 L455 95 L600 330 L710 190 L840 430 Z" fill="{{mountainColor}}"/>
+    <path d="M255 165 L315 245 L362 310 L455 95 L530 255 L600 330 L710 190 L760 300" fill="{{snowColor}}"/>
+    <path d="M145 360 C240 280 300 385 395 315 C505 235 590 375 745 285" fill="none" stroke="{{trackColor}}"/>
+    <path d="M150 392 C245 312 305 417 400 347 C510 267 595 407 750 317" fill="none" stroke="{{trackColor}}"/>
+    <path d="M210 350 L210 430 M365 330 L365 430 M525 320 L525 430 M690 305 L690 430" stroke="{{supportColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Mountain Bobsled Track</text>
+</svg>

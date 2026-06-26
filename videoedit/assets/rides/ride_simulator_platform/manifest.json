@@ -1,0 +1,77 @@
+{
+  "id": "ride_simulator_platform",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "simulator_platform",
+  "label": "Simulator Platform",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_simulator_platform",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "shake",
+    "tilt",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "simulator_platform"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "platformColor": "#374151",
+    "cabColor": "#6b7280",
+    "actuatorColor": "#9ca3af",
+    "baseColor": "#111827",
+    "lightColor": "#22d3ee"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_simulator_platform",
+  "librarySource": "category-catalog",
+  "packId": null
+}

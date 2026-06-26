@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M80 360 C190 300 300 310 410 360 C520 410 630 405 820 345 L840 425 C660 485 515 480 390 425 C270 372 175 385 80 435 Z" fill="{{waterColor}}"/>
+    <path d="M90 345 C200 285 305 295 415 345 C525 395 635 390 825 330" fill="none" stroke="{{edgeColor}}"/>
+    <path d="M95 445 C220 395 315 410 410 452 C525 500 660 475 830 420" fill="none" stroke="{{edgeColor}}"/>
+    <path d="M155 285 L155 430 M235 298 L235 455 M705 300 L705 455 M790 285 L790 430" stroke="{{dockColor}}"/>
+    <path d="M120 275 L285 275 M665 275 L830 275" stroke="{{dockColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Dark Ride Boat Channel</text>
+</svg>

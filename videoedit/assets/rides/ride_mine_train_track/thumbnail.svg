@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M90 385 C190 345 270 360 350 405 C455 465 555 430 650 355 C730 295 795 315 850 370" fill="none" stroke="{{railColor}}"/>
+    <path d="M95 420 C195 380 275 395 355 440 C460 500 560 465 655 390 C735 330 800 350 855 405" fill="none" stroke="{{railColor}}"/>
+    <path d="M120 400 L120 470 M245 383 L245 470 M370 430 L370 470 M525 440 L525 470 M680 375 L680 470 M805 385 L805 470" stroke="{{supportColor}}"/>
+    <path d="M60 465 L870 465" stroke="{{groundColor}}"/>
+    <path d="M140 330 L210 250 L280 330" fill="{{rockColor}}"/>
+    <path d="M650 340 L720 245 L805 345" fill="{{rockColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Mine Train Track</text>
+</svg>

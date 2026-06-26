@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <g stroke="{{outlineColor}}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <rect x="70" y="360" width="760" height="70" rx="35" fill="{{platformColor}}"/>
+    <path d="M95 320 C205 260 300 270 390 320 C485 374 580 365 690 300 C760 260 815 265 850 310" fill="none" stroke="{{trackColor}}"/>
+    <path d="M95 355 C205 295 300 305 390 355 C485 409 580 400 690 335 C760 295 815 300 850 345" fill="none" stroke="{{trackColor}}"/>
+    <path d="M120 338 L850 338" stroke="{{glowColor}}" stroke-width="5"/>
+    <path d="M145 392 L145 455 M300 390 L300 455 M465 392 L465 455 M620 375 L620 455 M780 332 L780 455" stroke="{{supportColor}}"/>
+
+  </g>
+</svg>

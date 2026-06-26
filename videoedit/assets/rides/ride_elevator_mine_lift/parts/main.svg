@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <g stroke="{{outlineColor}}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M270 90 L270 465 M630 90 L630 465" stroke="{{towerColor}}"/>
+    <path d="M270 120 L630 120 M270 210 L630 210 M270 300 L630 300 M270 390 L630 390" stroke="{{towerColor}}"/>
+    <path d="M315 300 L585 300 L585 390 L315 390 Z" fill="{{cabColor}}"/>
+    <path d="M345 325 L395 325 M430 325 L480 325 M515 325 L560 325" stroke="{{windowColor}}"/>
+    <path d="M450 85 L450 300" stroke="{{cableColor}}"/>
+    <path d="M210 465 L690 465" stroke="{{baseColor}}"/>
+    <path d="M250 465 L170 380 L240 380" fill="{{rockColor}}"/>
+
+  </g>
+</svg>

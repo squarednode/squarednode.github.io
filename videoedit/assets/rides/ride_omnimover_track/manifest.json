@@ -1,0 +1,74 @@
+{
+  "id": "ride_omnimover_track",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "dark_ride_track",
+  "label": "Omnimover Track",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_dark_ride_track",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "dark_ride_track"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "trackColor": "#475569",
+    "floorColor": "#1f2937",
+    "supportColor": "#64748b",
+    "ghostRailColor": "#c4b5fd"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_omnimover_track",
+  "librarySource": "category-catalog",
+  "packId": null
+}

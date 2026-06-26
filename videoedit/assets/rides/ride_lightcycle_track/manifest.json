@@ -1,0 +1,74 @@
+{
+  "id": "ride_lightcycle_track",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "cycle_track",
+  "label": "Lightcycle Launch Track",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_ride_static",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "cycle_track"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "trackColor": "#0f172a",
+    "platformColor": "#1e293b",
+    "supportColor": "#334155",
+    "glowColor": "#22d3ee"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_lightcycle_track",
+  "librarySource": "category-catalog",
+  "packId": null
+}

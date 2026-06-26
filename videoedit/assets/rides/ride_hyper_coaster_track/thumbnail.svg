@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M60 430 C160 90 330 92 430 430 C510 505 620 330 700 250 C770 180 835 220 875 330" fill="none" stroke="{{railColor}}"/>
+    <path d="M85 455 C180 125 315 125 405 455 C515 535 635 360 715 280 C780 215 840 250 880 360" fill="none" stroke="{{railColor}}"/>
+    <path d="M125 330 L125 485 M230 150 L230 485 M340 170 L340 485 M455 450 L455 500 M590 390 L590 490 M725 280 L725 490 M835 310 L835 490" stroke="{{supportColor}}"/>
+    <path d="M70 485 L860 485" stroke="{{baseColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Hyper Coaster Track</text>
+</svg>

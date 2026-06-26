@@ -1,0 +1,74 @@
+{
+  "id": "ride_mine_train_track",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "mine_train_track",
+  "label": "Mine Train Track",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_ride_static",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "mine_train_track"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "railColor": "#5b4636",
+    "supportColor": "#7c5f45",
+    "groundColor": "#5a3e2b",
+    "rockColor": "#9a7b5d"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_mine_train_track",
+  "librarySource": "category-catalog",
+  "packId": null
+}

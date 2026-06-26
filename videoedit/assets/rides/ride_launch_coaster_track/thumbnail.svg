@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M70 390 C160 310 240 300 330 360 C430 430 525 430 610 340 C700 250 790 245 850 320" fill="none" stroke="{{railColor}}"/>
+    <path d="M75 430 C165 350 245 340 335 400 C435 470 530 470 615 380 C705 290 795 285 855 360" fill="none" stroke="{{railColor}}"/>
+    <path d="M110 405 L110 480 M230 360 L230 480 M350 385 L350 480 M480 430 L480 485 M620 360 L620 480 M760 305 L760 480" stroke="{{supportColor}}"/>
+    <path d="M90 465 L810 465" stroke="{{baseColor}}"/>
+    <path d="M120 340 L250 340 L250 300 L120 300 Z" fill="{{stationColor}}"/>
+    <circle cx="150" cy="320" r="12" fill="{{lightColor}}"/><circle cx="205" cy="320" r="12" fill="{{lightColor}}"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Launch Coaster Track</text>
+</svg>

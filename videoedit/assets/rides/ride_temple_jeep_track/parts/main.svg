@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <g stroke="{{outlineColor}}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M85 405 C185 330 290 335 390 390 C505 455 620 430 810 335 L850 390 C660 505 510 500 370 430 C255 370 175 380 90 455 Z" fill="{{roadColor}}"/>
+    <path d="M125 390 C210 340 300 350 390 405 C505 475 615 455 800 365" fill="none" stroke="{{rutColor}}" stroke-dasharray="18 18"/>
+    <path d="M120 300 L200 185 L280 300 Z" fill="{{stoneColor}}"/>
+    <path d="M650 285 L760 165 L850 285 Z" fill="{{stoneColor}}"/>
+    <path d="M175 280 L225 280 M700 260 L790 260" stroke="{{carvingColor}}"/>
+
+  </g>
+</svg>

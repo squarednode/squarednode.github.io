@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 180">
+  <rect width="300" height="180" rx="18" fill="#eef8ff"/>
+  <g transform="scale(0.3333333333333333 0.34615384615384615)" stroke="#111111" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M100 370 C160 285 260 260 360 310 C450 355 520 425 620 380 C730 330 785 280 840 345" fill="none" stroke="{{trackColor}}"/>
+    <path d="M100 415 C170 330 265 310 350 350 C445 395 520 470 635 425 C745 380 800 330 850 390" fill="none" stroke="{{trackColor}}"/>
+    <path d="M95 440 L860 440" stroke="{{floorColor}}"/>
+    <path d="M155 395 L155 450 M285 335 L285 450 M430 380 L430 450 M590 420 L590 450 M755 360 L755 450" stroke="{{supportColor}}"/>
+    <path d="M80 180 C180 120 275 135 360 195 C460 265 570 265 675 190 C755 135 820 145 870 200" fill="none" stroke="{{ghostRailColor}}" stroke-dasharray="18 22"/>
+
+  </g>
+  <text x="14" y="166" font-family="Arial" font-size="18" font-weight="700" fill="#111111">Omnimover Track</text>
+</svg>

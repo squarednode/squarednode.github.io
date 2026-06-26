@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <g stroke="{{outlineColor}}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M90 410 C180 320 285 300 390 370 C505 445 615 440 805 330 L845 395 C650 510 500 500 365 425 C260 365 170 380 95 455 Z" fill="{{floorColor}}"/>
+    <path d="M130 390 C210 335 300 338 390 392 C505 462 620 455 790 360" fill="none" stroke="{{guideColor}}" stroke-dasharray="20 18"/>
+    <circle cx="210" cy="390" r="22" fill="{{markerColor}}"/><circle cx="500" cy="430" r="22" fill="{{markerColor}}"/><circle cx="720" cy="365" r="22" fill="{{markerColor}}"/>
+
+  </g>
+</svg>

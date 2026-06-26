@@ -1,0 +1,79 @@
+{
+  "id": "ride_elevator_mine_lift",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "vertical_lift",
+  "label": "Elevator Mine Lift",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_vertical_lift",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "drop",
+    "rise",
+    "shake",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "vertical_lift"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "towerColor": "#6b7280",
+    "cabColor": "#92400e",
+    "windowColor": "#fde68a",
+    "cableColor": "#111827",
+    "baseColor": "#44403c",
+    "rockColor": "#78716c"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_elevator_mine_lift",
+  "librarySource": "category-catalog",
+  "packId": null
+}

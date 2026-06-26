@@ -1,0 +1,77 @@
+{
+  "id": "ride_flying_theater_linkage",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "flying_theater",
+  "label": "Flying Theater Linkage",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_flying_theater",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "tilt",
+    "swing",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "flying_theater"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "screenColor": "#dbeafe",
+    "screenLineColor": "#60a5fa",
+    "platformColor": "#334155",
+    "seatColor": "#475569",
+    "armColor": "#64748b"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_flying_theater_linkage",
+  "librarySource": "category-catalog",
+  "packId": null
+}

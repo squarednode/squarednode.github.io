@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <g stroke="{{outlineColor}}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M170 125 L730 125 L790 390 L110 390 Z" fill="{{screenColor}}"/>
+    <path d="M220 380 C280 310 365 280 450 300 C545 322 620 300 700 245" fill="none" stroke="{{screenLineColor}}"/>
+    <path d="M230 420 L670 420" stroke="{{platformColor}}"/>
+    <path d="M290 420 L250 330 L330 330 Z" fill="{{seatColor}}"/>
+    <path d="M450 420 L410 330 L490 330 Z" fill="{{seatColor}}"/>
+    <path d="M610 420 L570 330 L650 330 Z" fill="{{seatColor}}"/>
+    <path d="M250 330 L450 250 L650 330" fill="none" stroke="{{armColor}}"/>
+
+  </g>
+</svg>

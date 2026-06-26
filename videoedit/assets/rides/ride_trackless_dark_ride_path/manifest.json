@@ -1,0 +1,73 @@
+{
+  "id": "ride_trackless_dark_ride_path",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "dark_ride_path",
+  "label": "Trackless Dark Ride Path",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_dark_ride_path",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "dark_ride_path"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "floorColor": "#374151",
+    "guideColor": "#facc15",
+    "markerColor": "#111827"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_trackless_dark_ride_path",
+  "librarySource": "category-catalog",
+  "packId": null
+}

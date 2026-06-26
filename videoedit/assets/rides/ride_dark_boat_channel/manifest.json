@@ -1,0 +1,73 @@
+{
+  "id": "ride_dark_boat_channel",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "boat_channel",
+  "label": "Dark Ride Boat Channel",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_water_path",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ],
+    "center": [
+      450,
+      260
+    ],
+    "trackStart": [
+      120,
+      410
+    ],
+    "trackEnd": [
+      780,
+      410
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "boat_channel"
+  ],
+  "defaults": {
+    "outlineColor": "#111111",
+    "waterColor": "#2d9cdb",
+    "edgeColor": "#59452d",
+    "dockColor": "#7a5435"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        450,
+        260
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_dark_boat_channel",
+  "librarySource": "category-catalog",
+  "packId": null
+}
