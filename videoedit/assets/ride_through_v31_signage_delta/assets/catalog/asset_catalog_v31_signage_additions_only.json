@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "22.0.0",
+  "version": "31.0",
+  "assets": [
+    {
+      "id": "signage_ride_entrance",
+      "category": "signage",
+      "path": "signage/signage_ride_entrance/manifest.json"
+    },
+    {
+      "id": "signage_exit",
+      "category": "signage",
+      "path": "signage/signage_exit/manifest.json"
+    },
+    {
+      "id": "signage_wait_time",
+      "category": "signage",
+      "path": "signage/signage_wait_time/manifest.json"
+    },
+    {
+      "id": "signage_height_requirement",
+      "category": "signage",
+      "path": "signage/signage_height_requirement/manifest.json"
+    },
+    {
+      "id": "signage_safety_warning",
+      "category": "signage",
+      "path": "signage/signage_safety_warning/manifest.json"
+    },
+    {
+      "id": "signage_express_lane",
+      "category": "signage",
+      "path": "signage/signage_express_lane/manifest.json"
+    },
+    {
+      "id": "signage_standby_queue",
+      "category": "signage",
+      "path": "signage/signage_standby_queue/manifest.json"
+    },
+    {
+      "id": "signage_accessibility",
+      "category": "signage",
+      "path": "signage/signage_accessibility/manifest.json"
+    },
+    {
+      "id": "signage_restrooms",
+      "category": "signage",
+      "path": "signage/signage_restrooms/manifest.json"
+    },
+    {
+      "id": "signage_food_drink",
+      "category": "signage",
+      "path": "signage/signage_food_drink/manifest.json"
+    },
+    {
+      "id": "signage_photo_spot",
+      "category": "signage",
+      "path": "signage/signage_photo_spot/manifest.json"
+    },
+    {
+      "id": "signage_guest_services",
+      "category": "signage",
+      "path": "signage/signage_guest_services/manifest.json"
+    },
+    {
+      "id": "signage_emergency_exit",
+      "category": "signage",
+      "path": "signage/signage_emergency_exit/manifest.json"
+    },
+    {
+      "id": "signage_area_map",
+      "category": "signage",
+      "path": "signage/signage_area_map/manifest.json"
+    },
+    {
+      "id": "signage_dinosaur_paddock",
+      "category": "signage",
+      "path": "signage/signage_dinosaur_paddock/manifest.json"
+    },
+    {
+      "id": "signage_pirate_cove",
+      "category": "signage",
+      "path": "signage/signage_pirate_cove/manifest.json"
+    },
+    {
+      "id": "signage_space_hangar",
+      "category": "signage",
+      "path": "signage/signage_space_hangar/manifest.json"
+    },
+    {
+      "id": "signage_wizard_school",
+      "category": "signage",
+      "path": "signage/signage_wizard_school/manifest.json"
+    },
+    {
+      "id": "signage_haunted_estate",
+      "category": "signage",
+      "path": "signage/signage_haunted_estate/manifest.json"
+    },
+    {
+      "id": "signage_racing_garage",
+      "category": "signage",
+      "path": "signage/signage_racing_garage/manifest.json"
+    },
+    {
+      "id": "signage_alien_forest",
+      "category": "signage",
+      "path": "signage/signage_alien_forest/manifest.json"
+    },
+    {
+      "id": "signage_world_festival",
+      "category": "signage",
+      "path": "signage/signage_world_festival/manifest.json"
+    },
+    {
+      "id": "signage_alpine_trail",
+      "category": "signage",
+      "path": "signage/signage_alpine_trail/manifest.json"
+    },
+    {
+      "id": "signage_neon_grid",
+      "category": "signage",
+      "path": "signage/signage_neon_grid/manifest.json"
+    },
+    {
+      "id": "signage_hero_city",
+      "category": "signage",
+      "path": "signage/signage_hero_city/manifest.json"
+    },
+    {
+      "id": "signage_mine_town",
+      "category": "signage",
+      "path": "signage/signage_mine_town/manifest.json"
+    },
+    {
+      "id": "signage_mummy_tomb",
+      "category": "signage",
+      "path": "signage/signage_mummy_tomb/manifest.json"
+    },
+    {
+      "id": "signage_temple_warning",
+      "category": "signage",
+      "path": "signage/signage_temple_warning/manifest.json"
+    },
+    {
+      "id": "signage_lab_hazard",
+      "category": "signage",
+      "path": "signage/signage_lab_hazard/manifest.json"
+    }
+  ]
+}
