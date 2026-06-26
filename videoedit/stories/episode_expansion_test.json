@@ -1,0 +1,160 @@
+{
+  "episodeId": "asset_expansion_test",
+  "title": "V21 Asset Expansion Test",
+  "shots": [
+    {
+      "id": "shot_001",
+      "title": "Expansion pack lineup",
+      "duration": 10,
+      "environment": {
+        "asset": "environment_jungle_path"
+      },
+      "camera": {
+        "position": [
+          0,
+          0
+        ],
+        "zoom": 1
+      },
+      "actors": [
+        {
+          "id": "staff",
+          "asset": "human_staff_basic",
+          "position": [
+            120,
+            405,
+            2
+          ],
+          "scale": 0.82,
+          "expression": "happy",
+          "wardrobe": {
+            "shirtColor": "#e9eef7",
+            "hatColor": "#f2c94c"
+          }
+        },
+        {
+          "id": "child",
+          "asset": "human_child_basic",
+          "position": [
+            235,
+            420,
+            2
+          ],
+          "scale": 0.66,
+          "expression": "surprised",
+          "wardrobe": {
+            "shirtColor": "#ffcf66"
+          }
+        },
+        {
+          "id": "dragon",
+          "asset": "creature_dragon",
+          "position": [
+            470,
+            372,
+            2
+          ],
+          "scale": 0.58,
+          "color": "#4f9f45",
+          "bellyColor": "#b9e4a6",
+          "wingColor": "#7bbf6a"
+        },
+        {
+          "id": "jeep",
+          "asset": "vehicle_jeep",
+          "position": [
+            720,
+            430,
+            3
+          ],
+          "scale": 0.72,
+          "color": "#8b6f47",
+          "trimColor": "#d6c197"
+        },
+        {
+          "id": "sign",
+          "asset": "prop_speech_bubble",
+          "position": [
+            180,
+            120,
+            4
+          ],
+          "scale": 0.75,
+          "text": "V21"
+        },
+        {
+          "id": "map",
+          "asset": "prop_map",
+          "position": [
+            55,
+            505,
+            3
+          ],
+          "scale": 0.4
+        },
+        {
+          "id": "mountain",
+          "asset": "landmark_mountain_peak",
+          "position": [
+            790,
+            180,
+            0
+          ],
+          "scale": 0.48
+        },
+        {
+          "id": "track",
+          "asset": "ride_water_flume_track",
+          "position": [
+            -30,
+            250,
+            1
+          ],
+          "scale": 0.62
+        }
+      ],
+      "timeline": [
+        {
+          "time": 0.3,
+          "actor": "staff",
+          "action": "wave",
+          "part": "rightUpperArm"
+        },
+        {
+          "time": 1,
+          "actor": "dragon",
+          "action": "talk"
+        },
+        {
+          "time": 2,
+          "actor": "jeep",
+          "action": "drive",
+          "to": [
+            850,
+            430,
+            3
+          ]
+        },
+        {
+          "time": 3.5,
+          "actor": "child",
+          "action": "look",
+          "angle": -8
+        },
+        {
+          "time": 4,
+          "actor": "dragon",
+          "action": "gesture",
+          "part": "wing",
+          "angle": -18,
+          "duration": 1.2
+        },
+        {
+          "time": 6,
+          "actor": "staff",
+          "action": "talk"
+        }
+      ]
+    }
+  ]
+}
