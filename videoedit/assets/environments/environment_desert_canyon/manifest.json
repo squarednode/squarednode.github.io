@@ -72,5 +72,6 @@
   ],
   "assetFolder": "assets/environments/environment_desert_canyon",
   "librarySource": "category-catalog",
-  "packId": null
+  "packId": null,
+  "rigType": "layered_environment"
 }
