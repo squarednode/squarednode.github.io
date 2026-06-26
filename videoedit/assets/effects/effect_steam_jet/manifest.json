@@ -1,0 +1,82 @@
+{
+  "id": "effect_steam_jet",
+  "type": "effect",
+  "category": "effects",
+  "subcategory": "atmosphere",
+  "label": "Steam Jet",
+  "displayName": "Steam Jet",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "effect_overlay",
+  "artboard": [
+    360,
+    260
+  ],
+  "groundPoint": [
+    180,
+    220
+  ],
+  "anchors": {
+    "center": [
+      180,
+      130
+    ],
+    "ground": [
+      180,
+      220
+    ],
+    "top": [
+      180,
+      40
+    ]
+  },
+  "motions": [
+    "idle",
+    "fadeIn",
+    "fadeOut",
+    "pulse",
+    "bob",
+    "sway",
+    "scale",
+    "spin",
+    "enter",
+    "exit"
+  ],
+  "rigType": "static_transparent_effect",
+  "rig": [
+    "effect"
+  ],
+  "parts": [
+    {
+      "name": "effect",
+      "file": "parts/effect.svg",
+      "order": 10,
+      "pivot": [
+        180,
+        130
+      ]
+    }
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "colorSlots": {
+    "effectColor": "#bfe9ff",
+    "secondaryColor": "#ffffff",
+    "outlineColor": "#111111",
+    "opacity": "0.65"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.65
+  },
+  "tags": [
+    "effects",
+    "transparent",
+    "atmosphere"
+  ],
+  "description": "Transparent layered effect asset for steam jet overlays."
+}

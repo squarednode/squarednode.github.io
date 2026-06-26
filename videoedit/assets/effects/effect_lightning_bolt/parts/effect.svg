@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260"><g opacity="{{opacity}}" stroke="{{outlineColor}}" stroke-width="5" stroke-linejoin="round"><path d="M205 25 L105 145 H170 L135 240 L260 105 H190 Z" fill="{{effectColor}}"/><path d="M192 60 L145 126 H187 L165 190 L226 105 H185 Z" fill="{{secondaryColor}}" stroke="none"/></g></svg>

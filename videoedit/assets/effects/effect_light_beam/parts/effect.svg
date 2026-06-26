@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 260"><g opacity="{{opacity}}"><path d="M150 30 L210 30 L315 245 L45 245 Z" fill="{{effectColor}}"/><path d="M175 30 L190 30 L230 245 L130 245 Z" fill="{{secondaryColor}}" opacity="0.45"/></g></svg>
