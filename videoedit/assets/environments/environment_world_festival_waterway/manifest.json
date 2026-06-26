@@ -1,0 +1,99 @@
+{
+  "id": "environment_world_festival_waterway",
+  "type": "environment",
+  "category": "environments",
+  "subcategory": "world waterway",
+  "label": "World Festival Waterway Environment",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "environment_wide",
+  "artboard": [
+    1280,
+    720
+  ],
+  "groundPoint": [
+    640,
+    620
+  ],
+  "anchors": {
+    "ground": [
+      640,
+      620
+    ],
+    "center": [
+      640,
+      360
+    ],
+    "leftEntry": [
+      120,
+      620
+    ],
+    "rightEntry": [
+      1160,
+      620
+    ]
+  },
+  "motions": [
+    "idle",
+    "pan",
+    "parallax"
+  ],
+  "rig": [],
+  "rigType": "layered_environment",
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "environment",
+    "world",
+    "waterway"
+  ],
+  "description": "stylized canal with global facade silhouettes and bridges",
+  "defaults": {
+    "skyColor": "#a7d8ff",
+    "sunColor": "#fff2a8",
+    "cloudColor": "#ffffff",
+    "starColor": "#ffffff",
+    "farColor": "#d2b36b",
+    "farAccentColor": "#d2b36b",
+    "midColor": "#8bc0c8",
+    "structureColor": "#d8c184",
+    "pathLineColor": "#f4e2a6",
+    "groundColor": "#447f9f",
+    "foregroundColor": "#447f9f",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "layers": [
+    {
+      "id": "sky",
+      "file": "layers/sky.svg",
+      "depth": -100,
+      "parallax": 0.05,
+      "order": 0
+    },
+    {
+      "id": "far",
+      "file": "layers/far.svg",
+      "depth": -20,
+      "parallax": 0.25,
+      "order": 10
+    },
+    {
+      "id": "mid",
+      "file": "layers/mid.svg",
+      "depth": 0,
+      "parallax": 0.7,
+      "order": 20
+    },
+    {
+      "id": "near",
+      "file": "layers/near.svg",
+      "depth": 3,
+      "parallax": 1.05,
+      "order": 30
+    }
+  ]
+}

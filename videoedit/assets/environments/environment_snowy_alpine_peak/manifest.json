@@ -1,0 +1,99 @@
+{
+  "id": "environment_snowy_alpine_peak",
+  "type": "environment",
+  "category": "environments",
+  "subcategory": "alpine snow",
+  "label": "Snowy Alpine Peak Environment",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "environment_wide",
+  "artboard": [
+    1280,
+    720
+  ],
+  "groundPoint": [
+    640,
+    620
+  ],
+  "anchors": {
+    "ground": [
+      640,
+      620
+    ],
+    "center": [
+      640,
+      360
+    ],
+    "leftEntry": [
+      120,
+      620
+    ],
+    "rightEntry": [
+      1160,
+      620
+    ]
+  },
+  "motions": [
+    "idle",
+    "pan",
+    "parallax"
+  ],
+  "rig": [],
+  "rigType": "layered_environment",
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "environment",
+    "alpine",
+    "snow"
+  ],
+  "description": "snow-covered mountain slope with icy track valley",
+  "defaults": {
+    "skyColor": "#cfefff",
+    "sunColor": "#fff2a8",
+    "cloudColor": "#ffffff",
+    "starColor": "#ffffff",
+    "farColor": "#9ab8c8",
+    "farAccentColor": "#9ab8c8",
+    "midColor": "#dfefff",
+    "structureColor": "#d8c184",
+    "pathLineColor": "#f4e2a6",
+    "groundColor": "#8fa6b5",
+    "foregroundColor": "#8fa6b5",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "layers": [
+    {
+      "id": "sky",
+      "file": "layers/sky.svg",
+      "depth": -100,
+      "parallax": 0.05,
+      "order": 0
+    },
+    {
+      "id": "far",
+      "file": "layers/far.svg",
+      "depth": -20,
+      "parallax": 0.25,
+      "order": 10
+    },
+    {
+      "id": "mid",
+      "file": "layers/mid.svg",
+      "depth": 0,
+      "parallax": 0.7,
+      "order": 20
+    },
+    {
+      "id": "near",
+      "file": "layers/near.svg",
+      "depth": 3,
+      "parallax": 1.05,
+      "order": 30
+    }
+  ]
+}
