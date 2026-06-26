@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "22.0",
+  "id": "background_cavern_wall",
+  "displayName": "Cavern Wall Layer",
+  "category": "background_layers",
+  "subcategory": "background",
+  "style": "simple_theme_park_svg_v1",
+  "rigType": "static_background_layer",
+  "scaleClass": "background_layer_standard",
+  "artboard": [
+    1200,
+    675
+  ],
+  "groundPoint": [
+    600,
+    675
+  ],
+  "description": "rock wall pattern",
+  "thumbnail": "thumbnail.svg",
+  "colorSlots": {
+    "primaryColor": "#6c88a8",
+    "secondaryColor": "#a8c4d8",
+    "accentColor": "#ffffff",
+    "outlineColor": "#111111",
+    "opacity": "0.65"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.65
+  },
+  "motions": [
+    "idle",
+    "drift",
+    "pan",
+    "fadeIn",
+    "fadeOut"
+  ],
+  "anchors": {
+    "center": [
+      600,
+      337
+    ],
+    "topLeft": [
+      0,
+      0
+    ],
+    "bottomCenter": [
+      600,
+      675
+    ]
+  },
+  "parts": [
+    {
+      "name": "layer",
+      "file": "parts/layer.svg",
+      "order": 10
+    }
+  ]
+}

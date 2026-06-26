@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "22.0",
+  "id": "background_fog_horizon",
+  "displayName": "Fog Horizon Layer",
+  "category": "background_layers",
+  "subcategory": "midground",
+  "style": "simple_theme_park_svg_v1",
+  "rigType": "static_background_layer",
+  "scaleClass": "background_layer_standard",
+  "artboard": [
+    1200,
+    675
+  ],
+  "groundPoint": [
+    600,
+    675
+  ],
+  "description": "low transparent horizon fog",
+  "thumbnail": "thumbnail.svg",
+  "colorSlots": {
+    "primaryColor": "#ffffff",
+    "secondaryColor": "#d8f1ff",
+    "accentColor": "#ffffff",
+    "outlineColor": "#111111",
+    "opacity": "0.65"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.65
+  },
+  "motions": [
+    "idle",
+    "drift",
+    "pan",
+    "fadeIn",
+    "fadeOut"
+  ],
+  "anchors": {
+    "center": [
+      600,
+      337
+    ],
+    "topLeft": [
+      0,
+      0
+    ],
+    "bottomCenter": [
+      600,
+      675
+    ]
+  },
+  "parts": [
+    {
+      "name": "layer",
+      "file": "parts/layer.svg",
+      "order": 10
+    }
+  ]
+}

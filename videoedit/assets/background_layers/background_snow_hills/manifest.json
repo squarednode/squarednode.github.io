@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "22.0",
+  "id": "background_snow_hills",
+  "displayName": "Snow Hills Layer",
+  "category": "background_layers",
+  "subcategory": "distant",
+  "style": "simple_theme_park_svg_v1",
+  "rigType": "static_background_layer",
+  "scaleClass": "background_layer_standard",
+  "artboard": [
+    1200,
+    675
+  ],
+  "groundPoint": [
+    600,
+    675
+  ],
+  "description": "snowy rolling hills",
+  "thumbnail": "thumbnail.svg",
+  "colorSlots": {
+    "primaryColor": "#f4fbff",
+    "secondaryColor": "#cfe8f3",
+    "accentColor": "#ffffff",
+    "outlineColor": "#111111",
+    "opacity": "0.65"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.65
+  },
+  "motions": [
+    "idle",
+    "drift",
+    "pan",
+    "fadeIn",
+    "fadeOut"
+  ],
+  "anchors": {
+    "center": [
+      600,
+      337
+    ],
+    "topLeft": [
+      0,
+      0
+    ],
+    "bottomCenter": [
+      600,
+      675
+    ]
+  },
+  "parts": [
+    {
+      "name": "layer",
+      "file": "parts/layer.svg",
+      "order": 10
+    }
+  ]
+}
