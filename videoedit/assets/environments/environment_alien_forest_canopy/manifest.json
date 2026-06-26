@@ -1,0 +1,99 @@
+{
+  "id": "environment_alien_forest_canopy",
+  "type": "environment",
+  "category": "environments",
+  "subcategory": "alien forest",
+  "label": "Alien Forest Canopy Environment",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "environment_wide",
+  "artboard": [
+    1280,
+    720
+  ],
+  "groundPoint": [
+    640,
+    620
+  ],
+  "anchors": {
+    "ground": [
+      640,
+      620
+    ],
+    "center": [
+      640,
+      360
+    ],
+    "leftEntry": [
+      120,
+      620
+    ],
+    "rightEntry": [
+      1160,
+      620
+    ]
+  },
+  "motions": [
+    "idle",
+    "pan",
+    "parallax"
+  ],
+  "rig": [],
+  "rigType": "layered_environment",
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "environment",
+    "alien",
+    "forest"
+  ],
+  "description": "bioluminescent forest with floating leaves and layered canopy",
+  "defaults": {
+    "skyColor": "#112034",
+    "sunColor": "#fff2a8",
+    "cloudColor": "#ffffff",
+    "starColor": "#ffffff",
+    "farColor": "#233b44",
+    "farAccentColor": "#233b44",
+    "midColor": "#2f6b66",
+    "structureColor": "#d8c184",
+    "pathLineColor": "#f4e2a6",
+    "groundColor": "#1b4f4b",
+    "foregroundColor": "#1b4f4b",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "layers": [
+    {
+      "id": "sky",
+      "file": "layers/sky.svg",
+      "depth": -100,
+      "parallax": 0.05,
+      "order": 0
+    },
+    {
+      "id": "far",
+      "file": "layers/far.svg",
+      "depth": -20,
+      "parallax": 0.25,
+      "order": 10
+    },
+    {
+      "id": "mid",
+      "file": "layers/mid.svg",
+      "depth": 0,
+      "parallax": 0.7,
+      "order": 20
+    },
+    {
+      "id": "near",
+      "file": "layers/near.svg",
+      "depth": 3,
+      "parallax": 1.05,
+      "order": 30
+    }
+  ]
+}

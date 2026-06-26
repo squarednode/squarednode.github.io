@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+
+<path d="M0 520 C170 470 250 540 420 485 C580 430 700 515 880 455 C1040 405 1150 480 1280 440 L1280 720 L0 720 Z" fill="{{midColor}}"/>
+<rect x="155" y="390" width="170" height="110" rx="18" fill="{{structureColor}}" stroke="{{outlineColor}}" stroke-width="8"/>
+<rect x="955" y="380" width="210" height="125" rx="20" fill="{{structureColor}}" stroke="{{outlineColor}}" stroke-width="8"/>
+<path d="M70 510 C180 470 300 575 440 515 C620 435 770 570 940 500 C1080 440 1175 490 1260 470" fill="none" stroke="{{pathLineColor}}" stroke-width="18" stroke-linecap="round" opacity="0.75"/>
+</svg>
