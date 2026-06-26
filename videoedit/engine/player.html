@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ride Through Episode Maker - V20</title>
+  <title>Ride Through Episode Maker - V21.1</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <div>
-      <h1>Ride Through Episode Maker <span>V20 Foundation Lock + Story Validation</span></h1>
-      <p>Offline SVG rigged episode maker with external asset packs, scale/anchor/motion standards, layered environments, story validation, 2.5D camera, and WebM export.</p>
+      <h1>Ride Through Episode Maker <span>V21.1 Story Loader + Asset Expansion</span></h1>
+      <p>Offline SVG rigged episode maker with external asset packs, selectable story JSON files, story validation, 2.5D camera, and WebM export.</p>
     </div>
     <div class="status" id="status">Loading...</div>
   </header>
@@ -34,11 +34,20 @@
         <button id="stop">Stop</button>
       </div>
 
+      <label for="storySelect">Story JSON File</label>
+      <select id="storySelect"></select>
+
+      <label for="storyPath">Custom Story Path</label>
+      <div class="path-row">
+        <input id="storyPath" type="text" value="../stories/episode_001.json" spellcheck="false" />
+        <button id="loadStoryPath">Load</button>
+      </div>
+
       <label for="shotSelect">Shot</label>
       <select id="shotSelect"></select>
 
       <div class="buttons">
-        <button id="reloadStory">Reload Story</button>
+        <button id="reloadStory">Reload Story From Editor</button>
         <button id="exportShot">Export Current Shot WebM</button>
         <button id="exportAll">Export All Shots</button>
         <button id="copyShotTemplate">Copy Shot Template</button>

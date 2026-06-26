@@ -10,6 +10,8 @@ const stage = document.getElementById('stage');
 const status = document.getElementById('status');
 const debug = document.getElementById('debug');
 const storyText = document.getElementById('storyText');
+const storySelect = document.getElementById('storySelect');
+const storyPath = document.getElementById('storyPath');
 const shotSelect = document.getElementById('shotSelect');
 const assetList = document.getElementById('assetList');
 const assetDetails = document.getElementById('assetDetails');
@@ -22,6 +24,8 @@ const storyValidationReport = document.getElementById('storyValidationReport');
 const renderer = new Renderer(stage);
 const player = new TimelinePlayer(renderer, text => debug.textContent = text);
 let story;
+let storyCatalog = { stories: [] };
+let currentStoryPath = '../stories/episode_001.json';
 let assetPackReport = { loaded: [], errors: [] };
 let selectedAsset = null;
 let validation = null;
@@ -29,18 +33,95 @@ let validation = null;
 async function init() {
   assetPackReport = await loadAssetPacks();
   registerAssetPacks(assetPackReport.loaded);
-  const res = await fetch('../stories/episode_001.json', { cache: 'no-cache' });
-  story = await res.json();
-  storyText.value = JSON.stringify(story, null, 2);
-  populateShots();
+  await loadStoryCatalog();
+  const requestedStory = getRequestedStoryPath();
+  await loadStoryFromPath(requestedStory || storyCatalog.defaultStory || currentStoryPath, { updateSelect: true });
   populateAssets();
   runValidation(false);
   runStoryValidation();
   renderer.buildShot(story.shots[0]);
   const packCount = assetPackReport.loaded.length;
   const errCount = assetPackReport.errors.length;
-  status.textContent = `Ready - V20 foundation lock + story validation engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
+  status.textContent = `Ready - V21.1 story loader + expansion engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
   if (errCount) debug.textContent = JSON.stringify(assetPackReport.errors, null, 2);
+}
+
+async function loadStoryCatalog() {
+  try {
+    const res = await fetch('../stories/story_catalog.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    storyCatalog = await res.json();
+  } catch (err) {
+    storyCatalog = {
+      version: 'fallback',
+      defaultStory: '../stories/episode_001.json',
+      stories: [
+        { id: 'episode_001', label: 'Episode 001', path: '../stories/episode_001.json' },
+        { id: 'episode_expansion_test', label: 'V21 Expansion Pack Test', path: '../stories/episode_expansion_test.json' }
+      ],
+      loadError: String(err)
+    };
+  }
+  populateStoryList();
+}
+
+function populateStoryList() {
+  storySelect.replaceChildren();
+  for (const item of storyCatalog.stories || []) {
+    const option = document.createElement('option');
+    option.value = item.path;
+    option.textContent = item.label || item.id || item.path;
+    option.title = item.description || item.path;
+    storySelect.appendChild(option);
+  }
+  const custom = document.createElement('option');
+  custom.value = '__custom__';
+  custom.textContent = 'Custom path from field';
+  storySelect.appendChild(custom);
+}
+
+function getRequestedStoryPath() {
+  const params = new URLSearchParams(window.location.search);
+  const storyParam = params.get('story');
+  if (!storyParam) return null;
+  const match = (storyCatalog.stories || []).find(item => item.id === storyParam || item.path === storyParam || item.path.endsWith('/' + storyParam) || item.path.endsWith('/' + storyParam + '.json'));
+  if (match) return match.path;
+  if (/^[a-zA-Z0-9_\-./]+\.json$/.test(storyParam)) {
+    return storyParam.includes('/') ? storyParam : `../stories/${storyParam}`;
+  }
+  return null;
+}
+
+async function loadStoryFromPath(path, options = {}) {
+  const normalized = normalizeStoryPath(path);
+  const res = await fetch(normalized, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`Failed to load story: ${normalized} - HTTP ${res.status}`);
+  story = await res.json();
+  currentStoryPath = normalized;
+  storyPath.value = normalized;
+  storyText.value = JSON.stringify(story, null, 2);
+  populateShots();
+  if (options.updateSelect !== false) syncStorySelect(normalized);
+  runStoryValidation();
+  renderer.buildShot(story.shots[0]);
+  status.textContent = `Loaded story: ${getStoryTitle(story)} (${normalized})`;
+}
+
+function normalizeStoryPath(path) {
+  const trimmed = String(path || '').trim();
+  if (!trimmed) return '../stories/episode_001.json';
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (trimmed.startsWith('../') || trimmed.startsWith('./') || trimmed.startsWith('/')) return trimmed;
+  return `../stories/${trimmed}`;
+}
+
+function syncStorySelect(path) {
+  const found = [...storySelect.options].some(option => option.value === path);
+  storySelect.value = found ? path : '__custom__';
+}
+
+function getStoryTitle(storyObj) {
+  return storyObj?.title || storyObj?.id || storyObj?.episodeId || 'Untitled story';
 }
 
 function populateShots() {
@@ -160,6 +241,17 @@ function reloadStory() {
   runStoryValidation();
 }
 
+storySelect.addEventListener('change', async () => {
+  const selected = storySelect.value === '__custom__' ? storyPath.value : storySelect.value;
+  try { await loadStoryFromPath(selected, { updateSelect: false }); syncStorySelect(currentStoryPath); }
+  catch (err) { status.textContent = 'Story load failed'; debug.textContent = String(err); }
+});
+
+document.getElementById('loadStoryPath').addEventListener('click', async () => {
+  try { await loadStoryFromPath(storyPath.value, { updateSelect: true }); }
+  catch (err) { status.textContent = 'Story load failed'; debug.textContent = String(err); }
+});
+
 document.getElementById('playShot').addEventListener('click', () => player.playShot(currentShot()));
 document.getElementById('runValidation').addEventListener('click', () => { runValidation(true); status.textContent = 'Asset validation complete'; });
 document.getElementById('runStoryValidation').addEventListener('click', () => { runStoryValidation(); status.textContent = 'Story validation complete'; });
@@ -175,7 +267,7 @@ document.getElementById('reloadStory').addEventListener('click', () => {
 document.getElementById('copyShotTemplate').addEventListener('click', async () => {
   const template = {
     id: 'shot_new',
-    title: 'New V20 validated shot template',
+    title: 'New V21.1 validated shot template',
     duration: 6,
     environment: { asset: 'park_path_day' },
     camera: { type: '2.5d', position: [0, 0], zoom: 1 },

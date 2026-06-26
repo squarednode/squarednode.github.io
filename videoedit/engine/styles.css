@@ -23,6 +23,25 @@ button, select { background: #2b3240; color: var(--ink); border: 1px solid var(-
 button:hover { border-color: var(--accent); }
 label { display: block; margin: 12px 0 6px; color: var(--muted); }
 select { width: 100%; }
+.path-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+input[type="text"] {
+  background: #10131a;
+  color: #dce8ff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 10px;
+  min-width: 0;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
 textarea { width: 100%; height: 440px; resize: vertical; color: #dce8ff; background: #10131a; border: 1px solid var(--border); border-radius: 10px; padding: 10px; font-family: Consolas, monospace; font-size: 12px; }
 pre { white-space: pre-wrap; background: #10131a; border: 1px solid var(--border); border-radius: 10px; padding: 10px; min-height: 120px; color: #dce8ff; }
 .asset-list {
