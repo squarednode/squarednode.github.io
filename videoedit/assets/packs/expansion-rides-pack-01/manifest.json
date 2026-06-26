@@ -1,0 +1,317 @@
+{
+  "id": "expansion-rides-pack-01",
+  "label": "Expansion Rides Pack 01",
+  "version": "21.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "schemaVersion": "20.0.0",
+  "assets": [
+    {
+      "id": "ride_flat_spinner",
+      "type": "ride",
+      "category": "rides",
+      "subcategory": "spinner",
+      "label": "Flat Spinner Ride",
+      "mode": "external-svg",
+      "path": "ride_flat_spinner/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_basic",
+      "scaleClass": "ride_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        470
+      ],
+      "anchors": {
+        "ground": [
+          400,
+          470
+        ],
+        "center": [
+          400,
+          250
+        ]
+      },
+      "motions": [
+        "idle",
+        "spin",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "main"
+      ],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "rides",
+        "spinner"
+      ],
+      "defaults": {
+        "color": "#f2c94c",
+        "trimColor": "#2f80ed"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            400,
+            250
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "ride_swing_tower",
+      "type": "ride",
+      "category": "rides",
+      "subcategory": "swing",
+      "label": "Swing Tower Ride",
+      "mode": "external-svg",
+      "path": "ride_swing_tower/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_basic",
+      "scaleClass": "ride_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        470
+      ],
+      "anchors": {
+        "ground": [
+          400,
+          470
+        ],
+        "center": [
+          400,
+          250
+        ]
+      },
+      "motions": [
+        "idle",
+        "swing",
+        "spin",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "main"
+      ],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "rides",
+        "swing"
+      ],
+      "defaults": {
+        "color": "#9aa4b5",
+        "trimColor": "#ffcf66"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            400,
+            250
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "ride_water_flume_track",
+      "type": "ride",
+      "category": "rides",
+      "subcategory": "water_track",
+      "label": "Water Flume Track",
+      "mode": "external-svg",
+      "path": "ride_water_flume_track/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_basic",
+      "scaleClass": "ride_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        470
+      ],
+      "anchors": {
+        "ground": [
+          400,
+          470
+        ],
+        "center": [
+          400,
+          250
+        ]
+      },
+      "motions": [
+        "idle",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "rides",
+        "water_track"
+      ],
+      "defaults": {
+        "color": "#8b6f47",
+        "trimColor": "#2d9cdb"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            400,
+            250
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "ride_show_stage",
+      "type": "ride",
+      "category": "rides",
+      "subcategory": "show_system",
+      "label": "Show Stage",
+      "mode": "external-svg",
+      "path": "ride_show_stage/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_basic",
+      "scaleClass": "ride_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        395
+      ],
+      "anchors": {
+        "ground": [
+          400,
+          395
+        ],
+        "center": [
+          400,
+          250
+        ]
+      },
+      "motions": [
+        "idle",
+        "flashLights",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "rides",
+        "show_system"
+      ],
+      "defaults": {
+        "color": "#56504b",
+        "trimColor": "#bb6bd9"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            400,
+            250
+          ],
+          "order": 10
+        }
+      ]
+    },
+    {
+      "id": "ride_queue_arch",
+      "type": "ride",
+      "category": "rides",
+      "subcategory": "queue",
+      "label": "Queue Arch",
+      "mode": "external-svg",
+      "path": "ride_queue_arch/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "scenic_basic",
+      "scaleClass": "ride_large",
+      "artboard": [
+        800,
+        500
+      ],
+      "groundPoint": [
+        400,
+        420
+      ],
+      "anchors": {
+        "ground": [
+          400,
+          420
+        ],
+        "center": [
+          400,
+          250
+        ]
+      },
+      "motions": [
+        "idle",
+        "gesture",
+        "scale"
+      ],
+      "rig": [],
+      "expressions": {},
+      "phonemes": {},
+      "tags": [
+        "rides",
+        "queue"
+      ],
+      "defaults": {
+        "color": "#e9eef7",
+        "trimColor": "#f2994a"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "main",
+          "file": "main.svg",
+          "pivot": [
+            400,
+            250
+          ],
+          "order": 10
+        }
+      ]
+    }
+  ]
+}
