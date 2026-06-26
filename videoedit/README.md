@@ -1,6 +1,6 @@
-# Ride Through Offline Video Creator - V22
+# Ride Through Offline Video Creator - V22.1
 
-V22 restructures the asset library into stable production categories instead of release-phase packs.
+V22.1 patches V22 and keeps the category asset library structure. V22 restructures the asset library into stable production categories instead of release-phase packs.
 
 ## Run locally
 
@@ -16,10 +16,10 @@ http://localhost:8080/engine/player.html
 
 ## GitHub Pages
 
-Replace your `videoedit` folder with this V22 folder content, commit, then open:
+Replace your `videoedit` folder with this V22.1 folder content, commit, then open:
 
 ```text
-https://squarednode.github.io/videoedit/engine/player.html?v=22
+https://squarednode.github.io/videoedit/engine/player.html?v=22.1
 ```
 
 ## Primary change
@@ -86,5 +86,5 @@ stories/story_catalog.json
 Direct-load example:
 
 ```text
-https://squarednode.github.io/videoedit/engine/player.html?v=22&story=episode_expansion_test
+https://squarednode.github.io/videoedit/engine/player.html?v=22.1&story=episode_expansion_test
 ```
