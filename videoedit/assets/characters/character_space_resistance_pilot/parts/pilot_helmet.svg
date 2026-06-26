@@ -1,0 +1,1 @@
+<svg xmlns='http://www.w3.org/2000/svg'><path d='M118 82 C118 30 232 30 232 82 L224 112 C205 94 145 94 126 112 Z' fill='{{hatColor}}' stroke='{{outlineColor}}' stroke-width='5'/><path d='M135 61 L215 61 L205 84 L145 84 Z' fill='#5e7d90' stroke='{{outlineColor}}' stroke-width='4'/><path d='M128 137 L222 137' stroke='{{accentColor}}' stroke-width='10' stroke-linecap='round'/></svg>
