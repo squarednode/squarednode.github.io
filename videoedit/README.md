@@ -1,6 +1,6 @@
-# Ride Through Episode Maker - V20
+# Ride Through Offline Video Creator - V22
 
-V20 is the foundation-lock build before large-scale asset expansion. It adds formal asset categories, scale classes, semantic anchors, motion compatibility tags, thumbnail declarations, layered environment assets, and story validation.
+V22 restructures the asset library into stable production categories instead of release-phase packs.
 
 ## Run locally
 
@@ -16,32 +16,75 @@ http://localhost:8080/engine/player.html
 
 ## GitHub Pages
 
-Upload/replace the `videoedit` folder contents and open:
+Replace your `videoedit` folder with this V22 folder content, commit, then open:
 
 ```text
-https://squarednode.github.io/videoedit/engine/player.html?v=20
+https://squarednode.github.io/videoedit/engine/player.html?v=22
 ```
 
-## Key V20 changes
+## Primary change
 
-- Neutral asset names: color is no longer part of reusable asset ids. Example: `creature_trex` with story-level `color` overrides.
-- Category schema locked: characters, creatures, vehicles, rides, landmarks, environments, props, wardrobe, facial_features, effects, signage, background_layers.
-- Scale classes, artboards, ground points, and semantic anchors added to manifests.
-- Motion compatibility tags added so story commands can be validated against each asset.
-- Expression and phoneme metadata separated.
-- External layered environment pack added: `park_path_day`.
-- Story validation panel added.
-- Coaster track remains track-only; ride vehicles are separate actors.
-
-## Important files
+The asset system now loads from:
 
 ```text
-engine/storyValidator.js
-engine/assetValidator.js
-engine/assetPackLoader.js
-engine/assetFactory.js
-assets/catalog/asset_packs.json
-assets/packs/core-environments/manifest.json
-docs/FOUNDATION_STANDARD_V20.md
-docs/CHANGELOG_V20.md
+assets/catalog/asset_catalog.json
+```
+
+Assets are organized by class:
+
+```text
+assets/characters/
+assets/creatures/
+assets/vehicles/
+assets/rides/
+assets/props/
+assets/landmarks/
+assets/environments/
+assets/wardrobe/
+assets/facial_features/
+assets/effects/
+assets/signage/
+assets/background_layers/
+```
+
+Each asset is self-contained:
+
+```text
+assets/creatures/creature_trex/
+  manifest.json
+  thumbnail.svg
+  parts/
+    body.svg
+    head.svg
+    jaw.svg
+```
+
+Environment assets use `layers/`:
+
+```text
+assets/environments/environment_jungle_path/
+  manifest.json
+  thumbnail.svg
+  layers/
+    sky.svg
+    background.svg
+    ground.svg
+```
+
+## Why this matters
+
+New assets can now be added by placing a folder under the correct category and adding one catalog entry. The engine no longer needs to care whether an asset was originally "core" or "expansion".
+
+## Included stories
+
+```text
+stories/episode_001.json
+stories/episode_expansion_test.json
+stories/story_catalog.json
+```
+
+Direct-load example:
+
+```text
+https://squarednode.github.io/videoedit/engine/player.html?v=22&story=episode_expansion_test
 ```
