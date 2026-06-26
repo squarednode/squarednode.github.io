@@ -1,5 +1,5 @@
 {
-  "version": "20.0.0",
+  "version": "21.0.0",
   "packs": [
     {
       "id": "core-characters",
@@ -24,6 +24,34 @@
     {
       "id": "core-environments",
       "manifest": "../packs/core-environments/manifest.json"
+    },
+    {
+      "id": "expansion-characters-pack-01",
+      "manifest": "../packs/expansion-characters-pack-01/manifest.json"
+    },
+    {
+      "id": "expansion-creatures-pack-01",
+      "manifest": "../packs/expansion-creatures-pack-01/manifest.json"
+    },
+    {
+      "id": "expansion-vehicles-pack-01",
+      "manifest": "../packs/expansion-vehicles-pack-01/manifest.json"
+    },
+    {
+      "id": "expansion-rides-pack-01",
+      "manifest": "../packs/expansion-rides-pack-01/manifest.json"
+    },
+    {
+      "id": "expansion-props-pack-01",
+      "manifest": "../packs/expansion-props-pack-01/manifest.json"
+    },
+    {
+      "id": "expansion-landmarks-pack-01",
+      "manifest": "../packs/expansion-landmarks-pack-01/manifest.json"
+    },
+    {
+      "id": "expansion-environments-pack-01",
+      "manifest": "../packs/expansion-environments-pack-01/manifest.json"
     }
   ]
 }
