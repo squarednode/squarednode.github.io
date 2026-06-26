@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "landmark_haunted_manor",
+  "displayName": "Haunted Manor",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "haunted",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "landmark_static",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    438
+  ],
+  "colorSlots": {
+    "bodyColor": "#5f6078",
+    "secondaryColor": "#8b8aa0",
+    "accentColor": "#b8f7ff",
+    "glassColor": "#efeaff",
+    "lightColor": "#d7d0ff",
+    "earthColor": "#5f8f4e",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "defaults": {
+    "bodyColor": "#5f6078",
+    "secondaryColor": "#8b8aa0",
+    "accentColor": "#b8f7ff",
+    "glassColor": "#efeaff",
+    "lightColor": "#d7d0ff",
+    "earthColor": "#5f8f4e",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      400,
+      438
+    ],
+    "center": [
+      400,
+      250
+    ],
+    "top": [
+      400,
+      80
+    ],
+    "entrance": [
+      400,
+      390
+    ],
+    "sign": [
+      400,
+      205
+    ]
+  },
+  "motions": [
+    "idle",
+    "bob",
+    "shake",
+    "enter",
+    "exit",
+    "scale"
+  ],
+  "tags": [
+    "landmark",
+    "haunted",
+    "haunted",
+    "mansion",
+    "ghost",
+    "spooky",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/landmarks/landmark_haunted_manor",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ]
+}

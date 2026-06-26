@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "landmark_mummy_temple",
+  "displayName": "Mummy Temple",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "ancient_mummy",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "landmark_static",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    438
+  ],
+  "colorSlots": {
+    "bodyColor": "#b07b45",
+    "secondaryColor": "#d2aa67",
+    "accentColor": "#49a6c9",
+    "glassColor": "#d9f4ff",
+    "lightColor": "#ffd95c",
+    "earthColor": "#6d5437",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "defaults": {
+    "bodyColor": "#b07b45",
+    "secondaryColor": "#d2aa67",
+    "accentColor": "#49a6c9",
+    "glassColor": "#d9f4ff",
+    "lightColor": "#ffd95c",
+    "earthColor": "#6d5437",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      400,
+      438
+    ],
+    "center": [
+      400,
+      250
+    ],
+    "top": [
+      400,
+      80
+    ],
+    "entrance": [
+      400,
+      390
+    ],
+    "sign": [
+      400,
+      205
+    ]
+  },
+  "motions": [
+    "idle",
+    "bob",
+    "shake",
+    "enter",
+    "exit",
+    "scale"
+  ],
+  "tags": [
+    "landmark",
+    "ancient_mummy",
+    "mummy",
+    "temple",
+    "ancient",
+    "tomb",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/landmarks/landmark_mummy_temple",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ]
+}

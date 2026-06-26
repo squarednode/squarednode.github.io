@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "landmark_gamma_lab",
+  "displayName": "Gamma Lab",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "science_lab",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "landmark_static",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    438
+  ],
+  "colorSlots": {
+    "bodyColor": "#8e99a8",
+    "secondaryColor": "#c2cad6",
+    "accentColor": "#4aa3df",
+    "glassColor": "#d9f4ff",
+    "lightColor": "#ffd95c",
+    "earthColor": "#5f8f4e",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "defaults": {
+    "bodyColor": "#8e99a8",
+    "secondaryColor": "#c2cad6",
+    "accentColor": "#4aa3df",
+    "glassColor": "#d9f4ff",
+    "lightColor": "#ffd95c",
+    "earthColor": "#5f8f4e",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      400,
+      438
+    ],
+    "center": [
+      400,
+      250
+    ],
+    "top": [
+      400,
+      80
+    ],
+    "entrance": [
+      400,
+      390
+    ],
+    "sign": [
+      400,
+      205
+    ]
+  },
+  "motions": [
+    "idle",
+    "bob",
+    "shake",
+    "enter",
+    "exit",
+    "scale"
+  ],
+  "tags": [
+    "landmark",
+    "science_lab",
+    "lab",
+    "science",
+    "hero",
+    "facility",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/landmarks/landmark_gamma_lab",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ]
+}

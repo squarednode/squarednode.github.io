@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "landmark_neon_grid_arch",
+  "displayName": "Neon Grid Arch",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "neon_sci_fi",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "landmark_static",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    438
+  ],
+  "colorSlots": {
+    "bodyColor": "#2d334f",
+    "secondaryColor": "#55608a",
+    "accentColor": "#39f5ff",
+    "glassColor": "#b8f7ff",
+    "lightColor": "#62fff0",
+    "earthColor": "#5f8f4e",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "defaults": {
+    "bodyColor": "#2d334f",
+    "secondaryColor": "#55608a",
+    "accentColor": "#39f5ff",
+    "glassColor": "#b8f7ff",
+    "lightColor": "#62fff0",
+    "earthColor": "#5f8f4e",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      400,
+      438
+    ],
+    "center": [
+      400,
+      250
+    ],
+    "top": [
+      400,
+      80
+    ],
+    "entrance": [
+      400,
+      390
+    ],
+    "sign": [
+      400,
+      205
+    ]
+  },
+  "motions": [
+    "idle",
+    "bob",
+    "shake",
+    "enter",
+    "exit",
+    "scale"
+  ],
+  "tags": [
+    "landmark",
+    "neon_sci_fi",
+    "neon",
+    "grid",
+    "sci-fi",
+    "portal",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/landmarks/landmark_neon_grid_arch",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ]
+}

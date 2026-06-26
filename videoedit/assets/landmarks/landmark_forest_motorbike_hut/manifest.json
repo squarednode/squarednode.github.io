@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "landmark_forest_motorbike_hut",
+  "displayName": "Forest Motorbike Hut",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "forest",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "landmark_static",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    438
+  ],
+  "colorSlots": {
+    "bodyColor": "#6f8a56",
+    "secondaryColor": "#a0b36a",
+    "accentColor": "#78ff9a",
+    "glassColor": "#d9f4ff",
+    "lightColor": "#ffd95c",
+    "earthColor": "#436b3a",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "defaults": {
+    "bodyColor": "#6f8a56",
+    "secondaryColor": "#a0b36a",
+    "accentColor": "#78ff9a",
+    "glassColor": "#d9f4ff",
+    "lightColor": "#ffd95c",
+    "earthColor": "#436b3a",
+    "skyColor": "#cfeeff",
+    "outlineColor": "#111111"
+  },
+  "anchors": {
+    "ground": [
+      400,
+      438
+    ],
+    "center": [
+      400,
+      250
+    ],
+    "top": [
+      400,
+      80
+    ],
+    "entrance": [
+      400,
+      390
+    ],
+    "sign": [
+      400,
+      205
+    ]
+  },
+  "motions": [
+    "idle",
+    "bob",
+    "shake",
+    "enter",
+    "exit",
+    "scale"
+  ],
+  "tags": [
+    "landmark",
+    "forest",
+    "forest",
+    "hut",
+    "motorbike",
+    "keeper",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/landmarks/landmark_forest_motorbike_hut",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ]
+}
