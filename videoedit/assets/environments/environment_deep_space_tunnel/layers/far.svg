@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+
+<path d="M0 420 C150 350 260 395 380 330 C520 260 640 380 800 315 C960 250 1070 360 1280 300 L1280 720 L0 720 Z" fill="{{farColor}}" opacity="0.98"/>
+<path d="M0 460 C220 410 325 480 535 405 C685 350 835 455 1020 385 C1135 340 1210 360 1280 340 L1280 720 L0 720 Z" fill="{{farAccentColor}}" opacity="0.82"/>
+<g stroke="{{outlineColor}}" stroke-width="6" stroke-linecap="round" opacity="0.28"><path d="M125 392 L125 292"/><path d="M245 360 L245 260"/><path d="M1045 354 L1045 250"/><path d="M1130 335 L1130 235"/></g>
+</svg>

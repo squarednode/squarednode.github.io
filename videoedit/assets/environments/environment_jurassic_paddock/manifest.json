@@ -1,0 +1,100 @@
+{
+  "id": "environment_jurassic_paddock",
+  "type": "environment",
+  "category": "environments",
+  "subcategory": "jungle dinosaur paddock",
+  "label": "Jurassic Paddock Environment",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "environment_wide",
+  "artboard": [
+    1280,
+    720
+  ],
+  "groundPoint": [
+    640,
+    620
+  ],
+  "anchors": {
+    "ground": [
+      640,
+      620
+    ],
+    "center": [
+      640,
+      360
+    ],
+    "leftEntry": [
+      120,
+      620
+    ],
+    "rightEntry": [
+      1160,
+      620
+    ]
+  },
+  "motions": [
+    "idle",
+    "pan",
+    "parallax"
+  ],
+  "rig": [],
+  "rigType": "layered_environment",
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "environment",
+    "jungle",
+    "dinosaur",
+    "paddock"
+  ],
+  "description": "lush jungle paddock with fencing and distant coaster hills",
+  "defaults": {
+    "skyColor": "#bfe9ff",
+    "sunColor": "#fff2a8",
+    "cloudColor": "#ffffff",
+    "starColor": "#ffffff",
+    "farColor": "#6caf5d",
+    "farAccentColor": "#6caf5d",
+    "midColor": "#3f8f48",
+    "structureColor": "#d8c184",
+    "pathLineColor": "#f4e2a6",
+    "groundColor": "#2f6d38",
+    "foregroundColor": "#2f6d38",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "layers": [
+    {
+      "id": "sky",
+      "file": "layers/sky.svg",
+      "depth": -100,
+      "parallax": 0.05,
+      "order": 0
+    },
+    {
+      "id": "far",
+      "file": "layers/far.svg",
+      "depth": -20,
+      "parallax": 0.25,
+      "order": 10
+    },
+    {
+      "id": "mid",
+      "file": "layers/mid.svg",
+      "depth": 0,
+      "parallax": 0.7,
+      "order": 20
+    },
+    {
+      "id": "near",
+      "file": "layers/near.svg",
+      "depth": 3,
+      "parallax": 1.05,
+      "order": 30
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+
+<rect width="1280" height="720" fill="{{skyColor}}"/>
+<circle cx="1040" cy="120" r="52" fill="{{sunColor}}" opacity="0.55"/>
+<path d="M0 155 C180 95 285 190 455 130 C600 80 720 170 850 120 C1010 70 1120 150 1280 115 L1280 0 L0 0 Z" fill="{{cloudColor}}" opacity="0.45"/>
+<g fill="{{starColor}}" opacity="0.35"><circle cx="120" cy="90" r="3"/><circle cx="245" cy="70" r="2"/><circle cx="710" cy="82" r="2"/><circle cx="900" cy="60" r="3"/><circle cx="1160" cy="170" r="2"/></g>
+</svg>

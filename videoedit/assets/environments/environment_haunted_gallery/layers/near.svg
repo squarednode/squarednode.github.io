@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+
+<path d="M0 590 C190 555 315 630 480 585 C620 545 770 620 930 570 C1080 525 1190 570 1280 550 L1280 720 L0 720 Z" fill="{{groundColor}}"/>
+<path d="M0 640 C220 610 400 675 600 625 C800 575 1010 665 1280 605 L1280 720 L0 720 Z" fill="{{foregroundColor}}" opacity="0.98"/>
+<g stroke="{{outlineColor}}" stroke-width="7" stroke-linecap="round" opacity="0.4"><path d="M70 602 L145 575"/><path d="M1060 592 L1130 565"/><path d="M1170 626 L1245 596"/></g>
+</svg>
