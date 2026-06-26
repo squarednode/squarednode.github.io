@@ -1,0 +1,458 @@
+{
+  "schemaVersion": "22.0.0",
+  "version": "22.0.0",
+  "assetRoot": "../assets",
+  "preferredStructure": "category-folders",
+  "categories": {
+    "characters": "characters",
+    "creatures": "creatures",
+    "vehicles": "vehicles",
+    "rides": "rides",
+    "props": "props",
+    "landmarks": "landmarks",
+    "environments": "environments",
+    "wardrobe": "wardrobe",
+    "facial_features": "facial_features",
+    "effects": "effects",
+    "signage": "signage",
+    "background_layers": "background_layers"
+  },
+  "assets": [
+    {
+      "id": "human_child_basic",
+      "category": "characters",
+      "subcategory": "child",
+      "type": "character",
+      "label": "Child Guest",
+      "path": "../characters/human_child_basic/manifest.json"
+    },
+    {
+      "id": "human_guest_basic",
+      "category": "characters",
+      "subcategory": "guest",
+      "type": "character",
+      "label": "Rigged Park Guest",
+      "path": "../characters/human_guest_basic/manifest.json"
+    },
+    {
+      "id": "human_mechanic_basic",
+      "category": "characters",
+      "subcategory": "mechanic",
+      "type": "character",
+      "label": "Mechanic",
+      "path": "../characters/human_mechanic_basic/manifest.json"
+    },
+    {
+      "id": "human_performer_basic",
+      "category": "characters",
+      "subcategory": "performer",
+      "type": "character",
+      "label": "Performer",
+      "path": "../characters/human_performer_basic/manifest.json"
+    },
+    {
+      "id": "human_rider_basic",
+      "category": "characters",
+      "subcategory": "rider",
+      "type": "character",
+      "label": "Ride Passenger",
+      "path": "../characters/human_rider_basic/manifest.json"
+    },
+    {
+      "id": "human_staff_basic",
+      "category": "characters",
+      "subcategory": "staff",
+      "type": "character",
+      "label": "Park Staff",
+      "path": "../characters/human_staff_basic/manifest.json"
+    },
+    {
+      "id": "creature_bird",
+      "category": "creatures",
+      "subcategory": "bird",
+      "type": "creature",
+      "label": "Large Bird Creature",
+      "path": "../creatures/creature_bird/manifest.json"
+    },
+    {
+      "id": "creature_dragon",
+      "category": "creatures",
+      "subcategory": "dragon",
+      "type": "creature",
+      "label": "Dragon Creature",
+      "path": "../creatures/creature_dragon/manifest.json"
+    },
+    {
+      "id": "creature_raptor",
+      "category": "creatures",
+      "subcategory": "dinosaur",
+      "type": "creature",
+      "label": "Raptor Creature",
+      "path": "../creatures/creature_raptor/manifest.json"
+    },
+    {
+      "id": "creature_robot",
+      "category": "creatures",
+      "subcategory": "robot",
+      "type": "creature",
+      "label": "Robot Creature",
+      "path": "../creatures/creature_robot/manifest.json"
+    },
+    {
+      "id": "creature_sea_serpent",
+      "category": "creatures",
+      "subcategory": "serpent",
+      "type": "creature",
+      "label": "Sea Serpent Creature",
+      "path": "../creatures/creature_sea_serpent/manifest.json"
+    },
+    {
+      "id": "creature_trex",
+      "category": "creatures",
+      "subcategory": "dinosaur",
+      "type": "creature",
+      "label": "Rigged T-Rex Creature",
+      "path": "../creatures/creature_trex/manifest.json"
+    },
+    {
+      "id": "environment_city_night",
+      "category": "environments",
+      "subcategory": "city",
+      "type": "environment",
+      "label": "City Night Environment",
+      "path": "../environments/environment_city_night/manifest.json"
+    },
+    {
+      "id": "environment_desert_canyon",
+      "category": "environments",
+      "subcategory": "desert",
+      "type": "environment",
+      "label": "Desert Canyon Environment",
+      "path": "../environments/environment_desert_canyon/manifest.json"
+    },
+    {
+      "id": "environment_jungle_path",
+      "category": "environments",
+      "subcategory": "jungle",
+      "type": "environment",
+      "label": "Jungle Path Environment",
+      "path": "../environments/environment_jungle_path/manifest.json"
+    },
+    {
+      "id": "environment_space_port",
+      "category": "environments",
+      "subcategory": "space",
+      "type": "environment",
+      "label": "Space Port Environment",
+      "path": "../environments/environment_space_port/manifest.json"
+    },
+    {
+      "id": "environment_waterfront",
+      "category": "environments",
+      "subcategory": "waterfront",
+      "type": "environment",
+      "label": "Waterfront Environment",
+      "path": "../environments/environment_waterfront/manifest.json"
+    },
+    {
+      "id": "park_path_day",
+      "category": "environments",
+      "subcategory": "theme_park_path",
+      "type": "environment",
+      "label": "Theme Park Path Day",
+      "path": "../environments/park_path_day/manifest.json"
+    },
+    {
+      "id": "landmark_castle_gate",
+      "category": "landmarks",
+      "subcategory": "entry_gate",
+      "type": "landmark",
+      "label": "Castle Entry Gate",
+      "path": "../landmarks/landmark_castle_gate/manifest.json"
+    },
+    {
+      "id": "landmark_city_facade",
+      "category": "landmarks",
+      "subcategory": "city",
+      "type": "landmark",
+      "label": "City Facade",
+      "path": "../landmarks/landmark_city_facade/manifest.json"
+    },
+    {
+      "id": "landmark_iconic_globe",
+      "category": "landmarks",
+      "subcategory": "studio_landmark",
+      "type": "landmark",
+      "label": "Iconic Studio Globe",
+      "path": "../landmarks/landmark_iconic_globe/manifest.json"
+    },
+    {
+      "id": "landmark_lighthouse",
+      "category": "landmarks",
+      "subcategory": "tower",
+      "type": "landmark",
+      "label": "Lighthouse",
+      "path": "../landmarks/landmark_lighthouse/manifest.json"
+    },
+    {
+      "id": "landmark_mountain_peak",
+      "category": "landmarks",
+      "subcategory": "mountain",
+      "type": "landmark",
+      "label": "Mountain Peak",
+      "path": "../landmarks/landmark_mountain_peak/manifest.json"
+    },
+    {
+      "id": "landmark_space_portal",
+      "category": "landmarks",
+      "subcategory": "portal",
+      "type": "landmark",
+      "label": "Space Portal",
+      "path": "../landmarks/landmark_space_portal/manifest.json"
+    },
+    {
+      "id": "landmark_temple_gate",
+      "category": "landmarks",
+      "subcategory": "gate",
+      "type": "landmark",
+      "label": "Temple Gate",
+      "path": "../landmarks/landmark_temple_gate/manifest.json"
+    },
+    {
+      "id": "prop_backpack",
+      "category": "props",
+      "subcategory": "bag",
+      "type": "prop",
+      "label": "Backpack",
+      "path": "../props/prop_backpack/manifest.json"
+    },
+    {
+      "id": "prop_balloon",
+      "category": "props",
+      "subcategory": "handheld",
+      "type": "prop",
+      "label": "Theme Park Balloon",
+      "path": "../props/prop_balloon/manifest.json"
+    },
+    {
+      "id": "prop_camera",
+      "category": "props",
+      "subcategory": "device",
+      "type": "prop",
+      "label": "Camera",
+      "path": "../props/prop_camera/manifest.json"
+    },
+    {
+      "id": "prop_crate",
+      "category": "props",
+      "subcategory": "box",
+      "type": "prop",
+      "label": "Supply Crate",
+      "path": "../props/prop_crate/manifest.json"
+    },
+    {
+      "id": "prop_flashlight",
+      "category": "props",
+      "subcategory": "tool",
+      "type": "prop",
+      "label": "Flashlight",
+      "path": "../props/prop_flashlight/manifest.json"
+    },
+    {
+      "id": "prop_food_tray",
+      "category": "props",
+      "subcategory": "food",
+      "type": "prop",
+      "label": "Food Tray",
+      "path": "../props/prop_food_tray/manifest.json"
+    },
+    {
+      "id": "prop_lantern",
+      "category": "props",
+      "subcategory": "light",
+      "type": "prop",
+      "label": "Lantern",
+      "path": "../props/prop_lantern/manifest.json"
+    },
+    {
+      "id": "prop_map",
+      "category": "props",
+      "subcategory": "paper",
+      "type": "prop",
+      "label": "Park Map",
+      "path": "../props/prop_map/manifest.json"
+    },
+    {
+      "id": "prop_popcorn_bucket",
+      "category": "props",
+      "subcategory": "food",
+      "type": "prop",
+      "label": "Popcorn Bucket",
+      "path": "../props/prop_popcorn_bucket/manifest.json"
+    },
+    {
+      "id": "prop_rope_barrier",
+      "category": "props",
+      "subcategory": "queue",
+      "type": "prop",
+      "label": "Rope Barrier",
+      "path": "../props/prop_rope_barrier/manifest.json"
+    },
+    {
+      "id": "prop_sign_arrow",
+      "category": "props",
+      "subcategory": "signage",
+      "type": "prop",
+      "label": "Arrow Sign Prop",
+      "path": "../props/prop_sign_arrow/manifest.json"
+    },
+    {
+      "id": "prop_speech_bubble",
+      "category": "props",
+      "subcategory": "dialogue",
+      "type": "prop",
+      "label": "Speech Bubble",
+      "path": "../props/prop_speech_bubble/manifest.json"
+    },
+    {
+      "id": "prop_star_marker",
+      "category": "props",
+      "subcategory": "marker",
+      "type": "prop",
+      "label": "Star Marker",
+      "path": "../props/prop_star_marker/manifest.json"
+    },
+    {
+      "id": "prop_ticket",
+      "category": "props",
+      "subcategory": "ticketing",
+      "type": "prop",
+      "label": "Admission Ticket",
+      "path": "../props/prop_ticket/manifest.json"
+    },
+    {
+      "id": "ride_coaster_track",
+      "category": "rides",
+      "subcategory": "coaster_track",
+      "type": "ride",
+      "label": "Coaster Track",
+      "path": "../rides/ride_coaster_track/manifest.json"
+    },
+    {
+      "id": "ride_drop_tower_icon",
+      "category": "rides",
+      "subcategory": "thrill_ride",
+      "type": "ride",
+      "label": "Drop Tower Icon",
+      "path": "../rides/ride_drop_tower_icon/manifest.json"
+    },
+    {
+      "id": "ride_ferris_wheel_icon",
+      "category": "rides",
+      "subcategory": "observation_ride",
+      "type": "ride",
+      "label": "Ferris Wheel Icon",
+      "path": "../rides/ride_ferris_wheel_icon/manifest.json"
+    },
+    {
+      "id": "ride_flat_spinner",
+      "category": "rides",
+      "subcategory": "spinner",
+      "type": "ride",
+      "label": "Flat Spinner Ride",
+      "path": "../rides/ride_flat_spinner/manifest.json"
+    },
+    {
+      "id": "ride_queue_arch",
+      "category": "rides",
+      "subcategory": "queue",
+      "type": "ride",
+      "label": "Queue Arch",
+      "path": "../rides/ride_queue_arch/manifest.json"
+    },
+    {
+      "id": "ride_show_stage",
+      "category": "rides",
+      "subcategory": "show_system",
+      "type": "ride",
+      "label": "Show Stage",
+      "path": "../rides/ride_show_stage/manifest.json"
+    },
+    {
+      "id": "ride_swing_tower",
+      "category": "rides",
+      "subcategory": "swing",
+      "type": "ride",
+      "label": "Swing Tower Ride",
+      "path": "../rides/ride_swing_tower/manifest.json"
+    },
+    {
+      "id": "ride_water_flume_track",
+      "category": "rides",
+      "subcategory": "water_track",
+      "type": "ride",
+      "label": "Water Flume Track",
+      "path": "../rides/ride_water_flume_track/manifest.json"
+    },
+    {
+      "id": "vehicle_boat",
+      "category": "vehicles",
+      "subcategory": "water_vehicle",
+      "type": "vehicle",
+      "label": "Ride Boat",
+      "path": "../vehicles/vehicle_boat/manifest.json"
+    },
+    {
+      "id": "vehicle_cart_basic",
+      "category": "vehicles",
+      "subcategory": "ride_vehicle",
+      "type": "vehicle",
+      "label": "Rigged Ride Cart",
+      "path": "../vehicles/vehicle_cart_basic/manifest.json"
+    },
+    {
+      "id": "vehicle_coaster_train",
+      "category": "vehicles",
+      "subcategory": "ride_vehicle",
+      "type": "vehicle",
+      "label": "Coaster Train",
+      "path": "../vehicles/vehicle_coaster_train/manifest.json"
+    },
+    {
+      "id": "vehicle_jeep",
+      "category": "vehicles",
+      "subcategory": "road_vehicle",
+      "type": "vehicle",
+      "label": "Adventure Jeep",
+      "path": "../vehicles/vehicle_jeep/manifest.json"
+    },
+    {
+      "id": "vehicle_omni_mover",
+      "category": "vehicles",
+      "subcategory": "dark_ride_vehicle",
+      "type": "vehicle",
+      "label": "Omni Mover Ride Vehicle",
+      "path": "../vehicles/vehicle_omni_mover/manifest.json"
+    },
+    {
+      "id": "vehicle_sky_bucket",
+      "category": "vehicles",
+      "subcategory": "aerial_vehicle",
+      "type": "vehicle",
+      "label": "Sky Bucket",
+      "path": "../vehicles/vehicle_sky_bucket/manifest.json"
+    },
+    {
+      "id": "vehicle_tram",
+      "category": "vehicles",
+      "subcategory": "transport",
+      "type": "vehicle",
+      "label": "Park Tram",
+      "path": "../vehicles/vehicle_tram/manifest.json"
+    }
+  ],
+  "legacyFallback": {
+    "enabled": true,
+    "catalog": "asset_packs_legacy.json"
+  }
+}
