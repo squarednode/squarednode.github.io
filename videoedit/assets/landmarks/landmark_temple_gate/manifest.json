@@ -1,0 +1,65 @@
+{
+  "id": "landmark_temple_gate",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "gate",
+  "label": "Temple Gate",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    450
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      450
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "landmarks",
+    "gate"
+  ],
+  "defaults": {
+    "color": "#8b6f47",
+    "trimColor": "#d6c197"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/landmarks/landmark_temple_gate",
+  "librarySource": "category-catalog",
+  "packId": null
+}

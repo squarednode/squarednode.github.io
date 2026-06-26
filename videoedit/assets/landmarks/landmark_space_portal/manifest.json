@@ -1,0 +1,65 @@
+{
+  "id": "landmark_space_portal",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "portal",
+  "label": "Space Portal",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    450
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      450
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "landmarks",
+    "portal"
+  ],
+  "defaults": {
+    "color": "#56504b",
+    "trimColor": "#bb6bd9"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/landmarks/landmark_space_portal",
+  "librarySource": "category-catalog",
+  "packId": null
+}

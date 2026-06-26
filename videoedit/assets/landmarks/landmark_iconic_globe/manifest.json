@@ -1,0 +1,75 @@
+{
+  "id": "landmark_iconic_globe",
+  "type": "landmark",
+  "label": "Iconic Studio Globe",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "globe"
+  ],
+  "tags": [
+    "landmark",
+    "globe",
+    "studio",
+    "external"
+  ],
+  "defaults": {
+    "color": "#5fb7ff",
+    "accentColor": "#f2cc5c"
+  },
+  "parts": [
+    {
+      "name": "base",
+      "file": "parts/base.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 10
+    },
+    {
+      "name": "globe",
+      "file": "parts/globe.svg",
+      "pivot": [
+        250,
+        160
+      ],
+      "order": 20
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "landmarks",
+  "subcategory": "studio_landmark",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "landmark_static",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      250,
+      360
+    ],
+    "center": [
+      250,
+      160
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "flashLights",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/landmarks/landmark_iconic_globe",
+  "librarySource": "category-catalog",
+  "packId": null
+}

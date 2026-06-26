@@ -1,0 +1,65 @@
+{
+  "id": "landmark_mountain_peak",
+  "type": "landmark",
+  "category": "landmarks",
+  "subcategory": "mountain",
+  "label": "Mountain Peak",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "landmark_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    450
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      450
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "landmarks",
+    "mountain"
+  ],
+  "defaults": {
+    "color": "#8b8f9a",
+    "trimColor": "#f4f4f4"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/landmarks/landmark_mountain_peak",
+  "librarySource": "category-catalog",
+  "packId": null
+}
