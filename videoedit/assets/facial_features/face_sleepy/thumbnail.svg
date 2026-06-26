@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400"><rect width="300" height="400" fill="#f7f8fb"/><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <g id="face" opacity="{{opacity}}">
+    <ellipse cx="150" cy="145" rx="92" ry="105" fill="{{skinColor}}" stroke="{{outlineColor}}" stroke-width="5"/>
+    <g id="brows" fill="none" stroke="{{outlineColor}}" stroke-width="6" stroke-linecap="round"><path d="M98 104 Q116 98 134 104"/><path d="M166 104 Q184 98 202 104"/></g>
+    <g id="eyes" fill="none" stroke="{{outlineColor}}" stroke-width="5" stroke-linecap="round"><path d="M98 128 Q116 138 134 128"/><path d="M166 128 Q184 138 202 128"/></g>
+    <path id="mouth" d="M125 184 Q150 188 175 184" fill="none" stroke="{{outlineColor}}" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg></svg>

@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "22.0.0",
+  "id": "eyes_looking_left",
+  "displayName": "Looking Left Eyes",
+  "type": "facial_feature",
+  "category": "facial_features",
+  "subcategory": "eyes",
+  "description": "Eyes looking left",
+  "style": "simple_theme_park_svg_v4",
+  "mode": "external-svg",
+  "source": "external-svg",
+  "path": "./",
+  "rigType": "facial_feature_basic",
+  "scaleClass": "facial_feature_standard",
+  "artboard": [
+    300,
+    400
+  ],
+  "groundPoint": [
+    150,
+    240
+  ],
+  "colorSlots": {
+    "skinColor": "#d9a066",
+    "mouthColor": "#5a1f2b",
+    "pupilColor": "#111111",
+    "outlineColor": "#111111",
+    "opacity": "1"
+  },
+  "defaults": {
+    "skinColor": "#d9a066",
+    "mouthColor": "#5a1f2b",
+    "pupilColor": "#111111",
+    "outlineColor": "#111111",
+    "opacity": "1"
+  },
+  "anchors": {
+    "center": [
+      150,
+      150
+    ],
+    "eyes": [
+      150,
+      125
+    ],
+    "brows": [
+      150,
+      102
+    ],
+    "mouth": [
+      150,
+      185
+    ],
+    "attachToFace": [
+      150,
+      145
+    ]
+  },
+  "motions": [
+    "idle",
+    "blink",
+    "talk",
+    "bob",
+    "scale",
+    "enter",
+    "exit"
+  ],
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 1.0
+  },
+  "tags": [
+    "facial_feature",
+    "eyes",
+    "eyes",
+    "expression",
+    "external"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/facial_features/eyes_looking_left",
+  "librarySource": "category-catalog",
+  "packId": null,
+  "rig": [
+    "body"
+  ],
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        150,
+        150
+      ],
+      "order": 10
+    }
+  ]
+}
