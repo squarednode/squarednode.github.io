@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><g stroke="{{outlineColor}}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M70 168 Q80 92 150 88 Q220 92 230 168 Z" fill="{{primaryColor}}"/><path d="M55 172 H245"/><path d="M150 92 V166 M98 126 H202" stroke="{{accentColor}}" fill="none"/></g></svg>

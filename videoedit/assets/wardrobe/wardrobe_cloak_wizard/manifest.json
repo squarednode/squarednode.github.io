@@ -1,0 +1,83 @@
+{
+  "id": "wardrobe_cloak_wizard",
+  "type": "wardrobe",
+  "category": "wardrobe",
+  "subcategory": "bodywear",
+  "label": "Wizard Cloak",
+  "displayName": "Wizard Cloak",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "wardrobe_standard",
+  "artboard": [
+    300,
+    300
+  ],
+  "groundPoint": [
+    150,
+    250
+  ],
+  "anchors": {
+    "attach": [
+      150,
+      150
+    ],
+    "center": [
+      150,
+      150
+    ],
+    "headTop": [
+      150,
+      80
+    ],
+    "chest": [
+      150,
+      150
+    ],
+    "waist": [
+      150,
+      165
+    ]
+  },
+  "motions": [
+    "idle",
+    "attach",
+    "bob",
+    "sway"
+  ],
+  "rigType": "attachment_wardrobe",
+  "rig": [
+    {
+      "name": "item",
+      "file": "parts/item.svg",
+      "order": 10,
+      "pivot": [
+        150,
+        150
+      ]
+    }
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "wardrobe",
+    "bodywear",
+    "cloak"
+  ],
+  "description": "Long fantasy cloak / robe overlay.",
+  "defaults": {
+    "primaryColor": "#4f6fd8",
+    "accentColor": "#f4d35e",
+    "outlineColor": "#111111",
+    "lensColor": "#bfe9ff"
+  },
+  "colorSlots": {
+    "primaryColor": "#4f6fd8",
+    "accentColor": "#f4d35e",
+    "outlineColor": "#111111",
+    "lensColor": "#bfe9ff"
+  },
+  "thumbnail": "thumbnail.svg"
+}
