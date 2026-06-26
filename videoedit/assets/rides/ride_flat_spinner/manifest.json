@@ -1,0 +1,66 @@
+{
+  "id": "ride_flat_spinner",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "spinner",
+  "label": "Flat Spinner Ride",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "ride_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    470
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      470
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "spin",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "main"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "spinner"
+  ],
+  "defaults": {
+    "color": "#f2c94c",
+    "trimColor": "#2f80ed"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_flat_spinner",
+  "librarySource": "category-catalog",
+  "packId": null
+}

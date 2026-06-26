@@ -1,0 +1,79 @@
+{
+  "id": "ride_drop_tower_icon",
+  "type": "ride",
+  "label": "Drop Tower Icon",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "carriage"
+  ],
+  "tags": [
+    "ride",
+    "tower",
+    "thrill",
+    "external"
+  ],
+  "defaults": {
+    "towerColor": "#596171",
+    "carColor": "#e0473f"
+  },
+  "parts": [
+    {
+      "name": "tower",
+      "file": "parts/tower.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 10
+    },
+    {
+      "name": "carriage",
+      "file": "parts/carriage.svg",
+      "pivot": [
+        265,
+        285
+      ],
+      "order": 20
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "rides",
+  "subcategory": "thrill_ride",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_ride_static",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      265,
+      500
+    ],
+    "carriage": [
+      265,
+      285
+    ]
+  },
+  "motions": [
+    "idle",
+    "spin",
+    "swing",
+    "drop",
+    "openGate",
+    "flashLights",
+    "gesture",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/rides/ride_drop_tower_icon",
+  "librarySource": "category-catalog",
+  "packId": null
+}

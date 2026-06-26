@@ -1,0 +1,64 @@
+{
+  "id": "ride_show_stage",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "show_system",
+  "label": "Show Stage",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "ride_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    395
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      395
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "flashLights",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "show_system"
+  ],
+  "defaults": {
+    "color": "#56504b",
+    "trimColor": "#bb6bd9"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_show_stage",
+  "librarySource": "category-catalog",
+  "packId": null
+}

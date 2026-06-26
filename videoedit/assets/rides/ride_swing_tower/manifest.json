@@ -1,0 +1,67 @@
+{
+  "id": "ride_swing_tower",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "swing",
+  "label": "Swing Tower Ride",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "ride_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    470
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      470
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "swing",
+    "spin",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "main"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "swing"
+  ],
+  "defaults": {
+    "color": "#9aa4b5",
+    "trimColor": "#ffcf66"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_swing_tower",
+  "librarySource": "category-catalog",
+  "packId": null
+}

@@ -1,0 +1,60 @@
+{
+  "id": "ride_coaster_track",
+  "type": "ride",
+  "label": "Coaster Track",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [],
+  "tags": [
+    "ride",
+    "coaster",
+    "external",
+    "track"
+  ],
+  "defaults": {
+    "railColor": "#56606d"
+  },
+  "parts": [
+    {
+      "name": "rails",
+      "file": "parts/rails.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 10
+    }
+  ],
+  "version": "19.1.0",
+  "notes": "V20 track-only scenic asset. Vehicles are separate actors.",
+  "schemaVersion": "22.0.0",
+  "category": "rides",
+  "subcategory": "coaster_track",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_ride_static",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      450,
+      500
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/rides/ride_coaster_track",
+  "librarySource": "category-catalog",
+  "packId": null
+}

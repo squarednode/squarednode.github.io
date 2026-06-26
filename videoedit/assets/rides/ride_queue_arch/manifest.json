@@ -1,0 +1,63 @@
+{
+  "id": "ride_queue_arch",
+  "type": "ride",
+  "category": "rides",
+  "subcategory": "queue",
+  "label": "Queue Arch",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_basic",
+  "scaleClass": "ride_large",
+  "artboard": [
+    800,
+    500
+  ],
+  "groundPoint": [
+    400,
+    420
+  ],
+  "anchors": {
+    "ground": [
+      400,
+      420
+    ],
+    "center": [
+      400,
+      250
+    ]
+  },
+  "motions": [
+    "idle",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "rides",
+    "queue"
+  ],
+  "defaults": {
+    "color": "#e9eef7",
+    "trimColor": "#f2994a"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "main",
+      "file": "parts/main.svg",
+      "pivot": [
+        400,
+        250
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/rides/ride_queue_arch",
+  "librarySource": "category-catalog",
+  "packId": null
+}

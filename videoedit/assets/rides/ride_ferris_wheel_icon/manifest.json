@@ -1,0 +1,82 @@
+{
+  "id": "ride_ferris_wheel_icon",
+  "type": "ride",
+  "label": "Ferris Wheel Icon",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "wheel"
+  ],
+  "tags": [
+    "ride",
+    "landmark",
+    "background",
+    "external"
+  ],
+  "defaults": {
+    "color": "#65a8ff"
+  },
+  "parts": [
+    {
+      "name": "supports",
+      "file": "parts/supports.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 10
+    },
+    {
+      "name": "wheel",
+      "file": "parts/wheel.svg",
+      "pivot": [
+        360,
+        170
+      ],
+      "order": 20
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "rides",
+  "subcategory": "observation_ride",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "scenic_ride_static",
+  "scaleClass": "ride_large",
+  "artboard": [
+    900,
+    520
+  ],
+  "groundPoint": [
+    450,
+    500
+  ],
+  "anchors": {
+    "ground": [
+      360,
+      500
+    ],
+    "center": [
+      360,
+      170
+    ],
+    "seat": [
+      360,
+      270
+    ]
+  },
+  "motions": [
+    "idle",
+    "spin",
+    "swing",
+    "drop",
+    "openGate",
+    "flashLights",
+    "gesture",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/rides/ride_ferris_wheel_icon",
+  "librarySource": "category-catalog",
+  "packId": null
+}
