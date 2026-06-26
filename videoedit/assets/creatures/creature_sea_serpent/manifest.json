@@ -1,0 +1,159 @@
+{
+  "id": "creature_sea_serpent",
+  "type": "creature",
+  "category": "creatures",
+  "subcategory": "serpent",
+  "label": "Sea Serpent Creature",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "creature_basic",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    275,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      275,
+      480
+    ],
+    "head": [
+      210,
+      105
+    ],
+    "mouth": [
+      115,
+      150
+    ],
+    "leftHand": [
+      166,
+      288
+    ],
+    "rightHand": [
+      201,
+      288
+    ],
+    "tailTip": [
+      555,
+      120
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "tail",
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "creature",
+    "serpent"
+  ],
+  "defaults": {
+    "color": "#2d9cdb",
+    "bellyColor": "#bdefff",
+    "wingColor": "#2d9cdb"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "tail",
+      "file": "parts/tail.svg",
+      "pivot": [
+        340,
+        245
+      ],
+      "order": 5
+    },
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        215,
+        400
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        310,
+        400
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        260,
+        265
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_arm.svg",
+      "pivot": [
+        170,
+        230
+      ],
+      "order": 30
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_arm.svg",
+      "pivot": [
+        205,
+        230
+      ],
+      "order": 31
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        210,
+        105
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        68,
+        138
+      ],
+      "order": 60
+    }
+  ],
+  "assetFolder": "assets/creatures/creature_sea_serpent",
+  "librarySource": "category-catalog",
+  "packId": null
+}
