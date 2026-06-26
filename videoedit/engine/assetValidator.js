@@ -4,12 +4,12 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
   const seenIds = new Map();
 
   for (const err of packReport.errors || []) {
-    checks.push(issue('error', 'pack-load', 'Asset pack failed to load', err.pack?.id || err.catalog || 'catalog', String(err.error || err)));
+    checks.push(issue('error', 'asset-load', 'Asset or catalog entry failed to load', err.asset?.id || err.pack?.id || err.catalog || 'catalog', String(err.error || err)));
   }
 
   for (const pack of packReport.loaded || []) {
-    if (!pack.id) checks.push(issue('error', 'pack-id', 'Pack is missing id', '(unknown pack)', pack.manifestUrl || ''));
-    if (!Array.isArray(pack.assets)) checks.push(issue('error', 'pack-assets', 'Pack has no assets array', pack.id || '(unknown pack)', pack.manifestUrl || ''));
+    if (!pack.id) checks.push(issue('error', 'group-id', 'Asset group is missing id', '(unknown group)', pack.manifestUrl || ''));
+    if (!Array.isArray(pack.assets)) checks.push(issue('error', 'group-assets', 'Asset group has no assets array', pack.id || '(unknown group)', pack.manifestUrl || ''));
 
     for (const asset of pack.assets || []) {
       assets.push(asset);
@@ -30,7 +30,14 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
         seenIds.set(asset.id, pack.id);
       }
       if (asset.mode !== 'external-svg') checks.push(issue('info', 'asset-mode', 'Asset is not external SVG mode', asset.id || '(unknown asset)', asset.mode || 'missing mode'));
-      if (!asset.path) checks.push(issue('warning', 'asset-path', 'Asset is missing path', asset.id || '(unknown asset)', 'External asset packs should point to an asset folder.'));
+      if (!asset.path) checks.push(issue('warning', 'asset-path', 'Asset is missing path', asset.id || '(unknown asset)', 'External assets should point to their own asset folder.'));
+      if (asset.source === 'category-catalog') {
+        const expectedSegment = `/${asset.category || ''}/${asset.id || ''}/manifest.json`;
+        const normalizedPath = String(asset.manifestUrl || asset.catalogPath || '').replace(/\\/g, '/');
+        if (asset.category && asset.id && !normalizedPath.endsWith(expectedSegment)) {
+          checks.push(issue('warning', 'category-folder', 'Asset catalog path does not match category/id folder convention', asset.id, `Expected ...${expectedSegment}, found ${asset.catalogPath || asset.manifestUrl || 'unknown path'}`));
+        }
+      }
 
       const parts = Array.isArray(asset.parts) ? asset.parts : [];
       const rig = Array.isArray(asset.rig) ? asset.rig : [];
@@ -73,7 +80,7 @@ export function validateAssetPacks(packReport, assetLibrary = []) {
   }
 
   for (const asset of assetLibrary || []) {
-    if (asset.source === 'core-fallback') checks.push(issue('info', 'fallback-asset', 'Fallback engine asset is still available', asset.id, 'Okay for safety, but real production assets should be external SVG packs.'));
+    if (asset.source === 'core-fallback') checks.push(issue('info', 'fallback-asset', 'Fallback engine asset is still available', asset.id, 'Okay for safety; production assets should come from assets/<category>/<asset_id>/manifest.json.'));
   }
 
   return {

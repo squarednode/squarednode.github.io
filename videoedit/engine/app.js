@@ -42,7 +42,7 @@ async function init() {
   renderer.buildShot(story.shots[0]);
   const packCount = assetPackReport.loaded.length;
   const errCount = assetPackReport.errors.length;
-  status.textContent = `Ready - V21.2 fixed story loader + expansion engine (${packCount} packs${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
+  status.textContent = `Ready - V22 category asset library (${packCount} category groups${errCount ? ', ' + errCount + ' load issue(s)' : ''})`;
   if (errCount) debug.textContent = JSON.stringify(assetPackReport.errors, null, 2);
 }
 
@@ -295,7 +295,7 @@ document.getElementById('reloadStory').addEventListener('click', () => {
 document.getElementById('copyShotTemplate').addEventListener('click', async () => {
   const template = {
     id: 'shot_new',
-    title: 'New V21.2 validated shot template',
+    title: 'New V22 category-library shot template',
     duration: 6,
     environment: { asset: 'park_path_day' },
     camera: { type: '2.5d', position: [0, 0], zoom: 1 },

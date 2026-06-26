@@ -24,7 +24,7 @@ export function registerAssetPacks(packs = []) {
       });
     }
   }
-  ASSET_LIBRARY = [...assetRegistry.values()].sort((a, b) => `${a.type}-${a.id}`.localeCompare(`${b.type}-${b.id}`));
+  ASSET_LIBRARY = [...assetRegistry.values()].sort((a, b) => `${a.category || a.type}-${a.id}`.localeCompare(`${b.category || b.type}-${b.id}`));
   return ASSET_LIBRARY;
 }
 
