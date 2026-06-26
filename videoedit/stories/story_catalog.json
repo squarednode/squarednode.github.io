@@ -16,8 +16,8 @@
     },
     {
       "id": "episode_jurassic_launch_coaster_15_shots",
-      "title": "Jurassic Launch Coaster - 15 Shot Story",
-      "path": "../stories/episode_jurassic_launch_coaster_15_shots.json"
+      "label": "Jurassic Launch Coaster - 15 Shot Story",
+      "path": "../stories/episode_jurassic_launch_coaster_15_shots.json",
       "description": "Story 1 velocicoaster"
     }
   ]
