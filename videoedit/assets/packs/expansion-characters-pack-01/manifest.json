@@ -1,0 +1,1049 @@
+{
+  "id": "expansion-characters-pack-01",
+  "label": "Expansion Characters Pack 01",
+  "version": "21.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "schemaVersion": "20.0.0",
+  "assets": [
+    {
+      "id": "human_staff_basic",
+      "type": "character",
+      "category": "characters",
+      "subcategory": "staff",
+      "label": "Park Staff",
+      "mode": "external-svg",
+      "path": "human_staff_basic/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "humanoid_basic",
+      "scaleClass": "character_standard",
+      "artboard": [
+        300,
+        400
+      ],
+      "groundPoint": [
+        150,
+        400
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          400
+        ],
+        "head": [
+          175,
+          80
+        ],
+        "mouth": [
+          175,
+          102
+        ],
+        "hat": [
+          175,
+          35
+        ],
+        "leftHand": [
+          105,
+          220
+        ],
+        "rightHand": [
+          247,
+          220
+        ],
+        "speechBubble": [
+          210,
+          45
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "head",
+        "mouth",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLeg",
+        "rightLeg"
+      ],
+      "expressions": {
+        "happy": {},
+        "neutral": {},
+        "surprised": {}
+      },
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      },
+      "tags": [
+        "human",
+        "staff",
+        "wardrobe"
+      ],
+      "defaults": {
+        "skinColor": "#c98657",
+        "shirtColor": "#e9eef7",
+        "pantsColor": "#25324a",
+        "hairColor": "#3b2418",
+        "hatColor": "#ffd34d"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "leftLeg",
+          "file": "left_leg.svg",
+          "pivot": [
+            145,
+            265
+          ],
+          "order": 10
+        },
+        {
+          "name": "rightLeg",
+          "file": "right_leg.svg",
+          "pivot": [
+            205,
+            265
+          ],
+          "order": 11
+        },
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            175,
+            180
+          ],
+          "order": 20
+        },
+        {
+          "name": "leftUpperArm",
+          "file": "left_upper_arm.svg",
+          "pivot": [
+            118,
+            135
+          ],
+          "order": 30
+        },
+        {
+          "name": "rightUpperArm",
+          "file": "right_upper_arm.svg",
+          "pivot": [
+            232,
+            135
+          ],
+          "order": 32
+        },
+        {
+          "name": "neck",
+          "file": "neck.svg",
+          "pivot": [
+            175,
+            118
+          ],
+          "order": 40
+        },
+        {
+          "name": "head",
+          "file": "head.svg",
+          "pivot": [
+            175,
+            80
+          ],
+          "order": 50
+        },
+        {
+          "name": "mouth",
+          "file": "mouth.svg",
+          "pivot": [
+            175,
+            102
+          ],
+          "order": 60
+        },
+        {
+          "name": "hat",
+          "file": "hat.svg",
+          "pivot": [
+            175,
+            35
+          ],
+          "order": 70
+        }
+      ],
+      "wardrobe": [
+        "shirtColor",
+        "pantsColor",
+        "hatColor"
+      ],
+      "mouthShapes": {
+        "smile": {
+          "d": "M150 104 C165 118 188 118 203 104",
+          "fill": "none"
+        },
+        "neutral": {
+          "d": "M154 106 L198 106",
+          "fill": "none"
+        },
+        "open": {
+          "d": "M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100",
+          "fill": "#111"
+        },
+        "o": {
+          "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+          "fill": "#111"
+        },
+        "wide": {
+          "d": "M143 101 C162 126 191 126 210 101",
+          "fill": "none"
+        }
+      }
+    },
+    {
+      "id": "human_child_basic",
+      "type": "character",
+      "category": "characters",
+      "subcategory": "child",
+      "label": "Child Guest",
+      "mode": "external-svg",
+      "path": "human_child_basic/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "humanoid_basic",
+      "scaleClass": "character_standard",
+      "artboard": [
+        300,
+        400
+      ],
+      "groundPoint": [
+        150,
+        400
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          400
+        ],
+        "head": [
+          175,
+          80
+        ],
+        "mouth": [
+          175,
+          102
+        ],
+        "hat": [
+          175,
+          35
+        ],
+        "leftHand": [
+          105,
+          220
+        ],
+        "rightHand": [
+          247,
+          220
+        ],
+        "speechBubble": [
+          210,
+          45
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "head",
+        "mouth",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLeg",
+        "rightLeg"
+      ],
+      "expressions": {
+        "happy": {},
+        "neutral": {},
+        "surprised": {}
+      },
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      },
+      "tags": [
+        "human",
+        "child",
+        "wardrobe"
+      ],
+      "defaults": {
+        "skinColor": "#d69a68",
+        "shirtColor": "#ffcf66",
+        "pantsColor": "#315c9f",
+        "hairColor": "#4a2f1b",
+        "hatColor": "#ffcf66"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "leftLeg",
+          "file": "left_leg.svg",
+          "pivot": [
+            145,
+            265
+          ],
+          "order": 10
+        },
+        {
+          "name": "rightLeg",
+          "file": "right_leg.svg",
+          "pivot": [
+            205,
+            265
+          ],
+          "order": 11
+        },
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            175,
+            180
+          ],
+          "order": 20
+        },
+        {
+          "name": "leftUpperArm",
+          "file": "left_upper_arm.svg",
+          "pivot": [
+            118,
+            135
+          ],
+          "order": 30
+        },
+        {
+          "name": "rightUpperArm",
+          "file": "right_upper_arm.svg",
+          "pivot": [
+            232,
+            135
+          ],
+          "order": 32
+        },
+        {
+          "name": "neck",
+          "file": "neck.svg",
+          "pivot": [
+            175,
+            118
+          ],
+          "order": 40
+        },
+        {
+          "name": "head",
+          "file": "head.svg",
+          "pivot": [
+            175,
+            80
+          ],
+          "order": 50
+        },
+        {
+          "name": "mouth",
+          "file": "mouth.svg",
+          "pivot": [
+            175,
+            102
+          ],
+          "order": 60
+        },
+        {
+          "name": "hat",
+          "file": "hat.svg",
+          "pivot": [
+            175,
+            35
+          ],
+          "order": 70
+        }
+      ],
+      "wardrobe": [
+        "shirtColor",
+        "pantsColor",
+        "hatColor"
+      ],
+      "mouthShapes": {
+        "smile": {
+          "d": "M150 104 C165 118 188 118 203 104",
+          "fill": "none"
+        },
+        "neutral": {
+          "d": "M154 106 L198 106",
+          "fill": "none"
+        },
+        "open": {
+          "d": "M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100",
+          "fill": "#111"
+        },
+        "o": {
+          "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+          "fill": "#111"
+        },
+        "wide": {
+          "d": "M143 101 C162 126 191 126 210 101",
+          "fill": "none"
+        }
+      }
+    },
+    {
+      "id": "human_rider_basic",
+      "type": "character",
+      "category": "characters",
+      "subcategory": "rider",
+      "label": "Ride Passenger",
+      "mode": "external-svg",
+      "path": "human_rider_basic/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "humanoid_basic",
+      "scaleClass": "character_standard",
+      "artboard": [
+        300,
+        400
+      ],
+      "groundPoint": [
+        150,
+        400
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          400
+        ],
+        "head": [
+          175,
+          80
+        ],
+        "mouth": [
+          175,
+          102
+        ],
+        "hat": [
+          175,
+          35
+        ],
+        "leftHand": [
+          105,
+          220
+        ],
+        "rightHand": [
+          247,
+          220
+        ],
+        "speechBubble": [
+          210,
+          45
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "head",
+        "mouth",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLeg",
+        "rightLeg"
+      ],
+      "expressions": {
+        "happy": {},
+        "neutral": {},
+        "surprised": {}
+      },
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      },
+      "tags": [
+        "human",
+        "rider",
+        "wardrobe"
+      ],
+      "defaults": {
+        "skinColor": "#b9784a",
+        "shirtColor": "#6fcf97",
+        "pantsColor": "#25324a",
+        "hairColor": "#111111",
+        "hatColor": "#f2994a"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "leftLeg",
+          "file": "left_leg.svg",
+          "pivot": [
+            145,
+            265
+          ],
+          "order": 10
+        },
+        {
+          "name": "rightLeg",
+          "file": "right_leg.svg",
+          "pivot": [
+            205,
+            265
+          ],
+          "order": 11
+        },
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            175,
+            180
+          ],
+          "order": 20
+        },
+        {
+          "name": "leftUpperArm",
+          "file": "left_upper_arm.svg",
+          "pivot": [
+            118,
+            135
+          ],
+          "order": 30
+        },
+        {
+          "name": "rightUpperArm",
+          "file": "right_upper_arm.svg",
+          "pivot": [
+            232,
+            135
+          ],
+          "order": 32
+        },
+        {
+          "name": "neck",
+          "file": "neck.svg",
+          "pivot": [
+            175,
+            118
+          ],
+          "order": 40
+        },
+        {
+          "name": "head",
+          "file": "head.svg",
+          "pivot": [
+            175,
+            80
+          ],
+          "order": 50
+        },
+        {
+          "name": "mouth",
+          "file": "mouth.svg",
+          "pivot": [
+            175,
+            102
+          ],
+          "order": 60
+        },
+        {
+          "name": "hat",
+          "file": "hat.svg",
+          "pivot": [
+            175,
+            35
+          ],
+          "order": 70
+        }
+      ],
+      "wardrobe": [
+        "shirtColor",
+        "pantsColor",
+        "hatColor"
+      ],
+      "mouthShapes": {
+        "smile": {
+          "d": "M150 104 C165 118 188 118 203 104",
+          "fill": "none"
+        },
+        "neutral": {
+          "d": "M154 106 L198 106",
+          "fill": "none"
+        },
+        "open": {
+          "d": "M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100",
+          "fill": "#111"
+        },
+        "o": {
+          "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+          "fill": "#111"
+        },
+        "wide": {
+          "d": "M143 101 C162 126 191 126 210 101",
+          "fill": "none"
+        }
+      }
+    },
+    {
+      "id": "human_mechanic_basic",
+      "type": "character",
+      "category": "characters",
+      "subcategory": "mechanic",
+      "label": "Mechanic",
+      "mode": "external-svg",
+      "path": "human_mechanic_basic/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "humanoid_basic",
+      "scaleClass": "character_standard",
+      "artboard": [
+        300,
+        400
+      ],
+      "groundPoint": [
+        150,
+        400
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          400
+        ],
+        "head": [
+          175,
+          80
+        ],
+        "mouth": [
+          175,
+          102
+        ],
+        "hat": [
+          175,
+          35
+        ],
+        "leftHand": [
+          105,
+          220
+        ],
+        "rightHand": [
+          247,
+          220
+        ],
+        "speechBubble": [
+          210,
+          45
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "head",
+        "mouth",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLeg",
+        "rightLeg"
+      ],
+      "expressions": {
+        "happy": {},
+        "neutral": {},
+        "surprised": {}
+      },
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      },
+      "tags": [
+        "human",
+        "mechanic",
+        "wardrobe"
+      ],
+      "defaults": {
+        "skinColor": "#c98657",
+        "shirtColor": "#6d7686",
+        "pantsColor": "#1d2a35",
+        "hairColor": "#2b2018",
+        "hatColor": "#e0e0e0"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "leftLeg",
+          "file": "left_leg.svg",
+          "pivot": [
+            145,
+            265
+          ],
+          "order": 10
+        },
+        {
+          "name": "rightLeg",
+          "file": "right_leg.svg",
+          "pivot": [
+            205,
+            265
+          ],
+          "order": 11
+        },
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            175,
+            180
+          ],
+          "order": 20
+        },
+        {
+          "name": "leftUpperArm",
+          "file": "left_upper_arm.svg",
+          "pivot": [
+            118,
+            135
+          ],
+          "order": 30
+        },
+        {
+          "name": "rightUpperArm",
+          "file": "right_upper_arm.svg",
+          "pivot": [
+            232,
+            135
+          ],
+          "order": 32
+        },
+        {
+          "name": "neck",
+          "file": "neck.svg",
+          "pivot": [
+            175,
+            118
+          ],
+          "order": 40
+        },
+        {
+          "name": "head",
+          "file": "head.svg",
+          "pivot": [
+            175,
+            80
+          ],
+          "order": 50
+        },
+        {
+          "name": "mouth",
+          "file": "mouth.svg",
+          "pivot": [
+            175,
+            102
+          ],
+          "order": 60
+        },
+        {
+          "name": "hat",
+          "file": "hat.svg",
+          "pivot": [
+            175,
+            35
+          ],
+          "order": 70
+        }
+      ],
+      "wardrobe": [
+        "shirtColor",
+        "pantsColor",
+        "hatColor"
+      ],
+      "mouthShapes": {
+        "smile": {
+          "d": "M150 104 C165 118 188 118 203 104",
+          "fill": "none"
+        },
+        "neutral": {
+          "d": "M154 106 L198 106",
+          "fill": "none"
+        },
+        "open": {
+          "d": "M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100",
+          "fill": "#111"
+        },
+        "o": {
+          "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+          "fill": "#111"
+        },
+        "wide": {
+          "d": "M143 101 C162 126 191 126 210 101",
+          "fill": "none"
+        }
+      }
+    },
+    {
+      "id": "human_performer_basic",
+      "type": "character",
+      "category": "characters",
+      "subcategory": "performer",
+      "label": "Performer",
+      "mode": "external-svg",
+      "path": "human_performer_basic/",
+      "source": "external-svg",
+      "schemaVersion": "20.0.0",
+      "style": "simple_theme_park_svg_v4",
+      "rigType": "humanoid_basic",
+      "scaleClass": "character_standard",
+      "artboard": [
+        300,
+        400
+      ],
+      "groundPoint": [
+        150,
+        400
+      ],
+      "anchors": {
+        "ground": [
+          150,
+          400
+        ],
+        "head": [
+          175,
+          80
+        ],
+        "mouth": [
+          175,
+          102
+        ],
+        "hat": [
+          175,
+          35
+        ],
+        "leftHand": [
+          105,
+          220
+        ],
+        "rightHand": [
+          247,
+          220
+        ],
+        "speechBubble": [
+          210,
+          45
+        ]
+      },
+      "motions": [
+        "idle",
+        "enter",
+        "exit",
+        "walk",
+        "wave",
+        "talk",
+        "look",
+        "expression",
+        "mouth",
+        "gesture",
+        "scale"
+      ],
+      "rig": [
+        "head",
+        "mouth",
+        "leftUpperArm",
+        "rightUpperArm",
+        "leftLeg",
+        "rightLeg"
+      ],
+      "expressions": {
+        "happy": {},
+        "neutral": {},
+        "surprised": {}
+      },
+      "phonemes": {
+        "rest": "smile",
+        "A": "open",
+        "E": "wide",
+        "O": "o",
+        "M": "neutral"
+      },
+      "tags": [
+        "human",
+        "performer",
+        "wardrobe"
+      ],
+      "defaults": {
+        "skinColor": "#c98657",
+        "shirtColor": "#bb6bd9",
+        "pantsColor": "#25324a",
+        "hairColor": "#3b2418",
+        "hatColor": "#f2c94c"
+      },
+      "thumbnail": "thumbnail.svg",
+      "parts": [
+        {
+          "name": "leftLeg",
+          "file": "left_leg.svg",
+          "pivot": [
+            145,
+            265
+          ],
+          "order": 10
+        },
+        {
+          "name": "rightLeg",
+          "file": "right_leg.svg",
+          "pivot": [
+            205,
+            265
+          ],
+          "order": 11
+        },
+        {
+          "name": "body",
+          "file": "body.svg",
+          "pivot": [
+            175,
+            180
+          ],
+          "order": 20
+        },
+        {
+          "name": "leftUpperArm",
+          "file": "left_upper_arm.svg",
+          "pivot": [
+            118,
+            135
+          ],
+          "order": 30
+        },
+        {
+          "name": "rightUpperArm",
+          "file": "right_upper_arm.svg",
+          "pivot": [
+            232,
+            135
+          ],
+          "order": 32
+        },
+        {
+          "name": "neck",
+          "file": "neck.svg",
+          "pivot": [
+            175,
+            118
+          ],
+          "order": 40
+        },
+        {
+          "name": "head",
+          "file": "head.svg",
+          "pivot": [
+            175,
+            80
+          ],
+          "order": 50
+        },
+        {
+          "name": "mouth",
+          "file": "mouth.svg",
+          "pivot": [
+            175,
+            102
+          ],
+          "order": 60
+        },
+        {
+          "name": "hat",
+          "file": "hat.svg",
+          "pivot": [
+            175,
+            35
+          ],
+          "order": 70
+        }
+      ],
+      "wardrobe": [
+        "shirtColor",
+        "pantsColor",
+        "hatColor"
+      ],
+      "mouthShapes": {
+        "smile": {
+          "d": "M150 104 C165 118 188 118 203 104",
+          "fill": "none"
+        },
+        "neutral": {
+          "d": "M154 106 L198 106",
+          "fill": "none"
+        },
+        "open": {
+          "d": "M154 100 C165 122 188 122 200 100 C190 132 164 132 154 100",
+          "fill": "#111"
+        },
+        "o": {
+          "d": "M158 105 C158 88 194 88 194 105 C194 128 158 128 158 105",
+          "fill": "#111"
+        },
+        "wide": {
+          "d": "M143 101 C162 126 191 126 210 101",
+          "fill": "none"
+        }
+      }
+    }
+  ]
+}

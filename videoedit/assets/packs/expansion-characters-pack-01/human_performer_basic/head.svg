@@ -1,0 +1,1 @@
+<svg xmlns='http://www.w3.org/2000/svg'><circle cx='175' cy='78' r='58' fill='{{skinColor}}' stroke='#111' stroke-width='5'/><path d='M125 62 C140 10 208 8 227 62 C195 45 160 45 125 62 Z' fill='{{hairColor}}' stroke='#111' stroke-width='5' stroke-linejoin='round'/><circle cx='154' cy='78' r='6' fill='#111'/><circle cx='196' cy='78' r='6' fill='#111'/></svg>
