@@ -1,75 +1,47 @@
-# Ride Through Offline Episode Maker - V16 Full Engine Build
+# Ride Through Episode Maker - V20
 
-V16 expands the V15 rig test into a larger system-level prototype.
+V20 is the foundation-lock build before large-scale asset expansion. It adds formal asset categories, scale classes, semantic anchors, motion compatibility tags, thumbnail declarations, layered environment assets, and story validation.
 
-## New in V16
-
-- Asset library browser in the right-side panel
-- New rigged human character asset with wardrobe color controls
-- New ride/coaster scenic asset
-- New vehicle/cart asset with wheel rigging
-- New sign prop asset
-- Mouth phoneme presets for simple talking animation
-- 2.5D camera movement and basic parallax layers
-- Gesture command for named body parts
-- Drive command for wheeled vehicles and ride trains
-- Export current shot or export all shots one by one
-- Copyable shot template button
-
-## How to run
-
-From inside this folder:
+## Run locally
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then open:
+Open:
 
 ```text
 http://localhost:8080/engine/player.html
 ```
 
-No internet connection is required.
+## GitHub Pages
 
-## Main files
+Upload/replace the `videoedit` folder contents and open:
 
 ```text
-engine/player.html       Main UI
-engine/app.js            UI wiring and story loading
-engine/renderer.js       Scene building, depth sorting, camera, actors
-engine/timeline.js       Motion command system
-engine/assetFactory.js   Built-in SVG asset library and rig definitions
-engine/exporter.js       WebM export
-stories/episode_001.json V16 feature test story
-docs/ASSET_RIG_STANDARD_V16.md
+https://squarednode.github.io/videoedit/engine/player.html?v=20
 ```
 
-## Supported timeline commands in V16
+## Key V20 changes
 
-- `enter`
-- `exit`
-- `walk`
-- `wave`
-- `talk`
-- `mouth`
-- `expression`
-- `look`
-- `gesture`
-- `drive`
-- `scale`
-- `camera_move`
+- Neutral asset names: color is no longer part of reusable asset ids. Example: `creature_trex` with story-level `color` overrides.
+- Category schema locked: characters, creatures, vehicles, rides, landmarks, environments, props, wardrobe, facial_features, effects, signage, background_layers.
+- Scale classes, artboards, ground points, and semantic anchors added to manifests.
+- Motion compatibility tags added so story commands can be validated against each asset.
+- Expression and phoneme metadata separated.
+- External layered environment pack added: `park_path_day`.
+- Story validation panel added.
+- Coaster track remains track-only; ride vehicles are separate actors.
 
-## Supported built-in asset IDs
+## Important files
 
-- `creature_red_dino`
-- `human_guest_basic`
-- `ride_coaster_icon`
-- `vehicle_cart_basic`
-- `prop_sign_arrow`
-
-## Notes
-
-This is still intentionally SVG-simple. The point of V16 is to prove the control architecture: story JSON -> asset loading -> rig assembly -> named part animation -> 2.5D scene playback -> WebM export.
-
-Next versions should split procedural demo assets into real reusable SVG part files and add an asset pack validator.
+```text
+engine/storyValidator.js
+engine/assetValidator.js
+engine/assetPackLoader.js
+engine/assetFactory.js
+assets/catalog/asset_packs.json
+assets/packs/core-environments/manifest.json
+docs/FOUNDATION_STANDARD_V20.md
+docs/CHANGELOG_V20.md
+```
