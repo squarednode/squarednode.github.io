@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "22.0.0",
-  "version": "22.0.0",
+  "schemaVersion": "24.0.0",
+  "version": "24.0.0",
   "assetRoot": "../assets",
   "preferredStructure": "category-folders",
   "categories": {
@@ -18,6 +18,166 @@
     "background_layers": "background_layers"
   },
   "assets": [
+    {
+      "id": "character_alien_forest_rider",
+      "category": "characters",
+      "subcategory": "alien",
+      "type": "character",
+      "label": "Alien Forest Rider",
+      "path": "../characters/character_alien_forest_rider/manifest.json"
+    },
+    {
+      "id": "character_alpine_climber",
+      "category": "characters",
+      "subcategory": "mountain climber",
+      "type": "character",
+      "label": "Alpine Climber",
+      "path": "../characters/character_alpine_climber/manifest.json"
+    },
+    {
+      "id": "character_ancient_priest",
+      "category": "characters",
+      "subcategory": "ancient mystic",
+      "type": "character",
+      "label": "Ancient Priest",
+      "path": "../characters/character_ancient_priest/manifest.json"
+    },
+    {
+      "id": "character_coaster_crew",
+      "category": "characters",
+      "subcategory": "ride operator",
+      "type": "character",
+      "label": "Coaster Crew Member",
+      "path": "../characters/character_coaster_crew/manifest.json"
+    },
+    {
+      "id": "character_frontier_miner",
+      "category": "characters",
+      "subcategory": "miner",
+      "type": "character",
+      "label": "Frontier Miner",
+      "path": "../characters/character_frontier_miner/manifest.json"
+    },
+    {
+      "id": "character_gamma_hero",
+      "category": "characters",
+      "subcategory": "superhero",
+      "type": "character",
+      "label": "Gamma Hero",
+      "path": "../characters/character_gamma_hero/manifest.json"
+    },
+    {
+      "id": "character_ghost_host",
+      "category": "characters",
+      "subcategory": "ghost",
+      "type": "character",
+      "label": "Ghost Host",
+      "path": "../characters/character_ghost_host/manifest.json"
+    },
+    {
+      "id": "character_mischief_lab_worker",
+      "category": "characters",
+      "subcategory": "lab worker",
+      "type": "character",
+      "label": "Mischief Lab Worker",
+      "path": "../characters/character_mischief_lab_worker/manifest.json"
+    },
+    {
+      "id": "character_motorbike_keeper",
+      "category": "characters",
+      "subcategory": "magical keeper",
+      "type": "character",
+      "label": "Motorbike Keeper",
+      "path": "../characters/character_motorbike_keeper/manifest.json"
+    },
+    {
+      "id": "character_neon_cycle_rider",
+      "category": "characters",
+      "subcategory": "lightcycle rider",
+      "type": "character",
+      "label": "Neon Cycle Rider",
+      "path": "../characters/character_neon_cycle_rider/manifest.json"
+    },
+    {
+      "id": "character_pirate_captain",
+      "category": "characters",
+      "subcategory": "pirate",
+      "type": "character",
+      "label": "Pirate Captain",
+      "path": "../characters/character_pirate_captain/manifest.json"
+    },
+    {
+      "id": "character_raptor_handler",
+      "category": "characters",
+      "subcategory": "animal handler",
+      "type": "character",
+      "label": "Raptor Handler",
+      "path": "../characters/character_raptor_handler/manifest.json"
+    },
+    {
+      "id": "character_rocket_astronaut",
+      "category": "characters",
+      "subcategory": "astronaut",
+      "type": "character",
+      "label": "Rocket Astronaut",
+      "path": "../characters/character_rocket_astronaut/manifest.json"
+    },
+    {
+      "id": "character_space_resistance_pilot",
+      "category": "characters",
+      "subcategory": "space pilot",
+      "type": "character",
+      "label": "Space Resistance Pilot",
+      "path": "../characters/character_space_resistance_pilot/manifest.json"
+    },
+    {
+      "id": "character_street_racer",
+      "category": "characters",
+      "subcategory": "racer",
+      "type": "character",
+      "label": "Street Racer",
+      "path": "../characters/character_street_racer/manifest.json"
+    },
+    {
+      "id": "character_temple_adventurer",
+      "category": "characters",
+      "subcategory": "adventurer",
+      "type": "character",
+      "label": "Temple Adventurer",
+      "path": "../characters/character_temple_adventurer/manifest.json"
+    },
+    {
+      "id": "character_underground_explorer",
+      "category": "characters",
+      "subcategory": "explorer",
+      "type": "character",
+      "label": "Underground Explorer",
+      "path": "../characters/character_underground_explorer/manifest.json"
+    },
+    {
+      "id": "character_web_slinger_hero",
+      "category": "characters",
+      "subcategory": "masked hero",
+      "type": "character",
+      "label": "Web Slinger Hero",
+      "path": "../characters/character_web_slinger_hero/manifest.json"
+    },
+    {
+      "id": "character_wizard_student",
+      "category": "characters",
+      "subcategory": "wizard",
+      "type": "character",
+      "label": "Wizard Student",
+      "path": "../characters/character_wizard_student/manifest.json"
+    },
+    {
+      "id": "character_world_doll_performer",
+      "category": "characters",
+      "subcategory": "doll",
+      "type": "character",
+      "label": "World Doll Performer",
+      "path": "../characters/character_world_doll_performer/manifest.json"
+    },
     {
       "id": "human_child_basic",
       "category": "characters",
@@ -67,11 +227,35 @@
       "path": "../characters/human_staff_basic/manifest.json"
     },
     {
+      "id": "creature_alien",
+      "category": "creatures",
+      "subcategory": "alien",
+      "type": "creature",
+      "label": "Alien Creature",
+      "path": "../creatures/creature_alien/manifest.json"
+    },
+    {
+      "id": "creature_banshee",
+      "category": "creatures",
+      "subcategory": "flying beast",
+      "type": "creature",
+      "label": "Flying Banshee Creature",
+      "path": "../creatures/creature_banshee/manifest.json"
+    },
+    {
+      "id": "creature_bat",
+      "category": "creatures",
+      "subcategory": "bat",
+      "type": "creature",
+      "label": "Bat Creature",
+      "path": "../creatures/creature_bat/manifest.json"
+    },
+    {
       "id": "creature_bird",
       "category": "creatures",
       "subcategory": "bird",
       "type": "creature",
-      "label": "Large Bird Creature",
+      "label": "Bird Creature",
       "path": "../creatures/creature_bird/manifest.json"
     },
     {
@@ -81,6 +265,62 @@
       "type": "creature",
       "label": "Dragon Creature",
       "path": "../creatures/creature_dragon/manifest.json"
+    },
+    {
+      "id": "creature_droid_scout",
+      "category": "creatures",
+      "subcategory": "droid",
+      "type": "creature",
+      "label": "Scout Droid Creature",
+      "path": "../creatures/creature_droid_scout/manifest.json"
+    },
+    {
+      "id": "creature_giant_spider",
+      "category": "creatures",
+      "subcategory": "arachnid",
+      "type": "creature",
+      "label": "Giant Spider Creature",
+      "path": "../creatures/creature_giant_spider/manifest.json"
+    },
+    {
+      "id": "creature_goat",
+      "category": "creatures",
+      "subcategory": "goat",
+      "type": "creature",
+      "label": "Goat Creature",
+      "path": "../creatures/creature_goat/manifest.json"
+    },
+    {
+      "id": "creature_hippogriff",
+      "category": "creatures",
+      "subcategory": "winged guardian",
+      "type": "creature",
+      "label": "Winged Guardian Creature",
+      "path": "../creatures/creature_hippogriff/manifest.json"
+    },
+    {
+      "id": "creature_lab_gremlin",
+      "category": "creatures",
+      "subcategory": "lab creature",
+      "type": "creature",
+      "label": "Lab Mischief Creature",
+      "path": "../creatures/creature_lab_gremlin/manifest.json"
+    },
+    {
+      "id": "creature_lava_monster",
+      "category": "creatures",
+      "subcategory": "lava monster",
+      "type": "creature",
+      "label": "Lava Monster Creature",
+      "path": "../creatures/creature_lava_monster/manifest.json"
+    },
+    {
+      "id": "creature_parrot",
+      "category": "creatures",
+      "subcategory": "bird",
+      "type": "creature",
+      "label": "Parrot Creature",
+      "path": "../creatures/creature_parrot/manifest.json"
     },
     {
       "id": "creature_raptor",
@@ -99,6 +339,14 @@
       "path": "../creatures/creature_robot/manifest.json"
     },
     {
+      "id": "creature_scarab_swarm",
+      "category": "creatures",
+      "subcategory": "scarab",
+      "type": "creature",
+      "label": "Scarab Swarm Creature",
+      "path": "../creatures/creature_scarab_swarm/manifest.json"
+    },
+    {
       "id": "creature_sea_serpent",
       "category": "creatures",
       "subcategory": "serpent",
@@ -107,12 +355,28 @@
       "path": "../creatures/creature_sea_serpent/manifest.json"
     },
     {
+      "id": "creature_snake",
+      "category": "creatures",
+      "subcategory": "snake",
+      "type": "creature",
+      "label": "Snake Creature",
+      "path": "../creatures/creature_snake/manifest.json"
+    },
+    {
       "id": "creature_trex",
       "category": "creatures",
       "subcategory": "dinosaur",
       "type": "creature",
-      "label": "Rigged T-Rex Creature",
+      "label": "T-Rex Creature",
       "path": "../creatures/creature_trex/manifest.json"
+    },
+    {
+      "id": "creature_yeti",
+      "category": "creatures",
+      "subcategory": "mountain monster",
+      "type": "creature",
+      "label": "Mountain Yeti Creature",
+      "path": "../creatures/creature_yeti/manifest.json"
     },
     {
       "id": "environment_city_night",
