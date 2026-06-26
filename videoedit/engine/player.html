@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ride Through Episode Maker - V21.1</title>
+  <title>Ride Through Episode Maker - V21.2</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <div>
-      <h1>Ride Through Episode Maker <span>V21.1 Story Loader + Asset Expansion</span></h1>
+      <h1>Ride Through Episode Maker <span>V21.2 Fixed Story Loader + Asset Expansion</span></h1>
       <p>Offline SVG rigged episode maker with external asset packs, selectable story JSON files, story validation, 2.5D camera, and WebM export.</p>
     </div>
     <div class="status" id="status">Loading...</div>
@@ -36,11 +36,14 @@
 
       <label for="storySelect">Story JSON File</label>
       <select id="storySelect"></select>
+      <div class="buttons story-load-buttons">
+        <button id="loadSelectedStory">Load Selected Story</button>
+      </div>
 
       <label for="storyPath">Custom Story Path</label>
       <div class="path-row">
         <input id="storyPath" type="text" value="../stories/episode_001.json" spellcheck="false" />
-        <button id="loadStoryPath">Load</button>
+        <button id="loadStoryPath">Load Custom Path</button>
       </div>
 
       <label for="shotSelect">Shot</label>
