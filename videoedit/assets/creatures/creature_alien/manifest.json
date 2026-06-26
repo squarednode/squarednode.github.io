@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "24.0.0",
+  "id": "creature_alien",
+  "type": "creature",
+  "label": "Alien Creature",
+  "category": "creatures",
+  "subcategory": "alien",
+  "style": "simple_theme_park_svg_v5",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rigType": "creature_basic",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    300,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      295,
+      470
+    ],
+    "head": [
+      295,
+      125
+    ],
+    "mouth": [
+      295,
+      210
+    ],
+    "leftGrip": [
+      130,
+      340
+    ],
+    "rightGrip": [
+      460,
+      340
+    ],
+    "speechBubble": [
+      300,
+      45
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "defaults": {
+    "bodyColor": "#83c66b",
+    "bellyColor": "#bde8a4",
+    "accentColor": "#76e4ff",
+    "outlineColor": "#111111",
+    "eyeColor": "#111111"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        250,
+        365
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        340,
+        365
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        295,
+        270
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_arm.svg",
+      "pivot": [
+        205,
+        230
+      ],
+      "order": 35
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_arm.svg",
+      "pivot": [
+        385,
+        230
+      ],
+      "order": 36
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        295,
+        125
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        295,
+        205
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "alien",
+    "space"
+  ],
+  "assetFolder": "assets/creatures/creature_alien",
+  "librarySource": "category-catalog",
+  "packId": null
+}

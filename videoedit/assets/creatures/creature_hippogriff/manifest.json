@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "24.0.0",
+  "id": "creature_hippogriff",
+  "type": "creature",
+  "label": "Winged Guardian Creature",
+  "category": "creatures",
+  "subcategory": "winged guardian",
+  "style": "simple_theme_park_svg_v5",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rigType": "creature_quadruped_winged",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    300,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      315,
+      452
+    ],
+    "head": [
+      160,
+      150
+    ],
+    "mouth": [
+      120,
+      172
+    ],
+    "leftWing": [
+      300,
+      225
+    ],
+    "rightWing": [
+      365,
+      225
+    ],
+    "speechBubble": [
+      300,
+      55
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "tail",
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "defaults": {
+    "bodyColor": "#a78b6f",
+    "bellyColor": "#d5c0a5",
+    "wingColor": "#8d765d",
+    "tailColor": "#6d5540",
+    "legColor": "#7c6048",
+    "beakColor": "#ffd45a",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111",
+    "eyeColor": "#050505"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "tail",
+      "file": "parts/tail.svg",
+      "pivot": [
+        420,
+        275
+      ],
+      "order": 5
+    },
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        250,
+        325
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        380,
+        325
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        330,
+        255
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_wing.svg",
+      "pivot": [
+        300,
+        225
+      ],
+      "order": 35
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_wing.svg",
+      "pivot": [
+        365,
+        225
+      ],
+      "order": 36
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        160,
+        150
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        120,
+        172
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "winged",
+    "guardian",
+    "mythic"
+  ],
+  "assetFolder": "assets/creatures/creature_hippogriff",
+  "librarySource": "category-catalog",
+  "packId": null
+}

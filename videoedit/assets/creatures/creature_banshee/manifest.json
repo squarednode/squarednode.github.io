@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "24.0.0",
+  "id": "creature_banshee",
+  "type": "creature",
+  "label": "Flying Banshee Creature",
+  "category": "creatures",
+  "subcategory": "flying beast",
+  "style": "simple_theme_park_svg_v5",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rigType": "creature_basic",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    300,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      310,
+      455
+    ],
+    "head": [
+      150,
+      170
+    ],
+    "mouth": [
+      105,
+      190
+    ],
+    "leftWing": [
+      210,
+      230
+    ],
+    "rightWing": [
+      390,
+      230
+    ],
+    "tailTip": [
+      590,
+      335
+    ],
+    "speechBubble": [
+      300,
+      60
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "tail",
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "defaults": {
+    "bodyColor": "#3779b8",
+    "bellyColor": "#92d5e8",
+    "wingColor": "#5aa9d8",
+    "stripeColor": "#f4d35e",
+    "outlineColor": "#111111",
+    "eyeColor": "#050505"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "tail",
+      "file": "parts/tail.svg",
+      "pivot": [
+        385,
+        250
+      ],
+      "order": 5
+    },
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        260,
+        340
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        340,
+        340
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        305,
+        250
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_wing.svg",
+      "pivot": [
+        210,
+        230
+      ],
+      "order": 35
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_wing.svg",
+      "pivot": [
+        390,
+        230
+      ],
+      "order": 36
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        150,
+        170
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        95,
+        182
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "flying",
+    "forest",
+    "banshee"
+  ],
+  "assetFolder": "assets/creatures/creature_banshee",
+  "librarySource": "category-catalog",
+  "packId": null
+}

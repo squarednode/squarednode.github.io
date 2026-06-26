@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "24.0.0",
+  "id": "creature_lava_monster",
+  "type": "creature",
+  "label": "Lava Monster Creature",
+  "category": "creatures",
+  "subcategory": "lava monster",
+  "style": "simple_theme_park_svg_v5",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rigType": "creature_basic",
+  "scaleClass": "creature_standard",
+  "artboard": [
+    600,
+    500
+  ],
+  "groundPoint": [
+    300,
+    480
+  ],
+  "anchors": {
+    "ground": [
+      300,
+      470
+    ],
+    "head": [
+      300,
+      110
+    ],
+    "mouth": [
+      300,
+      165
+    ],
+    "leftGrip": [
+      125,
+      330
+    ],
+    "rightGrip": [
+      475,
+      330
+    ],
+    "speechBubble": [
+      300,
+      50
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "walk",
+    "wave",
+    "talk",
+    "look",
+    "expression",
+    "mouth",
+    "gesture",
+    "scale"
+  ],
+  "rig": [
+    "leftLeg",
+    "rightLeg",
+    "leftArm",
+    "rightArm",
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
+  ],
+  "expressions": {
+    "happy": {},
+    "angry": {},
+    "surprised": {}
+  },
+  "phonemes": {
+    "rest": "smile",
+    "A": "open",
+    "E": "wide",
+    "O": "o",
+    "M": "neutral"
+  },
+  "defaults": {
+    "bodyColor": "#5a4a42",
+    "rockColor": "#5a4a42",
+    "glowColor": "#ff8a1c",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111",
+    "eyeColor": "#ff8a1c"
+  },
+  "colorSlots": {
+    "bodyColor": "#c7363e",
+    "bellyColor": "#f1a3a5",
+    "accentColor": "#ffd45a",
+    "outlineColor": "#111111"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "leftLeg",
+      "file": "parts/left_leg.svg",
+      "pivot": [
+        240,
+        360
+      ],
+      "order": 10
+    },
+    {
+      "name": "rightLeg",
+      "file": "parts/right_leg.svg",
+      "pivot": [
+        355,
+        360
+      ],
+      "order": 11
+    },
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        300,
+        270
+      ],
+      "order": 20
+    },
+    {
+      "name": "leftArm",
+      "file": "parts/left_arm.svg",
+      "pivot": [
+        190,
+        235
+      ],
+      "order": 35
+    },
+    {
+      "name": "rightArm",
+      "file": "parts/right_arm.svg",
+      "pivot": [
+        410,
+        235
+      ],
+      "order": 36
+    },
+    {
+      "name": "head",
+      "file": "parts/head.svg",
+      "pivot": [
+        300,
+        110
+      ],
+      "order": 50
+    },
+    {
+      "name": "jaw",
+      "file": "parts/jaw.svg",
+      "pivot": [
+        300,
+        160
+      ],
+      "order": 60
+    },
+    {
+      "name": "expression_happy",
+      "file": "parts/expression_happy.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 90,
+      "expression": "happy"
+    },
+    {
+      "name": "expression_angry",
+      "file": "parts/expression_angry.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 91,
+      "expression": "angry"
+    },
+    {
+      "name": "expression_surprised",
+      "file": "parts/expression_surprised.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 92,
+      "expression": "surprised"
+    }
+  ],
+  "tags": [
+    "creature",
+    "external",
+    "v24",
+    "lava",
+    "monster",
+    "underground"
+  ],
+  "assetFolder": "assets/creatures/creature_lava_monster",
+  "librarySource": "category-catalog",
+  "packId": null
+}
