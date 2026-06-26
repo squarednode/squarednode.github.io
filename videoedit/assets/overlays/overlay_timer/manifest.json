@@ -1,0 +1,100 @@
+{
+  "id": "overlay_timer",
+  "type": "overlay",
+  "category": "overlays",
+  "subcategory": "utility",
+  "label": "Timer",
+  "displayName": "Timer",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "scaleClass": "overlay_standard",
+  "artboard": [
+    800,
+    450
+  ],
+  "groundPoint": [
+    400,
+    450
+  ],
+  "anchors": {
+    "center": [
+      400,
+      225
+    ],
+    "topLeft": [
+      0,
+      0
+    ],
+    "bottomCenter": [
+      400,
+      450
+    ],
+    "textCenter": [
+      400,
+      225
+    ]
+  },
+  "motions": [
+    "idle",
+    "fadeIn",
+    "fadeOut",
+    "slideIn",
+    "slideOut",
+    "bob",
+    "pulse",
+    "scale",
+    "enter",
+    "exit"
+  ],
+  "rigType": "static_overlay",
+  "rig": [
+    "overlay"
+  ],
+  "parts": [
+    {
+      "name": "overlay",
+      "file": "parts/overlay.svg",
+      "order": 10,
+      "pivot": [
+        400,
+        225
+      ]
+    }
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "colorSlots": {
+    "panelColor": "#ffffff",
+    "accentColor": "#f4d35e",
+    "textColor": "#111111",
+    "outlineColor": "#111111",
+    "opacity": "0.92",
+    "title": "TITLE",
+    "subtitle": "Subtitle",
+    "text": "TEXT",
+    "label": "A",
+    "location": "LOCATION",
+    "chapter": "CHAPTER 1",
+    "timeText": "0:30",
+    "body": "Fact text",
+    "tag": "NOW",
+    "barWidth": "280",
+    "score": "10"
+  },
+  "compositing": {
+    "transparent": true,
+    "recommendedBlend": "normal",
+    "defaultOpacity": 0.92
+  },
+  "tags": [
+    "overlay",
+    "utility",
+    "storytelling",
+    "ui"
+  ],
+  "description": "countdown or wait-time timer overlay",
+  "thumbnail": "thumbnail.svg"
+}
