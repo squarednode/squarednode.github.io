@@ -1,10 +1,10 @@
 {
   "schemaVersion": "24.0.0",
-  "id": "creature_bird",
+  "id": "creature_yeti",
   "type": "creature",
-  "label": "Bird Creature",
+  "label": "Mountain Yeti Creature",
   "category": "creatures",
-  "subcategory": "bird",
+  "subcategory": "mountain monster",
   "style": "simple_theme_park_svg_v5",
   "mode": "external-svg",
   "path": "./",
@@ -16,29 +16,29 @@
     500
   ],
   "groundPoint": [
-    310,
-    455
+    300,
+    480
   ],
   "anchors": {
     "ground": [
-      310,
-      455
+      295,
+      470
     ],
     "head": [
-      300,
-      125
+      295,
+      120
     ],
     "mouth": [
-      300,
-      165
+      295,
+      170
     ],
-    "leftWing": [
-      205,
-      240
+    "leftGrip": [
+      145,
+      370
     ],
-    "rightWing": [
-      395,
-      240
+    "rightGrip": [
+      445,
+      370
     ],
     "speechBubble": [
       300,
@@ -59,12 +59,15 @@
     "scale"
   ],
   "rig": [
-    "head",
-    "jaw",
+    "leftLeg",
+    "rightLeg",
     "leftArm",
     "rightArm",
-    "leftLeg",
-    "rightLeg"
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
   ],
   "expressions": {
     "happy": {},
@@ -79,10 +82,10 @@
     "M": "neutral"
   },
   "defaults": {
-    "bodyColor": "#5fa6d8",
-    "bellyColor": "#d8f0ff",
-    "wingColor": "#7bb8e8",
-    "accentColor": "#ffd45a",
+    "bodyColor": "#d9eef4",
+    "bellyColor": "#ffffff",
+    "faceColor": "#b9d9e8",
+    "accentColor": "#b8d8e6",
     "outlineColor": "#111111",
     "eyeColor": "#050505"
   },
@@ -98,8 +101,8 @@
       "name": "leftLeg",
       "file": "parts/left_leg.svg",
       "pivot": [
-        260,
-        360
+        235,
+        350
       ],
       "order": 10
     },
@@ -107,8 +110,8 @@
       "name": "rightLeg",
       "file": "parts/right_leg.svg",
       "pivot": [
-        330,
-        360
+        360,
+        350
       ],
       "order": 11
     },
@@ -116,7 +119,7 @@
       "name": "body",
       "file": "parts/body.svg",
       "pivot": [
-        300,
+        295,
         260
       ],
       "order": 20
@@ -125,8 +128,8 @@
       "name": "leftArm",
       "file": "parts/left_arm.svg",
       "pivot": [
-        205,
-        240
+        185,
+        220
       ],
       "order": 35
     },
@@ -134,8 +137,8 @@
       "name": "rightArm",
       "file": "parts/right_arm.svg",
       "pivot": [
-        395,
-        240
+        405,
+        220
       ],
       "order": 36
     },
@@ -143,8 +146,8 @@
       "name": "head",
       "file": "parts/head.svg",
       "pivot": [
-        300,
-        125
+        295,
+        120
       ],
       "order": 50
     },
@@ -152,8 +155,8 @@
       "name": "jaw",
       "file": "parts/jaw.svg",
       "pivot": [
-        300,
-        160
+        295,
+        165
       ],
       "order": 60
     },
@@ -192,10 +195,10 @@
     "creature",
     "external",
     "v24",
-    "bird",
-    "winged"
+    "mountain",
+    "yeti"
   ],
-  "assetFolder": "assets/creatures/creature_bird",
+  "assetFolder": "assets/creatures/creature_yeti",
   "librarySource": "category-catalog",
   "packId": null
 }

@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+<path d="M175 190 C230 120 365 120 420 190 C485 275 430 420 295 430 C160 420 105 275 175 190 Z" fill="{bodyColor}" stroke="{{outlineColor}}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="295" cy="285" rx="78" ry="98" fill="{bellyColor}" stroke="{{outlineColor}}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M210 205 L235 230 L260 205 L285 230 L310 205 L335 230 L360 205" fill="none" stroke="{accentColor}" stroke-width="9" stroke-linecap="round"/>
+</svg>

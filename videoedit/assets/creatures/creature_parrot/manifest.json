@@ -1,8 +1,8 @@
 {
   "schemaVersion": "24.0.0",
-  "id": "creature_bird",
+  "id": "creature_parrot",
   "type": "creature",
-  "label": "Bird Creature",
+  "label": "Parrot Creature",
   "category": "creatures",
   "subcategory": "bird",
   "style": "simple_theme_park_svg_v5",
@@ -16,33 +16,33 @@
     500
   ],
   "groundPoint": [
-    310,
-    455
+    300,
+    480
   ],
   "anchors": {
     "ground": [
       310,
-      455
+      450
     ],
     "head": [
       300,
-      125
+      135
     ],
     "mouth": [
-      300,
-      165
+      325,
+      170
     ],
     "leftWing": [
-      205,
-      240
+      220,
+      250
     ],
     "rightWing": [
-      395,
-      240
+      380,
+      250
     ],
     "speechBubble": [
       300,
-      50
+      55
     ]
   },
   "motions": [
@@ -59,12 +59,16 @@
     "scale"
   ],
   "rig": [
-    "head",
-    "jaw",
+    "leftLeg",
+    "rightLeg",
+    "tail",
     "leftArm",
     "rightArm",
-    "leftLeg",
-    "rightLeg"
+    "head",
+    "jaw",
+    "expression_happy",
+    "expression_angry",
+    "expression_surprised"
   ],
   "expressions": {
     "happy": {},
@@ -79,10 +83,12 @@
     "M": "neutral"
   },
   "defaults": {
-    "bodyColor": "#5fa6d8",
-    "bellyColor": "#d8f0ff",
-    "wingColor": "#7bb8e8",
-    "accentColor": "#ffd45a",
+    "bodyColor": "#35a35a",
+    "bellyColor": "#ffee8a",
+    "wingColor": "#2c8ad8",
+    "tailColor": "#2b6dd8",
+    "accentColor": "#ff4a4a",
+    "beakColor": "#ffd45a",
     "outlineColor": "#111111",
     "eyeColor": "#050505"
   },
@@ -98,8 +104,8 @@
       "name": "leftLeg",
       "file": "parts/left_leg.svg",
       "pivot": [
-        260,
-        360
+        270,
+        365
       ],
       "order": 10
     },
@@ -107,17 +113,26 @@
       "name": "rightLeg",
       "file": "parts/right_leg.svg",
       "pivot": [
-        330,
-        360
+        325,
+        365
       ],
       "order": 11
+    },
+    {
+      "name": "tail",
+      "file": "parts/tail.svg",
+      "pivot": [
+        305,
+        365
+      ],
+      "order": 15
     },
     {
       "name": "body",
       "file": "parts/body.svg",
       "pivot": [
         300,
-        260
+        275
       ],
       "order": 20
     },
@@ -125,8 +140,8 @@
       "name": "leftArm",
       "file": "parts/left_arm.svg",
       "pivot": [
-        205,
-        240
+        220,
+        250
       ],
       "order": 35
     },
@@ -134,8 +149,8 @@
       "name": "rightArm",
       "file": "parts/right_arm.svg",
       "pivot": [
-        395,
-        240
+        380,
+        250
       ],
       "order": 36
     },
@@ -144,7 +159,7 @@
       "file": "parts/head.svg",
       "pivot": [
         300,
-        125
+        135
       ],
       "order": 50
     },
@@ -193,9 +208,10 @@
     "external",
     "v24",
     "bird",
-    "winged"
+    "pirate",
+    "parrot"
   ],
-  "assetFolder": "assets/creatures/creature_bird",
+  "assetFolder": "assets/creatures/creature_parrot",
   "librarySource": "category-catalog",
   "packId": null
 }

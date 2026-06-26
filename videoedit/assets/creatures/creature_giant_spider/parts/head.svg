@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+<ellipse cx="200" cy="235" rx="70" ry="55" fill="{bodyColor}" stroke="{{outlineColor}}" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><circle cx="175" cy="225" r="8" fill="{eyeColor}"/><circle cx="200" cy="220" r="8" fill="{eyeColor}"/><circle cx="225" cy="225" r="8" fill="{eyeColor}"/>
+</svg>
