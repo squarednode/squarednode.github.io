@@ -1,0 +1,97 @@
+{
+  "id": "vehicle_jeep",
+  "type": "vehicle",
+  "category": "vehicles",
+  "subcategory": "road_vehicle",
+  "label": "Adventure Jeep",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "wheeled_vehicle_basic",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    200,
+    250
+  ],
+  "anchors": {
+    "ground": [
+      200,
+      250
+    ],
+    "seat": [
+      200,
+      115
+    ],
+    "wheelRear": [
+      95,
+      225
+    ],
+    "wheelFront": [
+      280,
+      225
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "gesture",
+    "scale",
+    "rollWheels"
+  ],
+  "rig": [
+    "rearWheel",
+    "frontWheel"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "vehicle",
+    "road_vehicle"
+  ],
+  "defaults": {
+    "color": "#8b6f47",
+    "trimColor": "#d6c197"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        200,
+        150
+      ],
+      "order": 10
+    },
+    {
+      "name": "rearWheel",
+      "file": "parts/rear_wheel.svg",
+      "pivot": [
+        95,
+        225
+      ],
+      "order": 20
+    },
+    {
+      "name": "frontWheel",
+      "file": "parts/front_wheel.svg",
+      "pivot": [
+        280,
+        225
+      ],
+      "order": 20
+    }
+  ],
+  "assetFolder": "assets/vehicles/vehicle_jeep",
+  "librarySource": "category-catalog",
+  "packId": null
+}

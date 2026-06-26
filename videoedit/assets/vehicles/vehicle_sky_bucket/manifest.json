@@ -1,0 +1,75 @@
+{
+  "id": "vehicle_sky_bucket",
+  "type": "vehicle",
+  "category": "vehicles",
+  "subcategory": "aerial_vehicle",
+  "label": "Sky Bucket",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "vehicle_basic",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    200,
+    250
+  ],
+  "anchors": {
+    "ground": [
+      200,
+      250
+    ],
+    "seat": [
+      200,
+      115
+    ],
+    "wheelRear": [
+      95,
+      225
+    ],
+    "wheelFront": [
+      280,
+      225
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "gesture",
+    "scale"
+  ],
+  "rig": [],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "vehicle",
+    "aerial_vehicle"
+  ],
+  "defaults": {
+    "color": "#bb6bd9",
+    "trimColor": "#f2c94c"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        200,
+        150
+      ],
+      "order": 10
+    }
+  ],
+  "assetFolder": "assets/vehicles/vehicle_sky_bucket",
+  "librarySource": "category-catalog",
+  "packId": null
+}

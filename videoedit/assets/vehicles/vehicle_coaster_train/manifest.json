@@ -1,0 +1,97 @@
+{
+  "id": "vehicle_coaster_train",
+  "type": "vehicle",
+  "category": "vehicles",
+  "subcategory": "ride_vehicle",
+  "label": "Coaster Train",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "schemaVersion": "22.0.0",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "wheeled_vehicle_basic",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    200,
+    250
+  ],
+  "anchors": {
+    "ground": [
+      200,
+      250
+    ],
+    "seat": [
+      200,
+      115
+    ],
+    "wheelRear": [
+      95,
+      225
+    ],
+    "wheelFront": [
+      280,
+      225
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "bob",
+    "gesture",
+    "scale",
+    "rollWheels"
+  ],
+  "rig": [
+    "rearWheel",
+    "frontWheel"
+  ],
+  "expressions": {},
+  "phonemes": {},
+  "tags": [
+    "vehicle",
+    "ride_vehicle"
+  ],
+  "defaults": {
+    "color": "#c7363e",
+    "trimColor": "#ffcf66"
+  },
+  "thumbnail": "thumbnail.svg",
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        200,
+        150
+      ],
+      "order": 10
+    },
+    {
+      "name": "rearWheel",
+      "file": "parts/rear_wheel.svg",
+      "pivot": [
+        95,
+        225
+      ],
+      "order": 20
+    },
+    {
+      "name": "frontWheel",
+      "file": "parts/front_wheel.svg",
+      "pivot": [
+        280,
+        225
+      ],
+      "order": 20
+    }
+  ],
+  "assetFolder": "assets/vehicles/vehicle_coaster_train",
+  "librarySource": "category-catalog",
+  "packId": null
+}

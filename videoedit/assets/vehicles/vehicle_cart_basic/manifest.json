@@ -1,0 +1,96 @@
+{
+  "id": "vehicle_cart_basic",
+  "type": "vehicle",
+  "label": "Rigged Ride Cart",
+  "mode": "external-svg",
+  "path": "./",
+  "source": "external-svg",
+  "rig": [
+    "frontWheel",
+    "rearWheel"
+  ],
+  "tags": [
+    "vehicle",
+    "wheels",
+    "external"
+  ],
+  "defaults": {
+    "color": "#f0b33f",
+    "accentColor": "#ffcf66"
+  },
+  "parts": [
+    {
+      "name": "body",
+      "file": "parts/body.svg",
+      "pivot": [
+        0,
+        0
+      ],
+      "order": 10
+    },
+    {
+      "name": "rearWheel",
+      "file": "parts/rear_wheel.svg",
+      "pivot": [
+        95,
+        215
+      ],
+      "order": 20
+    },
+    {
+      "name": "frontWheel",
+      "file": "parts/front_wheel.svg",
+      "pivot": [
+        230,
+        215
+      ],
+      "order": 21
+    }
+  ],
+  "schemaVersion": "22.0.0",
+  "category": "vehicles",
+  "subcategory": "ride_vehicle",
+  "style": "simple_theme_park_svg_v4",
+  "rigType": "wheeled_vehicle_basic",
+  "scaleClass": "vehicle_standard",
+  "artboard": [
+    500,
+    300
+  ],
+  "groundPoint": [
+    250,
+    250
+  ],
+  "anchors": {
+    "ground": [
+      165,
+      245
+    ],
+    "seat": [
+      165,
+      120
+    ],
+    "wheelRear": [
+      95,
+      215
+    ],
+    "wheelFront": [
+      230,
+      215
+    ]
+  },
+  "motions": [
+    "idle",
+    "enter",
+    "exit",
+    "drive",
+    "rollWheels",
+    "bob",
+    "gesture",
+    "scale"
+  ],
+  "thumbnail": "thumbnail.svg",
+  "assetFolder": "assets/vehicles/vehicle_cart_basic",
+  "librarySource": "category-catalog",
+  "packId": null
+}
