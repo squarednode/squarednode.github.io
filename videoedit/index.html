@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Theme Park Story Engine V13.2</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#070b14;--panel:#111827;--line:#263244;--text:#e5e7eb;--muted:#9ca3af;--accent:#38bdf8;--good:#10b981;--bad:#ef4444}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 0%,#18243a,var(--bg) 65%);color:var(--text)}
+header{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(17,24,39,.97);position:sticky;top:0;z-index:5}
+h1,h2,p{margin:0}h1{font-size:24px}p{color:var(--muted)}code{color:#bfdbfe}
+.header-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+button{border:0;border-radius:10px;padding:9px 12px;background:var(--accent);color:#03111d;font-weight:850;cursor:pointer}
+button.secondary{background:#334155;color:var(--text)}button:disabled{opacity:.55;cursor:not-allowed}
+main{display:grid;grid-template-columns:minmax(400px,36%) 1fr;gap:18px;padding:18px}
+.panel{background:rgba(17,24,39,.97);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.28)}
+.panel-header{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:16px;border-bottom:1px solid var(--line)}
+textarea{width:100%;min-height:640px;resize:vertical;background:#020617;color:#d1fae5;border:0;border-bottom:1px solid var(--line);padding:16px;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;outline:none}
+.status{margin:12px 16px;padding:10px 12px;border-radius:10px;font-weight:750}.neutral{background:#1f2937}.good{background:#064e3b;color:#a7f3d0}.bad{background:#7f1d1d;color:#fecaca}
+.svg-mount{padding:16px;min-height:700px;display:grid;place-items:center;background:radial-gradient(circle at center,#1e293b,#020617 72%)}
+.svg-mount svg{width:100%;height:auto;max-height:78vh;border-radius:14px;box-shadow:0 22px 72px rgba(0,0,0,.5)}
+.timeline{display:flex;align-items:center;gap:12px;min-width:300px}.timeline input{width:220px}#timeReadout{font-weight:800;color:#bfdbfe;min-width:64px}
+.shot-panel{margin:0 18px 18px}.shot-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;padding:16px}
+.shot-row{border:1px solid var(--line);background:#020617;border-radius:12px;padding:10px;cursor:pointer}.shot-row.active{border-color:var(--accent);background:#0b2535}
+.shot-row strong{display:block;margin-bottom:3px}.shot-row span{display:block;color:var(--muted);font-size:12px}
+.pill{display:inline-block;margin-top:8px;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:850;background:#334155;color:#e5e7eb}.approved{background:#064e3b;color:#a7f3d0}.draft{background:#78350f;color:#fde68a}.exported{background:#1e3a8a;color:#bfdbfe}
+.help{padding:0 16px 16px}details{margin-top:10px}summary{cursor:pointer;font-weight:850}pre{overflow:auto;background:#020617;color:#bfdbfe;padding:12px;border-radius:12px;border:1px solid var(--line);max-height:260px}
+@media(max-width:1100px){main{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.timeline{min-width:220px}.timeline input{width:160px}textarea{min-height:420px}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Theme Park Story Engine V13.2</h1>
+    <p>Generic theme-park story engine · custom motion · zIndex layering · wardrobe silhouettes · iconic theme-park props</p>
+  </div>
+  <div class="header-actions">
+    <button id="loadSampleBtn">Load Sample</button>
+    <button id="applyProjectBtn">Apply JSON</button>
+    <button id="playShotBtn">Play Shot</button>
+    <button id="playEpisodeBtn">Play Episode</button>
+    <button id="pauseBtn" class="secondary">Pause</button>
+    <button id="restartBtn" class="secondary">Restart</button>
+    <button id="exportShotWebmBtn">Export Shot WebM</button>
+    <button id="exportAllWebmBtn">Export All WebM</button>
+    <button id="exportSvgBtn" class="secondary">Export SVG</button>
+    <button id="exportProjectBtn" class="secondary">Export JSON</button>
+    <button id="toggleDebugBtn" class="secondary">Debug Labels</button><button id="copyPromptBtn" class="secondary">Copy V13 Prompt</button>
+  </div>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="panel-header">
+      <div>
+        <h2>Episode JSON</h2>
+        <p>Paste generated V10 project JSON here. Stable IDs + order values allow easy scene inserts.</p>
+      </div>
+    </div>
+    <textarea id="projectEditor" spellcheck="false"></textarea>
+    <div id="status" class="status neutral">Ready.</div>
+    <div class="help">
+      <details>
+        <summary>Supported V10 Libraries</summary>
+        <pre id="libraryList"></pre>
+      </details>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header">
+      <div>
+        <h2 id="activeShotTitle">Preview</h2>
+        <p id="activeShotDesc">Load or apply an episode JSON.</p>
+      </div>
+      <div class="timeline">
+        <span id="timeReadout">0.00s</span>
+        <input id="scrubber" type="range" min="0" max="1000" value="0" />
+      </div>
+    </div>
+    <div id="svgMount" class="svg-mount"></div>
+  </section>
+</main>
+
+<section class="panel shot-panel">
+  <div class="panel-header">
+    <div>
+      <h2>Shot List</h2>
+      <p>Sorted by <code>order</code>. Export files use current display order; internal <code>shot_id</code> stays stable.</p>
+    </div>
+  </div>
+  <div id="shotList" class="shot-list"></div>
+</section>
+
+<script>
+const W=1920,H=1080,FPS=24,MAX_SHOTS=30,MAX_SHOT_SECONDS=15,MAX_EPISODE_SECONDS=180;
+const el=id=>document.getElementById(id);
+
+/* ----------------------------- V10 LIBRARIES ----------------------------- */
+
+const BASE_RIGS={
+  "char_humanoid_adult_v001":{type:"character",kind:"humanoid_adult",display:"Humanoid Adult"},
+  "char_humanoid_adult_male_v001":{type:"character",kind:"humanoid_adult_male",display:"Humanoid Adult Male"},
+  "char_humanoid_adult_female_v001":{type:"character",kind:"humanoid_adult_female",display:"Humanoid Adult Female"},
+  "char_humanoid_child_v001":{type:"character",kind:"humanoid_child",display:"Humanoid Child"},
+  "char_humanoid_large_v001":{type:"character",kind:"humanoid_large",display:"Large Humanoid"},
+  "creature_biped_v001":{type:"creature",kind:"biped",display:"Biped Creature"},
+  "creature_quadruped_v001":{type:"creature",kind:"quadruped",display:"Quadruped Creature"},
+  "creature_flying_v001":{type:"creature",kind:"flying",display:"Flying Creature"},
+  "vehicle_coaster_train_v001":{type:"vehicle",kind:"coaster_train",display:"Coaster Train"},
+  "vehicle_launch_coaster_train_v001":{type:"vehicle",kind:"launch_coaster_train",display:"Launch Coaster Train"},
+  "vehicle_dark_ride_vehicle_v001":{type:"vehicle",kind:"dark_ride",display:"Dark Ride Vehicle"},
+  "vehicle_boat_v001":{type:"vehicle",kind:"boat",display:"Boat"},
+  "vehicle_ride_car_v001":{type:"vehicle",kind:"ride_car",display:"Ride Car"},
+  "vehicle_omnimover_v001":{type:"vehicle",kind:"omnimover",display:"Omnimover"},
+  "vehicle_trackless_vehicle_v001":{type:"vehicle",kind:"trackless",display:"Trackless Vehicle"},
+  "prop_sign_v001":{type:"prop",kind:"sign",display:"Generic Sign"},
+  "prop_fence_v001":{type:"prop",kind:"fence",display:"Fence"},
+  "prop_lamp_v001":{type:"prop",kind:"lamp",display:"Lamp"},
+  "prop_text_sign_v001":{type:"prop",kind:"text_sign",display:"Text Sign"},
+  "prop_clock_tower_v001":{type:"prop",kind:"clock_tower",display:"Clock Tower"},
+  "prop_brick_wall_v001":{type:"prop",kind:"brick_wall",display:"Brick Wall"},
+  "prop_platform_arch_v001":{type:"prop",kind:"platform_arch",display:"Platform Arch"},
+  "prop_ghost_soul_v001":{type:"prop",kind:"ghost_soul",display:"Ghost Soul"},
+  "prop_magic_spark_v001":{type:"prop",kind:"magic_spark",display:"Magic Spark"},
+  "prop_suitcase_v001":{type:"prop",kind:"suitcase",display:"Suitcase"},
+  "prop_wand_v001":{type:"prop",kind:"wand",display:"Wand"},
+  "prop_camera_v001":{type:"prop",kind:"camera",display:"Camera"},
+  "prop_drink_cup_v001":{type:"prop",kind:"drink_cup",display:"Drink Cup"},
+  "prop_mouse_ears_v001":{type:"prop",kind:"mouse_ears",display:"Mouse Ears"},
+  "prop_wizard_wand_v001":{type:"prop",kind:"wizard_wand",display:"Wizard Wand"},
+  "vehicle_steam_train_v001":{type:"vehicle",kind:"steam_train",display:"Steam Train"},
+  "vehicle_sports_car_v001":{type:"vehicle",kind:"sports_car",display:"Sports Car"},
+  "vehicle_muscle_car_v001":{type:"vehicle",kind:"muscle_car",display:"Muscle Car"},
+  "vehicle_motorbike_sidecar_v001":{type:"vehicle",kind:"motorbike_sidecar",display:"Motorbike Sidecar"},
+  "vehicle_spinning_coaster_car_v001":{type:"vehicle",kind:"spinning_coaster_car",display:"Spinning Coaster Car"},
+  "vehicle_inverted_coaster_train_v001":{type:"vehicle",kind:"inverted_coaster_train",display:"Inverted Coaster Train"},
+  "vehicle_flume_log_v001":{type:"vehicle",kind:"flume_log",display:"Flume Log"},
+  "vehicle_raft_v001":{type:"vehicle",kind:"raft",display:"Raft"},
+  "vehicle_simulator_cabin_v001":{type:"vehicle",kind:"simulator_cabin",display:"Simulator Cabin"},
+  "vehicle_drop_tower_gondola_v001":{type:"vehicle",kind:"drop_tower_gondola",display:"Drop Tower Gondola"},
+  "vehicle_flying_theater_bench_v001":{type:"vehicle",kind:"flying_theater_bench",display:"Flying Theater Bench"},
+  "vehicle_tram_bus_v001":{type:"vehicle",kind:"tram_bus",display:"Tram Bus"},
+  "vehicle_mine_cart_v001":{type:"vehicle",kind:"mine_cart",display:"Mine Cart"},
+  "vehicle_elevator_cage_v001":{type:"vehicle",kind:"elevator_cage",display:"Elevator/Lift Cage"},
+  "prop_warning_sign_v001":{type:"prop",kind:"warning_sign",display:"Warning Sign"},
+  "prop_map_poster_v001":{type:"prop",kind:"map_poster",display:"Map/Poster"},
+  "prop_restraint_bar_v001":{type:"prop",kind:"restraint_bar",display:"Restraint Bar"},
+  "prop_restraint_lapbar_v001":{type:"prop",kind:"restraint_lapbar",display:"Lap Bar Restraint"},
+  "prop_restraint_otr_v001":{type:"prop",kind:"restraint_otr",display:"Over-Shoulder Restraint"},
+  "prop_restraint_motorbike_v001":{type:"prop",kind:"restraint_motorbike",display:"Motorbike Restraint"},
+  "prop_restraint_darkride_v001":{type:"prop",kind:"restraint_darkride",display:"Dark Ride Restraint"},
+  "prop_control_panel_v001":{type:"prop",kind:"control_panel",display:"Control Panel"},
+  "prop_splash_v001":{type:"prop",kind:"splash",display:"Water Splash"},
+  "prop_fire_burst_v001":{type:"prop",kind:"fire_burst",display:"Fire Burst"},
+  "prop_crate_barrel_v001":{type:"prop",kind:"crate_barrel",display:"Crate/Barrel"},
+  "prop_track_support_v001":{type:"prop",kind:"track_support",display:"Track Support"}
+};
+
+const APPEARANCES={
+  "appearance_vlogger_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#173A5E",shorts:"#C79B5F",watch:"#111827",stubble:true,hairStyle:"short",hairWind:false,display:"Theme Park Vlogger"},
+  "appearance_male_vlogger_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#173A5E",shorts:"#C79B5F",watch:"#111827",stubble:true,hairStyle:"short",hairWind:false,display:"Male Theme Park Vlogger"},
+  "appearance_female_vlogger_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#A855F7",shorts:"#C79B5F",watch:"#111827",stubble:false,hairStyle:"bob",hairWind:false,display:"Female Theme Park Vlogger"},
+  "appearance_wizard_child_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#111827",shorts:"#111827",watch:"#111827",stubble:false,hairStyle:"short",hairWind:false,bodyShape:"triangle_cloak",cloakColor:"#111827",robeTrim:"#7C2D12",hatStyle:"wizard_hat",hatColor:"#111827",display:"Wizard Child"},
+  "appearance_wizard_adult_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#111827",shorts:"#111827",watch:"#111827",stubble:true,hairStyle:"short",hairWind:false,bodyShape:"long_robe",cloakColor:"#111827",robeTrim:"#7C2D12",hatStyle:"wizard_hat",hatColor:"#111827",display:"Wizard Adult"},
+  "appearance_ride_operator_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#1D4ED8",shorts:"#111827",watch:"#111827",stubble:false,hairStyle:"short",hairWind:false,bodyShape:"standard",hatStyle:"baseball_cap",hatColor:"#1D4ED8",display:"Ride Operator"},
+  "appearance_mechanic_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#475569",shorts:"#334155",watch:"#111827",stubble:true,hairStyle:"short",hairWind:false,bodyShape:"mechanic_overalls",hatStyle:"baseball_cap",hatColor:"#111827",display:"Mechanic"},
+  "appearance_space_rider_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#E5E7EB",shorts:"#CBD5E1",watch:"#111827",stubble:false,hairStyle:"short",hairWind:false,bodyShape:"spacesuit",hatStyle:"helmet",hatColor:"#E5E7EB",display:"Space Rider"},
+  "appearance_pirate_v001":{skin:"#F1B178",hair:"#2A1A12",shirt:"#7C2D12",shorts:"#111827",watch:"#111827",stubble:true,hairStyle:"long",hairWind:false,bodyShape:"jacket",hatStyle:"pirate_hat",hatColor:"#111827",display:"Pirate"},
+  "appearance_park_guest_v001":{skin:"#EAB38A",hair:"#5B321E",shirt:"#38BDF8",shorts:"#64748B",watch:"#111827",display:"Park Guest"},
+  "appearance_employee_v001":{skin:"#F1B178",hair:"#22150F",shirt:"#7C3AED",shorts:"#111827",watch:"#111827",display:"Park Employee"},
+  "appearance_scientist_v001":{skin:"#F1B178",hair:"#3B2416",shirt:"#E5E7EB",shorts:"#334155",watch:"#111827",display:"Scientist"},
+  "appearance_pirate_v001":{skin:"#D9A06D",hair:"#1F130B",shirt:"#7F1D1D",shorts:"#3F2F20",watch:"#111827",display:"Pirate"},
+  "appearance_explorer_v001":{skin:"#D9A06D",hair:"#3B2416",shirt:"#8A6A38",shorts:"#6B4B2A",watch:"#111827",display:"Explorer"},
+  "appearance_superhero_v001":{skin:"#F1B178",hair:"#111827",shirt:"#DC2626",shorts:"#1D4ED8",watch:"#111827",display:"Superhero"}
+};
+
+const CREATURE_SKINS={
+  "skin_raptor_v001":{body:"#1D8FC2",belly:"#7DD3FC",eye:"#111111",display:"Raptor"},
+  "skin_dragon_v001":{body:"#2F855A",belly:"#FBBF24",eye:"#111111",display:"Dragon"},
+  "skin_gorilla_v001":{body:"#2D2A26",belly:"#4B5563",eye:"#111111",display:"Gorilla"},
+  "skin_alien_v001":{body:"#84CC16",belly:"#BEF264",eye:"#111111",display:"Alien"},
+  "skin_monster_v001":{body:"#7C3AED",belly:"#C4B5FD",eye:"#111111",display:"Monster"},
+  "skin_robot_v001":{body:"#94A3B8",belly:"#CBD5E1",eye:"#111111",display:"Robot Creature"}
+};
+
+const THEMES={
+  "theme_jurassic":{sky:["#78D7FF","#DDF7FF"],ground:"#3F4F35",dark:"#123F2A",mid:"#1E6B3E",accent:"#1B78A5",stone:"#777268",sign:"#26312C",light:"#FFB000"},
+  "theme_haunted":{sky:["#27324A","#111827"],ground:"#1F2937",dark:"#111827",mid:"#374151",accent:"#7C3AED",stone:"#4B5563",sign:"#1F2937",light:"#A78BFA"},
+  "theme_space":{sky:["#020617","#172554"],ground:"#111827",dark:"#020617",mid:"#1E3A8A",accent:"#38BDF8",stone:"#64748B",sign:"#0F172A",light:"#67E8F9"},
+  "theme_fantasy":{sky:["#A78BFA","#FDE68A"],ground:"#4D7C0F",dark:"#365314",mid:"#65A30D",accent:"#F59E0B",stone:"#78716C",sign:"#4C1D95",light:"#FDE68A"},
+  "theme_pirate":{sky:["#60A5FA","#FBBF24"],ground:"#7C5A34",dark:"#164E63",mid:"#0E7490",accent:"#B45309",stone:"#6B4B2A",sign:"#3F2F20",light:"#F59E0B"},
+  "theme_western":{sky:["#FBBF24","#FED7AA"],ground:"#92400E",dark:"#78350F",mid:"#B45309",accent:"#F59E0B",stone:"#A16207",sign:"#451A03",light:"#FDE68A"},
+  "theme_superhero":{sky:["#60A5FA","#DBEAFE"],ground:"#374151",dark:"#1E3A8A",mid:"#2563EB",accent:"#DC2626",stone:"#6B7280",sign:"#111827",light:"#FDE047"},
+  "theme_city":{sky:["#93C5FD","#E0F2FE"],ground:"#4B5563",dark:"#1F2937",mid:"#6B7280",accent:"#38BDF8",stone:"#9CA3AF",sign:"#111827",light:"#FACC15"},
+  "theme_underwater":{sky:["#67E8F9","#0E7490"],ground:"#0F7288",dark:"#164E63",mid:"#0891B2",accent:"#38BDF8",stone:"#155E75",sign:"#0F172A",light:"#A7F3D0"},
+  "theme_sci_fi":{sky:["#020617","#334155"],ground:"#111827",dark:"#0F172A",mid:"#334155",accent:"#22D3EE",stone:"#64748B",sign:"#020617",light:"#22D3EE"},
+  "theme_steampunk":{sky:["#C4A484","#F5DEB3"],ground:"#6B4B2A",dark:"#3F2F20",mid:"#8B5E34",accent:"#D97706",stone:"#78716C",sign:"#422006",light:"#F59E0B"},
+  "theme_post_apocalypse":{sky:["#A3A3A3","#737373"],ground:"#3F3F46",dark:"#27272A",mid:"#52525B",accent:"#EF4444",stone:"#71717A",sign:"#1F2937",light:"#F97316"}
+};
+
+const ENVIRONMENTS=[
+  "env_park_entry_v001","env_midway_v001","env_queue_v001","env_station_v001","env_launch_v001","env_lift_hill_v001",
+  "env_drop_v001","env_inversion_v001","env_show_scene_v001","env_tunnel_v001","env_bridge_v001","env_courtyard_v001",
+  "env_exit_path_v001","env_skyline_v001","env_waterfront_v001","env_forest_v001","env_jungle_v001","env_cave_v001",
+  "env_volcano_v001","env_ruins_v001","env_city_v001","env_space_v001","env_laboratory_v001","env_factory_v001",
+  "env_hangar_v001","env_castle_v001","env_dungeon_v001","env_pirate_port_v001","env_underwater_v001","env_desert_v001",
+  "env_arctic_v001","env_mountain_v001","env_sunset_v001","env_night_v001","env_train_station_v001","env_magic_platform_v001","env_castle_lake_v001","env_themed_land_street_v001","env_queue_interior_v001","env_load_platform_v001","env_launch_tunnel_v001","env_vertical_spike_v001","env_vertical_top_hat_v001","env_lagoon_v001","env_haunted_interior_v001","env_gift_shop_exit_v001","env_volcano_lava_v001","env_screen_room_v001","env_drop_tower_v001"
+];
+
+const MOTIONS={
+  "motion_idle_v001":{pose:"standing",expression:"neutral",tracks:[{part:"head",property:"rotate",from:-2,to:2,start:0,duration:2,loop:true,yoyo:true}]},
+  "motion_walk_v001":{pose:"walking",expression:"neutral",tracks:[{part:"rig",property:"translateX",from:-20,to:20,start:0,duration:1.8,loop:true,yoyo:true},{part:"body",property:"translateY",from:0,to:-7,start:0,duration:.5,loop:true,yoyo:true}]},
+  "motion_run_v001":{pose:"walking",expression:"shocked",tracks:[{part:"rig",property:"translateX",from:-40,to:40,start:0,duration:.8,loop:true,yoyo:true},{part:"body",property:"translateY",from:0,to:-10,start:0,duration:.25,loop:true,yoyo:true}]},
+  "motion_point_v001":{pose:"pointing",expression:"curious",tracks:[{part:"head",property:"rotate",from:-4,to:6,start:0,duration:1.3,loop:true,yoyo:true}]},
+  "motion_wave_v001":{pose:"wave",expression:"happy",tracks:[{part:"arm_R",property:"rotate",from:-18,to:18,start:0,duration:.5,loop:true,yoyo:true}]},
+  "motion_thumbsup_v001":{pose:"thumbs_up",expression:"happy",tracks:[{part:"head",property:"rotate",from:-2,to:3,start:0,duration:1.5,loop:true,yoyo:true},{part:"body",property:"translateY",from:0,to:-8,start:0,duration:1.4,loop:true,yoyo:true}]},
+  "motion_confident_v001":{pose:"thumbs_up",expression:"happy",tracks:[{part:"body",property:"translateY",from:0,to:-6,start:0,duration:1.6,loop:true,yoyo:true}]},
+  "motion_curious_v001":{pose:"pointing",expression:"curious",tracks:[{part:"head",property:"rotate",from:-5,to:8,start:0,duration:1.4,loop:true,yoyo:true}]},
+  "motion_nervous_v001":{pose:"gripping",expression:"worried",tracks:[{part:"head",property:"rotate",from:-5,to:2,start:0,duration:1.1,loop:true,yoyo:true},{part:"sweat",property:"opacity",from:.2,to:1,start:0,duration:.8,loop:true,yoyo:true}]},
+  "motion_surprised_v001":{pose:"standing",expression:"shocked",tracks:[{part:"head",property:"rotate",from:-4,to:5,start:0,duration:.7,loop:true,yoyo:true}]},
+  "motion_shocked_v001":{pose:"gripping",expression:"shocked",wind:70,tracks:[{part:"head",property:"rotate",from:-7,to:7,start:0,duration:.28,loop:true,yoyo:true},{part:"hair_wind",property:"scaleX",from:1,to:1.18,start:0,duration:.22,loop:true,yoyo:true}]},
+  "motion_panic_v001":{pose:"gripping",expression:"shocked",wind:90,tracks:[{part:"head",property:"rotate",from:-18,to:18,start:0,duration:.38,loop:true,yoyo:true},{part:"body",property:"rotate",from:-8,to:8,start:0,duration:.35,loop:true,yoyo:true}]},
+  "motion_celebrate_v001":{pose:"arms_up",expression:"happy",tracks:[{part:"body",property:"translateY",from:0,to:-12,start:0,duration:.8,loop:true,yoyo:true}]},
+  "motion_tired_v001":{pose:"thumbs_up",expression:"tired_happy",wind:15,tracks:[{part:"head",property:"rotate",from:-6,to:2,start:0,duration:1.6,loop:true,yoyo:true}]},
+  "motion_fall_v001":{pose:"arms_up",expression:"shocked",wind:80,tracks:[{part:"body",property:"translateY",from:-10,to:12,start:0,duration:.28,loop:true,yoyo:true}]},
+  "motion_hold_restraint_v001":{pose:"gripping",expression:"worried",tracks:[{part:"head",property:"rotate",from:-4,to:4,start:0,duration:1,loop:true,yoyo:true}]},
+  "motion_look_up_v001":{pose:"standing",expression:"curious",tracks:[{part:"head",property:"rotate",from:-8,to:-2,start:0,duration:1.5,loop:true,yoyo:true}]},
+  "motion_look_down_v001":{pose:"standing",expression:"worried",tracks:[{part:"head",property:"rotate",from:4,to:10,start:0,duration:1.4,loop:true,yoyo:true}]},
+  "motion_observe_v001":{pose:"standing",expression:"curious",tracks:[{part:"head",property:"rotate",from:-6,to:6,start:0,duration:2.2,loop:true,yoyo:true}]},
+  "motion_coaster_launch_v001":{pose:"gripping",expression:"shocked",wind:95,tracks:[{part:"head",property:"rotate",from:-7,to:7,start:0,duration:.28,loop:true,yoyo:true},{part:"body",property:"translateX",from:14,to:-10,start:0,duration:.25,loop:true,yoyo:true},{part:"hair_wind",property:"scaleX",from:1,to:1.22,start:0,duration:.22,loop:true,yoyo:true}]},
+  "motion_coaster_drop_v001":{pose:"arms_up",expression:"shocked",wind:90,tracks:[{part:"head",property:"rotate",from:-10,to:10,start:0,duration:.32,loop:true,yoyo:true}]},
+  "motion_coaster_inversion_v001":{pose:"gripping",expression:"shocked",wind:85,tracks:[{part:"head",property:"rotate",from:-20,to:20,start:0,duration:.4,loop:true,yoyo:true}]},
+  "motion_creature_idle_v001":{tracks:[{part:"head",property:"rotate",from:-8,to:8,start:0,duration:1.4,loop:true,yoyo:true},{part:"tail",property:"rotate",from:-4,to:5,start:0,duration:1.7,loop:true,yoyo:true}]},
+  "motion_creature_walk_right_v001":{tracks:[{part:"rig",property:"translateX",from:-650,to:650,start:0,duration:5.4,loop:false},{part:"body",property:"translateY",from:0,to:-8,start:0,duration:.45,loop:true,yoyo:true},{part:"head",property:"rotate",from:-5,to:6,start:0,duration:.9,loop:true,yoyo:true}]},
+  "motion_vehicle_idle_v001":{tracks:[{part:"rig",property:"translateY",from:0,to:-2,start:0,duration:1.8,loop:true,yoyo:true}]},
+  "motion_vehicle_launch_v001":{tracks:[{part:"rig",property:"translateX",from:-55,to:50,start:0,duration:.26,loop:true,yoyo:true}]},
+  "motion_vehicle_turn_v001":{tracks:[{part:"rig",property:"rotate",from:-10,to:10,start:0,duration:.6,loop:true,yoyo:true}]},
+  "motion_vehicle_drop_v001":{tracks:[{part:"rig",property:"translateY",from:-80,to:100,start:0,duration:.8,loop:true,yoyo:true},{part:"rig",property:"rotate",from:-15,to:8,start:0,duration:.8,loop:true,yoyo:true}]},
+  "motion_vehicle_inversion_v001":{tracks:[{part:"rig",property:"rotate",from:0,to:360,start:0,duration:2.2,loop:true}]},
+  "motion_vehicle_skyline_pass_v001":{tracks:[{part:"rig",property:"translateX",from:-900,to:900,start:0,duration:5.5,loop:true}]},
+  "motion_walk_in_from_left_v001":{pose:"walking",expression:"happy",tracks:[{part:"rig",property:"translateX",from:-700,to:0,start:0,duration:3.8,loop:false}]},
+  "motion_walk_out_right_v001":{pose:"walking",expression:"neutral",tracks:[{part:"rig",property:"translateX",from:0,to:700,start:0,duration:4.2,loop:false}]},
+  "motion_run_into_wall_v001":{pose:"walking",expression:"shocked",tracks:[{part:"rig",property:"translateX",from:-780,to:0,start:0,duration:2.2,loop:false},{part:"rig",property:"rotate",from:0,to:90,start:2.2,duration:.35,loop:false}]},
+  "motion_fly_across_v001":{tracks:[{part:"rig",property:"translateX",from:-900,to:900,start:0,duration:5.2,loop:false},{part:"rig",property:"translateY",from:0,to:-55,start:0,duration:2.6,loop:true,yoyo:true}]},
+  "motion_enter_from_right_v001":{pose:"wave",expression:"happy",tracks:[{part:"rig",property:"translateX",from:850,to:0,start:0,duration:3.2,loop:false}]},
+  "motion_drop_vertical_v001":{tracks:[{part:"rig",property:"translateY",from:-260,to:180,start:0,duration:2.2,loop:false},{part:"rig",property:"scale",from:.85,to:1.25,start:0,duration:2.2,loop:false}]},
+  "motion_rise_vertical_v001":{tracks:[{part:"rig",property:"translateY",from:160,to:-260,start:0,duration:3.5,loop:false},{part:"rig",property:"scale",from:1.15,to:.85,start:0,duration:3.5,loop:false}]},
+  "motion_pop_out_soul_v001":{tracks:[{part:"rig",property:"translateY",from:0,to:-180,start:0,duration:2.4,loop:false},{part:"rig",property:"scale",from:.55,to:1.05,start:0,duration:2.4,loop:false}]},
+  "motion_spike_climb_v001":{tracks:[{part:"rig",property:"translateY",from:260,to:-260,start:0,duration:4.2,loop:false},{part:"rig",property:"scale",from:1.1,to:.88,start:0,duration:4.2,loop:false}]},
+  "motion_spike_backward_drop_v001":{tracks:[{part:"rig",property:"translateY",from:-260,to:260,start:0,duration:3.0,loop:false},{part:"rig",property:"scale",from:.88,to:1.18,start:0,duration:3.0,loop:false}]},
+  "motion_top_hat_crest_v001":{tracks:[{part:"rig",property:"translateY",from:120,to:-120,start:0,duration:3.6,loop:false},{part:"rig",property:"scale",from:1.05,to:.92,start:0,duration:3.6,loop:false}]},
+  "motion_top_hat_drop_v001":{tracks:[{part:"rig",property:"translateY",from:-180,to:220,start:0,duration:2.8,loop:false},{part:"rig",property:"scale",from:.9,to:1.22,start:0,duration:2.8,loop:false}]},
+  "motion_walk_in_from_left_v001":{pose:"walking",expression:"happy",tracks:[{part:"rig",property:"translateX",from:-700,to:0,start:0,duration:3.8,loop:false},{part:"body",property:"translateY",from:0,to:-7,start:0,duration:.5,loop:true,yoyo:true}]},
+  "motion_walk_out_right_v001":{pose:"walking",expression:"neutral",tracks:[{part:"rig",property:"translateX",from:0,to:700,start:0,duration:4.2,loop:false},{part:"body",property:"translateY",from:0,to:-7,start:0,duration:.5,loop:true,yoyo:true}]},
+  "motion_run_into_wall_v001":{pose:"walking",expression:"shocked",tracks:[{part:"rig",property:"translateX",from:-780,to:0,start:0,duration:2.2,loop:false},{part:"rig",property:"rotate",from:0,to:90,start:2.2,duration:.35,loop:false},{part:"body",property:"translateY",from:0,to:-10,start:0,duration:.25,loop:true,yoyo:true}]},
+  "motion_fly_across_v001":{tracks:[{part:"rig",property:"translateX",from:-900,to:900,start:0,duration:5.2,loop:false},{part:"rig",property:"translateY",from:0,to:-55,start:0,duration:2.6,loop:true,yoyo:true},{part:"body",property:"rotate",from:-6,to:6,start:0,duration:.8,loop:true,yoyo:true}]},
+  "motion_enter_from_right_v001":{pose:"wave",expression:"happy",tracks:[{part:"rig",property:"translateX",from:850,to:0,start:0,duration:3.2,loop:false},{part:"arm_R",property:"rotate",from:-18,to:18,start:1.8,duration:.5,loop:true,yoyo:true}]},
+  "motion_drop_vertical_v001":{tracks:[{part:"rig",property:"translateY",from:-260,to:180,start:0,duration:2.2,loop:false},{part:"rig",property:"scale",from:.85,to:1.25,start:0,duration:2.2,loop:false}]},
+  "motion_rise_vertical_v001":{tracks:[{part:"rig",property:"translateY",from:160,to:-260,start:0,duration:3.5,loop:false},{part:"rig",property:"scale",from:1.15,to:.85,start:0,duration:3.5,loop:false}]},
+  "motion_pop_out_soul_v001":{tracks:[{part:"rig",property:"translateY",from:0,to:-180,start:0,duration:2.4,loop:false},{part:"rig",property:"scale",from:.55,to:1.05,start:0,duration:2.4,loop:false},{part:"body",property:"opacity",from:.15,to:.75,start:0,duration:1.5,loop:false}]}
+};
+
+const CAMERAS={
+  "cam_static_v001":{zoomFrom:1,zoomTo:1,panXFrom:0,panXTo:0,panYFrom:0,panYTo:0,shake:0},
+  "cam_push_in_v001":{zoomFrom:1,zoomTo:1.08,panXFrom:0,panXTo:-20,panYFrom:0,panYTo:-5,shake:0},
+  "cam_push_out_v001":{zoomFrom:1.1,zoomTo:1,panXFrom:0,panXTo:0,panYFrom:0,panYTo:0,shake:0},
+  "cam_pan_left_v001":{zoomFrom:1,zoomTo:1.02,panXFrom:40,panXTo:-40,panYFrom:0,panYTo:0,shake:0},
+  "cam_pan_right_v001":{zoomFrom:1,zoomTo:1.02,panXFrom:-40,panXTo:40,panYFrom:0,panYTo:0,shake:0},
+  "cam_reveal_v001":{zoomFrom:1.08,zoomTo:1.22,panXFrom:0,panXTo:-25,panYFrom:0,panYTo:-10,shake:0},
+  "cam_follow_v001":{zoomFrom:1.02,zoomTo:1.08,panXFrom:0,panXTo:-70,panYFrom:0,panYTo:0,shake:.25},
+  "cam_shake_light_v001":{zoomFrom:1.03,zoomTo:1.08,panXFrom:0,panXTo:-30,panYFrom:0,panYTo:0,shake:.4},
+  "cam_shake_heavy_v001":{zoomFrom:1.05,zoomTo:1.12,panXFrom:0,panXTo:-80,panYFrom:0,panYTo:10,shake:1.0}
+};
+
+/* ----------------------------- SAMPLE PROJECT ----------------------------- */
+
+const SAMPLE_PROJECT={
+  project_id:"theme_park_story_engine_v10_sample",
+  title:"Generic Theme Park Adventure Sample",
+  shots:[
+    {shot_id:"shot_000_sign_reveal",order:0,title:"Attraction Sign Reveal",status:"draft",duration:4.5,camera:"cam_reveal_v001",background:{theme:"theme_jurassic",environment:"env_park_entry_v001"},placements:[
+      {instance_id:"env",asset_type:"environment",environment:"env_park_entry_v001",theme:"theme_jurassic",x:0,y:0,scale:1.05,motion:"motion_idle_v001"},
+      {instance_id:"sign",asset_type:"prop",rig:"prop_sign_v001",theme:"theme_jurassic",x:960,y:560,scale:1.25,motion:"motion_idle_v001"}
+    ],effects:[]},
+    {shot_id:"shot_001_first_sight",order:10,title:"First Sight",status:"draft",duration:5,camera:"cam_push_in_v001",background:{theme:"theme_jurassic",environment:"env_park_entry_v001"},placements:[
+      {instance_id:"env",asset_type:"environment",environment:"env_park_entry_v001",theme:"theme_jurassic",x:0,y:0,scale:1,motion:"motion_idle_v001"},
+      {instance_id:"hero",asset_type:"character",rig:"char_humanoid_adult_v001",appearance:"appearance_vlogger_v001",x:820,y:895,scale:1.35,motion:"motion_thumbsup_v001"}
+    ],effects:[]},
+    {shot_id:"shot_002_queue",order:20,title:"Queue Curiosity",status:"draft",duration:5,camera:"cam_follow_v001",background:{theme:"theme_jurassic",environment:"env_queue_v001"},placements:[
+      {instance_id:"env",asset_type:"environment",environment:"env_queue_v001",theme:"theme_jurassic",x:0,y:0,scale:1,motion:"motion_idle_v001"},
+      {instance_id:"hero",asset_type:"character",rig:"char_humanoid_adult_v001",appearance:"appearance_vlogger_v001",x:760,y:850,scale:1.45,motion:"motion_curious_v001"}
+    ],effects:[]},
+    {shot_id:"shot_003_loose_creature",order:30,title:"Loose Creature",status:"draft",duration:5.5,camera:"cam_push_in_v001",background:{theme:"theme_jurassic",environment:"env_queue_v001"},placements:[
+      {instance_id:"env",asset_type:"environment",environment:"env_queue_v001",theme:"theme_jurassic",x:-120,y:0,scale:1.08,motion:"motion_idle_v001"},
+      {instance_id:"creature",asset_type:"creature",rig:"creature_biped_v001",skin:"skin_raptor_v001",x:1040,y:835,scale:.82,motion:"motion_creature_idle_v001"},
+      {instance_id:"hero",asset_type:"character",rig:"char_humanoid_adult_v001",appearance:"appearance_vlogger_v001",x:540,y:875,scale:1.28,motion:"motion_walk_v001"}
+    ],effects:[]},
+    {shot_id:"shot_004_boarding",order:40,title:"Boarding",status:"draft",duration:4.5,camera:"cam_push_in_v001",background:{theme:"theme_sci_fi",environment:"env_station_v001"},placements:[
+      {instance_id:"env",asset_type:"environment",environment:"env_station_v001",theme:"theme_sci_fi",x:0,y:0,scale:1,motion:"motion_idle_v001"},
+      {instance_id:"vehicle",asset_type:"vehicle",rig:"vehicle_coaster_train_v001",theme:"theme_jurassic",x:960,y:810,scale:1.35,rotate:0,motion:"motion_vehicle_idle_v001"},
+      {instance_id:"hero",asset_type:"character",rig:"char_humanoid_adult_v001",appearance:"appearance_vlogger_v001",x:960,y:770,scale:1.7,motion:"motion_nervous_v001"}
+    ],effects:[]},
+    {shot_id:"shot_005_launch",order:50,title:"Launch",status:"draft",duration:4,camera:"cam_shake_heavy_v001",background:{theme:"theme_jurassic",environment:"env_launch_v001"},placements:[
+      {instance_id:"env",asset_type:"environment",environment:"env_launch_v001",theme:"theme_jurassic",x:-60,y:0,scale:1.06,motion:"motion_idle_v001"},
+      {instance_id:"vehicle",asset_type:"vehicle",rig:"vehicle_coaster_train_v001",theme:"theme_jurassic",x:940,y:800,scale:1.55,rotate:-8,motion:"motion_vehicle_launch_v001"},
+      {instance_id:"hero",asset_type:"character",rig:"char_humanoid_adult_v001",appearance:"appearance_vlogger_v001",x:940,y:745,scale:1.82,motion:"motion_coaster_launch_v001"}
+    ],effects:[{id:"speed_lines",type:"speedLines",x:960,y:370,scale:1.8,opacity:.42},{id:"motion_blur",type:"motionBlur",x:960,y:390,w:1920,h:520,opacity:.2}]}
+  ]
+};
+
+/* ----------------------------- NORMALIZATION ----------------------------- */
+
+let project={},shots=[],shotIndex=0,activeShot={},debugLabels=false,playing=false,playingEpisode=false,raf=null,startMs=0,pauseAt=0,episodeStartOffset=0;
+
+function normalizeProject(p){
+  p=p&&typeof p==="object"?p:{};
+  let raw=Array.isArray(p.shots)?p.shots.slice(0,MAX_SHOTS):[];
+  return {
+    project_id:safeId(p.project_id||"project_untitled"),
+    title:String(p.title||"Untitled Episode"),
+    shots:raw.map(normalizeShot).sort((a,b)=>a.order-b.order||a.shot_id.localeCompare(b.shot_id))
+  };
+}
+function normalizeShot(s){
+  s=s&&typeof s==="object"?s:{};
+  const bg=s.background||{};
+  return {
+    shot_id:safeId(s.shot_id||"shot_untitled"),
+    order:num(s.order,9999,-9999,999999),
+    title:String(s.title||s.shot_id||"Untitled Shot"),
+    status:String(s.status||"draft"),
+    duration:num(s.duration,4,.5,MAX_SHOT_SECONDS),
+    camera:normalizeCamera(s.camera),
+    background:{
+      theme:String(bg.theme||"theme_jurassic"),
+      environment:String(bg.environment||"env_park_entry_v001"),
+      colors:Array.isArray(bg.colors)?bg.colors.map(String):null,
+      ground:bg.ground?String(bg.ground):null,
+      horizon:num(bg.horizon,68)
+    },
+    placements:Array.isArray(s.placements)?s.placements.map(normalizePlacement):[],
+    effects:Array.isArray(s.effects)?s.effects:[]
+  };
+}
+function normalizeCamera(c){
+  if(typeof c==="string") return {...(CAMERAS[c]||CAMERAS.cam_static_v001),preset:c};
+  c=c&&typeof c==="object"?c:{};
+  return {
+    zoomFrom:num(c.zoomFrom,1,.2,4),zoomTo:num(c.zoomTo,1,.2,4),
+    panXFrom:num(c.panXFrom,0,-2000,2000),panXTo:num(c.panXTo,0,-2000,2000),
+    panYFrom:num(c.panYFrom,0,-2000,2000),panYTo:num(c.panYTo,0,-2000,2000),
+    shake:num(c.shake,0,0,10)
+  };
+}
+function normalizePlacement(p){
+  p=p&&typeof p==="object"?p:{};
+  return {
+    instance_id:safeId(p.instance_id||"instance"),
+    asset_type:String(p.asset_type||inferAssetType(p)),
+    rig:String(p.rig||p.rig_id||""),
+    appearance:p.appearance?String(p.appearance):"",
+    skin:p.skin?String(p.skin):"",
+    theme:String(p.theme||"theme_jurassic"),
+    environment:String(p.environment||""),
+    x:num(p.x,0,-4000,4000),y:num(p.y,0,-4000,4000),scale:num(p.scale,1,.05,8),rotate:num(p.rotate,0,-360,360),
+    motion:String(p.motion||p.motion_id||"motion_idle_v001"),
+    overrides:(p.overrides&&typeof p.overrides==="object")?p.overrides:{},
+    zIndex:num(p.zIndex,0,-9999,9999),
+    opacity:num(p.opacity,1,0,1),
+    customMotion:(p.customMotion&&typeof p.customMotion==="object")?p.customMotion:null
+  };
+}
+function inferAssetType(p){
+  const r=String(p.rig||p.rig_id||"");
+  if(r.startsWith("char_")) return "character";
+  if(r.startsWith("creature_")) return "creature";
+  if(r.startsWith("vehicle_")) return "vehicle";
+  if(r.startsWith("prop_")) return "prop";
+  if(p.environment) return "environment";
+  return "prop";
+}
+
+function validateProject(p){
+  const errors=[];
+  if(p.shots.length>MAX_SHOTS) errors.push(`Too many shots. Max is ${MAX_SHOTS}.`);
+  const total=p.shots.reduce((a,s)=>a+s.duration,0);
+  if(total>MAX_EPISODE_SECONDS) errors.push(`Episode is ${total.toFixed(1)}s. Max recommended cap is ${MAX_EPISODE_SECONDS}s.`);
+  p.shots.forEach(s=>{
+    if(!THEMES[s.background.theme]) errors.push(`Unknown theme in ${s.shot_id}: ${s.background.theme}`);
+    if(!ENVIRONMENTS.includes(s.background.environment)) errors.push(`Unknown background environment in ${s.shot_id}: ${s.background.environment}`);
+    s.placements.forEach(pl=>{
+      if(pl.asset_type==="environment" && !ENVIRONMENTS.includes(pl.environment)) errors.push(`Unknown environment in ${s.shot_id}: ${pl.environment}`);
+      if(pl.rig && !BASE_RIGS[pl.rig]) errors.push(`Unknown rig in ${s.shot_id}: ${pl.rig}`);
+      if(pl.appearance && !APPEARANCES[pl.appearance]) errors.push(`Unknown appearance in ${s.shot_id}: ${pl.appearance}`);
+      if(pl.skin && !CREATURE_SKINS[pl.skin]) errors.push(`Unknown creature skin in ${s.shot_id}: ${pl.skin}`);
+      if(!MOTIONS[pl.motion]) errors.push(`Unknown motion in ${s.shot_id}: ${pl.motion}`);
+    });
+  });
+  return errors;
+}
+
+/* ----------------------------- RENDERING ----------------------------- */
+
+function renderProject(){
+  shots=project.shots;
+  const errors=validateProject(project);
+  setStatus(errors.length?errors.join(" | "):`Project valid. ${shots.length}/${MAX_SHOTS} shots.`,errors.length?"bad":"good");
+  selectShot(Math.min(shotIndex,Math.max(0,shots.length-1)));
+  renderShotList();
+}
+function renderShotList(){
+  const box=el("shotList"); box.innerHTML="";
+  shots.forEach((s,i)=>{
+    const row=document.createElement("div");
+    row.className="shot-row"+(i===shotIndex?" active":"");
+    const status=s.status.replace(/\s+/g,"_").toLowerCase();
+    row.innerHTML=`<strong>${String(i+1).padStart(2,"0")} — ${esc(s.title)}</strong><span>${esc(s.shot_id)} · order ${s.order} · ${s.duration}s</span><span class="pill ${status}">${esc(s.status)}</span>`;
+    row.onclick=()=>selectShot(i);
+    box.appendChild(row);
+  });
+}
+function selectShot(i){
+  pause();
+  shotIndex=Math.max(0,Math.min(i,shots.length-1));
+  activeShot=shots[shotIndex]||normalizeShot({});
+  renderShotList();
+  el("activeShotTitle").textContent=`${String(shotIndex+1).padStart(2,"0")} — ${activeShot.title}`;
+  el("activeShotDesc").textContent=`${activeShot.shot_id} · ${activeShot.duration}s · ${activeShot.background.environment} · ${activeShot.background.theme}`;
+  el("svgMount").innerHTML=buildSvg(activeShot);
+  pauseAt=0; applyFrame(0);
+}
+function buildSvg(s){
+  const theme=THEMES[s.background.theme]||THEMES.theme_jurassic;
+  const colors=s.background.colors||theme.sky;
+  const ground=s.background.ground||theme.ground;
+  return `<svg id="sceneSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
+    <defs>
+      <linearGradient id="bgLinear" x1="0" x2="0" y1="0" y2="1">${colors.map((c,i,a)=>`<stop offset="${a.length===1?0:i/(a.length-1)*100}%" stop-color="${esc(c)}"/>`).join("")}</linearGradient>
+      <radialGradient id="vignette" cx="50%" cy="50%" r="70%"><stop offset="60%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".38"/></radialGradient>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-opacity=".3"/></filter>
+      <filter id="blur"><feGaussianBlur stdDeviation="9"/></filter>
+    </defs>
+    <rect width="${W}" height="${H}" fill="url(#bgLinear)"/>
+    <rect x="0" y="${s.background.horizon/100*H}" width="${W}" height="${H-s.background.horizon/100*H}" fill="${esc(ground)}"/>
+    <g id="cameraRig">${s.effects.filter(e=>e.zIndex<0).map(drawEffect).join("")}${s.placements.slice().sort((a,b)=>a.zIndex-b.zIndex).map(drawPlacement).join("")}${s.effects.filter(e=>!e.zIndex||e.zIndex>=0).map(drawEffect).join("")}</g>
+    <rect width="${W}" height="${H}" fill="url(#vignette)"/>
+  </svg>`;
+}
+function drawPlacement(p){
+  const transform=`translate(${p.x},${p.y}) rotate(${p.rotate}) scale(${p.scale})`;
+  const id=esc(p.instance_id), op=` opacity="${p.opacity}"`;
+  const label=debugLabels?`<text x="0" y="-220" text-anchor="middle" font-size="34" font-family="Arial" font-weight="900" fill="#FDE047" stroke="#111" stroke-width="4">${id}</text><rect x="-120" y="-120" width="240" height="240" fill="none" stroke="#FDE047" stroke-width="5" stroke-dasharray="14 10"/>`:"";
+  if(p.asset_type==="environment") return `<g id="${id}" data-base-transform="${transform}" transform="${transform}"${op}>${drawEnvironment(p.environment,p.theme,id)}${label}</g>`;
+  if(p.asset_type==="character") return `<g id="${id}" data-base-transform="${transform}" transform="${transform}"${op}>${drawHumanoid(id,p)}${label}</g>`;
+  if(p.asset_type==="creature") return `<g id="${id}" data-base-transform="${transform}" transform="${transform}"${op}>${drawCreature(id,p)}${label}</g>`;
+  if(p.asset_type==="vehicle") return `<g id="${id}" data-base-transform="${transform}" transform="${transform}"${op}>${drawVehicle(id,p)}${label}</g>`;
+  if(p.asset_type==="prop") return `<g id="${id}" data-base-transform="${transform}" transform="${transform}"${op}>${drawProp(id,p)}${label}</g>`;
+  return "";
+}
+function drawEnvironment(env,themeId,id){
+  const t=THEMES[themeId]||THEMES.theme_jurassic;
+  const generic=`<g id="${id}_distant"><path d="M0 520 C160 410 260 500 390 410 C540 300 710 470 850 360 C1020 250 1190 450 1360 335 C1550 210 1760 380 1920 300 L1920 1080 L0 1080 Z" fill="${t.dark}"/><path d="M0 660 C190 540 380 650 560 510 C740 380 950 650 1160 500 C1350 360 1580 620 1920 440 L1920 1080 L0 1080 Z" fill="${t.mid}"/></g>`;
+  if(env==="env_vertical_top_hat_v001") return generic+`<path d="M360 1030 C470 470 640 120 960 120 C1280 120 1450 470 1560 1030" fill="none" stroke="${t.accent}" stroke-width="36" stroke-linecap="round"/><path d="M430 1030 C535 520 680 205 960 205 C1240 205 1385 520 1490 1030" fill="none" stroke="#0E425F" stroke-width="22" stroke-linecap="round"/><path d="M505 840 L1415 840 M590 620 L1330 620 M730 390 L1190 390" stroke="#64748B" stroke-width="16" opacity=".75"/>`;
+  if(env==="env_lagoon_v001") return `<g><rect width="1920" height="1080" fill="${t.sky}"/><path d="M0 615 C310 520 560 670 900 585 C1250 500 1510 635 1920 560 L1920 1080 L0 1080 Z" fill="#0EA5E9"/><path d="M0 780 C420 720 700 840 1040 780 C1380 715 1600 805 1920 760" fill="none" stroke="#BAE6FD" stroke-width="22" opacity=".65"/><path d="M180 1030 L1740 1030" stroke="#155E75" stroke-width="48" stroke-linecap="round"/></g>`;
+  if(env==="env_themed_land_street_v001") return generic+`<g><path d="M260 1080 L520 450 L1400 450 L1660 1080 Z" fill="${t.stone}" opacity=".65"/><rect x="150" y="520" width="280" height="360" fill="${t.sign}" stroke="#111" stroke-width="8"/><rect x="1490" y="500" width="280" height="380" fill="${t.sign}" stroke="#111" stroke-width="8"/></g>`;
+  if(env==="env_queue_interior_v001") return `<g><rect width="1920" height="1080" fill="${t.dark}"/><path d="M220 860 L1700 860 L1500 1080 L420 1080 Z" fill="${t.stone}" stroke="#111" stroke-width="8"/><path d="M240 220 L1680 220 M240 420 L1680 420 M240 620 L1680 620" stroke="${t.mid}" stroke-width="30"/><circle cx="420" cy="310" r="55" fill="${t.light}" opacity=".65"/><circle cx="1500" cy="310" r="55" fill="${t.light}" opacity=".65"/></g>`;
+  if(env==="env_load_platform_v001") return `<g><rect width="1920" height="1080" fill="${t.stone}"/><rect y="675" width="1920" height="405" fill="${t.sign}"/><path d="M180 675 L1740 675" stroke="#111" stroke-width="14"/><path d="M300 500 L1620 500" stroke="${t.accent}" stroke-width="32"/></g>`;
+  if(env==="env_launch_tunnel_v001") return `<g><rect width="1920" height="1080" fill="${t.dark}"/><path d="M0 850 C420 580 1500 580 1920 850 L1920 1080 L0 1080 Z" fill="${t.sign}" stroke="#111" stroke-width="10"/><path d="M260 420 L1660 420 M220 560 L1700 560 M180 700 L1740 700" stroke="${t.accent}" stroke-width="18" opacity=".7"/></g>`;
+  if(env==="env_vertical_spike_v001","env_vertical_top_hat_v001","env_lagoon_v001") return generic+`<path d="M960 1040 L960 80" stroke="${t.accent}" stroke-width="34" stroke-linecap="round"/><path d="M1015 1040 L1015 80" stroke="#0E425F" stroke-width="22" stroke-linecap="round"/><path d="M900 160 L1075 160" stroke="#64748B" stroke-width="18"/>`;
+  if(env==="env_haunted_interior_v001") return `<g><rect width="1920" height="1080" fill="${t.dark}"/><path d="M0 650 C420 500 1500 500 1920 650 L1920 1080 L0 1080 Z" fill="${t.mid}"/><path d="M320 720 L320 260 L520 260 L520 720 M1400 720 L1400 260 L1600 260 L1600 720" fill="none" stroke="${t.stone}" stroke-width="28"/></g>`;
+  if(env==="env_gift_shop_exit_v001") return `<g><rect width="1920" height="1080" fill="${t.stone}"/><rect x="260" y="320" width="420" height="360" fill="${t.sign}" stroke="#111" stroke-width="8"/><rect x="1240" y="320" width="420" height="360" fill="${t.sign}" stroke="#111" stroke-width="8"/><rect y="720" width="1920" height="360" fill="${t.dark}"/></g>`;
+  if(env==="env_volcano_lava_v001") return `<g><path d="M0 720 C320 600 640 760 960 560 C1280 760 1600 600 1920 720 L1920 1080 L0 1080 Z" fill="${t.dark}"/><path d="M620 850 L960 200 L1300 850 Z" fill="#3F3F46" stroke="#111" stroke-width="10"/><path d="M915 310 L960 200 L1005 310 C980 340 940 340 915 310Z" fill="#F97316"/><rect y="860" width="1920" height="220" fill="#7F1D1D"/></g>`;
+  if(env==="env_screen_room_v001") return `<g><rect width="1920" height="1080" fill="${t.dark}"/><rect x="280" y="150" width="1360" height="560" rx="30" fill="${t.sign}" stroke="#111" stroke-width="12"/><rect x="350" y="220" width="1220" height="420" fill="${t.accent}" opacity=".45"/></g>`;
+  if(env==="env_drop_tower_v001") return generic+`<path d="M960 80 L960 1000" stroke="#64748B" stroke-width="42"/><path d="M830 160 L1090 160 M830 320 L1090 320 M830 480 L1090 480 M830 640 L1090 640 M830 800 L1090 800" stroke="#64748B" stroke-width="18"/>`;
+  
+  if(env==="env_train_station_v001") return `<g><rect width="1920" height="1080" fill="${t.stone}"/><path d="M0 460 L1920 460 L1920 1080 L0 1080 Z" fill="${t.sign}"/><path d="M180 460 L360 170 L1560 170 L1740 460 Z" fill="${t.stone}" stroke="#111" stroke-width="12"/><circle cx="960" cy="300" r="90" fill="#F8FAFC" stroke="#111" stroke-width="10"/><path d="M960 300 L960 235 M960 300 L1015 330" stroke="#111" stroke-width="9" stroke-linecap="round"/><rect x="690" y="470" width="540" height="230" rx="20" fill="${t.dark}" stroke="#111" stroke-width="10"/></g>`;
+  if(env==="env_magic_platform_v001") return `<g><rect width="1920" height="1080" fill="${t.stone}"/><rect y="640" width="1920" height="440" fill="${t.sign}"/><path d="M260 620 L1660 620" stroke="#111" stroke-width="12"/><path d="M360 620 L360 300 M1560 620 L1560 300 M360 300 C650 170 1270 170 1560 300" fill="none" stroke="${t.dark}" stroke-width="32"/><rect x="670" y="250" width="580" height="110" rx="18" fill="${t.sign}" stroke="#111" stroke-width="9"/></g>`;
+  if(env==="env_castle_lake_v001","env_themed_land_street_v001","env_queue_interior_v001","env_load_platform_v001","env_launch_tunnel_v001","env_vertical_spike_v001","env_vertical_top_hat_v001","env_lagoon_v001","env_haunted_interior_v001","env_gift_shop_exit_v001","env_volcano_lava_v001","env_screen_room_v001","env_drop_tower_v001") return `<g><circle cx="1480" cy="250" r="120" fill="${t.light}" opacity=".75"/><path d="M520 650 L520 340 L650 220 L780 340 L780 650 M800 650 L800 250 L960 120 L1120 250 L1120 650 M1140 650 L1140 360 L1270 240 L1400 360 L1400 650" fill="${t.stone}" stroke="#111" stroke-width="10"/><rect y="700" width="1920" height="380" fill="#0F7288"/><path d="M480 760 C760 710 1120 710 1440 760" fill="none" stroke="#BFDBFE" stroke-width="20" opacity=".5"/></g>`;
+    if(env==="env_park_entry_v001") return generic+`<g><path d="M590 760 L705 520 L1215 520 L1330 760 Z" fill="${t.stone}" stroke="#111" stroke-width="8"/><rect x="715" y="590" width="490" height="170" rx="18" fill="${t.sign}" stroke="#111" stroke-width="8"/><path d="M-120 270 C240 90 480 160 660 340 C820 500 1020 540 1240 390 C1480 230 1620 80 2040 130" fill="none" stroke="${t.accent}" stroke-width="28" stroke-linecap="round"/></g>${drawLeaves(t)}`;
+  if(env==="env_queue_v001") return generic+`<g><rect x="1040" y="260" width="650" height="430" rx="30" fill="#8DDCFF" opacity=".35" stroke="#111" stroke-width="9"/><path d="M1080 260 L1080 690 M1160 260 L1160 690 M1240 260 L1240 690 M1320 260 L1320 690 M1400 260 L1400 690 M1480 260 L1480 690 M1560 260 L1560 690 M1640 260 L1640 690 M1040 370 L1690 370 M1040 510 L1690 510 M1040 640 L1690 640" fill="none" stroke="#AEB8BE" stroke-width="8"/><circle cx="1015" cy="335" r="30" fill="${t.light}" stroke="#111" stroke-width="7"/><circle cx="1720" cy="335" r="30" fill="${t.light}" stroke="#111" stroke-width="7"/></g>${drawLeaves(t)}`;
+  if(env==="env_station_v001") return `<g><rect width="1920" height="1080" fill="${t.stone}"/><rect y="650" width="1920" height="430" fill="${t.sign}"/><rect x="220" y="220" width="1480" height="360" fill="#9CA3AF" stroke="#111" stroke-width="10"/><path d="M0 650 L1920 650" stroke="#111" stroke-width="10"/></g>`;
+  if(env==="env_launch_v001") return generic+`<g id="${id}_speed_lines">${drawSpeedLines()}</g><path d="M-100 830 L2050 620" stroke="${t.accent}" stroke-width="28"/><path d="M-100 885 L2050 675" stroke="#0E425F" stroke-width="20"/>`;
+  if(env==="env_lift_hill_v001"||env==="env_mountain_v001") return generic+`<path d="M240 900 L960 210 L1680 900" fill="none" stroke="${t.accent}" stroke-width="30"/><path d="M270 940 L960 280 L1650 940" fill="none" stroke="#0E425F" stroke-width="20"/>`;
+  if(env==="env_drop_v001") return generic+`<path d="M1000 80 C1150 240 1180 520 990 900" fill="none" stroke="${t.accent}" stroke-width="32"/><path d="M1045 80 C1190 250 1220 530 1035 900" fill="none" stroke="#0E425F" stroke-width="22"/>`;
+  if(env==="env_inversion_v001") return generic+`<path d="M330 690 C560 260 1360 260 1590 690" fill="none" stroke="${t.accent}" stroke-width="32"/><path d="M330 740 C560 310 1360 310 1590 740" fill="none" stroke="#0E425F" stroke-width="22"/>`;
+  if(env==="env_waterfront_v001"||env==="env_lagoon_v001"||env==="env_underwater_v001") return generic+`<rect y="720" width="1920" height="360" fill="${t.ground}"/><path d="M0 830 C250 800 480 870 720 830 C1030 780 1260 890 1540 830 C1740 790 1880 830 1920 820 L1920 1080 L0 1080 Z" fill="#38BDF8" opacity=".45"/>`;
+  if(env==="env_skyline_v001"||env==="env_sunset_v001") return `<g><circle cx="1450" cy="260" r="120" fill="${t.light}"/><path d="M0 720 C300 610 620 770 900 660 C1200 540 1500 760 1920 600 L1920 1080 L0 1080 Z" fill="${t.dark}"/></g>`;
+  if(env==="env_cave_v001"||env==="env_dungeon_v001"||env==="env_tunnel_v001") return `<g><path d="M0 1080 L0 220 C240 80 420 80 600 230 C800 390 1120 390 1320 210 C1520 30 1760 120 1920 260 L1920 1080 Z" fill="${t.dark}"/><path d="M400 1080 L520 480 C760 350 1160 350 1400 480 L1520 1080 Z" fill="${t.mid}" stroke="#111" stroke-width="10"/></g>`;
+  if(env==="env_castle_v001") return generic+`<g><rect x="580" y="420" width="760" height="420" fill="${t.stone}" stroke="#111" stroke-width="10"/><rect x="510" y="330" width="160" height="510" fill="${t.stone}" stroke="#111" stroke-width="10"/><rect x="1250" y="330" width="160" height="510" fill="${t.stone}" stroke="#111" stroke-width="10"/><path d="M510 330 L590 220 L670 330 Z M1250 330 L1330 220 L1410 330 Z" fill="${t.accent}" stroke="#111" stroke-width="10"/></g>`;
+  if(env==="env_city_v001") return `<g>${[120,300,520,760,980,1220,1460,1680].map((x,i)=>`<rect x="${x}" y="${350-(i%3)*80}" width="${120+i%2*70}" height="${650+(i%3)*80}" fill="${i%2?t.mid:t.dark}" stroke="#111" stroke-width="7"/>`).join("")}</g>`;
+  if(env==="env_space_v001"||env==="env_hangar_v001"||env==="env_laboratory_v001"||env==="env_factory_v001") return `<g><rect width="1920" height="1080" fill="${t.dark}" opacity=".35"/><path d="M180 720 L1740 720 L1580 1080 L340 1080 Z" fill="${t.stone}" stroke="#111" stroke-width="10"/><circle cx="360" cy="260" r="60" fill="${t.light}" opacity=".7"/><circle cx="900" cy="180" r="32" fill="${t.light}" opacity=".5"/><circle cx="1460" cy="300" r="46" fill="${t.light}" opacity=".55"/></g>`;
+  if(env==="env_pirate_port_v001"||env==="env_bridge_v001") return generic+`<path d="M200 800 L1720 800" stroke="${t.stone}" stroke-width="70"/><path d="M260 820 L260 1080 M520 820 L520 1080 M780 820 L780 1080 M1040 820 L1040 1080 M1300 820 L1300 1080 M1560 820 L1560 1080" stroke="#3F2F20" stroke-width="28"/>`;
+  if(env==="env_desert_v001") return `<g><path d="M0 720 C300 620 520 780 840 680 C1120 590 1460 760 1920 620 L1920 1080 L0 1080 Z" fill="${t.mid}"/><circle cx="1500" cy="220" r="110" fill="${t.light}"/></g>`;
+  if(env==="env_arctic_v001") return `<g><path d="M0 720 C260 650 560 780 820 680 C1120 570 1420 760 1920 620 L1920 1080 L0 1080 Z" fill="#E0F2FE"/><path d="M220 770 L460 470 L700 770 Z M940 760 L1190 430 L1460 760 Z" fill="#BFDBFE" stroke="#111" stroke-width="7"/></g>`;
+  return generic+drawLeaves(t);
+}
+function drawLeaves(t){return`<g><path d="M0 1080 C70 900 150 760 285 625 C235 820 210 965 220 1080 Z" fill="${t.mid}" stroke="#111" stroke-width="7"/><path d="M1920 1080 C1850 900 1770 760 1635 625 C1685 820 1710 965 1700 1080 Z" fill="${t.mid}" stroke="#111" stroke-width="7"/></g>`;}
+function drawSpeedLines(){return`<g>${[0,1,2,3,4,5,6,7].map(k=>`<line x1="${-900+k*30}" y1="${220+k*70}" x2="2200" y2="${170+k*70}" stroke="#fff" stroke-width="${5+k%4}" opacity="${.12+k*.025}"/>`).join("")}</g>`;}
+
+function mergeAppearance(base, overrides){
+  const out={...base};
+  if(overrides&&typeof overrides==="object"){
+    ["skin","hair","shirt","shorts","watch","outline","bodyShape","cloakColor","robeTrim","hatStyle","hatColor","shoeStyle","handProp"].forEach(k=>{if(overrides[k])out[k]=String(overrides[k]);});
+    if(overrides.showStubble!==undefined)out.stubble=!!overrides.showStubble;
+    if(overrides.stubble!==undefined)out.stubble=!!overrides.stubble;
+    if(overrides.hairWind!==undefined)out.hairWind=!!overrides.hairWind;
+    if(overrides.hairStyle!==undefined)out.hairStyle=String(overrides.hairStyle);
+  }
+  return out;
+}
+
+function drawBodyShape(shape,bodyY,a,cloakColor,robeTrim,seated){
+  if(shape==="triangle_cloak") return `<path d="M0 ${bodyY-18} L-82 88 L82 88 Z" fill="${cloakColor}" stroke="#111" stroke-width="6"/><path d="M0 ${bodyY-8} L0 78" stroke="${robeTrim}" stroke-width="8"/><path d="M-38 ${bodyY+28} L38 ${bodyY+28}" stroke="${robeTrim}" stroke-width="7" opacity=".8"/>`;
+  if(shape==="long_robe") return `<path d="M-50 ${bodyY} C-72 -10 -68 42 -86 105 L86 105 C68 42 72 -10 50 ${bodyY} Z" fill="${cloakColor}" stroke="#111" stroke-width="6"/><path d="M0 ${bodyY+4} L0 100" stroke="${robeTrim}" stroke-width="8"/><path d="M-52 58 L52 58" stroke="${robeTrim}" stroke-width="7" opacity=".75"/>`;
+  if(shape==="jacket") return `<path d="M-58 ${bodyY} C-70 -15 -52 30 -36 42 C-10 60 10 60 36 42 C52 30 70 -15 58 ${bodyY} Z" fill="${cloakColor}" stroke="#111" stroke-width="6"/><path d="M-18 ${bodyY+3} L0 46 L20 ${bodyY+3}" fill="#F8FAFC" stroke="#111" stroke-width="4"/>`;
+  if(shape==="bulky_jacket") return `<path d="M-72 ${bodyY+8} C-95 -28 -70 58 -42 72 C-10 88 10 88 42 72 C70 58 95 -28 72 ${bodyY+8} Z" fill="${cloakColor}" stroke="#111" stroke-width="7"/>`;
+  if(shape==="dress") return `<path d="M-42 ${bodyY} C-55 -10 -45 20 -28 38 L-88 105 L88 105 L28 38 C45 20 55 -10 42 ${bodyY} Z" fill="${cloakColor}" stroke="#111" stroke-width="6"/>`;
+  if(shape==="armor") return `<path d="M-52 ${bodyY} C-70 -12 -54 45 0 58 C54 45 70 -12 52 ${bodyY} Z" fill="#94A3B8" stroke="#111" stroke-width="6"/><path d="M-44 -25 L44 -25 M-38 15 L38 15" stroke="#475569" stroke-width="8"/>`;
+  if(shape==="spacesuit") return `<path d="M-62 ${bodyY} C-80 -10 -60 45 -28 58 C-6 70 6 70 28 58 C60 45 80 -10 62 ${bodyY} Z" fill="${cloakColor}" stroke="#111" stroke-width="7"/><circle cx="0" cy="-25" r="28" fill="${a.shorts}" stroke="#111" stroke-width="5"/>`;
+  if(shape==="poncho") return `<path d="M0 ${bodyY-10} L-95 60 L0 105 L95 60 Z" fill="${cloakColor}" stroke="#111" stroke-width="6"/><path d="M-55 35 L55 35" stroke="${robeTrim}" stroke-width="8"/>`;
+  if(shape==="mechanic_overalls") return `<path d="M-50 ${bodyY} C-60 -20 -45 18 -22 30 C2 43 38 34 52 0 C61 -24 52 -60 36 ${bodyY} Z" fill="${a.shirt}" stroke="#111" stroke-width="5"/><path d="M-36 -62 L-18 35 M36 -62 L18 35 M-38 20 L38 20" stroke="${a.shorts}" stroke-width="10" stroke-linecap="round"/>`;
+  return `<path d="M-48 ${bodyY} C-58 -20 -45 18 -22 30 C2 43 38 34 52 0 C61 -24 52 -60 36 ${bodyY} Z" fill="${a.shirt}" stroke="#111" stroke-width="5"/>`;
+}
+function drawHat(style,color){
+  if(!style||style==="none") return "";
+  if(style==="wizard_hat") return `<g><path d="M-42 -188 L4 -302 L52 -188 Z" fill="${color}" stroke="#111" stroke-width="6"/><path d="M-70 -184 C-30 -205 35 -205 76 -184 C45 -160 -35 -160 -70 -184Z" fill="${color}" stroke="#111" stroke-width="6"/><path d="M-12 -238 L32 -238" stroke="#FDE68A" stroke-width="8"/></g>`;
+  if(style==="baseball_cap") return `<g><path d="M-48 -160 C-30 -200 32 -200 52 -158 Z" fill="${color}" stroke="#111" stroke-width="5"/><path d="M18 -160 C55 -165 82 -156 94 -143" fill="none" stroke="${color}" stroke-width="14" stroke-linecap="round"/></g>`;
+  if(style==="helmet") return `<g><path d="M-56 -145 C-54 -202 54 -202 58 -142 Z" fill="${color}" stroke="#111" stroke-width="6"/><path d="M-46 -138 C-10 -162 28 -162 48 -138" fill="none" stroke="#BFDBFE" stroke-width="10" opacity=".9"/></g>`;
+  if(style==="hard_hat") return `<g><path d="M-55 -154 C-40 -195 42 -195 58 -154 Z" fill="${color}" stroke="#111" stroke-width="5"/><path d="M-72 -151 L78 -151" stroke="#111" stroke-width="9" stroke-linecap="round"/></g>`;
+  if(style==="cowboy_hat") return `<g><path d="M-80 -158 C-35 -182 36 -182 82 -158" fill="none" stroke="${color}" stroke-width="18" stroke-linecap="round"/><path d="M-42 -168 C-32 -215 32 -215 44 -168 Z" fill="${color}" stroke="#111" stroke-width="5"/></g>`;
+  if(style==="beanie") return `<g><path d="M-48 -150 C-44 -198 42 -198 52 -150 Z" fill="${color}" stroke="#111" stroke-width="5"/><circle cx="0" cy="-198" r="13" fill="${color}" stroke="#111" stroke-width="4"/></g>`;
+  if(style==="hood") return `<g><path d="M-58 -140 C-65 -215 64 -215 62 -138 C36 -172 -30 -172 -58 -140Z" fill="${color}" stroke="#111" stroke-width="6"/></g>`;
+  if(style==="pirate_hat") return `<g><path d="M-78 -168 C-45 -225 45 -225 78 -168 C30 -188 -30 -188 -78 -168Z" fill="${color}" stroke="#111" stroke-width="6"/><circle cx="0" cy="-182" r="12" fill="#F8FAFC"/></g>`;
+  return "";
+}
+
+function drawHumanoid(id,p){
+  const baseA=APPEARANCES[p.appearance]||APPEARANCES.appearance_vlogger_v001;
+  const a=mergeAppearance(baseA,p.overrides);
+  const m=MOTIONS[p.motion]||MOTIONS.motion_idle_v001;
+  const pose=(p.overrides&&p.overrides.pose)||m.pose||"standing",expr=(p.overrides&&p.overrides.expression)||m.expression||"neutral";
+  const wind=0;
+  const child=p.rig==="char_humanoid_child_v001";
+  const large=p.rig==="char_humanoid_large_v001";
+  const female=p.rig==="char_humanoid_adult_female_v001" || (p.overrides&&p.overrides.genderPresentation==="female");
+  const mul=(p.overrides&&p.overrides.rigScale)?Number(p.overrides.rigScale):(child?.82:large?1.22:1);
+  const headScale=(p.overrides&&p.overrides.headScale)?Number(p.overrides.headScale):(female?0.96:1);
+  const bodyScaleX=(p.overrides&&p.overrides.bodyScaleX)?Number(p.overrides.bodyScaleX):(female?0.88:1);
+  const bodyScaleY=(p.overrides&&p.overrides.bodyScaleY)?Number(p.overrides.bodyScaleY):1;
+  const seated=["gripping","seated"].includes(pose),thumbs=pose==="thumbs_up",pointing=pose==="pointing",armsUp=pose==="arms_up",wave=pose==="wave";
+  const bodyY=seated?-45:-72;
+  const bodyShape=a.bodyShape||"standard";
+  const cloakColor=a.cloakColor||a.shirt;
+  const robeTrim=a.robeTrim||a.shorts;
+  const hatStyle=a.hatStyle||"none";
+  const hatColor=a.hatColor||a.hair;
+  const legStroke=female?18:20;
+  const armStroke=female?15:18;
+  const legs=seated?`<path d="M-28 10 C-50 38 -52 78 -36 102 M28 10 C50 38 52 78 36 102" stroke="${a.shorts}" stroke-width="${legStroke+2}" stroke-linecap="round" fill="none"/>`:`<path d="M-18 12 L-45 96 M20 12 L45 88" stroke="${a.shorts}" stroke-width="${legStroke}" stroke-linecap="round" fill="none"/>`;
+  let arms=`<path d="M0 -60 C-38 -42 -46 -5 -42 22" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><path d="M0 -60 C40 -50 60 -30 70 -10" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/>`;
+  if(seated)arms=`<path d="M-34 -38 C-62 -18 -66 12 -52 38" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><path d="M34 -38 C62 -18 66 12 52 38" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><circle cx="-52" cy="40" r="11" fill="${a.skin}"/><circle cx="52" cy="40" r="11" fill="${a.skin}"/>`;
+  if(thumbs||wave)arms=`<path d="M0 -60 C-38 -42 -46 -5 -42 22" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><g id="${id}_arm_R" data-base-transform=""><path d="M0 -60 C50 -90 85 -125 105 -170" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><path d="M104 -170 L124 -215" stroke="${a.skin}" stroke-width="${Math.max(8,armStroke-4)}" stroke-linecap="round"/></g>`;
+  if(pointing)arms=`<path d="M0 -60 C-38 -42 -46 -5 -42 22" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><g id="${id}_arm_R" data-base-transform=""><path d="M0 -60 C60 -80 110 -120 150 -165" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/></g>`;
+  if(armsUp)arms=`<path d="M-15 -60 C-55 -105 -70 -150 -80 -205" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/><path d="M15 -60 C55 -105 70 -150 80 -205" stroke="${a.skin}" stroke-width="${armStroke}" stroke-linecap="round" fill="none"/>`;
+  const shocked=expr==="shocked",curious=expr==="curious",worried=expr==="worried",tired=expr==="tired_happy";
+  const eyes=shocked?`<circle cx="-16" cy="-143" r="8" fill="#fff" stroke="#111" stroke-width="4"/><circle cx="20" cy="-143" r="8" fill="#fff" stroke="#111" stroke-width="4"/><circle cx="-16" cy="-143" r="3.5" fill="#111"/><circle cx="20" cy="-143" r="3.5" fill="#111"/>`:curious?`<circle cx="-16" cy="-143" r="7" fill="#fff" stroke="#111" stroke-width="4"/><circle cx="20" cy="-143" r="7" fill="#fff" stroke="#111" stroke-width="4"/><circle cx="-11" cy="-146" r="3" fill="#111"/><circle cx="25" cy="-146" r="3" fill="#111"/>`:tired?`<path d="M-25 -143 L-7 -143 M12 -143 L30 -143" stroke="#111" stroke-width="5" stroke-linecap="round"/>`:`<circle cx="-15" cy="-143" r="5" fill="#111"/><circle cx="19" cy="-143" r="5" fill="#111"/>`;
+  const mouth=shocked?`<ellipse cx="5" cy="-113" rx="9" ry="13" fill="none" stroke="#111" stroke-width="5"/>`:worried?`<path d="M-18 -106 C0 -124 22 -124 36 -106" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>`:`<path d="M-18 -116 C0 -99 25 -101 36 -118" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>`;
+  const windAmt=wind/100;
+  let hairShape=`<path d="M-44 -148 C-34 -198 36 -200 50 -142 C24 -164 -10 -166 -44 -148Z" fill="${a.hair}" stroke="#111" stroke-width="4"/>`;
+  if(a.hairStyle==="bob") hairShape=`<path d="M-50 -148 C-50 -205 52 -205 56 -138 C58 -94 35 -85 20 -96 C28 -125 18 -160 -12 -164 C-36 -160 -42 -130 -36 -100 C-55 -88 -66 -112 -50 -148Z" fill="${a.hair}" stroke="#111" stroke-width="4"/>`;
+  if(a.hairStyle==="long") hairShape=`<path d="M-48 -148 C-45 -208 50 -208 55 -142 C70 -75 35 -56 18 -88 C22 -132 13 -160 -12 -164 C-38 -160 -47 -127 -38 -86 C-66 -58 -83 -92 -48 -148Z" fill="${a.hair}" stroke="#111" stroke-width="4"/>`;
+  const hairWindBlock=false?`<g id="${id}_hair_wind" data-base-transform=""><path d="M-22 -182 C${-60-85*windAmt} ${-192-35*windAmt} ${-78-135*windAmt} ${-164-20*windAmt} ${-105-165*windAmt} -142" fill="none" stroke="${a.hair}" stroke-width="${windAmt>0?10+8*windAmt:0}" stroke-linecap="round"/></g>`:`<g id="${id}_hair_wind" data-base-transform=""></g>`;
+  return `<g transform="scale(${mul})"><g id="${id}_body" data-base-transform="" filter="url(#shadow)"><ellipse cx="0" cy="112" rx="75" ry="17" fill="#000" opacity=".22"/>${legs}<g transform="scale(${bodyScaleX},${bodyScaleY})">${drawBodyShape(bodyShape,bodyY,a,cloakColor,robeTrim,seated)}</g>${arms}<rect x="-82" y="-7" width="24" height="18" rx="4" fill="${a.watch}" stroke="#111" stroke-width="3"/></g><g id="${id}_head" data-base-transform="" transform="scale(${headScale})"><circle cx="0" cy="-142" r="48" fill="${a.skin}" stroke="#111" stroke-width="5"/>${hairShape}${drawHat(hatStyle,hatColor)}${hairWindBlock}${eyes}${mouth}${a.stubble?`<path d="M-30 -105 C-10 -92 18 -92 38 -105" fill="none" stroke="#6B4A3B" stroke-width="4" opacity=".45"/>`:""}<ellipse id="${id}_sweat" cx="38" cy="-135" rx="5" ry="10" fill="#60A5FA" opacity="${worried?.7:0}"/></g></g>`;
+}
+function drawCreature(id,p){
+  const skin={...(CREATURE_SKINS[p.skin]||CREATURE_SKINS.skin_raptor_v001),...((p.overrides&&typeof p.overrides==="object")?p.overrides:{})};
+  if(p.rig==="creature_quadruped_v001") return `<g filter="url(#shadow)"><g id="${id}_body" data-base-transform=""><ellipse cx="0" cy="0" rx="145" ry="62" fill="${skin.body}" stroke="#111" stroke-width="9"/><circle cx="135" cy="-52" r="55" fill="${skin.body}" stroke="#111" stroke-width="8"/><circle cx="152" cy="-65" r="8" fill="${skin.eye}"/><path d="M-115 35 L-150 150 M-40 45 L-55 160 M65 45 L80 160 M140 20 L180 140" stroke="${skin.body}" stroke-width="24" stroke-linecap="round"/></g><g id="${id}_tail" data-base-transform=""><path d="M-135 -5 C-260 -40 -350 -80 -430 -145" fill="none" stroke="${skin.body}" stroke-width="30" stroke-linecap="round"/></g></g>`;
+  if(p.rig==="creature_flying_v001") return `<g filter="url(#shadow)"><g id="${id}_body" data-base-transform=""><ellipse cx="0" cy="0" rx="90" ry="55" fill="${skin.body}" stroke="#111" stroke-width="8"/><circle cx="95" cy="-35" r="42" fill="${skin.body}" stroke="#111" stroke-width="7"/><circle cx="108" cy="-45" r="7" fill="${skin.eye}"/><path d="M-35 -20 C-170 -155 -300 -125 -360 -10 C-230 -45 -130 -35 -35 -20 Z" fill="${skin.body}" stroke="#111" stroke-width="8"/><path d="M35 -20 C170 -155 300 -125 360 -10 C230 -45 130 -35 35 -20 Z" fill="${skin.body}" stroke="#111" stroke-width="8"/></g><g id="${id}_tail" data-base-transform=""><path d="M-85 5 C-175 40 -240 70 -320 120" fill="none" stroke="${skin.body}" stroke-width="22" stroke-linecap="round"/></g></g>`;
+  return `<g filter="url(#shadow)"><g id="${id}_tail" data-base-transform=""><path d="M-115 0 C-240 -35 -330 -95 -430 -170 C-260 -150 -160 -85 -55 -42" fill="none" stroke="${skin.body}" stroke-width="32" stroke-linecap="round"/></g><g id="${id}_body" data-base-transform=""><path d="M-120 0 C-70 -80 60 -95 155 -45 C210 -15 260 5 335 -15 C280 45 190 68 105 52 C15 36 -35 88 -85 145 C-92 82 -108 35 -120 0Z" fill="${skin.body}" stroke="#111" stroke-width="9"/><path d="M-10 55 L-52 155 L-105 195 M105 48 L160 150 L220 190" fill="none" stroke="${skin.body}" stroke-width="25" stroke-linecap="round"/></g><g id="${id}_head" data-base-transform=""><path d="M300 -48 C380 -88 455 -65 505 5 C430 25 365 18 315 -10 Z" fill="${skin.body}" stroke="#111" stroke-width="9"/><circle cx="410" cy="-32" r="9" fill="${skin.eye}"/></g></g>`;
+}
+function drawVehicle(id,p){
+  let t={...(THEMES[p.theme]||THEMES.theme_jurassic)}; if(p.overrides&&typeof p.overrides==="object"){ if(p.overrides.bodyColor)t.sign=p.overrides.bodyColor; if(p.overrides.accentColor)t.accent=p.overrides.accentColor; if(p.overrides.trimColor)t.stone=p.overrides.trimColor; }
+  if(p.rig==="vehicle_steam_train_v001") return `<g id="${id}_body" filter="url(#shadow)"><rect x="-420" y="-55" width="560" height="170" rx="26" fill="${t.sign}" stroke="#111" stroke-width="9"/><rect x="-330" y="-130" width="180" height="85" rx="18" fill="${t.sign}" stroke="#111" stroke-width="8"/><path d="M120 -80 L250 -80 L300 80 L120 80 Z" fill="${t.accent}" stroke="#111" stroke-width="8"/><rect x="210" y="-185" width="70" height="110" rx="12" fill="#111827" stroke="#111" stroke-width="7"/><circle cx="-300" cy="120" r="52" fill="#111" stroke="#64748B" stroke-width="10"/><circle cx="-120" cy="120" r="52" fill="#111" stroke="#64748B" stroke-width="10"/><circle cx="125" cy="120" r="42" fill="#111" stroke="#64748B" stroke-width="9"/><circle cx="285" cy="120" r="42" fill="#111" stroke="#64748B" stroke-width="9"/><rect x="-610" y="-35" width="180" height="145" rx="18" fill="${t.sign}" stroke="#111" stroke-width="8"/><rect x="-575" y="-5" width="110" height="55" rx="10" fill="#BFDBFE" stroke="#111" stroke-width="5"/><path d="M245 -210 C210 -270 285 -310 250 -360 C335 -315 310 -250 345 -205" fill="none" stroke="#E5E7EB" stroke-width="24" stroke-linecap="round" opacity=".7"/></g>`;
+  if(p.rig==="vehicle_boat_v001") return `<g id="${id}_body" filter="url(#shadow)"><path d="M-360 10 C-240 110 230 110 360 10 L300 90 C170 165 -170 165 -300 90 Z" fill="${t.stone}" stroke="#111" stroke-width="9"/><rect x="-150" y="-55" width="300" height="70" rx="14" fill="${t.sign}" stroke="#111" stroke-width="7"/></g>`;
+  if(p.rig==="vehicle_dark_ride_vehicle_v001"||p.rig==="vehicle_ride_car_v001"||p.rig==="vehicle_trackless_vehicle_v001"||p.rig==="vehicle_omnimover_v001") return `<g id="${id}_body" filter="url(#shadow)"><path d="M-320 55 C-260 -25 -120 -55 60 -45 C230 -35 330 10 360 70 C260 130 -210 135 -340 80 Z" fill="${t.sign}" stroke="#111" stroke-width="9"/><path d="M-250 10 L250 10" stroke="${t.accent}" stroke-width="18" stroke-linecap="round"/><circle cx="-190" cy="85" r="38" fill="#111"/><circle cx="200" cy="85" r="38" fill="#111"/></g>`;
+  if(p.rig==="vehicle_launch_coaster_train_v001") return `<g id="${id}_body" filter="url(#shadow)"><path d="M-430 55 C-300 10 -110 -10 0 0 C120 12 300 15 430 55 L385 130 C190 165 -190 165 -385 130 Z" fill="${t.sign}" stroke="#111" stroke-width="9"/><path d="M-350 25 L-210 -35 L-40 5 L120 -35 L350 25" fill="none" stroke="${t.accent}" stroke-width="20" stroke-linecap="round"/><circle cx="-270" cy="135" r="38" fill="#111"/><circle cx="270" cy="135" r="38" fill="#111"/><path d="M-370 80 L370 80" stroke="#64748B" stroke-width="10" stroke-linecap="round"/></g>`;
+  if(["vehicle_sports_car_v001","vehicle_muscle_car_v001"].includes(p.rig)) return `<g id="${id}_body" filter="url(#shadow)"><path d="M-390 55 C-310 -45 -150 -75 40 -55 C205 -38 335 5 395 75 C270 130 -230 140 -410 88 Z" fill="${t.sign}" stroke="#111" stroke-width="9"/><path d="M-160 -55 L40 -105 L210 -35 Z" fill="${t.accent}" stroke="#111" stroke-width="7"/><circle cx="-230" cy="92" r="45" fill="#111"/><circle cx="235" cy="92" r="45" fill="#111"/><path d="M-320 25 L-245 25 M250 25 L330 25" stroke="${t.light}" stroke-width="18" stroke-linecap="round"/></g>`;
+  if(p.rig==="vehicle_motorbike_sidecar_v001") return `<g id="${id}_body" filter="url(#shadow)"><circle cx="-160" cy="95" r="58" fill="#111" stroke="#64748B" stroke-width="10"/><circle cx="125" cy="95" r="58" fill="#111" stroke="#64748B" stroke-width="10"/><path d="M-200 55 L-60 -65 L110 55" fill="none" stroke="${t.sign}" stroke-width="28" stroke-linecap="round"/><rect x="80" y="-55" width="210" height="120" rx="45" fill="${t.accent}" stroke="#111" stroke-width="9"/></g>`;
+  if(p.rig==="vehicle_spinning_coaster_car_v001") return `<g id="${id}_body" filter="url(#shadow)"><circle cx="0" cy="0" r="170" fill="${t.sign}" stroke="#111" stroke-width="10"/><rect x="-210" y="-85" width="420" height="170" rx="45" fill="${t.accent}" stroke="#111" stroke-width="9"/><circle cx="-125" cy="110" r="34" fill="#111"/><circle cx="125" cy="110" r="34" fill="#111"/></g>`;
+  if(p.rig==="vehicle_inverted_coaster_train_v001") return `<g id="${id}_body" filter="url(#shadow)"><path d="M-430 -110 L430 -110" stroke="#64748B" stroke-width="28" stroke-linecap="round"/><path d="M-330 -90 L-260 80 M-110 -90 L-60 80 M110 -90 L60 80 M330 -90 L260 80" stroke="#64748B" stroke-width="16"/><path d="M-390 70 C-250 130 250 130 390 70 L340 145 C185 185 -185 185 -340 145 Z" fill="${t.sign}" stroke="#111" stroke-width="9"/></g>`;
+  if(p.rig==="vehicle_flume_log_v001") return `<g id="${id}_body" filter="url(#shadow)"><path d="M-400 35 C-260 130 260 130 400 35 C300 110 -300 110 -400 35Z" fill="#8B5E34" stroke="#111" stroke-width="9"/><ellipse cx="-160" cy="25" rx="90" ry="45" fill="#6B4B2A" stroke="#111" stroke-width="6"/><ellipse cx="120" cy="25" rx="90" ry="45" fill="#6B4B2A" stroke="#111" stroke-width="6"/></g>`;
+  if(p.rig==="vehicle_raft_v001") return `<g id="${id}_body" filter="url(#shadow)"><circle cx="0" cy="0" r="185" fill="${t.accent}" stroke="#111" stroke-width="12"/><circle cx="0" cy="0" r="95" fill="${t.sign}" stroke="#111" stroke-width="8"/><circle cx="-120" cy="-55" r="35" fill="#111"/><circle cx="120" cy="-55" r="35" fill="#111"/><circle cx="0" cy="120" r="35" fill="#111"/></g>`;
+  if(p.rig==="vehicle_simulator_cabin_v001") return `<g id="${id}_body" filter="url(#shadow)"><rect x="-380" y="-160" width="760" height="320" rx="60" fill="${t.sign}" stroke="#111" stroke-width="12"/><rect x="-300" y="-95" width="600" height="120" rx="24" fill="${t.accent}" stroke="#111" stroke-width="8"/></g>`;
+  if(p.rig==="vehicle_drop_tower_gondola_v001"||p.rig==="vehicle_elevator_cage_v001") return `<g id="${id}_body" filter="url(#shadow)"><rect x="-250" y="-170" width="500" height="340" rx="28" fill="${t.sign}" stroke="#111" stroke-width="12"/><path d="M-160 -150 L-160 150 M0 -150 L0 150 M160 -150 L160 150 M-250 -50 L250 -50 M-250 70 L250 70" stroke="#64748B" stroke-width="12"/><path d="M-320 -250 L-320 250 M320 -250 L320 250" stroke="#64748B" stroke-width="22"/></g>`;
+  if(p.rig==="vehicle_flying_theater_bench_v001") return `<g id="${id}_body" filter="url(#shadow)"><rect x="-390" y="-45" width="780" height="120" rx="28" fill="${t.sign}" stroke="#111" stroke-width="10"/><path d="M-310 -45 L-310 -150 M-100 -45 L-100 -150 M100 -45 L100 -150 M310 -45 L310 -150" stroke="#64748B" stroke-width="16"/></g>`;
+  if(p.rig==="vehicle_tram_bus_v001") return `<g id="${id}_body" filter="url(#shadow)"><rect x="-470" y="-120" width="940" height="240" rx="34" fill="${t.sign}" stroke="#111" stroke-width="10"/><rect x="-390" y="-70" width="150" height="85" rx="12" fill="${t.accent}" stroke="#111" stroke-width="6"/><rect x="-190" y="-70" width="150" height="85" rx="12" fill="${t.accent}" stroke="#111" stroke-width="6"/><rect x="10" y="-70" width="150" height="85" rx="12" fill="${t.accent}" stroke="#111" stroke-width="6"/><rect x="210" y="-70" width="150" height="85" rx="12" fill="${t.accent}" stroke="#111" stroke-width="6"/><circle cx="-310" cy="120" r="48" fill="#111"/><circle cx="310" cy="120" r="48" fill="#111"/></g>`;
+  if(p.rig==="vehicle_mine_cart_v001") return `<g id="${id}_body" filter="url(#shadow)"><path d="M-310 -60 L310 -60 L250 110 L-250 110 Z" fill="${t.stone}" stroke="#111" stroke-width="10"/><circle cx="-180" cy="125" r="42" fill="#111"/><circle cx="180" cy="125" r="42" fill="#111"/></g>`;
+  return `<g id="${id}_body" filter="url(#shadow)"><path d="M-430 50 C-360 -20 -215 -48 -40 -48 L220 -48 C345 -48 425 -5 462 58 L440 118 C310 145 -230 145 -455 105 Z" fill="#101923" stroke="#D7E1E8" stroke-width="7"/><path d="M-365 -18 C-270 -70 -50 -82 230 -50 C320 -38 390 -8 430 44 L-425 44 C-412 18 -395 -2 -365 -18Z" fill="${t.accent}" stroke="#9ca3af" stroke-width="5"/><rect x="-260" y="-32" width="90" height="72" rx="12" fill="#111827" stroke="#64748b" stroke-width="5"/><rect x="-120" y="-32" width="90" height="72" rx="12" fill="#111827" stroke="#64748b" stroke-width="5"/><rect x="25" y="-32" width="90" height="72" rx="12" fill="#111827" stroke="#64748b" stroke-width="5"/><rect x="170" y="-32" width="90" height="72" rx="12" fill="#111827" stroke="#64748b" stroke-width="5"/></g>`;
+}
+function drawProp(id,p){
+  let t={...(THEMES[p.theme]||THEMES.theme_jurassic)};
+  const o=(p.overrides&&typeof p.overrides==="object")?p.overrides:{};
+  if(o.panelColor)t.sign=o.panelColor; if(o.accentColor)t.accent=o.accentColor; if(o.lightColor)t.light=o.lightColor; if(o.stoneColor)t.stone=o.stoneColor;
+  const text=String(o.signText||o.attractionName||"");
+  const textColor=String(o.textColor||"#F8FAFC");
+  const fontSize=Number(o.fontSize||54);
+  if(p.rig==="prop_fence_v001") return `<path d="M-350 -120 L-350 140 M-250 -120 L-250 140 M-150 -120 L-150 140 M-50 -120 L-50 140 M50 -120 L50 140 M150 -120 L150 140 M250 -120 L250 140 M350 -120 L350 140 M-400 -45 L400 -45 M-400 60 L400 60" fill="none" stroke="#AEB8BE" stroke-width="11"/>`;
+  if(p.rig==="prop_lamp_v001") return `<g><path d="M0 160 L0 -80" stroke="#111" stroke-width="16"/><circle cx="0" cy="-125" r="50" fill="${t.light}" stroke="#111" stroke-width="8"/><circle cx="0" cy="-125" r="90" fill="${t.light}" opacity=".18"/></g>`;
+  if(p.rig==="prop_camera_v001") return `<g filter="url(#shadow)"><rect x="-150" y="-90" width="300" height="190" rx="28" fill="#111827" stroke="#111" stroke-width="9"/><rect x="-95" y="-135" width="110" height="55" rx="14" fill="#374151" stroke="#111" stroke-width="7"/><circle cx="40" cy="5" r="72" fill="#0F172A" stroke="#111" stroke-width="8"/><circle cx="40" cy="5" r="38" fill="#38BDF8" stroke="#111" stroke-width="5"/><circle cx="-95" cy="-25" r="20" fill="${t.light}" stroke="#111" stroke-width="5"/></g>`;
+  if(p.rig==="prop_drink_cup_v001") return `<g filter="url(#shadow)"><path d="M-70 -130 L70 -130 L45 125 L-45 125 Z" fill="${o.cupColor||"#F8FAFC"}" stroke="#111" stroke-width="8"/><path d="M-78 -130 L78 -130" stroke="#111" stroke-width="16" stroke-linecap="round"/><path d="M-28 -130 L-55 -210" stroke="#111" stroke-width="8" stroke-linecap="round"/><path d="M-48 -205 L28 -205" stroke="#111" stroke-width="8" stroke-linecap="round"/><rect x="-42" y="-45" width="84" height="70" rx="12" fill="${t.accent}" stroke="#111" stroke-width="5"/></g>`;
+  if(p.rig==="prop_mouse_ears_v001") return `<g><circle cx="-68" cy="-45" r="58" fill="${o.earColor||"#111827"}" stroke="#111" stroke-width="8"/><circle cx="68" cy="-45" r="58" fill="${o.earColor||"#111827"}" stroke="#111" stroke-width="8"/><path d="M-120 30 C-55 -35 55 -35 120 30" fill="none" stroke="${o.bandColor||"#111827"}" stroke-width="24" stroke-linecap="round"/></g>`;
+  if(p.rig==="prop_wizard_wand_v001") return `<g><path d="M-10 130 L40 -130" stroke="${o.woodColor||"#4B2E16"}" stroke-width="12" stroke-linecap="round"/><circle cx="43" cy="-145" r="28" fill="${t.light}" opacity=".55"/><path d="M43 -145 L80 -190 M43 -145 L0 -192 M43 -145 L90 -120" stroke="${t.light}" stroke-width="7" stroke-linecap="round"/><circle cx="42" cy="-135" r="9" fill="#FDE68A" stroke="#111" stroke-width="3"/></g>`;
+  if(p.rig==="prop_wand_v001") return `<g><path d="M-10 130 L40 -130" stroke="#4B2E16" stroke-width="12" stroke-linecap="round"/><circle cx="43" cy="-145" r="28" fill="${t.light}" opacity=".55"/><path d="M43 -145 L80 -190 M43 -145 L0 -192 M43 -145 L90 -120" stroke="${t.light}" stroke-width="7" stroke-linecap="round"/></g>`;
+  if(p.rig==="prop_suitcase_v001") return `<g filter="url(#shadow)"><rect x="-150" y="-80" width="300" height="190" rx="24" fill="#8B5E34" stroke="#111" stroke-width="10"/><path d="M-60 -80 C-58 -145 58 -145 60 -80" fill="none" stroke="#111" stroke-width="12"/><path d="M-115 -30 L115 -30 M-115 40 L115 40" stroke="#6B4B2A" stroke-width="12"/></g>`;
+  if(p.rig==="prop_ghost_soul_v001") return `<g id="${id}_body" data-base-transform="" opacity="${o.opacity||.68}"><path d="M0 -150 C80 -120 105 -40 70 35 C45 90 80 135 110 175 C50 155 20 120 0 180 C-22 120 -55 155 -110 175 C-80 135 -45 90 -70 35 C-105 -40 -80 -120 0 -150Z" fill="${o.body||"#DBEAFE"}" stroke="#93C5FD" stroke-width="8"/><circle cx="-22" cy="-48" r="8" fill="#1E3A8A"/><circle cx="22" cy="-48" r="8" fill="#1E3A8A"/><ellipse cx="0" cy="-12" rx="13" ry="20" fill="none" stroke="#1E3A8A" stroke-width="6"/></g>`;
+  if(p.rig==="prop_magic_spark_v001") return `<g opacity="${o.opacity||.8}"><circle cx="0" cy="0" r="55" fill="${t.light}" opacity=".25"/><path d="M0 -120 L20 -25 L115 0 L20 25 L0 120 L-20 25 L-115 0 L-20 -25 Z" fill="${t.light}" stroke="#111" stroke-width="5"/></g>`;
+  if(p.rig==="prop_brick_wall_v001") return `<g filter="url(#shadow)"><rect x="-480" y="-260" width="960" height="520" fill="${o.brickColor||"#9A3412"}" stroke="#111" stroke-width="12"/><path d="${[-200,-120,-40,40,120,200].map(y=>`M-480 ${y} L480 ${y}`).join(" ")} ${[-360,-240,-120,0,120,240,360].map(x=>`M${x} -260 L${x} -200 M${x+60} -200 L${x+60} -120 M${x} -120 L${x} -40 M${x+60} -40 L${x+60} 40 M${x} 40 L${x} 120 M${x+60} 120 L${x+60} 200 M${x} 200 L${x} 260`).join(" ")}" stroke="#FED7AA" stroke-width="5" opacity=".65"/><ellipse cx="${o.dentX||0}" cy="${o.dentY||40}" rx="95" ry="70" fill="#7C2D12" opacity=".55" stroke="#111" stroke-width="7"/></g>`;
+  if(p.rig==="prop_clock_tower_v001") return `<g filter="url(#shadow)"><rect x="-120" y="-360" width="240" height="560" fill="${t.stone}" stroke="#111" stroke-width="10"/><path d="M-150 -360 L0 -500 L150 -360 Z" fill="${t.sign}" stroke="#111" stroke-width="10"/><circle cx="0" cy="-210" r="75" fill="#F8FAFC" stroke="#111" stroke-width="8"/><path d="M0 -210 L0 -260 M0 -210 L42 -190" stroke="#111" stroke-width="8" stroke-linecap="round"/><rect x="-60" y="-40" width="120" height="240" rx="12" fill="${t.dark}" stroke="#111" stroke-width="8"/></g>`;
+  if(p.rig==="prop_platform_arch_v001") return `<g filter="url(#shadow)"><path d="M-390 170 L-390 -70 C-390 -310 390 -310 390 -70 L390 170 L260 170 L260 -70 C260 -170 -260 -170 -260 -70 L-260 170 Z" fill="${t.stone}" stroke="#111" stroke-width="12"/><rect x="-320" y="-245" width="640" height="90" rx="16" fill="${t.sign}" stroke="#111" stroke-width="8"/><text x="0" y="-185" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="${fontSize}" fill="${textColor}" stroke="#111" stroke-width="3">${escapeText(text||"PLATFORM")}</text></g>`;
+  if(p.rig==="prop_text_sign_v001") if(p.rig==="prop_warning_sign_v001") return `<g filter="url(#shadow)"><path d="M0 -170 L210 160 L-210 160 Z" fill="${t.light}" stroke="#111" stroke-width="12"/><text x="0" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="${fontSize||56}" fill="#111">${escapeText(text||"!")}</text></g>`;
+  if(p.rig==="prop_map_poster_v001") return `<g filter="url(#shadow)"><rect x="-220" y="-160" width="440" height="320" rx="18" fill="#F8FAFC" stroke="#111" stroke-width="10"/><path d="M-170 -90 C-50 -150 55 -20 175 -90 M-170 20 C-30 -50 60 90 175 20 M-130 110 L120 -120" fill="none" stroke="${t.accent}" stroke-width="12" stroke-linecap="round"/><text x="0" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="34" fill="#111">${escapeText(text||"MAP")}</text></g>`;
+  if(p.rig==="prop_restraint_lapbar_v001") return `<g><path d="M-185 18 C-90 -38 90 -38 185 18" fill="none" stroke="#111827" stroke-width="22" stroke-linecap="round"/><path d="M-165 20 C-80 -18 80 -18 165 20" fill="none" stroke="#64748B" stroke-width="10" stroke-linecap="round"/><circle cx="-185" cy="18" r="18" fill="#111827"/><circle cx="185" cy="18" r="18" fill="#111827"/></g>`;
+  if(p.rig==="prop_restraint_motorbike_v001") return `<g><path d="M-150 28 C-65 -25 65 -25 150 28" fill="none" stroke="#111827" stroke-width="18" stroke-linecap="round"/><path d="M-125 32 L125 32" stroke="#64748B" stroke-width="10" stroke-linecap="round"/></g>`;
+  if(p.rig==="prop_restraint_darkride_v001") return `<g><path d="M-160 20 L160 20" stroke="#111827" stroke-width="20" stroke-linecap="round"/><path d="M-150 20 L150 20" stroke="#64748B" stroke-width="9" stroke-linecap="round"/></g>`;
+  if(p.rig==="prop_restraint_otr_v001") return `<g><path d="M-115 -80 C-180 -20 -180 75 -115 120 M115 -80 C180 -20 180 75 115 120" fill="none" stroke="#111827" stroke-width="24" stroke-linecap="round"/><path d="M-90 100 C-35 135 35 135 90 100" fill="none" stroke="#64748B" stroke-width="14" stroke-linecap="round"/></g>`;
+  if(p.rig==="prop_restraint_bar_v001") return `<g><path d="M-210 25 C-105 -45 105 -45 210 25" fill="none" stroke="#111827" stroke-width="24" stroke-linecap="round"/><path d="M-190 25 C-95 -20 95 -20 190 25" fill="none" stroke="#64748B" stroke-width="12" stroke-linecap="round"/></g>`;
+  if(p.rig==="prop_control_panel_v001") return `<g filter="url(#shadow)"><rect x="-230" y="-125" width="460" height="250" rx="28" fill="${t.sign}" stroke="#111" stroke-width="10"/><circle cx="-120" cy="-25" r="38" fill="#EF4444" stroke="#111" stroke-width="6"/><circle cx="0" cy="-25" r="38" fill="#FACC15" stroke="#111" stroke-width="6"/><circle cx="120" cy="-25" r="38" fill="#22C55E" stroke="#111" stroke-width="6"/><text x="0" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="42" fill="${textColor}">${escapeText(text||"READY")}</text></g>`;
+  if(p.rig==="prop_splash_v001") return `<g opacity="${o.opacity||.85}"><path d="M-260 100 C-180 -60 -100 80 -40 -120 C20 70 95 -90 160 80 C200 10 235 50 280 100 Z" fill="#38BDF8" stroke="#111" stroke-width="7"/><circle cx="-160" cy="-30" r="28" fill="#BAE6FD"/><circle cx="75" cy="-75" r="24" fill="#BAE6FD"/><circle cx="195" cy="5" r="20" fill="#BAE6FD"/></g>`;
+  if(p.rig==="prop_fire_burst_v001") return `<g opacity="${o.opacity||.9}"><path d="M0 -210 C90 -110 55 -50 150 25 C75 10 115 120 0 185 C-120 110 -70 15 -160 25 C-55 -55 -90 -115 0 -210Z" fill="#F97316" stroke="#111" stroke-width="8"/><path d="M0 -95 C40 -38 30 25 0 85 C-35 28 -25 -40 0 -95Z" fill="#FDE047"/></g>`;
+  if(p.rig==="prop_crate_barrel_v001") return `<g filter="url(#shadow)"><rect x="-170" y="-95" width="220" height="190" rx="12" fill="#8B5E34" stroke="#111" stroke-width="9"/><path d="M-155 -45 L35 -45 M-155 35 L35 35 M-120 -90 L-120 90 M0 -90 L0 90" stroke="#6B4B2A" stroke-width="10"/><ellipse cx="130" cy="0" rx="70" ry="110" fill="#6B4B2A" stroke="#111" stroke-width="9"/></g>`;
+  if(p.rig==="prop_track_support_v001") return `<g><path d="M-240 220 L0 -220 L240 220 M-170 110 L170 110 M-95 0 L95 0 M-45 -95 L45 -95" fill="none" stroke="#64748B" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  return `<g id="${id}_body" filter="url(#shadow)"><rect x="-370" y="-130" width="740" height="260" rx="32" fill="${t.sign}" stroke="#111" stroke-width="12"/><rect x="-320" y="-82" width="640" height="164" rx="18" fill="${t.accent}" stroke="#111" stroke-width="7"/>${multiLineText(text||"ATTRACTION",0,-20,fontSize,textColor)}</g>`;
+  return `<g id="${id}_body" filter="url(#shadow)"><path d="M-340 -90 L340 -90 L300 110 L-300 110 Z" fill="${t.sign}" stroke="#111" stroke-width="12"/><path d="M-300 -55 L300 -55 L265 70 L-265 70 Z" fill="${t.accent}" stroke="#111" stroke-width="7"/><text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="${fontSize*.75}" fill="${textColor}" stroke="#111" stroke-width="3">${escapeText(text)}</text><circle cx="-320" cy="-15" r="26" fill="${t.light}" stroke="#111" stroke-width="6"/><circle cx="320" cy="-15" r="26" fill="${t.light}" stroke="#111" stroke-width="6"/></g>`;
+}
+function multiLineText(text,x,y,fontSize,textColor){const lines=String(text).split(/\\n|\|/).slice(0,3);const start=y-(lines.length-1)*fontSize*.48;return lines.map((line,i)=>`<text x="${x}" y="${start+i*fontSize*.95}" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="${fontSize}" fill="${textColor}" stroke="#111" stroke-width="3">${escapeText(line)}</text>`).join("");}
+function escapeText(s){return String(s).replace(/[<>&"']/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;","'":"&apos;"}[c]));}
+function drawEffect(e){if(e.type==="speedLines")return`<g id="${esc(e.id)}" data-base-transform="translate(${e.x},${e.y}) scale(${e.scale||1})" transform="translate(${e.x},${e.y}) scale(${e.scale||1})" opacity="${e.opacity??.35}">${[0,1,2,3,4,5,6,7].map(k=>`<line x1="${-900+k*30}" y1="${-250+k*60}" x2="900" y2="${-300+k*60}" stroke="#fff" stroke-width="${5+k%4}" opacity="${.25+k*.045}"/>`).join("")}</g>`;if(e.type==="motionBlur")return`<g id="${esc(e.id)}" opacity="${e.opacity??.2}" filter="url(#blur)">${[0,1,2,3,4].map(k=>`<rect x="${e.x-e.w/2}" y="${e.y-e.h/2+k*e.h/5}" width="${e.w}" height="${e.h/18}" fill="#fff"/>`).join("")}</g>`;return"";}
+
+/* ----------------------------- ANIMATION ----------------------------- */
+
+function ease(t){t=Math.max(0,Math.min(1,t));return.5-Math.cos(Math.PI*t)/2;}
+function applyFrame(t){
+  const s=activeShot,c=s.camera,pct=Math.max(0,Math.min(1,t/s.duration));
+  const zoom=c.zoomFrom+(c.zoomTo-c.zoomFrom)*ease(pct),panX=c.panXFrom+(c.panXTo-c.panXFrom)*ease(pct),panY=c.panYFrom+(c.panYTo-c.panYFrom)*ease(pct);
+  const shakeX=c.shake?Math.sin(t*48)*c.shake*8:0,shakeY=c.shake?Math.cos(t*42)*c.shake*5:0;
+  const cam=document.querySelector("#cameraRig"); if(cam) cam.setAttribute("transform",`translate(${panX+shakeX},${panY+shakeY}) scale(${zoom})`);
+  s.placements.forEach(p=>{if(p.customMotion)applyCustomMotion(p,t,s.duration); const m=MOTIONS[p.motion]; if(m) m.tracks.forEach(tr=>applyTrack(p.instance_id,tr,t));});
+  el("scrubber").value=String(Math.round(pct*1000)); el("timeReadout").textContent=`${t.toFixed(2)}s`;
+}
+
+function applyCustomMotion(p,t,shotDuration){
+  const node=document.getElementById(p.instance_id); if(!node||!p.customMotion) return;
+  const cm=p.customMotion, start=Number(cm.start||0), duration=Number(cm.duration||shotDuration||1);
+  let q=(t-start)/duration; if(q<0) return;
+  if(cm.loop){const cyc=Math.floor(q); q=q-cyc; if(cm.yoyo&&cyc%2===1) q=1-q;} else q=Math.max(0,Math.min(1,q));
+  const e=ease(q);
+  const tx=lerp(num(cm.fromX,0,-9999,9999),num(cm.toX,0,-9999,9999),e);
+  const ty=lerp(num(cm.fromY,0,-9999,9999),num(cm.toY,0,-9999,9999),e);
+  const rot=lerp(num(cm.fromRotate,0,-3600,3600),num(cm.toRotate,0,-3600,3600),e);
+  const sc=lerp(num(cm.fromScale,1,.01,20),num(cm.toScale,1,.01,20),e);
+  const base=node.getAttribute("data-base-transform")||"";
+  node.setAttribute("transform",`${base} translate(${tx},${ty}) rotate(${rot}) scale(${sc})`);
+  if(cm.fromOpacity!==undefined||cm.toOpacity!==undefined){
+    node.setAttribute("opacity",lerp(num(cm.fromOpacity,p.opacity||1,0,1),num(cm.toOpacity,p.opacity||1,0,1),e));
+  }
+}
+function lerp(a,b,t){return a+(b-a)*t;}
+
+function applyTrack(instanceId,tr,t){
+  let nodeId=tr.part&&tr.part!=="rig"?`${instanceId}_${tr.part}`:instanceId;
+  const node=document.getElementById(nodeId); if(!node) return;
+  let local=t-tr.start; if(local<0) return;
+  let p=local/tr.duration;
+  if(tr.loop){const cycle=Math.floor(p);p=p-cycle;if(tr.yoyo&&cycle%2===1)p=1-p;} else p=Math.max(0,Math.min(1,p));
+  const val=tr.from+(tr.to-tr.from)*ease(p),base=node.getAttribute("data-base-transform")||"";
+  let extra=""; if(tr.property==="translateX")extra=` translate(${val},0)`; if(tr.property==="translateY")extra=` translate(0,${val})`; if(tr.property==="rotate")extra=` rotate(${val})`; if(tr.property==="scaleX")extra=` scale(${val},1)`; if(tr.property==="scale")extra=` scale(${val})`;
+  if(extra) node.setAttribute("transform",`${base}${extra}`); if(tr.property==="opacity") node.setAttribute("opacity",val);
+}
+function tick(ms){
+  if(!playing) return;
+  const elapsed=(ms-startMs)/1000;
+  if(playingEpisode){
+    const total=episodeDuration(); let epT=(episodeStartOffset+elapsed)%total; const loc=locateEpisodeTime(epT);
+    if(loc.index!==shotIndex) selectShotNoPause(loc.index); pauseAt=loc.local; applyFrame(loc.local);
+  }else{const t=elapsed%activeShot.duration; pauseAt=t; applyFrame(t);}
+  raf=requestAnimationFrame(tick);
+}
+function playShot(){playing=true;playingEpisode=false;startMs=performance.now()-pauseAt*1000;cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);}
+function playEpisode(){playing=true;playingEpisode=true;episodeStartOffset=episodeTimeForShot(shotIndex)+pauseAt;startMs=performance.now();cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);}
+function pause(){playing=false;cancelAnimationFrame(raf);}
+function restart(){pauseAt=0;applyFrame(0);playShot();}
+function selectShotNoPause(i){shotIndex=i;activeShot=shots[i];renderShotList();el("activeShotTitle").textContent=`${String(i+1).padStart(2,"0")} — ${activeShot.title}`;el("activeShotDesc").textContent=`${activeShot.shot_id} · ${activeShot.duration}s · ${activeShot.background.environment} · ${activeShot.background.theme}`;el("svgMount").innerHTML=buildSvg(activeShot);}
+function episodeDuration(){return shots.reduce((a,s)=>a+s.duration,0);}
+function episodeTimeForShot(i){return shots.slice(0,i).reduce((a,s)=>a+s.duration,0);}
+function locateEpisodeTime(t){let acc=0;for(let i=0;i<shots.length;i++){if(t<acc+shots[i].duration)return{index:i,local:t-acc};acc+=shots[i].duration;}return{index:0,local:0};}
+
+/* ----------------------------- EXPORTS ----------------------------- */
+
+function svgToImage(svgString){return new Promise((resolve,reject)=>{const blob=new Blob([svgString],{type:"image/svg+xml;charset=utf-8"}),url=URL.createObjectURL(blob),img=new Image();img.onload=()=>{URL.revokeObjectURL(url);resolve(img);};img.onerror=e=>{URL.revokeObjectURL(url);reject(e);};img.src=url;});}
+async function drawShotFrame(ctx,s,t){const old=activeShot;activeShot=s;el("svgMount").innerHTML=buildSvg(s);applyFrame(t);const img=await svgToImage(el("sceneSvg").outerHTML);ctx.fillStyle="#fff";ctx.fillRect(0,0,W,H);ctx.drawImage(img,0,0,W,H);activeShot=old;}
+async function renderShotWebM(index,autoDownload=true){
+  pause(); const s=shots[index]; if(!window.MediaRecorder){setStatus("WebM export unavailable in this browser.","bad");return null;}
+  const canvas=document.createElement("canvas");canvas.width=W;canvas.height=H;const ctx=canvas.getContext("2d"),stream=canvas.captureStream(FPS),chunks=[];
+  let mime="video/webm;codecs=vp8"; if(!MediaRecorder.isTypeSupported(mime)) mime="video/webm";
+  const rec=new MediaRecorder(stream,{mimeType:mime});rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data);};const done=new Promise(r=>rec.onstop=r);rec.start();
+  const fc=Math.ceil(s.duration*FPS);
+  for(let f=0;f<fc;f++){await drawShotFrame(ctx,s,f/FPS);setStatus(`Rendering ${exportName(index,s)} frame ${f+1}/${fc}...`,"neutral");await new Promise(r=>setTimeout(r,1000/FPS));}
+  rec.stop(); await done; const blob=new Blob(chunks,{type:mime}); if(autoDownload) downloadBlob(blob,`${exportName(index,s)}.webm`,mime);
+  setStatus(`Exported ${exportName(index,s)}.webm`,"good"); selectShot(index); return blob;
+}
+async function exportCurrentShotWebM(){el("exportShotWebmBtn").disabled=true;await renderShotWebM(shotIndex,true);el("exportShotWebmBtn").disabled=false;}
+async function exportAllShotsWebM(){el("exportAllWebmBtn").disabled=true;for(let i=0;i<shots.length;i++){await renderShotWebM(i,true);await new Promise(r=>setTimeout(r,300));}setStatus(`Exported ${shots.length} shot WebM files.`,"good");el("exportAllWebmBtn").disabled=false;selectShot(shotIndex);}
+function exportSvg(){applyFrame(pauseAt||0);downloadBlob(el("sceneSvg").outerHTML,`${exportName(shotIndex,activeShot)}.svg`,"image/svg+xml");}
+function exportProject(){downloadBlob(JSON.stringify(project,null,2),`${project.project_id}.json`,"application/json");}
+function exportName(i,s){return `${String(i+1).padStart(2,"0")}_${s.shot_id}`.toLowerCase().replace(/[^a-z0-9_]+/g,"_");}
+function downloadBlob(content,filename,type){const blob=content instanceof Blob?content:new Blob([content],{type});const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),500);}
+
+/* ----------------------------- UI ----------------------------- */
+
+function applyProject(){try{pause();project=normalizeProject(JSON.parse(el("projectEditor").value));el("projectEditor").value=JSON.stringify(project,null,2);shotIndex=0;renderProject();}catch(err){setStatus(`JSON error: ${err.message}`,"bad");}}
+function loadSample(){pause();project=normalizeProject(SAMPLE_PROJECT);el("projectEditor").value=JSON.stringify(project,null,2);shotIndex=0;renderProject();}
+function copyPrompt(){
+  const prompt=`Create valid JSON only for Theme Park Story Engine V13.2.1. Max 30 shots. Use stable shot_id values and numeric order values. Project schema: project_id, title, shots[]. Shot fields: shot_id, order, title, status, duration, camera preset or object, background {theme, environment, horizon optional}, placements[], effects optional. Supported environment IDs: ${ENVIRONMENTS.join(", ")}. Supported themes: ${Object.keys(THEMES).join(", ")}. Supported rigs: ${Object.keys(BASE_RIGS).join(", ")}. Supported appearances: ${Object.keys(APPEARANCES).join(", ")}. Supported creature skins: ${Object.keys(CREATURE_SKINS).join(", ")}. Supported motions: ${Object.keys(MOTIONS).join(", ")}. Placement fields: instance_id, asset_type, rig or environment, appearance or skin optional, theme optional, x, y, scale, rotate, motion, zIndex optional, opacity optional, customMotion optional, overrides optional. Overrides can include hairWind, hairStyle, shirt, shorts, skin, hair, showStubble, headScale, bodyScaleX, bodyScaleY, genderPresentation, panelColor, accentColor, body, belly, signText, textColor, fontSize, showClock, brickColor. Use text only on signs/props. Character overrides may include bodyShape, cloakColor, robeTrim, hatStyle, hatColor, shoeStyle, handProp. Use lapbar/motorbike restraint rigs instead of oversized generic restraint when faces must remain visible. For vertical spike scenes, keep vehicle/rider rotation near 0 unless the story specifically requires sideways/inverted staging. customMotion supports fromX,toX,fromY,toY,fromRotate,toRotate,fromScale,toScale,fromOpacity,toOpacity,start,duration,loop,yoyo. Return JSON only.`;
+  navigator.clipboard.writeText(prompt).then(()=>setStatus("Copied V10 prompt.","good"),()=>setStatus("Clipboard blocked.","bad"));
+}
+function setStatus(msg,kind){const box=el("status");box.textContent=msg;box.className=`status ${kind}`;}
+function renderLibraryList(){
+  el("libraryList").textContent=[
+    "ENVIRONMENTS:",...ENVIRONMENTS.map(x=>"  "+x),"",
+    "THEMES:",...Object.keys(THEMES).map(x=>"  "+x),"",
+    "RIGS:",...Object.keys(BASE_RIGS).map(x=>"  "+x),"",
+    "APPEARANCES:",...Object.keys(APPEARANCES).map(x=>"  "+x),"",
+    "CREATURE SKINS:",...Object.keys(CREATURE_SKINS).map(x=>"  "+x),"",
+    "MOTIONS:",...Object.keys(MOTIONS).map(x=>"  "+x),"",
+    "CAMERA PRESETS:",...Object.keys(CAMERAS).map(x=>"  "+x)
+  ].join("\\n");
+}
+function num(v,f,min=0,max=100){const n=Number(v);return Number.isFinite(n)?Math.max(min,Math.min(max,n)):f;}
+function safeId(v){return String(v).replace(/[^a-zA-Z0-9_-]/g,"_");}
+function esc(s){return String(s).replace(/[<>&"']/g,c=>({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;","'":"&apos;"}[c]));}
+
+el("loadSampleBtn").addEventListener("click",loadSample);
+el("applyProjectBtn").addEventListener("click",applyProject);
+el("playShotBtn").addEventListener("click",playShot);
+el("playEpisodeBtn").addEventListener("click",playEpisode);
+el("pauseBtn").addEventListener("click",pause);
+el("restartBtn").addEventListener("click",restart);
+el("exportShotWebmBtn").addEventListener("click",exportCurrentShotWebM);
+el("exportAllWebmBtn").addEventListener("click",exportAllShotsWebM);
+el("exportSvgBtn").addEventListener("click",exportSvg);
+el("exportProjectBtn").addEventListener("click",exportProject);
+if(el("toggleDebugBtn"))el("toggleDebugBtn").addEventListener("click",()=>{debugLabels=!debugLabels;selectShot(shotIndex);});
+el("copyPromptBtn").addEventListener("click",copyPrompt);
+el("scrubber").addEventListener("input",e=>{pause();pauseAt=Number(e.target.value)/1000*activeShot.duration;applyFrame(pauseAt);});
+
+renderLibraryList();
+loadSample();
+</script>
+</body>
+</html>
